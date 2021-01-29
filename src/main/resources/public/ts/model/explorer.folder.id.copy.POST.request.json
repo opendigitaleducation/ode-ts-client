@@ -1,0 +1,6 @@
+// POST /share
+
+{
+  resourceIds: string[],
+  folderIds: string[]
+}

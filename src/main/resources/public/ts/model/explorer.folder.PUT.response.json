@@ -1,0 +1,10 @@
+// POST /folder
+
+{
+  id: string,
+  name: string,
+  type: "default",
+  createdAt: date,
+  updatedAt: date,
+  parentId: string|"default"
+}

@@ -1,0 +1,13 @@
+// POST /share
+
+{
+  resourceIds: string[],
+  rights:[{
+    read: boolean,
+    contribute: boolean, 
+    manage: boolean,
+    comment: boolean,
+    userId?: string,
+    groupId?: string
+  }]
+}

@@ -1,0 +1,10 @@
+// GET /folder/_id_
+
+{
+  folders:[{
+    id: string,
+    name: string,
+    type: "bin"|"default"|id, // customisation du dossier (icone...)
+    childNumber: number // à minima, 0 ou 1...
+  }]
+}
