@@ -4,8 +4,25 @@ export const APP = {
   ANY:        "any"
  ,BLOG:       "blog"
  ,EXERCIZER:  "exercizer"
+ // TODO compléter
 } as const;
 export type App = typeof APP[keyof typeof APP];   // type App = "any" | "blog" | "exercizer"
+
+//-- Actions (toaster)
+export const ACTION = {
+  CREATE:     "create"
+ ,OPEN:       "open"
+ ,MANAGE:     "manage"
+ ,COMMENT:    "comment"
+ ,DELETE:     "delete"
+ ,MOVE:       "move"
+ ,COPY:       "copy"
+ ,EXPORT:     "export"
+ ,SHARE:      "share"
+ ,PUBLISH:    "publish"
+ ,PRINT:      "print"
+} as const;
+export type ActionType = typeof ACTION[keyof typeof ACTION];
 
 //-- Resources
 export const RESOURCE = {
@@ -30,42 +47,152 @@ export const FILTER = {
 export type FilterType = typeof FOLDER[keyof typeof FOLDER];
 
 //-- Semantique
-export type id = string;
+export type ID = string;
+export type DefaultValue = string | string[] | boolean | boolean[];
+export type FilterValue = { value: string|boolean; name: string; };
 
 
-//------------------------- Data models
-//-- Folder
+let test = () => {
+  /*
+  Aïe ! 
+  Property 'values' does not exist on type 'ObjectConstructor'. 
+  Do you need to change your target library? 
+  Try changing the `lib` compiler option to 'es2017' or later.ts(2550)
+  */
+  for( const filter of Object.values(FILTER) ) {
+    
+  }
+}
+
+//------------------------- Data models 
+//-------------------------------------
+interface IContext {
+//-------------------------------------
+  // Détailler toutes les valeurs possibles (Folders, Filters...)
+  // ET la(les) valeur(s) courante(s) qui sert de modèle pour l'IHM (composants angular)
+  // (potentiellement, plusieurs valeurs pour même filtre)
+  //TODO
+
+}
+
+//-------------------------------------
+interface IAction {
+//-------------------------------------
+  id: ActionType, //ex: "create" par convention
+  available: boolean  // L'utilisateur a le droit workflow ou pas
+  //FIXME comment relier les actions aux behaviours, qu'on va remplacer.
+}
+
+//-------------------------------------
 interface IFolder {
+//-------------------------------------
   id: string;
   name: string;
-  type: FolderType | id;
+  type: FolderType | ID;
   childNumber: number; // à minima, 0 ou 1...
 }
 
-//-- Filter
-type FilterValue = {
-  value: string|boolean,
-  name: string
-};
+//-------------------------------------
 interface IFilter {
+//-------------------------------------
   id: FilterType;
-  defaultValue?: string | boolean;
-  values:FilterValue[]
+  defaultValue?: DefaultValue;
+  values: FilterValue[];
 }
 
-//------------------------- Services
+//-------------------------------------
+interface IPagination { // TODO à tester
+//-------------------------------------
+  startIdx: number;
+  maxIdx?: number;  // Si elastic search renvoie bien le nombre de hits 
+  pageSize: number; // Sera égal à la valeur paramétrée côté serveur
+}
 
+//-------------------------------------
+interface IResource {
+//-------------------------------------
+  id: ID;
+  name: string;
+  thumbnail: URL;   // requis; ou bien déductible d’une convention ?
+  application: App;
+  createdAt: string;  // FIXME: S'entendre sur un format de date
+  authorId: string;
+  authorName: string;
+  modifierId: ID;
+  modifierName: string;
+  modifiedAt: string; // FIXME: S'entendre sur un format de date
+  folderId?: ID;      // TODO à confirmer
+  public?: boolean;
+  shared?: boolean;
+  favorite?: boolean;
+  views?: number;
+  comments?: number;
+}
+
+//-------------------------------------
+interface IGroupUserRight {
+//-------------------------------------
+  read: boolean;
+  contribute: boolean;
+  manage: boolean;
+  comment: boolean;
+  userId?: ID;
+  groupId?: ID;
+}
+
+//------------------------- Service call results
+export type GetResourcesResult = {
+  folders: IFolder[];
+  pagination: IPagination;
+  resources: IResource[];
+}
+export type GetSubFoldersResult = {
+  folders: IFolder[];
+}
+export type CreateFolderResult = {
+  id: ID;
+  name: string;
+  type: FolderType;
+  createdAt: string;
+}
+export type UpdateFolderResult = CreateFolderResult & {
+  updatedAt: string;
+  parentId: ID|"default";
+}
 
 //------------------------- API
-
+//-------------------------------------
 interface IExplorerFramework {
-  
-  createAgent( /*types: ResourceType[]|string, app?:App*/ ): IAgent;
+//-------------------------------------
+  /**
+   * Instancie un agent délégué au traitement des tâches d'exploration.
+   * @param types Types de ressources traitées par l'agent, minimum 1.
+   * @param app [optionnel] Application délégante.
+   */
+  createAgent( types: ResourceType[], app?:App ): IAgent;
   
 }
 
+//-------------------------------------
 interface IAgent {
+//-------------------------------------
 
-  getContext( app: App, types )
+  getContext( /* Paramètres de l'agent */ ): IContext;
+
+  getResources( /* Paramètres trouvés dans le Context */ ): GetResourcesResult;
+
+  getSubFolders( parentId: ID ): GetSubFoldersResult;
+
+  createFolder( resourceType: ResourceType, parentId: ID, name: string ): CreateFolderResult;
+
+  updateFolder( resourceType: ResourceType, parentId: ID, name: string ): UpdateFolderResult;
+
+  share( resourceIds: ID[], rights: IGroupUserRight[] ): void;
+
+  copy( targetId: ID, resourceIds: ID[], folderIds: ID[] ): void;
+
+  move( targetId: ID, resourceIds: ID[], folderIds: ID[] ): void;
+
+  delete( resourceIds: ID[], folderIds: ID[] ): void; //FIXME 1 seul tableau en paramètres ?
 
 }

@@ -24,7 +24,8 @@
     modifierName: string,
     modifiedAt: date,
     folderId?: string, // TODO à confirmer
-    visibility?: "private"|"shared"|"public",
+    public?: boolean,
+    shared?: boolean,
     favorite?: boolean,
     views?: number,
     comments?: number
