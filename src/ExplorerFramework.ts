@@ -40,16 +40,42 @@ export type FolderType = typeof FOLDER[keyof typeof FOLDER];
 
 //-- Filters
 export const FILTER = {
-  VISIBILITY: "visibility"
+  OWNER:      "owner"
+ ,SHARED:     "shared"
+ ,PUBLIC:     "public"
  ,FAVORITE:   "favorite"
  ,FOLDER:     "folder"
 } as const;
-export type FilterType = typeof FOLDER[keyof typeof FOLDER];
+export type FilterType = typeof FILTER[keyof typeof FILTER];
+
+//-- Orders 
+export const ORDER = {
+  NAME:         "name"
+ ,MODIFY_DATE:  "modifiedAt"
+/*
+//FIXME On devrait pouvoir trier sur tout champ issu d'un type de ressource (name, createdAt, authorId...) voir IResource
+  createdAt: string;
+  authorId: string;
+  authorName: string;
+  modifierId: ID;
+  modifierName: string;
+  modifiedAt: string;
+  folderId?: ID;      // TODO à confirmer
+  public?: boolean;
+  shared?: boolean;
+  favorite?: boolean;
+  views?: number;
+  comments?: number;
+*/
+} as const;
+export type OrderType = typeof ORDER[keyof typeof ORDER];
 
 //-- Semantique
 export type ID = string;
-export type DefaultValue = string | string[] | boolean | boolean[];
-export type FilterValue = { value: string|boolean; name: string; };
+export type StringFilterValue = {
+  value: string;  // Value of the filter (as sent to backend)
+  name: string;   // Translation key of the filter (as displayed in frontend)
+};
 
 
 let test = () => {
@@ -71,14 +97,19 @@ interface IContext {
   // Détailler toutes les valeurs possibles (Folders, Filters...)
   // ET la(les) valeur(s) courante(s) qui sert de modèle pour l'IHM (composants angular)
   // (potentiellement, plusieurs valeurs pour même filtre)
-  //TODO
-
+  folders: IFolder[];
+  filters: IFilter[];
+  orders: IOrder[];
+  actions: IAction[];
+  pagination: IPagination;
+  resources: IResource[];
+  preferences: IPreferences;
 }
 
 //-------------------------------------
 interface IAction {
 //-------------------------------------
-  id: ActionType, //ex: "create" par convention
+  id: ActionType,
   available: boolean  // L'utilisateur a le droit workflow ou pas
   //FIXME comment relier les actions aux behaviours, qu'on va remplacer.
 }
@@ -96,11 +127,19 @@ interface IFolder {
 interface IFilter {
 //-------------------------------------
   id: FilterType;
-  defaultValue?: DefaultValue;
-  values: FilterValue[];
+  defaultValue?: string | string[] | boolean | boolean[];
+  values: StringFilterValue[];
 }
 
 //-------------------------------------
+interface IOrder {
+//-------------------------------------
+  id: OrderType;
+  defaultValue?: "asc"|"desc";
+  name: string;
+}
+  
+  //-------------------------------------
 interface IPagination { // TODO à tester
 //-------------------------------------
   startIdx: number;
@@ -127,6 +166,12 @@ interface IResource {
   favorite?: boolean;
   views?: number;
   comments?: number;
+}
+
+//-------------------------------------
+interface IPreferences {
+//-------------------------------------
+  view: "card"|"list";
 }
 
 //-------------------------------------
