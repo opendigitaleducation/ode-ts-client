@@ -39,14 +39,17 @@ export const FOLDER = {
 export type FolderType = typeof FOLDER[keyof typeof FOLDER];
 
 //-- Filters
-export const FILTER = {
+export const BOOLEAN_FILTER = {
   OWNER:      "owner"
  ,SHARED:     "shared"
  ,PUBLIC:     "public"
  ,FAVORITE:   "favorite"
- ,FOLDER:     "folder"
 } as const;
-export type FilterType = typeof FILTER[keyof typeof FILTER];
+export type BooleanFilterType = typeof BOOLEAN_FILTER[keyof typeof BOOLEAN_FILTER];
+export const STRING_FILTER = {
+//  FOLDER:     "folder" // is instead an ID
+} as const;
+export type StringFilterType = typeof STRING_FILTER[keyof typeof STRING_FILTER];
 
 //-- Orders 
 export const ORDER = {
@@ -85,9 +88,9 @@ let test = () => {
   Do you need to change your target library? 
   Try changing the `lib` compiler option to 'es2017' or later.ts(2550)
   */
-  for( const filter of Object.values(FILTER) ) {
+  //for( const filter of Object.values(FILTER) ) {
     
-  }
+  //}
 }
 
 //------------------------- Data models 
@@ -104,6 +107,16 @@ interface IContext {
   pagination: IPagination;
   resources: IResource[];
   preferences: IPreferences;
+}
+
+//-------------------------------------
+interface ISearchParameters {
+//-------------------------------------
+  types:ResourceType[];
+  app?:App;
+  filters:FilterValues;
+  orders:IOrder;
+  pagination:IPagination;
 }
 
 //-------------------------------------
@@ -126,7 +139,7 @@ interface IFolder {
 //-------------------------------------
 interface IFilter {
 //-------------------------------------
-  id: FilterType;
+  id: BooleanFilterType | StringFilterType;
   defaultValue?: string | string[] | boolean | boolean[];
   values: StringFilterValue[];
 }
@@ -139,7 +152,7 @@ interface IOrder {
   name: string;
 }
   
-  //-------------------------------------
+//-------------------------------------
 interface IPagination { // TODO à tester
 //-------------------------------------
   startIdx: number;
@@ -174,6 +187,7 @@ interface IPreferences {
   view: "card"|"list";
 }
 
+//------------------------- Service call parameters
 //-------------------------------------
 interface IGroupUserRight {
 //-------------------------------------
@@ -184,6 +198,9 @@ interface IGroupUserRight {
   userId?: ID;
   groupId?: ID;
 }
+
+export type FilterValues = {[B in BooleanFilterType]: boolean} & {[S in StringFilterType]: string} & {folder: ID};
+export type OrderValues  = {  };
 
 //------------------------- Service call results
 export type GetResourcesResult = {
@@ -210,34 +227,102 @@ export type UpdateFolderResult = CreateFolderResult & {
 interface IExplorerFramework {
 //-------------------------------------
   /**
-   * Instancie un agent délégué au traitement des tâches d'exploration.
+   * Instancie un contexte d'exploration .
    * @param types Types de ressources traitées par l'agent, minimum 1.
-   * @param app [optionnel] Application délégante.
+   * @param app [optionnel] Application à l'origine de l'appel.
    */
-  createAgent( types: ResourceType[], app?:App ): IAgent;
+  createContext( types: ResourceType[], app?:App ): IExplorerContext;
   
+  /**
+   * Retrieve the underlying communication bus.
+   */
+  getBus(): IBus;
 }
 
 //-------------------------------------
-interface IAgent {
+interface IExplorerContext {
+//-------------------------------------
+  isInitialized(): boolean;
+  getContext(): IContext;
+  getSearchParameters(): ISearchParameters;
+
+  clear(): void;
+
+  initialize(): Promise<IContext>;
+
+  getResources(): Promise<GetResourcesResult>;
+
+  getSubFolders( parentId:ID ): Promise<GetSubFoldersResult>;
+
+  createFolder( resourceType:ResourceType, parentId:ID, name:string ): Promise<CreateFolderResult>;
+
+  updateFolder( resourceType:ResourceType, parentId:ID, name:string ): Promise<UpdateFolderResult>;
+
+  share( resourceIds:ID[], rights:IGroupUserRight[] ): void;
+
+  copy( targetId:ID, resourceIds:ID[], folderIds:ID[] ): void;
+
+  move( targetId:ID, resourceIds:ID[], folderIds:ID[] ): void;
+
+  delete( resourceIds:ID[], folderIds:ID[] ): void; //FIXME 1 seul tableau en paramètres ?
+
+/*//TODO ajouter des méthodes pour les autres actions du toaster ?
+  CREATE:     "create"
+ ,OPEN:       "open"
+ ,MANAGE:     "manage"
+ ,COMMENT:    "comment"
+ ,EXPORT:     "export"
+ ,PUBLISH:    "publish"
+ ,PRINT:      "print"
+*/
+}
+
+//-------------------------------------
+interface IBus {
+//-------------------------------------
+  /** App registered as "any" will manage Folders. */
+  register( app:App, actions:ActionType[], agent:IBusAgent ): void;
+
+  delegate( app:App, action:ActionType, parameters:any ): Observable<IActionResult>;
+}
+
+//-------------------------------------
+interface IBusAgent {
+//-------------------------------------
+  activate( app:App, action:ActionType, parameters:any ): Observable<IActionResult>;
+
+// Ou bien, s'il y a besoin de dissocier agent/action pour permettre plus d'interactions :
+/*
+  queryActivator( app:App, action:ActionType ): IActivator;
+}
+interface IActivator {
+  activate( parameters:any ): Observable<IActionResult>;
+}
+*/
+}
+
+//-------------------------------------
+interface IActionResult {
+//-------------------------------------
+  //TODO
+}
+
+
+//-------------------------------------
+// TODO will become a class
+interface IBlogManager extends IBusAgent {
 //-------------------------------------
 
-  getContext( /* Paramètres de l'agent */ ): IContext;
+}
 
-  getResources( /* Paramètres trouvés dans le Context */ ): GetResourcesResult;
+//-------------------------------------
+interface IFolderManager {
+//-------------------------------------
 
   getSubFolders( parentId: ID ): GetSubFoldersResult;
 
   createFolder( resourceType: ResourceType, parentId: ID, name: string ): CreateFolderResult;
 
   updateFolder( resourceType: ResourceType, parentId: ID, name: string ): UpdateFolderResult;
-
-  share( resourceIds: ID[], rights: IGroupUserRight[] ): void;
-
-  copy( targetId: ID, resourceIds: ID[], folderIds: ID[] ): void;
-
-  move( targetId: ID, resourceIds: ID[], folderIds: ID[] ): void;
-
-  delete( resourceIds: ID[], folderIds: ID[] ): void; //FIXME 1 seul tableau en paramètres ?
 
 }
