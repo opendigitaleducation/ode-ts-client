@@ -55,7 +55,8 @@ export type StringFilterType = typeof STRING_FILTER[keyof typeof STRING_FILTER];
 export const ORDER = {
   NAME:         "name"
  ,MODIFY_DATE:  "modifiedAt"
-/*
+ ,VIEWS:        "views"
+ /*
 //FIXME On devrait pouvoir trier sur tout champ issu d'un type de ressource (name, createdAt, authorId...) voir IResource
   createdAt: string;
   authorId: string;
@@ -67,7 +68,6 @@ export const ORDER = {
   public?: boolean;
   shared?: boolean;
   favorite?: boolean;
-  views?: number;
   comments?: number;
 */
 } as const;
@@ -95,7 +95,7 @@ let test = () => {
 
 //------------------------- Data models 
 //-------------------------------------
-interface IContext {
+export interface IContext {
 //-------------------------------------
   // Détailler toutes les valeurs possibles (Folders, Filters...)
   // ET la(les) valeur(s) courante(s) qui sert de modèle pour l'IHM (composants angular)
@@ -110,7 +110,7 @@ interface IContext {
 }
 
 //-------------------------------------
-interface ISearchParameters {
+export interface ISearchParameters {
 //-------------------------------------
   types:ResourceType[];
   app?:App;
@@ -120,7 +120,7 @@ interface ISearchParameters {
 }
 
 //-------------------------------------
-interface IAction {
+export interface IAction {
 //-------------------------------------
   id: ActionType,
   available: boolean  // L'utilisateur a le droit workflow ou pas
@@ -128,7 +128,7 @@ interface IAction {
 }
 
 //-------------------------------------
-interface IFolder {
+export interface IFolder {
 //-------------------------------------
   id: string;
   name: string;
@@ -137,7 +137,7 @@ interface IFolder {
 }
 
 //-------------------------------------
-interface IFilter {
+export interface IFilter {
 //-------------------------------------
   id: BooleanFilterType | StringFilterType;
   defaultValue?: string | string[] | boolean | boolean[];
@@ -145,7 +145,7 @@ interface IFilter {
 }
 
 //-------------------------------------
-interface IOrder {
+export interface IOrder {
 //-------------------------------------
   id: OrderType;
   defaultValue?: "asc"|"desc";
@@ -153,7 +153,7 @@ interface IOrder {
 }
   
 //-------------------------------------
-interface IPagination { // TODO à tester
+export interface IPagination { // TODO à tester
 //-------------------------------------
   startIdx: number;
   maxIdx?: number;  // Si elastic search renvoie bien le nombre de hits 
@@ -161,7 +161,7 @@ interface IPagination { // TODO à tester
 }
 
 //-------------------------------------
-interface IResource {
+export interface IResource {
 //-------------------------------------
   id: ID;
   name: string;
@@ -182,14 +182,14 @@ interface IResource {
 }
 
 //-------------------------------------
-interface IPreferences {
+export interface IPreferences {
 //-------------------------------------
   view: "card"|"list";
 }
 
 //------------------------- Service call parameters
 //-------------------------------------
-interface IGroupUserRight {
+export interface IGroupUserRight {
 //-------------------------------------
   read: boolean;
   contribute: boolean;
@@ -224,7 +224,7 @@ export type UpdateFolderResult = CreateFolderResult & {
 
 //------------------------- API
 //-------------------------------------
-interface IExplorerFramework {
+export interface IExplorerFramework {
 //-------------------------------------
   /**
    * Instancie un contexte d'exploration .
@@ -240,7 +240,7 @@ interface IExplorerFramework {
 }
 
 //-------------------------------------
-interface IExplorerContext {
+export interface IExplorerContext {
 //-------------------------------------
   isInitialized(): boolean;
   getContext(): IContext;
@@ -278,7 +278,7 @@ interface IExplorerContext {
 }
 
 //-------------------------------------
-interface IBus {
+export interface IBus {
 //-------------------------------------
   /** App registered as "any" will manage Folders. */
   register( app:App, actions:ActionType[], agent:IBusAgent ): void;
@@ -287,22 +287,22 @@ interface IBus {
 }
 
 //-------------------------------------
-interface IBusAgent {
+export interface IBusAgent {
 //-------------------------------------
   activate( app:App, action:ActionType, parameters:any ): Observable<IActionResult>;
 
-// Ou bien, s'il y a besoin de dissocier agent/action pour permettre plus d'interactions :
+// Ou bien, s'il y a besoin de dissocier agents et actions pour permettre plus d'interactions :
 /*
   queryActivator( app:App, action:ActionType ): IActivator;
 }
-interface IActivator {
+export interface IActivator {
   activate( parameters:any ): Observable<IActionResult>;
 }
 */
 }
 
 //-------------------------------------
-interface IActionResult {
+export interface IActionResult {
 //-------------------------------------
   //TODO
 }
@@ -310,13 +310,13 @@ interface IActionResult {
 
 //-------------------------------------
 // TODO will become a class
-interface IBlogManager extends IBusAgent {
+export interface IBlogManager extends IBusAgent {
 //-------------------------------------
 
 }
 
 //-------------------------------------
-interface IFolderManager {
+export interface IFolderManager {
 //-------------------------------------
 
   getSubFolders( parentId: ID ): GetSubFoldersResult;
