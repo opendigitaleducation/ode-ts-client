@@ -24,7 +24,7 @@ export declare interface Behaviours {
     loadBehaviours( serviceName:string, callback: ((resource:AppBehaviours)=>void) ): Actions;
     load( serviceName:string ): Promise<any>;
     findWorkflow( serviceName:string ): Promise<any>;
-    workflowsFrom( obj:any, dependencies:any ): any;
+    workflowsFrom( obj:any, dependencies:any ): {};
 	applicationsBehaviours: any;
 }
 export declare var Behaviours:Behaviours;
