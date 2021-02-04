@@ -307,16 +307,8 @@ export interface IActionResult {
   //TODO
 }
 
-
 //-------------------------------------
-// TODO will become a class
-export interface IBlogManager extends IBusAgent {
-//-------------------------------------
-
-}
-
-//-------------------------------------
-export interface IFolderManager {
+export interface IFolderAdapter extends IBusAgent {
 //-------------------------------------
 
   getSubFolders( parentId: ID ): GetSubFoldersResult;
@@ -324,5 +316,12 @@ export interface IFolderManager {
   createFolder( resourceType: ResourceType, parentId: ID, name: string ): CreateFolderResult;
 
   updateFolder( resourceType: ResourceType, parentId: ID, name: string ): UpdateFolderResult;
+
+}
+
+//TODO exemple d'adaptateur pour exploiter les Behaviours de Blog
+//-------------------------------------
+export interface IBlogAdapter extends IBusAgent {
+//-------------------------------------
 
 }
