@@ -1,20 +1,58 @@
-import { CreateFolderResult, GetResourcesResult, GetSubFoldersResult, IContext, IExplorerContext, IGroupUserRight, ISearchParameters, ResourceType, UpdateFolderResult } from "../interfaces";
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight } from "../interfaces";
+import { ExplorerFramework } from './ExplorerFramework';
 
-class ExplorerContext implements IExplorerContext {
+export class ExplorerContext implements IExplorerContext {
+    private searchParameters: ISearchParameters;
+    private context: IContext | null;
+    private bus:IBus;
+
+    constructor( types:ResourceType[], app?:App ) {
+        this.context = null;
+        this.bus = ExplorerFramework.instance.getBus();
+        
+        this.searchParameters = {
+            types: types,
+            filters: {},
+            pagination: {
+                startIdx: 0,
+                pageSize: 20
+            }
+        }
+        if( app ) {
+            this.searchParameters.app = app;
+        }
+    }
+
+    clear(): void {
+        this.searchParameters.filters = {
+            owner: true,
+            shared: true,
+            public: true
+        };
+        this.searchParameters.pagination.startIdx = 0;
+        this.searchParameters.pagination.pageSize = 20;
+        this.context = null;
+    }
     isInitialized(): boolean {
-        throw new Error("Method not implemented.");
+        return this.context!==null;
     }
     getContext(): IContext {
-        throw new Error("Method not implemented.");
+        if( this.context!==null ) {
+            return this.context;
+        } else {
+            throw new Error(ERROR_CODE.NOT_INITIALIZED);
+        }
     }
     getSearchParameters(): ISearchParameters {
-        throw new Error("Method not implemented.");
-    }
-    clear(): void {
-        throw new Error("Method not implemented.");
+        return this.searchParameters;
     }
     initialize(): Promise<IContext> {
-        throw new Error("Method not implemented.");
+        this.bus.delegate( APP.ANY, ACTION.INITIALIZE, this.searchParameters );
+        return Promise.resolve().then( () => {
+            if( !this.context )
+                throw new Error( ERROR_CODE.UNKNOWN );
+            return this.context;
+        });
     }
     getResources(): Promise<GetResourcesResult> {
         throw new Error("Method not implemented.");

@@ -1,5 +1,13 @@
 //------------------------- Data types
-//-- Applications
+//-- Error codes 
+export const ERROR_CODE = {
+  SUCCESS:          "0000"
+ ,UNKNOWN:          "0010"
+ ,NOT_INITIALIZED:  "0020"
+} as const;
+export type ErrorCode = typeof ERROR_CODE[keyof typeof ERROR_CODE];
+    
+  //-- Applications
 export const APP = {
   ANY:        "any"
  ,BLOG:       "blog"
@@ -10,7 +18,9 @@ export type App = typeof APP[keyof typeof APP];   // type App = "any" | "blog" |
 
 //-- Actions (toaster)
 export const ACTION = {
-  CREATE:     "create"
+  /** @param ISearchParameters */
+  SEARCH:     "search"
+ ,CREATE:     "create"
  ,OPEN:       "open"
  ,MANAGE:     "manage"
  ,COMMENT:    "comment"
@@ -115,8 +125,9 @@ export interface ISearchParameters {
   types:ResourceType[];
   app?:App;
   filters:FilterValues;
-  orders:IOrder;
+  orders?:IOrder[];
   pagination:IPagination;
+  search?:String;
 }
 
 //-------------------------------------
@@ -141,7 +152,7 @@ export interface IFilter {
 //-------------------------------------
   id: BooleanFilterType | StringFilterType;
   defaultValue?: string | string[] | boolean | boolean[];
-  values: StringFilterValue[];
+  values?: StringFilterValue[];
 }
 
 //-------------------------------------
@@ -199,7 +210,7 @@ export interface IGroupUserRight {
   groupId?: ID;
 }
 
-export type FilterValues = {[B in BooleanFilterType]: boolean} & {[S in StringFilterType]: string} & {folder: ID};
+export type FilterValues = {[B in BooleanFilterType]?: boolean} & {[S in StringFilterType]?: string} & {folder?: ID};
 export type OrderValues  = {  };
 
 //------------------------- Service call results
@@ -243,6 +254,10 @@ export interface IExplorerFramework {
 export interface IExplorerContext {
 //-------------------------------------
   isInitialized(): boolean;
+  /**
+   * @return a new search context
+   * @throw ERROR_CODE.NOT_INITIALIZED: if initialize() was not called before.
+   */
   getContext(): IContext;
   getSearchParameters(): ISearchParameters;
 
@@ -324,4 +339,13 @@ export interface IFolderAdapter extends IBusAgent {
 export interface IBlogAdapter extends IBusAgent {
 //-------------------------------------
 
+}
+
+/**
+ * Framework is a singleton.
+ */
+//-------------------------------------
+export abstract class ExplorerFactory {
+//-------------------------------------
+  static instance: IExplorerFramework;
 }
