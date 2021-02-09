@@ -91,18 +91,6 @@ export type StringFilterValue = {
 };
 
 
-let test = () => {
-  /*
-  Aïe ! 
-  Property 'values' does not exist on type 'ObjectConstructor'. 
-  Do you need to change your target library? 
-  Try changing the `lib` compiler option to 'es2017' or later.ts(2550)
-  */
-  //for( const filter of Object.values(FILTER) ) {
-    
-  //}
-}
-
 //------------------------- Data models 
 //-------------------------------------
 export interface IContext {
@@ -176,7 +164,7 @@ export interface IResource {
 //-------------------------------------
   id: ID;
   name: string;
-  thumbnail: URL;   // requis; ou bien déductible d’une convention ?
+  thumbnail: string;   // URL : requis; ou bien déductible d’une convention ?
   application: App;
   createdAt: string;  // FIXME: S'entendre sur un format de date
   authorId: string;
@@ -298,13 +286,13 @@ export interface IBus {
   /** App registered as "any" will manage Folders. */
   register( app:App, actions:ActionType[], agent:IBusAgent ): void;
 
-  delegate( app:App, action:ActionType, parameters:any ): Observable<IActionResult>;
+  delegate( app:App, action:ActionType, parameters:any ): Promise<IActionResult>;
 }
 
 //-------------------------------------
 export interface IBusAgent {
 //-------------------------------------
-  activate( app:App, action:ActionType, parameters:any ): Observable<IActionResult>;
+  activate( app:App, action:ActionType, parameters:any ): Promise<IActionResult>;
 
 // Ou bien, s'il y a besoin de dissocier agents et actions pour permettre plus d'interactions :
 /*
@@ -345,7 +333,7 @@ export interface IBlogAdapter extends IBusAgent {
  * Framework is a singleton.
  */
 //-------------------------------------
-export abstract class ExplorerFactory {
+export abstract class ExplorerFrameworkFactory {
 //-------------------------------------
   static instance: IExplorerFramework;
 }

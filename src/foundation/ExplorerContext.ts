@@ -1,5 +1,4 @@
-import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight } from "../interfaces";
-import { ExplorerFramework } from './ExplorerFramework';
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory } from "../interfaces";
 
 export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;
@@ -8,7 +7,7 @@ export class ExplorerContext implements IExplorerContext {
 
     constructor( types:ResourceType[], app?:App ) {
         this.context = null;
-        this.bus = ExplorerFramework.instance.getBus();
+        this.bus = ExplorerFrameworkFactory.instance.getBus();
         
         this.searchParameters = {
             types: types,
@@ -47,7 +46,7 @@ export class ExplorerContext implements IExplorerContext {
         return this.searchParameters;
     }
     initialize(): Promise<IContext> {
-        this.bus.delegate( APP.ANY, ACTION.INITIALIZE, this.searchParameters );
+        this.bus.delegate( APP.ANY, ACTION.SEARCH, this.searchParameters );
         return Promise.resolve().then( () => {
             if( !this.context )
                 throw new Error( ERROR_CODE.UNKNOWN );
