@@ -1,11 +1,13 @@
-const { ExplorerFrameworkFactory } = require("../dist/index");
+import "jasmine";
+import { framework } from 'framework/index';
+import { APP, RESOURCE } from 'framework/interfaces';
 
 /** Test the fundations of the framework. */
 describe("Foundation", function() {
-    var framework = null;
+    var context = null;
 
     beforeEach( ()=>{
-        framework = ExplorerFrameworkFactory.instance;
+        // nada ATM
     });
 
     /** @test framework bootstrapping */
@@ -15,6 +17,6 @@ describe("Foundation", function() {
 
     /** @test framework initialization */
     it("should not throw error", ()=>{
-        framework.framework.framework
-    })
+        context = framework.createContext( [RESOURCE.BLOG], APP.ANY );
+    });
 });

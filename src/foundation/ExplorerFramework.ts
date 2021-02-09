@@ -12,6 +12,4 @@ export class ExplorerFramework implements IExplorerFramework {
 }
 
 /** The whole framework is a singleton. */
-ExplorerFrameworkFactory.instance = new ExplorerFramework();
-
-export let framework:IExplorerFramework = ExplorerFrameworkFactory.instance;
+export let framework:IExplorerFramework = ExplorerFrameworkFactory.instance = new ExplorerFramework();
