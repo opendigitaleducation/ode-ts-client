@@ -1,6 +1,5 @@
 import "jasmine";
-import { framework } from 'framework/index';
-import { APP, RESOURCE } from 'framework/interfaces';
+import { APP, framework, RESOURCE } from "../src/index";
 
 /** Test the fundations of the framework. */
 describe("Foundation", function() {
