@@ -46,8 +46,11 @@ export class ExplorerContext implements IExplorerContext {
         return this.searchParameters;
     }
     initialize(): Promise<IContext> {
-        this.bus.delegate( APP.ANY, ACTION.SEARCH, this.searchParameters );
+        // Using Promise.resolve().then()  allows the use of .catch(), .finally() and is considered a good practice.
         return Promise.resolve().then( () => {
+            return this.bus.delegate( APP.ANY, ACTION.SEARCH, this.searchParameters );
+        }).then( (ar) => {
+            // TODO extraire le contexte depuis ar et le retourner.
             if( !this.context )
                 throw new Error( ERROR_CODE.UNKNOWN );
             return this.context;

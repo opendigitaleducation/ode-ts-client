@@ -1,4 +1,5 @@
 import { App, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "../interfaces";
+import { Me } from "../legacy/Me";
 import { ExplorerContext } from "./ExplorerContext";
 
 export class ExplorerFramework implements IExplorerFramework {

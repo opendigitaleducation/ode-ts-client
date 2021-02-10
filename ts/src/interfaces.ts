@@ -1,4 +1,7 @@
 //------------------------- Data types
+
+import { Me } from "./legacy/Me";
+
 //-- Error codes 
 export const ERROR_CODE = {
   SUCCESS:          "0000"
@@ -95,9 +98,6 @@ export type StringFilterValue = {
 //-------------------------------------
 export interface IContext {
 //-------------------------------------
-  // Détailler toutes les valeurs possibles (Folders, Filters...)
-  // ET la(les) valeur(s) courante(s) qui sert de modèle pour l'IHM (composants angular)
-  // (potentiellement, plusieurs valeurs pour même filtre)
   folders: IFolder[];
   filters: IFilter[];
   orders: IOrder[];
@@ -230,7 +230,7 @@ export interface IExplorerFramework {
    * @param types Types de ressources traitées par l'agent, minimum 1.
    * @param app [optionnel] Application à l'origine de l'appel.
    */
-  createContext( types: ResourceType[], app?:App ): IExplorerContext;
+  createContext( types:ResourceType[], app?:App ): IExplorerContext;
   
   /**
    * Retrieve the underlying communication bus.
@@ -251,6 +251,11 @@ export interface IExplorerContext {
 
   clear(): void;
 
+  /**
+   * Retrieves the first page of listed resources from the server.
+   * Search parameters can be adjusted beforehand, @see getSearchParameters().
+   * @return 
+   */
   initialize(): Promise<IContext>;
 
   getResources(): Promise<GetResourcesResult>;
