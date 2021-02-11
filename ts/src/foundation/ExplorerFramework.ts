@@ -1,5 +1,5 @@
 import { App, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "../interfaces";
-import { Me } from "../legacy/Me";
+import { BusFactory } from "./Bus";
 import { ExplorerContext } from "./ExplorerContext";
 
 export class ExplorerFramework implements IExplorerFramework {
@@ -8,7 +8,7 @@ export class ExplorerFramework implements IExplorerFramework {
         return new ExplorerContext( types, app );
     }
     getBus(): IBus {
-        throw new Error("Method not implemented.");
+        return BusFactory.instance;
     }
 }
 
