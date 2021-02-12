@@ -1,20 +1,32 @@
+import { Observable } from "rxjs";
+
 //------------------------- Data types
 //-- Error codes 
 export const ERROR_CODE = {
   SUCCESS:          "0000"
  ,UNKNOWN:          "0010"
  ,NOT_INITIALIZED:  "0020"
+ ,NOT_SUPPORTED:    "0030"
+ ,APP_NOT_FOUND:    "0040"
 } as const;
 export type ErrorCode = typeof ERROR_CODE[keyof typeof ERROR_CODE];
-    
-  //-- Applications
+
+//-- Applications
 export const APP = {
   EXPLORER:   "explorer"
  ,BLOG:       "blog"
  ,EXERCIZER:  "exercizer"
  // TODO compléter
 } as const;
-export type App = typeof APP[keyof typeof APP];   // type App = "any" | "blog" | "exercizer"
+export type App = typeof APP[keyof typeof APP];   // type App = "explorer" | "blog" | "exercizer"
+
+//-- Resources
+export const RESOURCE = {
+  FOLDER:     "folder"
+ ,BLOG:       "blog"
+ ,EXERCISE:   "exercise"
+} as const;
+export type ResourceType = typeof RESOURCE[keyof typeof RESOURCE];
 
 //-- Actions (toaster)
 export const ACTION = {
@@ -34,13 +46,6 @@ export const ACTION = {
  ,PRINT:      "print"
 } as const;
 export type ActionType = typeof ACTION[keyof typeof ACTION];
-
-//-- Resources
-export const RESOURCE = {
-  BLOG:       "blog"
- ,EXERCISE:   "exercise"
-} as const;
-export type ResourceType = typeof RESOURCE[keyof typeof RESOURCE];
 
 //-- Folders
 export const FOLDER = {
@@ -293,21 +298,18 @@ export interface IExplorerContext {
 //-------------------------------------
 export interface IBus {
 //-------------------------------------
-  /** 
-   * Allows registering an app agent as being able to resolve 1 or more action.
-   * App registered as the "any" application will manage Folders. //TODO create a "folder" dedicated app ?
-   */
-  register( app:App, actions:ActionType[], agent:IBusAgent ): void;
+  /** Allows registering an agent as being able to resolve 1 or more action on a type of resource. */
+  consumer( res:ResourceType, action:ActionType, agent:IBusAgent ): void;
 
-  /** Allows delegating an action to another app, registered on the bus. */
-  delegate( app:App, action:ActionType, parameters:any ): Promise<IActionResult>;
+  /** Allows delegating an action on a type of resource, to a registered agent on the bus. */
+  send( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult>;
 }
 
 //-------------------------------------
 export interface IBusAgent {
 //-------------------------------------
   /** Ask this agent to resolve an action. */
-  activate( app:App, action:ActionType, parameters:any ): Promise<IActionResult>;
+  activate( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult>;
 
 // Ou bien, s'il y a besoin de dissocier agents et actions pour permettre plus d'interactions :
 /*
@@ -328,13 +330,6 @@ export interface IFolderAdapter extends IBusAgent {
   createFolder( resourceType: ResourceType, parentId: ID, name: string ): CreateFolderResult;
 
   updateFolder( resourceType: ResourceType, parentId: ID, name: string ): UpdateFolderResult;
-
-}
-
-//TODO exemple d'adaptateur pour exploiter les Behaviours de Blog
-//-------------------------------------
-export interface IBlogAdapter extends IBusAgent {
-//-------------------------------------
 
 }
 

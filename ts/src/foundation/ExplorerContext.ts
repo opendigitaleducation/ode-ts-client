@@ -1,4 +1,4 @@
-import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult } from "../interfaces";
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE } from "../interfaces";
 
 export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;
@@ -49,7 +49,7 @@ export class ExplorerContext implements IExplorerContext {
         // Using Promise.resolve().then() allows the use of .catch(), .finally() and is considered a good practice.
         return Promise.resolve().then( () => {
             // Initialization a context is the same as requesting 
-            return this.bus.delegate( APP.EXPLORER, ACTION.INITIALIZE, this.searchParameters );
+            return this.bus.send( RESOURCE.FOLDER, ACTION.INITIALIZE, this.searchParameters );
         }).then( (ar) => {
             this.context = ar as GetContextResult;
             // TODO data sanity check

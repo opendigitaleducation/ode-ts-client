@@ -20,9 +20,14 @@ describe("Foundation", function() {
 
     /** @test Getting an explorer context. */
     it("should get a valid context without throwing an error", ()=>{
-        context = framework.createContext( [RESOURCE.BLOG], APP.BLOG );
+        context = framework.createContext( [RESOURCE.FOLDER], APP.BLOG );
         expect(context).toBeDefined();
     });
 
-
+    /**  */
+    it("should not crash", ()=>{
+        context?.initialize().then( ctx => {
+            expect(ctx).toBeDefined();
+        });
+    });
 });
