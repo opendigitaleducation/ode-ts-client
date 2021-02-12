@@ -1,22 +1,22 @@
-import { ACTION, ActionType, App, IActionResult, IBus, IBusAgent } from "../interfaces";
+import { ACTION, ActionType, APP, App, IActionResult, IBus, IBusAgent } from "../interfaces";
 import { IAbstractBusAgent } from './Agent';
 
-type AgentForActions = {[B in ActionType]: IBusAgent|null};
+type AgentForActions = {[B in ActionType]: IAbstractBusAgent|null};
 
 class Bus implements IBus {
     private delegatedAgentMap: {[A in App]?: AgentForActions} = {};
     
-    register(app: App, actions: ActionType[], agent: IBusAgent): void {
+    register( app:App, actions:ActionType[], agent:IBusAgent ): void {
         throw new Error("Method not implemented.");
     }
-    delegate(app: App, action: ActionType, parameters: any): Promise<IActionResult> {
+    delegate( app:App, action:ActionType, parameters:any ): Promise<IActionResult> {
         let agent = this.lookupDelegateFor( app, action );
-
+        agent.activate( app, action, parameters )
         throw new Error("Method not implemented.");
     }
 
     /**
-     * Lookup the dedicated agent for making an action on a resource-productive app.
+     * Lookup the dedicated agent for resolving an action on a resource-productive app.
      * @param app {App} The targeted resource-productive app
      * @param action {ActionType} The type of action that the agent must support.
      */
@@ -31,12 +31,16 @@ class Bus implements IBus {
             }
             this.delegatedAgentMap[app] = agentForActions;
         }
-
+        // Lookup the agent for this action.
         let agent = agentForActions[action];
         if( typeof agent==="undefined" ) {
+            // No agent defined yet, so create one.
             agentForActions[action] = agent = AgentActionMapper.generateAgent( app, action );
         }
-        throw new Error("Method not implemented.");
+        if( agent === null ) {
+            throw new Error("Agent is null");
+        }
+        return agent;
     }
 }
 
@@ -49,8 +53,13 @@ export class BusFactory {
 
 
 class AgentActionMapper {
-    static lookupDelegateFor(app: App, action: ActionType): IAbstractBusAgent {
-        return null;
+    static generateAgent(app: App, action: ActionType): IAbstractBusAgent {
         // TODO full apps support, depending on which apps Me can access.
+        //FIXME rendre ce mapping paramétrable, afin de faciliter l'ajout de nouvelles applis / migrer les anciennes.
+
+        switch( app ) {
+            case APP.EXPLORER :
+                
+        }
     }
 }

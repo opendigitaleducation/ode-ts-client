@@ -19,7 +19,10 @@ describe("Foundation", function() {
     it("should be available", () => { expect(framework).toBeDefined(); });
 
     /** @test Getting an explorer context. */
-    it("should not throw error", ()=>{
-        context = framework.createContext( [RESOURCE.BLOG], APP.ANY );
+    it("should get a valid context without throwing an error", ()=>{
+        context = framework.createContext( [RESOURCE.BLOG], APP.BLOG );
+        expect(context).toBeDefined();
     });
+
+
 });
