@@ -1,7 +1,4 @@
 //------------------------- Data types
-
-import { Me } from "./legacy/Me";
-
 //-- Error codes 
 export const ERROR_CODE = {
   SUCCESS:          "0000"
@@ -12,7 +9,7 @@ export type ErrorCode = typeof ERROR_CODE[keyof typeof ERROR_CODE];
     
   //-- Applications
 export const APP = {
-  ANY:        "any"
+  EXPLORER:   "explorer"
  ,BLOG:       "blog"
  ,EXERCIZER:  "exercizer"
  // TODO compléter
@@ -22,7 +19,8 @@ export type App = typeof APP[keyof typeof APP];   // type App = "any" | "blog" |
 //-- Actions (toaster)
 export const ACTION = {
   /** @param ISearchParameters */
-  SEARCH:     "search"
+  INITIALIZE: "initialize"
+ ,SEARCH:     "search"
  ,CREATE:     "create"
  ,OPEN:       "open"
  ,MANAGE:     "manage"
@@ -202,15 +200,22 @@ export type FilterValues = {[B in BooleanFilterType]?: boolean} & {[S in StringF
 export type OrderValues  = {  };
 
 //------------------------- Service call results
-export type GetResourcesResult = {
+//-------------------------------------
+export interface IActionResult {
+//-------------------------------------
+}
+
+export type GetContextResult = IActionResult & IContext;
+
+export type GetResourcesResult = IActionResult & {
   folders: IFolder[];
   pagination: IPagination;
   resources: IResource[];
 }
-export type GetSubFoldersResult = {
+export type GetSubFoldersResult = IActionResult & {
   folders: IFolder[];
 }
-export type CreateFolderResult = {
+export type CreateFolderResult = IActionResult & {
   id: ID;
   name: string;
   type: FolderType;
@@ -288,15 +293,20 @@ export interface IExplorerContext {
 //-------------------------------------
 export interface IBus {
 //-------------------------------------
-  /** App registered as "any" will manage Folders. */
+  /** 
+   * Allows registering an app agent as being able to resolve 1 or more action.
+   * App registered as the "any" application will manage Folders. //TODO create a "folder" dedicated app ?
+   */
   register( app:App, actions:ActionType[], agent:IBusAgent ): void;
 
+  /** Allows delegating an action to another app, registered on the bus. */
   delegate( app:App, action:ActionType, parameters:any ): Promise<IActionResult>;
 }
 
 //-------------------------------------
 export interface IBusAgent {
 //-------------------------------------
+  /** Ask this agent to resolve an action. */
   activate( app:App, action:ActionType, parameters:any ): Promise<IActionResult>;
 
 // Ou bien, s'il y a besoin de dissocier agents et actions pour permettre plus d'interactions :
@@ -304,15 +314,9 @@ export interface IBusAgent {
   queryActivator( app:App, action:ActionType ): IActivator;
 }
 export interface IActivator {
-  activate( parameters:any ): Observable<IActionResult>;
+  activate( parameters:IActionParameters ): Observable<IActionResult>;
 }
 */
-}
-
-//-------------------------------------
-export interface IActionResult {
-//-------------------------------------
-  //TODO
 }
 
 //-------------------------------------
