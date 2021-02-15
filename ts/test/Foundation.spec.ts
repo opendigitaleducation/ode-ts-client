@@ -1,19 +1,23 @@
 import "jasmine";
-import * as MockData from './config/userinfo.json';
+import * as UserInfoData from './mocks/data/userinfo.json';
+import { BehavioursMock } from './mocks/Behaviours.mock'
 import { APP, framework, IExplorerContext, RESOURCE } from "../src/index";
+import { IBehaviours } from "../src/legacy/Behaviours";
+
+var Behaviours:IBehaviours = new BehavioursMock();
 
 /** Test the fundations of the framework. */
 describe("Foundation", function() {
     var context:IExplorerContext|null = null;
-    const userinfo = MockData.userinfo;
+    const userinfo = UserInfoData;
 
-    beforeEach( ()=>{
-        // nada ATM
-    });
-
-    /** @test Mocked data definition */
+    /** @test Mocked data */
     //FIXME validate against jsonschema ?
-    it("should have mocked data defined", () => { expect(userinfo.apps).toBeDefined(); });
+    it("should have mocked data", () => { expect(userinfo.apps).toBeDefined(); });
+
+    /** @test Mocked functions */
+    //FIXME validate against jsonschema ?
+    it("should have mocked Behaviours", () => { expect(Behaviours).toBeDefined(); });
 
     /** @test Framework bootstrapping */
     it("should be available", () => { expect(framework).toBeDefined(); });

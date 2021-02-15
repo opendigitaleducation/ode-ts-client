@@ -1,7 +1,7 @@
-import { Behaviours } from "./Behaviours";
+import { IBehaviours } from "./Behaviours";
 
 declare interface Entcore {
-    Behaviours: Behaviours;
+    Behaviours: IBehaviours;
 }
 export declare var entcore: Entcore;
 export declare var newLogin: boolean;
