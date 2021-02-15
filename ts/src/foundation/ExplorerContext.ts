@@ -48,7 +48,7 @@ export class ExplorerContext implements IExplorerContext {
     initialize(): Promise<IContext> {
         // Using Promise.resolve().then() allows the use of .catch(), .finally() and is considered a good practice.
         return Promise.resolve().then( () => {
-            // Initialization a context is the same as requesting 
+            // Initialization context is the same as requesting 
             return this.bus.send( RESOURCE.FOLDER, ACTION.INITIALIZE, this.searchParameters );
         }).then( (ar) => {
             this.context = ar as GetContextResult;

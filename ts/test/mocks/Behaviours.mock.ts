@@ -174,6 +174,15 @@ export class BehavioursMock implements IBehaviours {
             Behaviours.applicationsBehaviours[serviceName] = {failed: true};
         });
         */
+        let content = null;
+        switch( serviceName ) {
+            case 'blog': content = require("./behaviours/blog.js"); break;
+            case 'exercizer': content = null; break;
+        }
+        callbacks.forEach( (cb:(model:any)=>void) => {
+            cb(Behaviours.applicationsBehaviours[serviceName]);
+        });
+
         return actions;
     };
     load(serviceName: string): Promise<any>{

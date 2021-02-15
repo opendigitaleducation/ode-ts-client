@@ -1,57 +1,18 @@
 import { Observable } from "rxjs";
-import { ACTION, ActionType, ERROR_CODE, ExplorerFrameworkFactory, IActionResult, RESOURCE, ResourceType } from "../interfaces";
-import { IAbstractBusAgent } from "../foundation/Agent";
+import { ACTION, ActionType, ERROR_CODE, IActionResult, RESOURCE, ResourceType } from "../interfaces";
+import { AbstractBusAgent } from "./AbstractBusAgent";
 
 /**
  * Manage RESOURCE.FOLDER
  */
-
-export class FolderAgent implements IAbstractBusAgent {
-    private initialized: boolean = false;
-    private handlerFor: {
-        [action in ActionType]: boolean;
-    } = {
-            comment: false,
-            copy: false,
-            create: false,
-            delete: false,
-            export: false,
-            initialize: true,
-            manage: false,
-            move: false,
-            open: false,
-            print: false,
-            publish: false,
-            search: true,
-            share: false
-        };
-
-    private canHandle(res: ResourceType, action: ActionType): boolean {
-        return RESOURCE.FOLDER === res && true === this.handlerFor[action];
+export class FolderAgent extends AbstractBusAgent {
+    constructor() {
+        super( RESOURCE.FOLDER );
     }
 
-    initialize(res: ResourceType, action: ActionType): Promise<IAbstractBusAgent> {
-        return Promise.resolve()
-            .then(() => {
-                //TODO requête vers les Behaviours.
-                return {};
-            })
-            .catch(reason => {
-                throw new Error(`Unable to request the behaviours of FolderAgent, reason: ${reason}`);
-            })
-            .then(behaviours => {
-                // TODO gérer les behaviours.
-                ExplorerFrameworkFactory.instance.getBus().consumer(RESOURCE.FOLDER, ACTION.INITIALIZE, this);
-                ExplorerFrameworkFactory.instance.getBus().consumer(RESOURCE.FOLDER, ACTION.SEARCH, this);
-
-                this.initialized = true;
-
-                if (this.canHandle(res, action)) {
-                    return this;
-                } else {
-                    throw new Error(`FolderAgent cannot handle action ${action}`);
-                }
-            });
+    protected registerHandlers(): void {
+        this.setHandler( ACTION.INITIALIZE );
+        this.setHandler( ACTION.SEARCH );
     }
 
     activate(res: ResourceType, action: ActionType, parameters: any): Promise<IActionResult> {

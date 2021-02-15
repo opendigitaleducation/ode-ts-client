@@ -28,10 +28,20 @@ describe("Foundation", function() {
         expect(context).toBeDefined();
     });
 
-    /**  */
-    it("should not crash", ()=>{
+    it("should initialize a context", ()=>{
         context?.initialize().then( ctx => {
             expect(ctx).toBeDefined();
         });
     });
+
+    // Test du mock de Behaviour
+    
+
+    // TODO Créer des dossiers, sous-dossiers, lister les dossiers et comparer le résultat.
+    // Va nécessiter de mocker le serveur, or seul la couche "Behaviour" le permettra facilement.
+    // Du coup, toutes les applis devront conserver une couche "Behaviours", y compris celle de gestion des dossiers.
+//    it("", ()=>{});
+
+//    it("", ()=>{});
+
 });
