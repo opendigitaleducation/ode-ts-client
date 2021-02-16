@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
-import { ACTION, ActionType, ERROR_CODE, IActionResult, RESOURCE, ResourceType } from "../interfaces";
-import { AbstractBusAgent } from "./AbstractBusAgent";
+import { ACTION, ActionType, ERROR_CODE, IActionResult, RESOURCE, ResourceType } from "../../../src/interfaces";
+import { AbstractBusAgent } from "../../../src/foundation/Agent";
 
 /**
  * Manage RESOURCE.FOLDER

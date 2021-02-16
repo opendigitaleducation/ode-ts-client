@@ -321,18 +321,6 @@ export interface IActivator {
 */
 }
 
-//-------------------------------------
-export interface IFolderAdapter extends IBusAgent {
-//-------------------------------------
-
-  getSubFolders( parentId: ID ): GetSubFoldersResult;
-
-  createFolder( resourceType: ResourceType, parentId: ID, name: string ): CreateFolderResult;
-
-  updateFolder( resourceType: ResourceType, parentId: ID, name: string ): UpdateFolderResult;
-
-}
-
 /**
  * Framework is a singleton.
  */

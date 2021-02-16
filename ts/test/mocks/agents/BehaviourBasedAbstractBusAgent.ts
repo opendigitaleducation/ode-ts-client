@@ -1,8 +1,7 @@
 import { Observable } from "rxjs";
-import { ACTION, ActionType, ERROR_CODE, ExplorerFrameworkFactory, IActionResult, RESOURCE, ResourceType } from "../interfaces";
-import { IAbstractBusAgent } from "../foundation/Agent";
-import { IBehaviours } from "../legacy/Behaviours";
-import { AbstractBusAgent } from "./AbstractBusAgent";
+import { ActionType, ERROR_CODE, IActionResult, ResourceType } from "../../../src/interfaces";
+import { IAbstractBusAgent, AbstractBusAgent } from "../../../src/foundation/Agent";
+import { IBehaviours } from "../../../src/legacy/Behaviours";
 
 declare var Behaviours:IBehaviours;
 

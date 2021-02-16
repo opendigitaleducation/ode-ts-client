@@ -160,6 +160,8 @@ export class BehavioursMock implements IBehaviours {
         let callbacks = Behaviours.applicationsBehaviours[serviceName].callbacks;
         let errors = Behaviours.applicationsBehaviours[serviceName].errors;
         /*
+         * REMOVED FOR MOCKING PURPOSES
+         *
         http().get('/' + serviceName + '/public/js/behaviours.js').done((content) => {
             callbacks.forEach((cb) => {
                 cb(Behaviours.applicationsBehaviours[serviceName]);
@@ -173,7 +175,8 @@ export class BehavioursMock implements IBehaviours {
             });
             Behaviours.applicationsBehaviours[serviceName] = {failed: true};
         });
-        */
+         * REPLACED BY : */
+        // BEGIN
         let content = null;
         switch( serviceName ) {
             case 'blog': content = require("./behaviours/blog.js"); break;
@@ -182,6 +185,7 @@ export class BehavioursMock implements IBehaviours {
         callbacks.forEach( (cb:(model:any)=>void) => {
             cb(Behaviours.applicationsBehaviours[serviceName]);
         });
+        // END
 
         return actions;
     };

@@ -4,6 +4,8 @@ import { ExplorerContext } from "./ExplorerContext";
 
 export class ExplorerFramework implements IExplorerFramework {
 
+    agentLoader: AgentLoader = new AgentLoader();
+
     createContext(types: ResourceType[], app?: App): IExplorerContext {
         return new ExplorerContext( types, app );
     }
