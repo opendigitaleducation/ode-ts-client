@@ -203,6 +203,12 @@ export interface IActionParameters {
 }
 export type GetContextParameters = IActionParameters & ISearchParameters;
 export type GetResourcesParameters = IActionParameters & ISearchParameters;
+export type CreateFolderParameters = IActionParameters & {
+  app:App
+, type:ResourceType
+, parentId: ID|"default"
+, name: string
+};
 
 //-------------------------------------
 export interface IGroupUserRight {

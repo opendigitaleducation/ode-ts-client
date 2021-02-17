@@ -83,9 +83,9 @@ export abstract class AbstractBusAgent implements IAbstractBusAgent {
         if( !this.initialized ) {
             throw new Error(ERROR_CODE.NOT_INITIALIZED);
         }
-        const handler:IHandler = this.getHandler(action);
         return new Observable<IActionResult>(observer => {
-            handler(parameters).then( result => {
+            const handler:IHandler = this.getHandler(action);
+            handler.bind(this)(parameters).then( result => {
                 observer.next(result);
             });
         });
