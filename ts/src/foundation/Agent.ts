@@ -1,5 +1,5 @@
-import { ACTION, ActionType, ERROR_CODE, ExplorerFrameworkFactory, IActionResult, IBusAgent, ResourceType } from "../interfaces";
 import { Observable } from "rxjs";
+import { ACTION, ActionType, ERROR_CODE, ExplorerFrameworkFactory, IActionParameters, IActionResult, IBusAgent, ResourceType } from "../interfaces";
 
 /**
  * Inner representation of an agent, from the bus' perspective.
@@ -13,6 +13,8 @@ export interface IAbstractBusAgent extends IBusAgent {
     initialize(res: ResourceType, action: ActionType): Promise<IAbstractBusAgent>;
 }
 
+export type IHandler = (parameters:IActionParameters)=>Promise<IActionResult>;
+
 /**
  * Manage a generic RESOURCE
  */
@@ -23,35 +25,41 @@ export abstract class AbstractBusAgent implements IAbstractBusAgent {
     /** Type of resource this agent can manage. */
     protected managedResource: ResourceType;
     protected initialized: boolean = false;
+    protected static defaultHandler: IHandler = function( parameters:IActionParameters ):Promise<IActionResult> {
+        throw new Error(ERROR_CODE.NOT_SUPPORTED);
+    }
     protected handlerFor: {
-        [action in ActionType]: boolean;
+        [action in ActionType]: IHandler
     } = {
-            comment: false,
-            copy: false,
-            create: false,
-            delete: false,
-            export: false,
-            initialize: false,
-            manage: false,
-            move: false,
-            open: false,
-            print: false,
-            publish: false,
-            search: false,
-            share: false
+            comment: AbstractBusAgent.defaultHandler,
+            copy: AbstractBusAgent.defaultHandler,
+            create: AbstractBusAgent.defaultHandler,
+            delete: AbstractBusAgent.defaultHandler,
+            export: AbstractBusAgent.defaultHandler,
+            initialize: AbstractBusAgent.defaultHandler,
+            manage: AbstractBusAgent.defaultHandler,
+            move: AbstractBusAgent.defaultHandler,
+            open: AbstractBusAgent.defaultHandler,
+            print: AbstractBusAgent.defaultHandler,
+            publish: AbstractBusAgent.defaultHandler,
+            search: AbstractBusAgent.defaultHandler,
+            share: AbstractBusAgent.defaultHandler
         };
 
     protected resetHandlers(): void {
         for( let action in Object.values(ACTION) ) {
-            this.handlerFor[action as ActionType] = false;
+            this.handlerFor[action as ActionType] = AbstractBusAgent.defaultHandler;
         }
     }
-    protected setHandler( action:ActionType ): void {
+    protected setHandler( action:ActionType, handler:IHandler ): void {
         ExplorerFrameworkFactory.instance.getBus().consumer(this.managedResource, action, this);
-        this.handlerFor[action] = true;
+        this.handlerFor[action] = handler;
+    }
+    protected getHandler( action:ActionType ): IHandler {
+        return this.handlerFor[action];
     }
     protected canHandle( res:ResourceType, action:ActionType): boolean {
-        return this.managedResource===res && true===this.handlerFor[action];
+        return this.managedResource===res && AbstractBusAgent.defaultHandler!==this.getHandler(action);
     }
 
     /** Override to register handlers for actions this agent support. */
@@ -71,15 +79,16 @@ export abstract class AbstractBusAgent implements IAbstractBusAgent {
         });
     }
 
-    activate(res: ResourceType, action: ActionType, parameters: any): Promise<IActionResult> {
-        if (this.initialized && this.canHandle(res, action)) {
-            return new Observable<IActionResult>(observer => {
-                // TODO Envoyer parameters à la behaviour, récupérer le résultat.
-                let data = {};
-
-                observer.next(data);
-            }).toPromise();
+    activate(res: ResourceType, action: ActionType, parameters: IActionParameters): Observable<IActionResult> {
+        if( !this.initialized ) {
+            throw new Error(ERROR_CODE.NOT_INITIALIZED);
         }
-        throw new Error(ERROR_CODE.NOT_SUPPORTED);
+        const handler:IHandler = this.getHandler(action);
+        return new Observable<IActionResult>(observer => {
+            handler(parameters).then( result => {
+                observer.next(result);
+            });
+        });
     }
+
 }

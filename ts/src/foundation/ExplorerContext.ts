@@ -59,7 +59,15 @@ export class ExplorerContext implements IExplorerContext {
         });
     }
     getResources(): Promise<GetResourcesResult> {
-        throw new Error("Method not implemented.");
+        return Promise.resolve().then( () => {
+            return this.bus.send( RESOURCE.FOLDER, ACTION.SEARCH, this.searchParameters );
+        }).then( (ar) => {
+            let result = ar as GetResourcesResult;
+            // TODO data sanity check
+            if( !result )
+                throw new Error( ERROR_CODE.UNKNOWN );
+            return result;
+        });
     }
     getSubFolders(parentId: string): Promise<GetSubFoldersResult> {
         throw new Error("Method not implemented.");

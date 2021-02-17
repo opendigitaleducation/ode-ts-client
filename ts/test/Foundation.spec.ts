@@ -1,6 +1,6 @@
 import "jasmine";
 import * as UserInfoData from './mocks/data/userinfo.json';
-import { APP, framework, IContext, IExplorerContext, RESOURCE } from "../src/index";
+import { APP, ERROR_CODE, framework, IContext, IExplorerContext, RESOURCE } from "../src/index";
 import { ExplorerFramework } from "../src/foundation/ExplorerFramework";
 import { MockedAgentLoader } from "./mocks/agents/MockedAgentLoader";
 
@@ -32,7 +32,7 @@ describe("Foundation", function() {
 
     /** @test Accessing the context before initializing it is an error. */
     it("is using the context before initializing it, thus throwing an error.", ()=>{
-        expect( context?.getContext() ).toThrowError();
+        expect( context?.getContext() ).toThrowError(ERROR_CODE.NOT_INITIALIZED);
     });
 
     /**
@@ -44,10 +44,9 @@ describe("Foundation", function() {
         (framework as ExplorerFramework).setAgentLoader( new MockedAgentLoader() );
     });
 
-    it("should initialize a context", ()=>{
-        context?.initialize().then( ctx => {
-            expect(ctx).toBeDefined();
-        });
+    it("should initialize a context", async ()=>{
+        const ctx = await context?.initialize();
+        expect(ctx).toBeDefined();
     });
 
     it("should have access to folders of first level", ()=>{

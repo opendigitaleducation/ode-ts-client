@@ -17,7 +17,7 @@ class Bus implements IBus {
     send( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult> {
         return Promise.resolve().then( () => {
             return this.getActionMapping(res)[action] || (framework as ExplorerFramework).requestAgentFor( res, action );
-        }).then( agent => agent.activate(res, action, parameters) );
+        }).then( agent => agent.activate(res, action, parameters).toPromise() );
     }
 
     private getActionMapping(res:ResourceType): AgentByAction {

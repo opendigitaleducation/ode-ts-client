@@ -198,6 +198,13 @@ export interface IPreferences {
 
 //------------------------- Service call parameters
 //-------------------------------------
+export interface IActionParameters {
+//-------------------------------------
+}
+export type GetContextParameters = IActionParameters & ISearchParameters;
+export type GetResourcesParameters = IActionParameters & ISearchParameters;
+
+//-------------------------------------
 export interface IGroupUserRight {
 //-------------------------------------
   read: boolean;
@@ -306,14 +313,14 @@ export interface IBus {
   consumer( res:ResourceType, action:ActionType, agent:IBusAgent ): void;
 
   /** Allows delegating an action on a type of resource, to a registered agent on the bus. */
-  send( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult>;
+  send( res:ResourceType, action:ActionType, parameters:IActionParameters ): Promise<IActionResult>;
 }
 
 //-------------------------------------
 export interface IBusAgent {
 //-------------------------------------
   /** Ask this agent to resolve an action. */
-  activate( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult>;
+  activate( res:ResourceType, action:ActionType, parameters:IActionParameters ): Observable<IActionResult>;
 
 // Ou bien, s'il y a besoin de dissocier agents et actions pour permettre plus d'interactions :
 /*
