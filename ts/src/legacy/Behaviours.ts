@@ -1,4 +1,4 @@
-import { Shareable } from './Rights';
+import { Shareable } from './rights';
 
 export interface IBehavioursActions {
     error(cb: Function): void;

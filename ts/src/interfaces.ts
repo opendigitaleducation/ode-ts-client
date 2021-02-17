@@ -28,6 +28,13 @@ export const RESOURCE = {
 } as const;
 export type ResourceType = typeof RESOURCE[keyof typeof RESOURCE];
 
+//-- App/Resource link
+export const appNameForResource:{[R in ResourceType]: string} = {
+  "folder":   "explorer"
+, "blog" :    "blog"
+, "exercise": "exercizer"
+} as const;
+
 //-- Actions (toaster)
 export const ACTION = {
   /** @param ISearchParameters */
@@ -220,10 +227,7 @@ export type GetResourcesResult = IActionResult & {
 export type GetSubFoldersResult = IActionResult & {
   folders: IFolder[];
 }
-export type CreateFolderResult = IActionResult & {
-  id: ID;
-  name: string;
-  type: FolderType;
+export type CreateFolderResult = IActionResult &  IFolder & {
   createdAt: string;
 }
 export type UpdateFolderResult = CreateFolderResult & {

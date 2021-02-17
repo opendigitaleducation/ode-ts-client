@@ -1,6 +1,7 @@
 import { Observable } from "rxjs";
 import { ActionType, ACTION, IActionResult, IBus, ResourceType, IBusAgent } from "../interfaces";
-import { IAbstractBusAgent, AgentFactory } from "./Agent";
+import { IAbstractBusAgent } from "./Agent";
+import { ExplorerFramework, framework } from "./ExplorerFramework";
 
 type AgentByAction = {[B in ActionType]: IAbstractBusAgent|null};
 
@@ -15,7 +16,7 @@ class Bus implements IBus {
 
     send( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult> {
         return Promise.resolve().then( () => {
-            return this.getActionMapping(res)[action] || AgentFactory.requestAgentFor( res, action );
+            return this.getActionMapping(res)[action] || (framework as ExplorerFramework).requestAgentFor( res, action );
         }).then( agent => agent.activate(res, action, parameters) );
     }
 

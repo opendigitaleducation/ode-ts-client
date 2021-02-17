@@ -1,23 +1,25 @@
 import "jasmine";
 import * as UserInfoData from './mocks/data/userinfo.json';
-import { BehavioursMock } from './mocks/Behaviours.mock'
-import { APP, framework, IExplorerContext, RESOURCE } from "../src/index";
-import { IBehaviours } from "../src/legacy/Behaviours";
-
-var Behaviours:IBehaviours = new BehavioursMock();
+import { APP, framework, IContext, IExplorerContext, RESOURCE } from "../src/index";
+import { ExplorerFramework } from "../src/foundation/ExplorerFramework";
+import { MockedAgentLoader } from "./mocks/agents/MockedAgentLoader";
 
 /** Test the fundations of the framework. */
 describe("Foundation", function() {
     var context:IExplorerContext|null = null;
     const userinfo = UserInfoData;
 
+    /** Utility function */
+    let getModel = ():IContext => {
+        let model = context?.getContext();
+        if( typeof model==="undefined" )
+            throw new Error("Context seems undefined.");
+        return model;
+    }
+
     /** @test Mocked data */
     //FIXME validate against jsonschema ?
     it("should have mocked data", () => { expect(userinfo.apps).toBeDefined(); });
-
-    /** @test Mocked functions */
-    //FIXME validate against jsonschema ?
-    it("should have mocked Behaviours", () => { expect(Behaviours).toBeDefined(); });
 
     /** @test Framework bootstrapping */
     it("should be available", () => { expect(framework).toBeDefined(); });
@@ -28,18 +30,43 @@ describe("Foundation", function() {
         expect(context).toBeDefined();
     });
 
+    /** @test Accessing the context before initializing it is an error. */
+    it("is using the context before initializing it, thus throwing an error.", ()=>{
+        expect( context?.getContext() ).toThrowError();
+    });
+
+    /**
+     * @test Mocking the agents.
+     * Créer des dossiers, sous-dossiers, lister les dossiers et comparer le résultat.
+     * Cela nécessite de mocker le serveur.
+     **/
+    it("is mocking the agents", ()=>{
+        (framework as ExplorerFramework).setAgentLoader( new MockedAgentLoader() );
+    });
+
     it("should initialize a context", ()=>{
         context?.initialize().then( ctx => {
             expect(ctx).toBeDefined();
         });
     });
 
-    // Test du mock de Behaviour
-    
+    it("should have access to folders of first level", ()=>{
+        expect( getModel().folders ).toBeInstanceOf(Array);
+    });
 
-    // TODO Créer des dossiers, sous-dossiers, lister les dossiers et comparer le résultat.
-    // Va nécessiter de mocker le serveur, or seul la couche "Behaviour" le permettra facilement.
-    // Du coup, toutes les applis devront conserver une couche "Behaviours", y compris celle de gestion des dossiers.
+    it("can create a top level folder.", async ()=>{
+        const result = await context?.createFolder( RESOURCE.FOLDER, "default", "Root folder 1");
+        expect(result).toBeDefined();
+        expect(result?.name).toBe("Root folder 1");
+        if( !!result ) getModel().folders.push( result );
+    });
+
+    it("should have access to folders of first level", ()=>{
+        expect( getModel().folders.length ).toBe(1);
+    });
+
+
+    
 //    it("", ()=>{});
 
 //    it("", ()=>{});
