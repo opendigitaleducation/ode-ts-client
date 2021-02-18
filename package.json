@@ -2,29 +2,32 @@
   "name": "infrontexplore",
   "version": "0.1.0",
   "description": "Frontend explorer API definition and implementation",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "private": true,
   "scripts": {
     "compile": "npx tsc --build ./tsconfig.json",
     "test": "npm run compile && npm run jasmine",
-    "jasmine": "npx jasmine --config=ts/test/config/jasmine.json"
+    "jasmine": "npx jasmine --config=ts/test/config/jasmine.json",
+    "build": "npx webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jcbe-ode/infrontexplore.git"
+    "url": "git+https://github.com/opendigitaleducation/infrontexplore.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/jcbe-ode/infrontexplore/issues"
+    "url": "https://github.com/opendigitaleducation/infrontexplore/issues"
   },
-  "homepage": "https://github.com/jcbe-ode/infrontexplore#readme",
+  "homepage": "https://github.com/opendigitaleducation/infrontexplore#readme",
   "devDependencies": {
     "@types/jasmine": "^3.6.3",
     "@types/node": "^14.14.28",
     "gulp": "^4.0.2",
     "jasmine": "^3.6.4",
-    "typescript": "^4.1.3"
+    "terser-webpack-plugin": "^5.1.1",
+    "typescript": "^4.1.3",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0"
   },
   "dependencies": {
     "core-js": "^3.8.3",
