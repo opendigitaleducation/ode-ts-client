@@ -1,5 +1,4 @@
 import { appNameForResource, ResourceType } from "../interfaces";
-import { httpPromisy } from "../legacy/http";
 import { IAbstractBusAgent } from "./Agent";
 
 /**
