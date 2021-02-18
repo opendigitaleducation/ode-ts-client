@@ -18,7 +18,7 @@ export const APP = {
  ,EXERCIZER:  "exercizer"
  // TODO compléter
 } as const;
-export type App = typeof APP[keyof typeof APP];   // type App = "explorer" | "blog" | "exercizer"
+export type App = typeof APP[keyof typeof APP];   // type App = "explorer" | "blog" | "exercizer"...
 
 //-- Resources
 export const RESOURCE = {
@@ -29,10 +29,10 @@ export const RESOURCE = {
 export type ResourceType = typeof RESOURCE[keyof typeof RESOURCE];
 
 //-- App/Resource link
-export const appNameForResource:{[R in ResourceType]: string} = {
-  "folder":   "explorer"
-, "blog" :    "blog"
-, "exercise": "exercizer"
+export const appNameForResource:{[R in ResourceType]: App} = {
+  "folder":   APP.EXPLORER
+, "blog":     APP.BLOG
+, "exercise": APP.EXERCIZER
 } as const;
 
 //-- Actions (toaster)
@@ -121,7 +121,7 @@ export interface IContext {
 export interface ISearchParameters {
 //-------------------------------------
   types:ResourceType[];
-  app?:App;
+  app:App;
   filters:FilterValues;
   orders?:IOrder[];
   pagination:IPagination;
@@ -139,7 +139,7 @@ export interface IAction {
 //-------------------------------------
 export interface IFolder {
 //-------------------------------------
-  id: string;
+  id: ID;
   name: string;
   type: FolderType | ID;
   childNumber: number; // à minima, 0 ou 1...
@@ -248,16 +248,25 @@ export type UpdateFolderResult = CreateFolderResult & {
   parentId: ID|"default";
 }
 
-//------------------------- API
+//-------------------------------------
+//------------------- API (HIGH-LEVEL)
+//-------------------------------------
+/** Framework is a singleton. */
+//-------------------------------------
+export abstract class ExplorerFrameworkFactory {
+//-------------------------------------
+  static instance: IExplorerFramework;
+}
+
 //-------------------------------------
 export interface IExplorerFramework {
 //-------------------------------------
   /**
    * Instancie un contexte d'exploration .
    * @param types Types de ressources traitées par l'agent, minimum 1.
-   * @param app [optionnel] Application à l'origine de l'appel.
+   * @param app Application à l'origine de l'appel.
    */
-  createContext( types:ResourceType[], app?:App ): IExplorerContext;
+  createContext( types:ResourceType[], app:App ): IExplorerContext;
   
   /**
    * Retrieve the underlying communication bus.
@@ -289,9 +298,9 @@ export interface IExplorerContext {
 
   getSubFolders( parentId:ID ): Promise<GetSubFoldersResult>;
 
-  createFolder( resourceType:ResourceType, parentId:ID, name:string ): Promise<CreateFolderResult>;
+  createFolder( resourceType:ResourceType, parentId:ID|"default", name:string ): Promise<CreateFolderResult>;
 
-  updateFolder( resourceType:ResourceType, parentId:ID, name:string ): Promise<UpdateFolderResult>;
+  updateFolder( folderId:ID, resourceType:ResourceType, parentId:ID|"default", name:string ): Promise<UpdateFolderResult>;
 
   share( resourceIds:ID[], rights:IGroupUserRight[] ): void;
 
@@ -312,6 +321,8 @@ export interface IExplorerContext {
 */
 }
 
+//-------------------------------------
+//-------------------- API (LOW-LEVEL)
 //-------------------------------------
 export interface IBus {
 //-------------------------------------
@@ -338,11 +349,3 @@ export interface IActivator {
 */
 }
 
-/**
- * Framework is a singleton.
- */
-//-------------------------------------
-export abstract class ExplorerFrameworkFactory {
-//-------------------------------------
-  static instance: IExplorerFramework;
-}

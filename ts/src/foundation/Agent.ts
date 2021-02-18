@@ -87,6 +87,7 @@ export abstract class AbstractBusAgent implements IAbstractBusAgent {
             const handler:IHandler = this.getHandler(action);
             handler.bind(this)(parameters).then( result => {
                 observer.next(result);
+                observer.complete();
             });
         });
     }

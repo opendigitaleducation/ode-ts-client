@@ -21,9 +21,9 @@ export class MockedFolderAgent extends AbstractBusAgent {
     }
 
     onInitialize( parameters:GetContextParameters ): Promise<GetContextResult> {
-        return Promise.resolve().then( () => 
-            ContextData as GetContextResult
-        ).then( ctx => {
+        return Promise.resolve().then( () => {
+            return ContextData as GetContextResult
+        }).then( ctx => {
             return this.ctx = ctx;
         });
     }

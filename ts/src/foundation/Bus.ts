@@ -18,7 +18,10 @@ class Bus implements IBus {
         return Promise.resolve().then( () => {
             return this.getActionMapping(res)[action] || (framework as ExplorerFramework).requestAgentFor( res, action );
         }).then( agent => {
-            return agent.activate(res, action, parameters).toPromise() 
+            const obs = agent.activate(res, action, parameters);
+            //TODO FIXME https://indepth.dev/posts/1287/rxjs-heads-up-topromise-is-being-deprecated
+            //return await lastValueFrom(obs);
+            return obs.toPromise();
         });
     }
 

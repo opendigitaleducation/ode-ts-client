@@ -19,7 +19,7 @@ export class ExplorerFramework implements IExplorerFramework {
         return this.agentLoader.load( res ).then( agent => agent.initialize(res,action) );
     }
 
-    createContext(types: ResourceType[], app?: App): IExplorerContext {
+    createContext(types: ResourceType[], app: App): IExplorerContext {
         return new ExplorerContext( types, app );
     }
     
