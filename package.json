@@ -2,7 +2,8 @@
   "name": "ode-ts-client",
   "version": "0.1.0",
   "description": "Frontend explorer API definition and implementation",
-  "private": true,
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "compile": "npx tsc --build ./tsconfig.json",
     "test": "npm run compile && npm run jasmine",

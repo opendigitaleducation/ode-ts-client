@@ -36,8 +36,8 @@ build () {
 
 publish () {
   LOCAL_BRANCH=`echo $GIT_BRANCH | sed -e "s|origin/||g"`
-  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm pack --dry-run"
-#  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm publish --tag $LOCAL_BRANCH"
+#  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm pack --dry-run"
+  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm publish --tag $LOCAL_BRANCH"
 }
 
 case $action in
