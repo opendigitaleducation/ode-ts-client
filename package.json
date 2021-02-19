@@ -1,6 +1,6 @@
 {
   "name": "ode-ts-client",
-  "version": "0.1.0",
+  "version": "0.1.0-explorer.0",
   "description": "Frontend explorer API definition and implementation",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
