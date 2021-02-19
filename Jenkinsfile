@@ -6,7 +6,8 @@ pipeline {
     stage('Init') {
       steps {
         checkout scm
-        sh './build.sh clean init'
+        sh './build.sh clean'
+        sh './build.sh init'
       }
     }
     stage('Build') {
