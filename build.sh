@@ -31,7 +31,7 @@ init () {
 }
 
 build () {
-  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm run test && npm run build"
+  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm run test"
 }
 
 publish () {
