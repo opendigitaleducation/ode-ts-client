@@ -1,8 +1,0 @@
-// POST /folder
-
-{
-  id: string,
-  name: string,
-  type: "default",
-  createdAt: date
-}

@@ -1,8 +1,0 @@
-// POST /folder
-
-{
-  application: string,
-  resourceType: string,
-  parentId: string|"default",
-  name: string
-}

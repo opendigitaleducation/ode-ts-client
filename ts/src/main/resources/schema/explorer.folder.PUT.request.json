@@ -1,8 +1,0 @@
-// PUT /folder/:id
-
-{
-  application: string,
-  resourceType: string,
-  parentId: string|"default",
-  name: string
-}
