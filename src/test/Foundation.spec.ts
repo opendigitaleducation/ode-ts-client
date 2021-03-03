@@ -1,7 +1,7 @@
 import "jasmine";
 import * as UserInfoData from './mocks/data/userinfo.json';
-import { APP, ERROR_CODE, framework, IContext, IExplorerContext, RESOURCE } from "../src/index";
-import { ExplorerFramework } from "../src/foundation/ExplorerFramework";
+import { APP, ERROR_CODE, framework, IContext, IExplorerContext, RESOURCE } from "../ts/index";
+import { ExplorerFramework } from "../ts/foundation/ExplorerFramework";
 import { MockedAgentLoader } from "./mocks/agents/MockedAgentLoader";
 
 /** Test the fundations of the framework. */

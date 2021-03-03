@@ -1,5 +1,5 @@
-import { IAbstractBusAgent, RESOURCE, ResourceType } from "../../../src";
-import { IAgentLoader } from "../../../src/foundation/AgentLoader";
+import { IAbstractBusAgent, RESOURCE, ResourceType } from "../../../ts";
+import { IAgentLoader } from "../../../ts/foundation/AgentLoader";
 import { MockedFolderAgent } from "./MockedFolderAgent";
 
 /**

@@ -4,7 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: {
-    'ode-ts-client': './dist/src/index.js'
+    'ode-ts-client': './dist/ts/index.js'
   },
   output: {
     filename: '[name].js',
