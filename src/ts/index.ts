@@ -12,3 +12,14 @@ export { framework } from "./foundation/ExplorerFramework";
  * CURRENTLY BEING TESTED
  */
 export { IAbstractBusAgent, AbstractBusAgent } from './foundation/Agent';
+
+
+
+
+/** Hack pour rendre compatible le module commonjs avec une balise <script> dans un navigateur. */
+declare var window:any;
+declare var module:any;
+if(typeof window!=='undefined') {
+    window.entcore = window.entcore||{};
+    window.entcore["ode-ts-client"] = module.exports;
+}
