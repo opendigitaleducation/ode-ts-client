@@ -8,6 +8,7 @@ import * as ContextData from '../data/MockedContextData.json';
 export class MockedFolderAgent extends AbstractBusAgent {
     constructor() {
         super( RESOURCE.FOLDER );
+        this.registerHandlers();
     }
 
     protected ctx:IContext|null = null;

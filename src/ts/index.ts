@@ -9,7 +9,9 @@ export * from './interfaces';
 export { framework } from "./foundation/ExplorerFramework";
 
 /* These utility classes offer, from the applications' perspective :
- * CURRENTLY BEING TESTED
+ * CURRENTLY BEING TESTED, WILL PROBABLY BE REFACTORED
+ * => Agents will register themselves instead of having the bus asking for it.
+ *    The framework would then export a method for agents to register their supported Actions.
  */
 export { IAbstractBusAgent, AbstractBusAgent } from './foundation/Agent';
 

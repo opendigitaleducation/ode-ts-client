@@ -1,4 +1,4 @@
-import { ActionType, App, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "../interfaces";
+import { ERROR_CODE, ActionType, App, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "../interfaces";
 import { IAbstractBusAgent } from "./Agent";
 import { AgentLoader, IAgentLoader } from "./AgentLoader";
 import { BusFactory } from "./Bus";
@@ -16,7 +16,14 @@ export class ExplorerFramework implements IExplorerFramework {
 
     requestAgentFor(res:ResourceType, action: ActionType): Promise<IAbstractBusAgent> {
         // TODO Check which apps Me can access.
-        return this.agentLoader.load( res ).then( agent => agent.initialize(res,action) );
+        return this.agentLoader.load( res ).then( () => {
+            // The agent should be registered on the bus, by itself or by the (mocked) loader. It must be available here.
+            let agent = this.getBus().getAgentFor(res, action) as IAbstractBusAgent;
+            if( !agent ) {
+                throw new Error(ERROR_CODE.AGENT_NOT_FOUND);
+            }
+            return agent.initialize(res,action);
+        });
     }
 
     createContext(types: ResourceType[], app: App): IExplorerContext {

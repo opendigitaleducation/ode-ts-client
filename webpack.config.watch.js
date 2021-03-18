@@ -25,7 +25,7 @@ module.exports = env => ({
   module: {
     rules: [
       // ts-loader will handle files with `.ts` or `.tsx` extensions
-      { test: /\.tsx?$/, loader: "ts-loader" },
+      { test: /\.tsx?$/, loader: "ts-loader", type: 'javascript/auto' },
     ],
   },
 });

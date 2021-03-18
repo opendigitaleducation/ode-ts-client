@@ -1,4 +1,3 @@
-import { Observable } from "rxjs";
 import { ActionType, ACTION, IActionResult, IBus, ResourceType, IBusAgent } from "../interfaces";
 import { IAbstractBusAgent } from "./Agent";
 import { ExplorerFramework, framework } from "./ExplorerFramework";
@@ -16,13 +15,17 @@ class Bus implements IBus {
 
     send( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult> {
         return Promise.resolve().then( () => {
-            return this.getActionMapping(res)[action] || (framework as ExplorerFramework).requestAgentFor( res, action );
+            return this.getAgentFor(res,action) || (framework as ExplorerFramework).requestAgentFor( res, action );
         }).then( agent => {
             const obs = agent.activate(res, action, parameters);
             //TODO FIXME https://indepth.dev/posts/1287/rxjs-heads-up-topromise-is-being-deprecated
             //return await lastValueFrom(obs);
             return obs.toPromise();
         });
+    }
+
+    getAgentFor( res:ResourceType, action:ActionType ): IAbstractBusAgent|null {
+        return this.getActionMapping(res)[action];
     }
 
     private getActionMapping(res:ResourceType): AgentByAction {

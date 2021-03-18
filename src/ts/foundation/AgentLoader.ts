@@ -11,12 +11,20 @@ export interface IAgentLoader {
 /**
  * Default implementation of the loader.
  */
-export class AgentLoader implements IAgentLoader {
+ export class AgentLoader implements IAgentLoader {
     load(res: ResourceType): Promise<IAbstractBusAgent> {
         let appName = appNameForResource[res];
         if( typeof appName!=="string" ) {
             throw new Error(`The resource type ${res} is not supported yet.`);
         }
-        return import(`/${appName}/public/js/explorer.js`);
+        return new Promise((resolve, reject) => {
+            let loader = require("little-loader");
+            loader( `${appName}/public/js/explorer.agent.js`, (ctx:any, err:string) => {
+                // ctx will be null here, since little-loader is really basic.
+                // => Agent must self-register on the bus.
+                if(err) return reject(err);
+                resolve(ctx as IAbstractBusAgent);
+            });
+        });
     }
 }

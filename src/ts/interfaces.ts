@@ -8,6 +8,7 @@ export const ERROR_CODE = {
  ,NOT_INITIALIZED:  "0020"
  ,NOT_SUPPORTED:    "0030"
  ,APP_NOT_FOUND:    "0040"
+ ,AGENT_NOT_FOUND:  "0050"
 } as const;
 export type ErrorCode = typeof ERROR_CODE[keyof typeof ERROR_CODE];
 
@@ -331,6 +332,9 @@ export interface IBus {
 
   /** Allows delegating an action on a type of resource, to a registered agent on the bus. */
   send( res:ResourceType, action:ActionType, parameters:IActionParameters ): Promise<IActionResult>;
+
+  /** Utility function for retrieving an agent. */
+  getAgentFor( res:ResourceType, action:ActionType ): IBusAgent|null;
 }
 
 //-------------------------------------
