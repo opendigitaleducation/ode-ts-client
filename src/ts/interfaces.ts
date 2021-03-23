@@ -280,10 +280,9 @@ export interface IExplorerContext {
 //-------------------------------------
   isInitialized(): boolean;
   /**
-   * @return a new search context
-   * @throw ERROR_CODE.NOT_INITIALIZED: if initialize() was not called before.
+   * @return a new search context, or undefined if initialize() has not been called before.
    */
-  getContext(): IContext;
+  getContext(): IContext|undefined;
   getSearchParameters(): ISearchParameters;
 
   clear(): void;

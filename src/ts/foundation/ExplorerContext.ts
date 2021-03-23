@@ -33,11 +33,9 @@ export class ExplorerContext implements IExplorerContext {
     isInitialized(): boolean {
         return this.context!==null;
     }
-    getContext(): IContext {
+    getContext(): IContext|undefined {
         if( this.context!==null ) {
             return this.context;
-        } else {
-            throw new Error(ERROR_CODE.NOT_INITIALIZED);
         }
     }
     getSearchParameters(): ISearchParameters {
