@@ -1,13 +1,16 @@
 import "jasmine";
 import * as UserInfoData from './mocks/data/userinfo.json';
-import { APP, ERROR_CODE, framework, IContext, IExplorerContext, RESOURCE } from "../ts/index";
+import { APP, ERROR_CODE, framework, IContext, IExplorerContext, ISearchResults, RESOURCE } from "../ts/index";
 import { ExplorerFramework } from "../ts/foundation/ExplorerFramework";
 import { MockedAgentLoader } from "./mocks/agents/MockedAgentLoader";
+import { Subscription } from "rxjs";
 
 /** Test the fundations of the framework. */
 describe("Foundation", function() {
     var context:IExplorerContext|null = null;
     const userinfo = UserInfoData;
+    var subscription:Subscription|undefined;
+    var latestResult:ISearchResults|null = null;
 
     /** Utility function */
     let getModel = ():IContext => {
@@ -30,10 +33,18 @@ describe("Foundation", function() {
         expect(context).toBeDefined();
     });
 
-    /** @test Accessing the context before initializing it is an error. */
+    /** @test Subscribe to search results flow. */
+    it("has a result flow to subscribe to", ()=>{
+        subscription = context?.latestResources().subscribe({
+            next: (result) => { latestResult = result; return 'NEXT'; },
+            error: err => { throw new Error(`ERROR: ${err}`) },
+            complete: () => 'UNSUBSCRIBED'
+        });
+    });
+
+    /** @test Accessing the context, before initializing it, has an undefined result. */
     it("is using the context before initializing it, thus throwing an error.", ()=>{
-        /// The lambda is mandatory for toThrowError() to work, @see https://stackoverflow.com/questions/21221697/using-tothrowerror-in-jasmine
-        expect( ()=>{context?.getContext();} ).toThrowError(ERROR_CODE.NOT_INITIALIZED);
+        expect( context?.getContext() ).not.toBeDefined;
     });
 
     /**
@@ -48,6 +59,15 @@ describe("Foundation", function() {
     it("should initialize a context", async ()=>{
         const ctx = await context?.initialize();
         expect(ctx).toBeDefined();
+    });
+
+    it("should have received a resultset", ()=>{
+        expect(latestResult).toEqual( getModel() );
+    });
+
+    it("can unsubscribe to the result flow", ()=>{
+        latestResult = null;
+        expect( () => subscription?.unsubscribe() ).not.toThrowError();
     });
 
     it("should have access to folders of first level", ()=>{

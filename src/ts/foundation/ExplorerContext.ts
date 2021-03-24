@@ -1,9 +1,11 @@
-import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID } from "../interfaces";
+import { Observable, Subject } from "rxjs";
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults } from "../interfaces";
 
 export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;
     private context: IContext | null;
     private bus:IBus;
+    private latestResults:Subject<ISearchResults> = new Subject();
 
     constructor( types:ResourceType[], app:App ) {
         this.context = null;
@@ -41,6 +43,11 @@ export class ExplorerContext implements IExplorerContext {
     getSearchParameters(): ISearchParameters {
         return this.searchParameters;
     }
+    
+    latestResources():Observable<ISearchResults> {
+        return this.latestResults.asObservable();
+    }
+
     initialize(): Promise<IContext> {
         // Using Promise.resolve().then() allows the use of .catch(), .finally() and is considered a good practice.
         return Promise.resolve()
@@ -48,8 +55,11 @@ export class ExplorerContext implements IExplorerContext {
         .then( (ar) => {
             this.context = ar as GetContextResult;
             // TODO data sanity check
-            if( !this.context )
+            if( !this.context ) {
                 throw new Error( ERROR_CODE.UNKNOWN );
+            }
+            // Publish this results for listeners.
+            this.latestResults.next(this.context);
             return this.context;
         });
     }
@@ -60,6 +70,8 @@ export class ExplorerContext implements IExplorerContext {
             // TODO data sanity check
             if( !result )
                 throw new Error( ERROR_CODE.UNKNOWN );
+            // Publish this results for listeners.
+            this.latestResults.next(result);
             return result;
         });
     }
