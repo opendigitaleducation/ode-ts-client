@@ -75,8 +75,13 @@ export const STRING_FILTER = {
 } as const;
 export type StringFilterType = typeof STRING_FILTER[keyof typeof STRING_FILTER];
 
-//-- Orders 
-export const ORDER = {
+//-- Sort orders
+export const SORT_ORDER = {
+ ASC:   "asc"
+,DESC:  "desc"
+} as const;
+export type SortOrderType = typeof SORT_ORDER[keyof typeof SORT_ORDER];
+export const SORT_BY = {
   NAME:         "name"
  ,MODIFY_DATE:  "modifiedAt"
  ,VIEWS:        "views"
@@ -95,13 +100,13 @@ export const ORDER = {
   comments?: number;
 */
 } as const;
-export type OrderType = typeof ORDER[keyof typeof ORDER];
+export type SortByType = typeof SORT_BY[keyof typeof SORT_BY];
 
 //-- Semantique
 export type ID = string;
 export type StringFilterValue = {
   value: string;  // Value of the filter (as sent to backend)
-  name: string;   // Translation key of the filter (as displayed in frontend)
+  i18n: string;   // Translation key of the filter (as displayed in frontend)
 };
 
 
@@ -112,7 +117,7 @@ export interface ISearchParameters {
   types:ResourceType[];
   app:App;
   filters:FilterValues;
-  orders?:IOrder[];
+  orders?:OrderValues;
   pagination:IPagination;
   search?:String;
 }
@@ -160,11 +165,11 @@ export interface IFilter {
 //-------------------------------------
 export interface IOrder {
 //-------------------------------------
-  id: OrderType;
-  defaultValue?: "asc"|"desc";
-  name: string;
+  id: SortByType;
+  defaultValue?: SortOrderType;
+  i18n: string;
 }
-  
+
 //-------------------------------------
 export interface IPagination { // TODO à tester
 //-------------------------------------
@@ -226,7 +231,7 @@ export interface IGroupUserRight {
 }
 
 export type FilterValues = {[B in BooleanFilterType]?: boolean} & {[S in StringFilterType]?: string} & {folder?: ID};
-export type OrderValues  = {  };
+export type OrderValues  = {[O in SortByType]?: SortOrderType};
 
 //------------------------- Service call results
 //-------------------------------------
