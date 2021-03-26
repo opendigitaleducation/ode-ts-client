@@ -38,12 +38,12 @@ export const appNameForResource:{[R in ResourceType]: App} = {
 
 //-- Actions (toaster)
 export const ACTION = {
-  /** @param ISearchParameters */
   INITIALIZE: "initialize"
  ,SEARCH:     "search"
  ,CREATE:     "create"
  ,OPEN:       "open"
- ,MANAGE:     "manage"
+ ,MANAGE:     "manage"      // Query properties metadata
+ ,UPD_PROPS:  "properties"  // Update properties
  ,COMMENT:    "comment"
  ,DELETE:     "delete"
  ,MOVE:       "move"
@@ -109,6 +109,25 @@ export type StringFilterValue = {
   i18n: string;   // Translation key of the filter (as displayed in frontend)
 };
 
+//-- Properties management
+export const PROP_MODE = {
+  READONLY: "RO"
+ ,READWRITE: "RW"
+} as const;
+export type PropMode = typeof PROP_MODE[keyof typeof PROP_MODE];
+export const PROP_TYPE = {
+  TEXT:   "text"
+ ,NUMBER: "number"
+ ,DATE:   "date"
+ ,IMAGE:  "image"
+ // TODO more types ? Currencies...
+} as const;
+export type PropType = typeof PROP_TYPE[keyof typeof PROP_TYPE];
+export const PROP_FORMAT = {
+  PLAIN:  "plain"   // Plain text or number value, no formatting
+  // TODO more format to come ? Full dates, months only, timestamps, regexp....
+} as const;
+export type PropFormat = typeof PROP_FORMAT[keyof typeof PROP_FORMAT];
 
 //------------------------- Data models 
 //-------------------------------------
@@ -179,6 +198,15 @@ export interface IPagination { // TODO à tester
 }
 
 //-------------------------------------
+export interface IProperty {
+//-------------------------------------
+  property:keyof IResource;
+  mode:PropMode;
+  type:PropType;
+  format?:PropFormat[];
+}
+  
+//-------------------------------------
 export interface IResource {
 //-------------------------------------
   id: ID;
@@ -218,6 +246,8 @@ export type CreateFolderParameters = IActionParameters & {
 , parentId: ID|"default"
 , name: string
 };
+export type ManagePropertiesParameters = IActionParameters & { resources:IResource[] };
+export type UpdatePropertiesParameters = IActionParameters & { resources:IResource[] };
 
 //-------------------------------------
 export interface IGroupUserRight {
@@ -237,6 +267,7 @@ export type OrderValues  = {[O in SortByType]?: SortOrderType};
 //-------------------------------------
 export interface IActionResult {
 //-------------------------------------
+// TODO : generic success, failure, error codes... should be placed here
 }
 
 export type GetContextResult = IActionResult & IContext;
@@ -253,6 +284,11 @@ export type UpdateFolderResult = CreateFolderResult & {
   updatedAt: string;
   parentId: ID|"default";
 }
+export type ManagePropertiesResult = IActionResult & {
+  properties: IProperty[]
+};
+export type UpdatePropertiesResult = IActionResult & { resources:IResource[] }
+
 
 //-------------------------------------
 //------------------- API (HIGH-LEVEL)
@@ -322,10 +358,15 @@ export interface IExplorerContext {
 
   delete( resourceIds:ID[], folderIds:ID[] ): void; //FIXME 1 seul tableau en paramètres ?
 
+  /** Retrieves which properties of the resource(s) are manageable, can be modified and how. */
+  manageProperties( resourceType:ResourceType, resources:IResource[] ): Promise<ManagePropertiesResult>;
+  /** Update managed properties. */
+  updateProperties( resourceType:ResourceType, resources:IResource[] ): Promise<UpdatePropertiesResult>;
+
+
 /*//TODO ajouter des méthodes pour les autres actions du toaster ?
   CREATE:     "create"
  ,OPEN:       "open"
- ,MANAGE:     "manage"
  ,COMMENT:    "comment"
  ,EXPORT:     "export"
  ,PUBLISH:    "publish"

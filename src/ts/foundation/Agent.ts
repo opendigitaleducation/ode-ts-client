@@ -28,23 +28,22 @@ export abstract class AbstractBusAgent implements IAbstractBusAgent {
     protected static defaultHandler: IHandler = function( parameters:IActionParameters ):Promise<IActionResult> {
         throw new Error(ERROR_CODE.NOT_SUPPORTED);
     }
-    protected handlerFor: {
-        [action in ActionType]: IHandler
-    } = {
-            comment: AbstractBusAgent.defaultHandler,
-            copy: AbstractBusAgent.defaultHandler,
-            create: AbstractBusAgent.defaultHandler,
-            delete: AbstractBusAgent.defaultHandler,
-            export: AbstractBusAgent.defaultHandler,
-            initialize: AbstractBusAgent.defaultHandler,
-            manage: AbstractBusAgent.defaultHandler,
-            move: AbstractBusAgent.defaultHandler,
-            open: AbstractBusAgent.defaultHandler,
-            print: AbstractBusAgent.defaultHandler,
-            publish: AbstractBusAgent.defaultHandler,
-            search: AbstractBusAgent.defaultHandler,
-            share: AbstractBusAgent.defaultHandler
-        };
+    protected handlerFor:{ [action in ActionType]:IHandler } = {
+        comment: AbstractBusAgent.defaultHandler,
+        copy: AbstractBusAgent.defaultHandler,
+        create: AbstractBusAgent.defaultHandler,
+        delete: AbstractBusAgent.defaultHandler,
+        export: AbstractBusAgent.defaultHandler,
+        initialize: AbstractBusAgent.defaultHandler,
+        manage: AbstractBusAgent.defaultHandler,
+        properties: AbstractBusAgent.defaultHandler,
+        move: AbstractBusAgent.defaultHandler,
+        open: AbstractBusAgent.defaultHandler,
+        print: AbstractBusAgent.defaultHandler,
+        publish: AbstractBusAgent.defaultHandler,
+        search: AbstractBusAgent.defaultHandler,
+        share: AbstractBusAgent.defaultHandler
+    };
 
     protected resetHandlers(): void {
         for( let action in Object.values(ACTION) ) {

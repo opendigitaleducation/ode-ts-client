@@ -1,5 +1,5 @@
 import { Observable, Subject } from "rxjs";
-import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, APP, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults } from "../interfaces";
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults, IResource, ManagePropertiesResult, ManagePropertiesParameters, UpdatePropertiesResult, UpdatePropertiesParameters } from "../interfaces";
 
 export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;
@@ -109,5 +109,26 @@ export class ExplorerContext implements IExplorerContext {
     delete(resourceIds: string[], folderIds: string[]): void {
         throw new Error("Method not implemented.");
     }
-
+    manageProperties(resourceType:ResourceType, resources:IResource[]): Promise<ManagePropertiesResult> {
+        const params:ManagePropertiesParameters = { resources:resources };
+        return this.bus.send( resourceType, ACTION.MANAGE, params )
+        .then( (ar) => {
+            let result = ar as ManagePropertiesResult;
+            // TODO data sanity check
+            if( !result )
+                throw new Error( ERROR_CODE.UNKNOWN );
+            return result;
+        });
+    }
+    updateProperties(resourceType:ResourceType, resources:IResource[]): Promise<UpdatePropertiesResult> {
+        const params:UpdatePropertiesParameters = { resources:resources };
+        return this.bus.send( resourceType, ACTION.MANAGE, params )
+        .then( (ar) => {
+            let result = ar as UpdatePropertiesResult;
+            // TODO data sanity check
+            if( !result )
+                throw new Error( ERROR_CODE.UNKNOWN );
+            return result;
+        });
+    }
 }
