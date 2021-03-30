@@ -5,7 +5,7 @@ export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;
     private context: IContext | null;
     private bus:IBus;
-    private latestResults:Subject<ISearchResults> = new Subject();
+    private latestResults:Subject<{input:ISearchParameters, output:ISearchResults}> = new Subject();
 
     constructor( types:ResourceType[], app:App ) {
         this.context = null;
@@ -43,15 +43,19 @@ export class ExplorerContext implements IExplorerContext {
     getSearchParameters(): ISearchParameters {
         return this.searchParameters;
     }
+    private duplicateSearchParameters():ISearchParameters {
+        return JSON.parse( JSON.stringify(this.searchParameters) );
+    }
     
-    latestResources():Observable<ISearchResults> {
+    latestResources():Observable<{input:ISearchParameters, output:ISearchResults}> {
         return this.latestResults.asObservable();
     }
 
     initialize(): Promise<IContext> {
+        const parameters:ISearchParameters = this.duplicateSearchParameters();
         // Using Promise.resolve().then() allows the use of .catch(), .finally() and is considered a good practice.
         return Promise.resolve()
-        .then( () => this.bus.send(RESOURCE.FOLDER, ACTION.INITIALIZE, this.searchParameters) )
+        .then( () => this.bus.send(RESOURCE.FOLDER, ACTION.INITIALIZE, parameters) )
         .then( (ar) => {
             this.context = ar as GetContextResult;
             // TODO data sanity check
@@ -59,19 +63,20 @@ export class ExplorerContext implements IExplorerContext {
                 throw new Error( ERROR_CODE.UNKNOWN );
             }
             // Publish this results for listeners.
-            this.latestResults.next(this.context);
+            this.latestResults.next( {input:parameters, output:this.context} );
             return this.context;
         });
     }
     getResources(): Promise<GetResourcesResult> {
-        return this.bus.send( RESOURCE.FOLDER, ACTION.SEARCH, this.searchParameters )
+        const parameters:ISearchParameters = this.duplicateSearchParameters();
+        return this.bus.send( RESOURCE.FOLDER, ACTION.SEARCH, parameters )
         .then( (ar) => {
             let result = ar as GetResourcesResult;
             // TODO data sanity check
             if( !result )
                 throw new Error( ERROR_CODE.UNKNOWN );
             // Publish this results for listeners.
-            this.latestResults.next(result);
+            this.latestResults.next( {input:parameters, output:result} );
             return result;
         });
     }

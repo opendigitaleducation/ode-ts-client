@@ -36,7 +36,7 @@ describe("Foundation", function() {
     /** @test Subscribe to search results flow. */
     it("has a result flow to subscribe to", ()=>{
         subscription = context?.latestResources().subscribe({
-            next: (result) => { latestResult = result; return 'NEXT'; },
+            next: (result) => { latestResult = result.output; return 'NEXT'; },
             error: err => { throw new Error(`ERROR: ${err}`) },
             complete: () => 'UNSUBSCRIBED'
         });
