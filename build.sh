@@ -44,7 +44,7 @@ init () {
 }
 
 build () {
-  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm run test"
+  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm run test && npm run docs && npm run build"
 }
 
 watch () {
@@ -57,7 +57,6 @@ watch () {
 
 publish () {
   LOCAL_BRANCH=`echo $GIT_BRANCH | sed -e "s|origin/||g"`
-#  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm pack --dry-run"
   docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm publish --tag $LOCAL_BRANCH"
 }
 
