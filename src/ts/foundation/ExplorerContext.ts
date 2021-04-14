@@ -1,5 +1,5 @@
 import { Observable, Subject } from "rxjs";
-import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults, IResource, ManagePropertiesResult, ManagePropertiesParameters, UpdatePropertiesResult, UpdatePropertiesParameters } from "../interfaces";
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults, IResource, ManagePropertiesResult, ManagePropertiesParameters, UpdatePropertiesResult, UpdatePropertiesParameters, UpdateFolderParameters, CopyParameters, MoveParameters, DeleteParameters } from "../interfaces";
 
 export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;
@@ -84,13 +84,13 @@ export class ExplorerContext implements IExplorerContext {
         throw new Error("Method not implemented.");
     }
     createFolder(resourceType: ResourceType, parentId: string, name: string): Promise<CreateFolderResult> {
-        const createParameters:CreateFolderParameters = {
+        const parameters:CreateFolderParameters = {
             app: this.searchParameters.app,
             name: name,
             parentId: parentId,
             type: resourceType
         };
-        return this.bus.send( RESOURCE.FOLDER, ACTION.CREATE, createParameters )
+        return this.bus.send( RESOURCE.FOLDER, ACTION.CREATE, parameters )
         .then( (ar) => {
             let result = ar as CreateFolderResult;
             // TODO data sanity check
@@ -99,19 +99,56 @@ export class ExplorerContext implements IExplorerContext {
             return result;
         });
     }
-    updateFolder( folderId:ID, resourceType: ResourceType, parentId:ID|"default", name: string): Promise<UpdateFolderResult> {
-        throw new Error("Method not implemented.");
+    updateFolder( folderId:ID, resourceType:ResourceType, parentId:ID|"default", name: string): Promise<UpdateFolderResult> {
+        const parameters:UpdateFolderParameters = {
+            folderId: folderId,
+            app: this.searchParameters.app,
+            name: name,
+            parentId: parentId,
+            type: resourceType
+        };
+        return this.bus.send( RESOURCE.FOLDER, ACTION.UPD_PROPS, parameters )
+        .then( (ar) => {
+            let result = ar as UpdateFolderResult;
+            // TODO data sanity check
+            if( !result )
+                throw new Error( ERROR_CODE.UNKNOWN );
+            return result;
+        });
     }
-    share(resourceIds: string[], rights: IGroupUserRight[]): void {
-        throw new Error("Method not implemented.");
+    copy(targetId:string, resourceIds:ID[], folderIds:ID[]): Promise<void> {
+        const parameters:CopyParameters = {
+            folderId: targetId,
+            resourceIds: resourceIds,
+            folderIds: folderIds
+        };
+        return this.bus.send( RESOURCE.FOLDER, ACTION.COPY, parameters )
+        .then( (ar) => {
+            // void
+        });
     }
-    copy(targetId: string, resourceIds: string[], folderIds: string[]): void {
-        throw new Error("Method not implemented.");
+    move(targetId:string, resourceIds:ID[], folderIds:ID[]): Promise<void> {
+        const parameters:MoveParameters = {
+            folderId: targetId,
+            resourceIds: resourceIds,
+            folderIds: folderIds
+        };
+        return this.bus.send( RESOURCE.FOLDER, ACTION.MOVE, parameters )
+        .then( (ar) => {
+            // void
+        });
     }
-    move(targetId: string, resourceIds: string[], folderIds: string[]): void {
-        throw new Error("Method not implemented.");
+    delete(resourceIds:string[], folderIds:string[]): Promise<void> {
+        const parameters:DeleteParameters = {
+            resourceIds: resourceIds,
+            folderIds: folderIds
+        };
+        return this.bus.send( RESOURCE.FOLDER, ACTION.DELETE, parameters )
+        .then( (ar) => {
+            // void
+        });
     }
-    delete(resourceIds: string[], folderIds: string[]): void {
+    share(resourceIds:string[], rights:IGroupUserRight[]): Promise<void> {
         throw new Error("Method not implemented.");
     }
     manageProperties(resourceType:ResourceType, resources:IResource[]): Promise<ManagePropertiesResult> {
@@ -127,7 +164,7 @@ export class ExplorerContext implements IExplorerContext {
     }
     updateProperties(resourceType:ResourceType, resources:IResource[]): Promise<UpdatePropertiesResult> {
         const params:UpdatePropertiesParameters = { resources:resources };
-        return this.bus.send( resourceType, ACTION.MANAGE, params )
+        return this.bus.send( resourceType, ACTION.UPD_PROPS, params )
         .then( (ar) => {
             let result = ar as UpdatePropertiesResult;
             // TODO data sanity check

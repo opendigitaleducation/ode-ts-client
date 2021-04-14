@@ -36,8 +36,10 @@
 - [ActionType](modules.md#actiontype)
 - [App](modules.md#app)
 - [BooleanFilterType](modules.md#booleanfiltertype)
+- [CopyParameters](modules.md#copyparameters)
 - [CreateFolderParameters](modules.md#createfolderparameters)
 - [CreateFolderResult](modules.md#createfolderresult)
+- [DeleteParameters](modules.md#deleteparameters)
 - [ErrorCode](modules.md#errorcode)
 - [FilterValues](modules.md#filtervalues)
 - [FolderType](modules.md#foldertype)
@@ -49,6 +51,7 @@
 - [ID](modules.md#id)
 - [ManagePropertiesParameters](modules.md#managepropertiesparameters)
 - [ManagePropertiesResult](modules.md#managepropertiesresult)
+- [MoveParameters](modules.md#moveparameters)
 - [OrderValues](modules.md#ordervalues)
 - [PropFormat](modules.md#propformat)
 - [PropMode](modules.md#propmode)
@@ -58,6 +61,7 @@
 - [SortOrderType](modules.md#sortordertype)
 - [StringFilterType](modules.md#stringfiltertype)
 - [StringFilterValue](modules.md#stringfiltervalue)
+- [UpdateFolderParameters](modules.md#updatefolderparameters)
 - [UpdateFolderResult](modules.md#updatefolderresult)
 - [UpdatePropertiesParameters](modules.md#updatepropertiesparameters)
 - [UpdatePropertiesResult](modules.md#updatepropertiesresult)
@@ -85,7 +89,7 @@
 
 Ƭ **ActionType**: *typeof* [*ACTION*](modules.md#action)[keyof *typeof* [*ACTION*](modules.md#action)]
 
-Defined in: [interfaces.ts:56](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L56)
+Defined in: [interfaces.ts:56](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L56)
 
 ___
 
@@ -93,7 +97,7 @@ ___
 
 Ƭ **App**: *typeof* [*APP*](modules.md#app)[keyof *typeof* [*APP*](modules.md#app)]
 
-Defined in: [interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L22)
+Defined in: [interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L22)
 
 ___
 
@@ -101,7 +105,15 @@ ___
 
 Ƭ **BooleanFilterType**: *typeof* [*BOOLEAN\_FILTER*](modules.md#boolean_filter)[keyof *typeof* [*BOOLEAN\_FILTER*](modules.md#boolean_filter)]
 
-Defined in: [interfaces.ts:72](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L72)
+Defined in: [interfaces.ts:72](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L72)
+
+___
+
+### CopyParameters
+
+Ƭ **CopyParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderId`: [*ID*](modules.md#id) ; `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
+
+Defined in: [interfaces.ts:256](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L256)
 
 ___
 
@@ -109,7 +121,7 @@ ___
 
 Ƭ **CreateFolderParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `app`: [*App*](modules.md#app) ; `name`: *string* ; `parentId`: [*ID*](modules.md#id) \| *default* ; `type`: [*ResourceType*](modules.md#resourcetype)  }
 
-Defined in: [interfaces.ts:243](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L243)
+Defined in: [interfaces.ts:243](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L243)
 
 ___
 
@@ -117,7 +129,15 @@ ___
 
 Ƭ **CreateFolderResult**: [*IActionResult*](interfaces/iactionresult.md) & [*IFolder*](interfaces/ifolder.md) & { `createdAt`: *string*  }
 
-Defined in: [interfaces.ts:280](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L280)
+Defined in: [interfaces.ts:301](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L301)
+
+___
+
+### DeleteParameters
+
+Ƭ **DeleteParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
+
+Defined in: [interfaces.ts:266](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L266)
 
 ___
 
@@ -125,7 +145,7 @@ ___
 
 Ƭ **ErrorCode**: *typeof* [*ERROR\_CODE*](modules.md#error_code)[keyof *typeof* [*ERROR\_CODE*](modules.md#error_code)]
 
-Defined in: [interfaces.ts:13](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L13)
+Defined in: [interfaces.ts:13](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L13)
 
 ___
 
@@ -133,7 +153,7 @@ ___
 
 Ƭ **FilterValues**: { [B in BooleanFilterType]?: boolean} & { [S in StringFilterType]?: string} & { `folder?`: [*ID*](modules.md#id)  }
 
-Defined in: [interfaces.ts:263](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L263)
+Defined in: [interfaces.ts:284](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L284)
 
 ___
 
@@ -141,7 +161,7 @@ ___
 
 Ƭ **FolderType**: *typeof* [*FOLDER*](modules.md#folder)[keyof *typeof* [*FOLDER*](modules.md#folder)]
 
-Defined in: [interfaces.ts:63](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L63)
+Defined in: [interfaces.ts:63](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L63)
 
 ___
 
@@ -149,7 +169,7 @@ ___
 
 Ƭ **GetContextParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & [*ISearchParameters*](interfaces/isearchparameters.md)
 
-Defined in: [interfaces.ts:241](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L241)
+Defined in: [interfaces.ts:241](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L241)
 
 ___
 
@@ -157,7 +177,7 @@ ___
 
 Ƭ **GetContextResult**: [*IActionResult*](interfaces/iactionresult.md) & [*IContext*](interfaces/icontext.md)
 
-Defined in: [interfaces.ts:273](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L273)
+Defined in: [interfaces.ts:294](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L294)
 
 ___
 
@@ -165,7 +185,7 @@ ___
 
 Ƭ **GetResourcesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & [*ISearchParameters*](interfaces/isearchparameters.md)
 
-Defined in: [interfaces.ts:242](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L242)
+Defined in: [interfaces.ts:242](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L242)
 
 ___
 
@@ -173,7 +193,7 @@ ___
 
 Ƭ **GetResourcesResult**: [*IActionResult*](interfaces/iactionresult.md) & [*ISearchResults*](interfaces/isearchresults.md)
 
-Defined in: [interfaces.ts:275](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L275)
+Defined in: [interfaces.ts:296](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L296)
 
 ___
 
@@ -181,7 +201,7 @@ ___
 
 Ƭ **GetSubFoldersResult**: [*IActionResult*](interfaces/iactionresult.md) & { `folders`: [*IFolder*](interfaces/ifolder.md)[]  }
 
-Defined in: [interfaces.ts:277](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L277)
+Defined in: [interfaces.ts:298](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L298)
 
 ___
 
@@ -189,7 +209,7 @@ ___
 
 Ƭ **ID**: *string*
 
-Defined in: [interfaces.ts:106](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L106)
+Defined in: [interfaces.ts:106](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L106)
 
 ___
 
@@ -197,7 +217,7 @@ ___
 
 Ƭ **ManagePropertiesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `resources`: [*IResource*](interfaces/iresource.md)[]  }
 
-Defined in: [interfaces.ts:249](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L249)
+Defined in: [interfaces.ts:270](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L270)
 
 ___
 
@@ -205,7 +225,15 @@ ___
 
 Ƭ **ManagePropertiesResult**: [*IActionResult*](interfaces/iactionresult.md) & { `properties`: [*IProperty*](interfaces/iproperty.md)[]  }
 
-Defined in: [interfaces.ts:287](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L287)
+Defined in: [interfaces.ts:308](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L308)
+
+___
+
+### MoveParameters
+
+Ƭ **MoveParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderId`: [*ID*](modules.md#id) ; `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
+
+Defined in: [interfaces.ts:261](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L261)
 
 ___
 
@@ -213,7 +241,7 @@ ___
 
 Ƭ **OrderValues**: { [O in SortByType]?: SortOrderType}
 
-Defined in: [interfaces.ts:264](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L264)
+Defined in: [interfaces.ts:285](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L285)
 
 ___
 
@@ -221,7 +249,7 @@ ___
 
 Ƭ **PropFormat**: *typeof* [*PROP\_FORMAT*](modules.md#prop_format)[keyof *typeof* [*PROP\_FORMAT*](modules.md#prop_format)]
 
-Defined in: [interfaces.ts:130](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L130)
+Defined in: [interfaces.ts:130](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L130)
 
 ___
 
@@ -229,7 +257,7 @@ ___
 
 Ƭ **PropMode**: *typeof* [*PROP\_MODE*](modules.md#prop_mode)[keyof *typeof* [*PROP\_MODE*](modules.md#prop_mode)]
 
-Defined in: [interfaces.ts:117](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L117)
+Defined in: [interfaces.ts:117](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L117)
 
 ___
 
@@ -237,7 +265,7 @@ ___
 
 Ƭ **PropType**: *typeof* [*PROP\_TYPE*](modules.md#prop_type)[keyof *typeof* [*PROP\_TYPE*](modules.md#prop_type)]
 
-Defined in: [interfaces.ts:125](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L125)
+Defined in: [interfaces.ts:125](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L125)
 
 ___
 
@@ -245,7 +273,7 @@ ___
 
 Ƭ **ResourceType**: *typeof* [*RESOURCE*](modules.md#resource)[keyof *typeof* [*RESOURCE*](modules.md#resource)]
 
-Defined in: [interfaces.ts:30](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L30)
+Defined in: [interfaces.ts:30](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L30)
 
 ___
 
@@ -253,7 +281,7 @@ ___
 
 Ƭ **SortByType**: *typeof* [*SORT\_BY*](modules.md#sort_by)[keyof *typeof* [*SORT\_BY*](modules.md#sort_by)]
 
-Defined in: [interfaces.ts:103](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L103)
+Defined in: [interfaces.ts:103](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L103)
 
 ___
 
@@ -261,7 +289,7 @@ ___
 
 Ƭ **SortOrderType**: *typeof* [*SORT\_ORDER*](modules.md#sort_order)[keyof *typeof* [*SORT\_ORDER*](modules.md#sort_order)]
 
-Defined in: [interfaces.ts:83](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L83)
+Defined in: [interfaces.ts:83](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L83)
 
 ___
 
@@ -269,7 +297,7 @@ ___
 
 Ƭ **StringFilterType**: *typeof* [*STRING\_FILTER*](modules.md#string_filter)[keyof *typeof* [*STRING\_FILTER*](modules.md#string_filter)]
 
-Defined in: [interfaces.ts:76](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L76)
+Defined in: [interfaces.ts:76](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L76)
 
 ___
 
@@ -284,7 +312,15 @@ Name | Type |
 `i18n` | *string* |
 `value` | *string* |
 
-Defined in: [interfaces.ts:107](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L107)
+Defined in: [interfaces.ts:107](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L107)
+
+___
+
+### UpdateFolderParameters
+
+Ƭ **UpdateFolderParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `app`: [*App*](modules.md#app) ; `folderId`: [*ID*](modules.md#id) ; `name`: *string* ; `parentId`: [*ID*](modules.md#id) \| *default* ; `type`: [*ResourceType*](modules.md#resourcetype)  }
+
+Defined in: [interfaces.ts:249](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L249)
 
 ___
 
@@ -292,7 +328,7 @@ ___
 
 Ƭ **UpdateFolderResult**: [*CreateFolderResult*](modules.md#createfolderresult) & { `parentId`: [*ID*](modules.md#id) \| *default* ; `updatedAt`: *string*  }
 
-Defined in: [interfaces.ts:283](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L283)
+Defined in: [interfaces.ts:304](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L304)
 
 ___
 
@@ -300,7 +336,7 @@ ___
 
 Ƭ **UpdatePropertiesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `resources`: [*IResource*](interfaces/iresource.md)[]  }
 
-Defined in: [interfaces.ts:250](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L250)
+Defined in: [interfaces.ts:271](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L271)
 
 ___
 
@@ -308,7 +344,7 @@ ___
 
 Ƭ **UpdatePropertiesResult**: [*IActionResult*](interfaces/iactionresult.md) & { `resources`: [*IResource*](interfaces/iresource.md)[]  }
 
-Defined in: [interfaces.ts:290](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L290)
+Defined in: [interfaces.ts:311](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L311)
 
 ## Variables
 
@@ -335,7 +371,7 @@ Name | Type |
 `SHARE` | *share* |
 `UPD_PROPS` | *properties* |
 
-Defined in: [interfaces.ts:40](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L40)
+Defined in: [interfaces.ts:40](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L40)
 
 ___
 
@@ -351,7 +387,7 @@ Name | Type |
 `EXERCIZER` | *exercizer* |
 `EXPLORER` | *explorer* |
 
-Defined in: [interfaces.ts:16](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L16)
+Defined in: [interfaces.ts:16](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L16)
 
 ___
 
@@ -368,7 +404,7 @@ Name | Type |
 `PUBLIC` | *public* |
 `SHARED` | *shared* |
 
-Defined in: [interfaces.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L66)
+Defined in: [interfaces.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L66)
 
 ___
 
@@ -387,7 +423,7 @@ Name | Type |
 `SUCCESS` | *0000* |
 `UNKNOWN` | *0010* |
 
-Defined in: [interfaces.ts:5](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L5)
+Defined in: [interfaces.ts:5](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L5)
 
 ___
 
@@ -402,7 +438,7 @@ Name | Type |
 `BIN` | *bin* |
 `DEFAULT` | *default* |
 
-Defined in: [interfaces.ts:59](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L59)
+Defined in: [interfaces.ts:59](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L59)
 
 ___
 
@@ -416,7 +452,7 @@ Name | Type |
 :------ | :------ |
 `PLAIN` | *plain* |
 
-Defined in: [interfaces.ts:126](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L126)
+Defined in: [interfaces.ts:126](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L126)
 
 ___
 
@@ -431,7 +467,7 @@ Name | Type |
 `READONLY` | *RO* |
 `READWRITE` | *RW* |
 
-Defined in: [interfaces.ts:113](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L113)
+Defined in: [interfaces.ts:113](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L113)
 
 ___
 
@@ -448,7 +484,7 @@ Name | Type |
 `NUMBER` | *number* |
 `TEXT` | *text* |
 
-Defined in: [interfaces.ts:118](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L118)
+Defined in: [interfaces.ts:118](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L118)
 
 ___
 
@@ -464,7 +500,7 @@ Name | Type |
 `EXERCISE` | *exercise* |
 `FOLDER` | *folder* |
 
-Defined in: [interfaces.ts:25](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L25)
+Defined in: [interfaces.ts:25](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L25)
 
 ___
 
@@ -480,7 +516,7 @@ Name | Type |
 `NAME` | *name* |
 `VIEWS` | *views* |
 
-Defined in: [interfaces.ts:84](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L84)
+Defined in: [interfaces.ts:84](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L84)
 
 ___
 
@@ -495,7 +531,7 @@ Name | Type |
 `ASC` | *asc* |
 `DESC` | *desc* |
 
-Defined in: [interfaces.ts:79](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L79)
+Defined in: [interfaces.ts:79](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L79)
 
 ___
 
@@ -505,7 +541,7 @@ ___
 
 #### Type declaration:
 
-Defined in: [interfaces.ts:73](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L73)
+Defined in: [interfaces.ts:73](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L73)
 
 ___
 
@@ -513,7 +549,7 @@ ___
 
 • `Const` **appNameForResource**: { [R in ResourceType]: App}
 
-Defined in: [interfaces.ts:33](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L33)
+Defined in: [interfaces.ts:33](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L33)
 
 ___
 
@@ -523,4 +559,4 @@ ___
 
 The whole framework is a singleton.
 
-Defined in: [foundation/ExplorerFramework.ts:39](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/foundation/ExplorerFramework.ts#L39)
+Defined in: [foundation/ExplorerFramework.ts:39](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/foundation/ExplorerFramework.ts#L39)

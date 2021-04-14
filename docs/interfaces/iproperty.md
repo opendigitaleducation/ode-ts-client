@@ -17,7 +17,7 @@
 
 • `Optional` **format**: *plain*[]
 
-Defined in: [interfaces.ts:206](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L206)
+Defined in: [interfaces.ts:206](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L206)
 
 ___
 
@@ -25,7 +25,7 @@ ___
 
 • **mode**: [*PropMode*](../modules.md#propmode)
 
-Defined in: [interfaces.ts:204](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L204)
+Defined in: [interfaces.ts:204](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L204)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **property**: *shared* \| *public* \| *favorite* \| *name* \| *modifiedAt* \| *views* \| *id* \| *thumbnail* \| *application* \| *createdAt* \| *authorId* \| *authorName* \| *modifierId* \| *modifierName* \| *folderId* \| *comments*
 
-Defined in: [interfaces.ts:203](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L203)
+Defined in: [interfaces.ts:203](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L203)
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 • **type**: [*PropType*](../modules.md#proptype)
 
-Defined in: [interfaces.ts:205](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L205)
+Defined in: [interfaces.ts:205](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L205)

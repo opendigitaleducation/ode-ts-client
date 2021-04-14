@@ -2,6 +2,8 @@
 
 # Interface: IExplorerFramework
 
+Framework exploration capabilities offered to the client.
+
 ## Table of contents
 
 ### Methods
@@ -15,18 +17,18 @@
 
 ▸ **createContext**(`types`: [*ResourceType*](../modules.md#resourcetype)[], `app`: [*App*](../modules.md#app)): [*IExplorerContext*](iexplorercontext.md)
 
-Instancie un contexte d'exploration .
+Create a new context to explore resources from an application.
 
 #### Parameters:
 
 Name | Type | Description |
 :------ | :------ | :------ |
-`types` | [*ResourceType*](../modules.md#resourcetype)[] | Types de ressources traitées par l'agent, minimum 1.   |
-`app` | [*App*](../modules.md#app) | Application à l'origine de l'appel.    |
+`types` | [*ResourceType*](../modules.md#resourcetype)[] | Types of resource to be managed in this context.   |
+`app` | [*App*](../modules.md#app) | Application which creates the new context.    |
 
 **Returns:** [*IExplorerContext*](iexplorercontext.md)
 
-Defined in: [interfaces.ts:311](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L311)
+Defined in: [interfaces.ts:333](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L333)
 
 ___
 
@@ -38,4 +40,4 @@ Retrieve the underlying communication bus.
 
 **Returns:** [*IBus*](ibus.md)
 
-Defined in: [interfaces.ts:316](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L316)
+Defined in: [interfaces.ts:338](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L338)

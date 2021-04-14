@@ -41,7 +41,7 @@ Name | Type |
 
 Inherited from: [IBusAgent](ibusagent.md)
 
-Defined in: [interfaces.ts:396](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L396)
+Defined in: [interfaces.ts:466](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L466)
 
 ___
 
@@ -58,4 +58,4 @@ Name | Type |
 
 **Returns:** *Promise*<[*IAbstractBusAgent*](iabstractbusagent.md)\>
 
-Defined in: [foundation/Agent.ts:13](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/foundation/Agent.ts#L13)
+Defined in: [foundation/Agent.ts:13](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/foundation/Agent.ts#L13)

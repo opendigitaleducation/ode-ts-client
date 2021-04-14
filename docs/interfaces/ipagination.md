@@ -16,7 +16,7 @@
 
 • `Optional` **maxIdx**: *number*
 
-Defined in: [interfaces.ts:196](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L196)
+Defined in: [interfaces.ts:196](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L196)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **pageSize**: *number*
 
-Defined in: [interfaces.ts:197](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L197)
+Defined in: [interfaces.ts:197](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L197)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **startIdx**: *number*
 
-Defined in: [interfaces.ts:195](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L195)
+Defined in: [interfaces.ts:195](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L195)

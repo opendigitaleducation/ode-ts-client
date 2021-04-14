@@ -17,7 +17,7 @@
 
 • **childNumber**: *number*
 
-Defined in: [interfaces.ts:173](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L173)
+Defined in: [interfaces.ts:173](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L173)
 
 ___
 
@@ -25,7 +25,7 @@ ___
 
 • **id**: *string*
 
-Defined in: [interfaces.ts:170](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L170)
+Defined in: [interfaces.ts:170](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L170)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **name**: *string*
 
-Defined in: [interfaces.ts:171](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L171)
+Defined in: [interfaces.ts:171](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L171)
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 • **type**: *string*
 
-Defined in: [interfaces.ts:172](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L172)
+Defined in: [interfaces.ts:172](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L172)

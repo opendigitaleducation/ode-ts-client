@@ -19,7 +19,7 @@
 
 • **comment**: *boolean*
 
-Defined in: [interfaces.ts:258](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L258)
+Defined in: [interfaces.ts:279](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L279)
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **contribute**: *boolean*
 
-Defined in: [interfaces.ts:256](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L256)
+Defined in: [interfaces.ts:277](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L277)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • `Optional` **groupId**: *string*
 
-Defined in: [interfaces.ts:260](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L260)
+Defined in: [interfaces.ts:281](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L281)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **manage**: *boolean*
 
-Defined in: [interfaces.ts:257](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L257)
+Defined in: [interfaces.ts:278](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L278)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **read**: *boolean*
 
-Defined in: [interfaces.ts:255](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L255)
+Defined in: [interfaces.ts:276](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L276)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • `Optional` **userId**: *string*
 
-Defined in: [interfaces.ts:259](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L259)
+Defined in: [interfaces.ts:280](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L280)

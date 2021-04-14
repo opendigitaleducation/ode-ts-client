@@ -28,4 +28,4 @@ Framework is a singleton.
 
 ▪ `Static` **instance**: [*IExplorerFramework*](../interfaces/iexplorerframework.md)
 
-Defined in: [interfaces.ts:300](https://github.com/opendigitaleducation/infrontexplore/blob/1e962a2/src/ts/interfaces.ts#L300)
+Defined in: [interfaces.ts:321](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L321)
