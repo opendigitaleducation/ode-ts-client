@@ -1,4 +1,4 @@
-import { Observable, Subject } from "rxjs";
+import { Observable } from "rxjs";
 
 //------------------------- Data types
 //-- Error codes 
@@ -110,11 +110,22 @@ export type StringFilterValue = {
 };
 
 //-- Properties management
-export const PROP_MODE = {
-  READONLY: "RO"
- ,READWRITE: "RW"
+export const PROP_KEY = {
+   TITLE:       "title"
+  ,IMAGE:       "image"
+  ,COLOR:       "color"
+  ,DESCRIPTION: "description"
+  ,URL:         "url"
+//  ,GENERIC:     "generic"   //NOT USED AT THE MOMENT
 } as const;
-export type PropMode = typeof PROP_MODE[keyof typeof PROP_MODE];
+export type PropKeyType = typeof PROP_KEY[keyof typeof PROP_KEY];
+
+export const PROP_MODE = {
+  READONLY:   "RO"
+ ,READWRITE:  "RW"
+} as const;
+export type PropModeType = typeof PROP_MODE[keyof typeof PROP_MODE];
+
 export const PROP_TYPE = {
   TEXT:   "text"
  ,NUMBER: "number"
@@ -122,12 +133,13 @@ export const PROP_TYPE = {
  ,IMAGE:  "image"
  // TODO more types ? Currencies...
 } as const;
-export type PropType = typeof PROP_TYPE[keyof typeof PROP_TYPE];
+export type PropTypeType = typeof PROP_TYPE[keyof typeof PROP_TYPE];
+
 export const PROP_FORMAT = {
   PLAIN:  "plain"   // Plain text or number value, no formatting
   // TODO more format to come ? Full dates, months only, timestamps, regexp....
 } as const;
-export type PropFormat = typeof PROP_FORMAT[keyof typeof PROP_FORMAT];
+export type PropFormatType = typeof PROP_FORMAT[keyof typeof PROP_FORMAT];
 
 //------------------------- Data models 
 //-------------------------------------
@@ -200,12 +212,22 @@ export interface IPagination { // TODO à tester
 //-------------------------------------
 export interface IProperty {
 //-------------------------------------
-  property:keyof IResource;
-  mode:PropMode;
-  type:PropType;
-  format?:PropFormat[];
+  key:PropKeyType;
+  i18n?:string;
 }
-  
+
+/* NOT USED AT THE MOMENT
+   Additional metadata when key===PROP_KEY.GENERIC
+//-------------------------------------
+export interface IGenericProperty extends IProperty {
+//-------------------------------------
+  property:keyof IResource;
+  mode:PropModeType;
+  type:PropTypeType;
+  format?:PropFormatType[];
+}
+*/
+
 //-------------------------------------
 export interface IResource {
 //-------------------------------------
@@ -268,8 +290,12 @@ export type DeleteParameters = IActionParameters & {
 , folderIds:ID[]
 };
 export type ManagePropertiesParameters = IActionParameters & { resources:IResource[] };
-export type UpdatePropertiesParameters = IActionParameters & { resources:IResource[] };
+export type UpdatePropertiesParameters = IActionParameters & { 
+  resources:IResource[]
+, props:{[key in PropKeyType]?:string}
+};
 
+/* NOT USED AT THE MOMENT (and probably never)
 //-------------------------------------
 export interface IGroupUserRight {
 //-------------------------------------
@@ -280,6 +306,7 @@ export interface IGroupUserRight {
   userId?: ID;
   groupId?: ID;
 }
+*/
 
 export type FilterValues = {[B in BooleanFilterType]?: boolean} & {[S in StringFilterType]?: string} & {folder?: ID};
 export type OrderValues  = {[O in SortByType]?: SortOrderType};
@@ -295,20 +322,14 @@ export type GetContextResult = IActionResult & IContext;
 
 export type GetResourcesResult = IActionResult & ISearchResults;
 
-export type GetSubFoldersResult = IActionResult & {
-  folders: IFolder[];
-}
-export type CreateFolderResult = IActionResult &  IFolder & {
-  createdAt: string;
-}
+export type GetSubFoldersResult = IActionResult & { folders: IFolder[]; };
+export type CreateFolderResult = IActionResult &  IFolder & { createdAt: string; };
 export type UpdateFolderResult = CreateFolderResult & {
   updatedAt: string;
   parentId: ID|"default";
-}
-export type ManagePropertiesResult = IActionResult & {
-  properties: IProperty[]
 };
-export type UpdatePropertiesResult = IActionResult & { resources:IResource[] }
+export type ManagePropertiesResult = IActionResult & { genericProps:IProperty[]; };
+export type UpdatePropertiesResult = IActionResult & { resources:IResource[]; };
 
 
 //-------------------------------------
@@ -425,13 +446,13 @@ export interface IExplorerContext {
    */
   delete( resourceIds:ID[], folderIds:ID[] ): Promise<void>; //FIXME 1 seul tableau en paramètres ?
 
-  /** Retrieves which properties of the resource(s) are manageable, can be modified and how. */
+  /** Retrieves which properties of the resource(s) are manageable. */
   manageProperties( resourceType:ResourceType, resources:IResource[] ): Promise<ManagePropertiesResult>;
   /** Update managed properties. */
-  updateProperties( resourceType:ResourceType, resources:IResource[] ): Promise<UpdatePropertiesResult>;
+  updateProperties( resourceType:ResourceType, resources:IResource[], props:{[key in PropKeyType]?:string} ): Promise<UpdatePropertiesResult>;
 
-  /** Share resources */
-  share( resourceIds:ID[], rights:IGroupUserRight[] ): Promise<void>;
+  /* Share resources */
+  //share( resourceIds:ID[] /*, rights:IGroupUserRight[]*/ ): Promise<void>;
 
 
 /*//TODO ajouter des méthodes pour les autres actions du toaster ?

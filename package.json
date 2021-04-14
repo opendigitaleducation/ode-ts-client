@@ -1,6 +1,6 @@
 {
   "name": "ode-ts-client",
-  "version": "0.4.0-explorer.0",
+  "version": "0.5.0-explorer.0",
   "description": "Explorer: client API definition and implementation",
   "main": "dist/ts/index.js",
   "types": "dist/ts/index.d.ts",

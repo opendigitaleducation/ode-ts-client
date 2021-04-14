@@ -1,5 +1,5 @@
 import { Observable, Subject } from "rxjs";
-import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, IGroupUserRight, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults, IResource, ManagePropertiesResult, ManagePropertiesParameters, UpdatePropertiesResult, UpdatePropertiesParameters, UpdateFolderParameters, CopyParameters, MoveParameters, DeleteParameters } from "../interfaces";
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults, IResource, ManagePropertiesResult, ManagePropertiesParameters, UpdatePropertiesResult, UpdatePropertiesParameters, UpdateFolderParameters, CopyParameters, MoveParameters, DeleteParameters, PropKeyType } from "../interfaces";
 
 export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;
@@ -148,9 +148,6 @@ export class ExplorerContext implements IExplorerContext {
             // void
         });
     }
-    share(resourceIds:string[], rights:IGroupUserRight[]): Promise<void> {
-        throw new Error("Method not implemented.");
-    }
     manageProperties(resourceType:ResourceType, resources:IResource[]): Promise<ManagePropertiesResult> {
         const params:ManagePropertiesParameters = { resources:resources };
         return this.bus.send( resourceType, ACTION.MANAGE, params )
@@ -162,8 +159,8 @@ export class ExplorerContext implements IExplorerContext {
             return result;
         });
     }
-    updateProperties(resourceType:ResourceType, resources:IResource[]): Promise<UpdatePropertiesResult> {
-        const params:UpdatePropertiesParameters = { resources:resources };
+    updateProperties(resourceType:ResourceType, resources:IResource[], props:{[key in PropKeyType]?:string}): Promise<UpdatePropertiesResult> {
+        const params:UpdatePropertiesParameters = { resources:resources, props:props };
         return this.bus.send( resourceType, ACTION.UPD_PROPS, params )
         .then( (ar) => {
             let result = ar as UpdatePropertiesResult;

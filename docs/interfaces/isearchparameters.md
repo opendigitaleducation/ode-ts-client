@@ -19,7 +19,7 @@
 
 • **app**: [*App*](../modules.md#app)
 
-Defined in: [interfaces.ts:137](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L137)
+Defined in: [interfaces.ts:149](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L149)
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **filters**: [*FilterValues*](../modules.md#filtervalues)
 
-Defined in: [interfaces.ts:138](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L138)
+Defined in: [interfaces.ts:150](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L150)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • `Optional` **orders**: [*OrderValues*](../modules.md#ordervalues)
 
-Defined in: [interfaces.ts:139](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L139)
+Defined in: [interfaces.ts:151](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L151)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **pagination**: [*IPagination*](ipagination.md)
 
-Defined in: [interfaces.ts:140](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L140)
+Defined in: [interfaces.ts:152](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L152)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **search**: String
 
-Defined in: [interfaces.ts:141](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L141)
+Defined in: [interfaces.ts:153](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L153)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • **types**: [*ResourceType*](../modules.md#resourcetype)[]
 
-Defined in: [interfaces.ts:136](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L136)
+Defined in: [interfaces.ts:148](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L148)

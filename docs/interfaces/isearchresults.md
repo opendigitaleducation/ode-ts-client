@@ -22,7 +22,7 @@
 
 • **folders**: [*IFolder*](ifolder.md)[]
 
-Defined in: [interfaces.ts:146](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L146)
+Defined in: [interfaces.ts:158](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L158)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **pagination**: [*IPagination*](ipagination.md)
 
-Defined in: [interfaces.ts:147](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L147)
+Defined in: [interfaces.ts:159](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L159)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **resources**: [*IResource*](iresource.md)[]
 
-Defined in: [interfaces.ts:148](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L148)
+Defined in: [interfaces.ts:160](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L160)

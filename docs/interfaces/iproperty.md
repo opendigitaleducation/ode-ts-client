@@ -6,39 +6,21 @@
 
 ### Properties
 
-- [format](iproperty.md#format)
-- [mode](iproperty.md#mode)
-- [property](iproperty.md#property)
-- [type](iproperty.md#type)
+- [i18n](iproperty.md#i18n)
+- [key](iproperty.md#key)
 
 ## Properties
 
-### format
+### i18n
 
-• `Optional` **format**: *plain*[]
+• `Optional` **i18n**: *string*
 
-Defined in: [interfaces.ts:206](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L206)
-
-___
-
-### mode
-
-• **mode**: [*PropMode*](../modules.md#propmode)
-
-Defined in: [interfaces.ts:204](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L204)
+Defined in: [interfaces.ts:216](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L216)
 
 ___
 
-### property
+### key
 
-• **property**: *shared* \| *public* \| *favorite* \| *name* \| *modifiedAt* \| *views* \| *id* \| *thumbnail* \| *application* \| *createdAt* \| *authorId* \| *authorName* \| *modifierId* \| *modifierName* \| *folderId* \| *comments*
+• **key**: [*PropKeyType*](../modules.md#propkeytype)
 
-Defined in: [interfaces.ts:203](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L203)
-
-___
-
-### type
-
-• **type**: [*PropType*](../modules.md#proptype)
-
-Defined in: [interfaces.ts:205](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L205)
+Defined in: [interfaces.ts:215](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L215)

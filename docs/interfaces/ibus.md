@@ -28,7 +28,7 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [interfaces.ts:453](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L453)
+Defined in: [interfaces.ts:474](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L474)
 
 ___
 
@@ -47,7 +47,7 @@ Name | Type |
 
 **Returns:** *null* \| [*IBusAgent*](ibusagent.md)
 
-Defined in: [interfaces.ts:459](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L459)
+Defined in: [interfaces.ts:480](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L480)
 
 ___
 
@@ -67,4 +67,4 @@ Name | Type |
 
 **Returns:** *Promise*<[*IActionResult*](iactionresult.md)\>
 
-Defined in: [interfaces.ts:456](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L456)
+Defined in: [interfaces.ts:477](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L477)

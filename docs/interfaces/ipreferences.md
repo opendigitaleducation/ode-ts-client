@@ -14,4 +14,4 @@
 
 • **view**: *card* \| *list*
 
-Defined in: [interfaces.ts:233](https://github.com/opendigitaleducation/infrontexplore/blob/2f94543/src/ts/interfaces.ts#L233)
+Defined in: [interfaces.ts:255](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L255)
