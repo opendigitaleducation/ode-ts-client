@@ -52,7 +52,7 @@ watch () {
     --rm \
     -u "$USER_UID:$GROUP_GID" \
     -v $PWD/../$SPRINGBOARD:/home/node/springboard \
-    node sh -c "npm run watch --springboard=/home/node/springboard/assets"
+    node sh -c "npm run watch --springboard=/home/node/springboard"
 }
 
 publish () {
