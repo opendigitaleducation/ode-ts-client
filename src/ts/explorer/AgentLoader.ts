@@ -1,4 +1,4 @@
-import { appNameForResource, ResourceType } from "../interfaces";
+import { appNameForResource, ResourceType } from "./interfaces";
 import { IAbstractBusAgent } from "./Agent";
 
 /**

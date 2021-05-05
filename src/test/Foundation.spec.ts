@@ -1,7 +1,7 @@
 import "jasmine";
 import * as UserInfoData from './mocks/data/userinfo.json';
-import { APP, framework, IContext, IExplorerContext, ISearchResults, RESOURCE } from "../ts/index";
-import { ExplorerFramework } from "../ts/foundation/ExplorerFramework";
+import { APP, explorer, IContext, IExplorerContext, ISearchResults, RESOURCE } from "../ts/index";
+import { ExplorerFramework } from "../ts/explorer/ExplorerFramework";
 import { MockedAgentLoader } from "./mocks/agents/MockedAgentLoader";
 import { Subscription } from "rxjs";
 
@@ -25,11 +25,11 @@ describe("Foundation", function() {
     it("should have mocked data", () => { expect(userinfo.apps).toBeDefined(); });
 
     /** @test Framework bootstrapping */
-    it("should be available", () => { expect(framework).toBeDefined(); });
+    it("should be available", () => { expect(explorer).toBeDefined(); });
 
     /** @test Getting an explorer context. */
     it("should get a valid context without throwing an error", ()=>{
-        context = framework.createContext( [RESOURCE.FOLDER], APP.BLOG );
+        context = explorer.createContext( [RESOURCE.FOLDER], APP.BLOG );
         expect(context).toBeDefined();
     });
 
@@ -53,7 +53,7 @@ describe("Foundation", function() {
      * Cela nécessite de mocker le serveur.
      **/
     it("is mocking the agents", ()=>{
-        (framework as ExplorerFramework).setAgentLoader( new MockedAgentLoader() );
+        (explorer as ExplorerFramework).setAgentLoader( new MockedAgentLoader() );
     });
 
     it("should initialize a context", async ()=>{

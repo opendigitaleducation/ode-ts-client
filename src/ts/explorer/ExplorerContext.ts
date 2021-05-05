@@ -1,5 +1,5 @@
 import { Observable, Subject } from "rxjs";
-import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults, IResource, ManagePropertiesResult, ManagePropertiesParameters, UpdatePropertiesResult, UpdatePropertiesParameters, UpdateFolderParameters, CopyParameters, MoveParameters, DeleteParameters, PropKeyType } from "../interfaces";
+import { App, IContext, IExplorerContext, ISearchParameters, ResourceType, ERROR_CODE, IBus, ACTION, GetResourcesResult, GetSubFoldersResult, CreateFolderResult, UpdateFolderResult, ExplorerFrameworkFactory, GetContextResult, RESOURCE, CreateFolderParameters, ID, ISearchResults, IResource, ManagePropertiesResult, ManagePropertiesParameters, UpdatePropertiesResult, UpdatePropertiesParameters, UpdateFolderParameters, CopyParameters, MoveParameters, DeleteParameters, PropKeyType } from "./interfaces";
 
 export class ExplorerContext implements IExplorerContext {
     private searchParameters: ISearchParameters;

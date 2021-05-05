@@ -1,4 +1,4 @@
-import { ERROR_CODE, ActionType, App, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "../interfaces";
+import { ERROR_CODE, ActionType, App, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "../explorer/interfaces";
 import { IAbstractBusAgent } from "./Agent";
 import { AgentLoader, IAgentLoader } from "./AgentLoader";
 import { BusFactory } from "./Bus";
@@ -36,4 +36,4 @@ export class ExplorerFramework implements IExplorerFramework {
 }
 
 /** The whole framework is a singleton. */
-export let framework:IExplorerFramework = ExplorerFrameworkFactory.instance = new ExplorerFramework();
+export let explorer:IExplorerFramework = ExplorerFrameworkFactory.instance = new ExplorerFramework();
