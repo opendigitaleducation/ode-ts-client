@@ -1,13 +1,11 @@
-import { ExplorerFramework } from "../configuration/ConfigurationFramework";
-import { IConfigurationFramework } from "../configuration/interfaces";
 import { App, ERROR_CODE } from "../globals";
 import { IAbstractBusAgent } from "./Agent";
 import { AgentLoader, IAgentLoader } from "./AgentLoader";
 import { BusFactory } from "./Bus";
-import { ExplorerContext } from "./ExplorerContext";
+import { ExplorerContext } from "./Context";
 import { ActionType, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "./interfaces";
 
-export class ConfigurationFramework implements IConfigurationFramework {
+export class ExplorerFramework implements IExplorerFramework {
     private agentLoader:AgentLoader = new AgentLoader();
 
     /* This is useful for mocking data. */
@@ -39,4 +37,4 @@ export class ConfigurationFramework implements IConfigurationFramework {
 }
 
 /** The whole framework is a singleton. */
-export let explorer:IExplorerFramework = ExplorerFrameworkFactory.instance = new ExplorerFramework();
+export const explorer:IExplorerFramework = ExplorerFrameworkFactory.instance = new ExplorerFramework();

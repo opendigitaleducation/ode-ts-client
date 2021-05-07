@@ -1,6 +1,6 @@
 import { ActionType, ACTION, IActionResult, IBus, ResourceType, IBusAgent } from "./interfaces";
 import { IAbstractBusAgent } from "./Agent";
-import { ExplorerFramework, explorer } from "./ExplorerFramework";
+import { ExplorerFramework, explorer } from "./Framework";
 
 type AgentByAction = {[B in ActionType]: IAbstractBusAgent|null};
 

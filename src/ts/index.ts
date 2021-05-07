@@ -1,26 +1,37 @@
 export * from './globals';
 
+//------------------------------------------
+//-------------------------------- EXPLORER
+//------------------------------------------
 /* These interfaces describe, from the UI point of view :
  * - Data types and contants, with a semantic meaning : applications, resources, actions on resources...
  * - High-level API : an explorer context (IExplorerContext),
  * - Low-level API : access to the communication bus, if needed (IBus, IBusAgent)
  */
-export * from './explorer/interfaces';
+export * from './explore/interfaces';
 
 /* This is the Explorer Framework entry point */
-export { explorer } from "./explorer/ExplorerFramework";
+export { explorer } from "./explore/Framework";
 
 /* These utility classes offer, from the applications' perspective :
  * CURRENTLY BEING TESTED, WILL PROBABLY BE REFACTORED
  * => Agents will register themselves instead of having the bus asking for it.
  *    The framework would then export a method for agents to register their supported Actions.
  */
-export { IAbstractBusAgent, AbstractBusAgent } from './explorer/Agent';
+export { IAbstractBusAgent, AbstractBusAgent } from './explore/Agent';
 
+//------------------------------------------
+//------------------------------- TRANSPORT
+//------------------------------------------
+export * from './transport/interfaces';
+/* Entry point of the Transport framework. */
+export { transport } from "./transport/Framework";
 
+//------------------------------------------
+//---------------------------------- CONFIG
+//------------------------------------------
 /* Entry point of the Configuration framework. */
-export { config } from "./configuration/ConfigurationFramework";
-
+//export { config } from "./configure/Framework";
 
 
 /** Hack pour rendre compatible le module commonjs avec une balise <script> dans un navigateur. */
