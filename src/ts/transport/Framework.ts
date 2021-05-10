@@ -14,4 +14,4 @@ class TransportFramework implements ITransportFramework {
 }
 
 /** The whole framework is a singleton. */
-export const transport:ITransportFramework = TransportFrameworkFactory.instance = new TransportFramework();
+export const transport:ITransportFramework = (TransportFrameworkFactory as any).instance = new TransportFramework();

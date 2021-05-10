@@ -1,8 +1,14 @@
 export type IHttpParams = {};
+export type IHttpResponse = {
+    status: number;
+    statusText: string;
+    headers: any;
+};
 
 //-------------------------------------
 export interface IHttp {
 //-------------------------------------
+    readonly latestResponse: IHttpResponse;
     get<T=any,R=any>( url:string, params?:IHttpParams ): Promise<R>;
     post<T=any,R=any>( url:string, data?:any, params?:IHttpParams ): Promise<R>;
     postFile<T=any,R=any>( url:string, data:any, params?:IHttpParams ): Promise<R>;
@@ -15,14 +21,14 @@ export interface IHttp {
 }
 
 //-------------------------------------
-export abstract class TransportFrameworkFactory {
-//-------------------------------------
-      static instance: ITransportFramework;
-}
-    
-//-------------------------------------
 export interface ITransportFramework {
 //-------------------------------------
-    http:IHttp;
+    readonly http:IHttp;
     newHttpInstance( params?:IHttpParams ):IHttp;
+}
+
+//-------------------------------------
+export abstract class TransportFrameworkFactory {
+//-------------------------------------
+    static readonly instance: ITransportFramework;
 }
