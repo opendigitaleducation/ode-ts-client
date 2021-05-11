@@ -320,7 +320,7 @@ export type UpdatePropertiesResult = IActionResult & { resources:IResource[]; };
 //-------------------------------------
 export abstract class ExplorerFrameworkFactory {
 //-------------------------------------
-  static instance: IExplorerFramework;
+  static readonly instance: IExplorerFramework;
 }
 
 /** Framework exploration capabilities offered to the client. */

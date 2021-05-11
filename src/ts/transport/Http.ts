@@ -1,23 +1,24 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { ERROR_CODE } from "../globals";
 import { IHttp, IHttpParams, IHttpResponse } from "./interfaces";
 
-const loadedScripts:{[url:string]:boolean} = {};
+const loadedScripts: { [url: string]: boolean } = {};
 
 export class Http implements IHttp {
     // Axios automatically manages the XSRF-TOKEN cookie and the X-XSRF-TOKEN HTTP header.
-    private axios:AxiosInstance;
+    private axios: AxiosInstance;
 
-    private _latestResponse:any;
+    private _latestResponse: any;
 
-    constructor( params?:IHttpParams ) {
-        this.axios = axios.create( this.toAxiosConfig(params) );
+    constructor(params?: IHttpParams) {
+        this.axios = axios.create(this.toAxiosConfig(params));
     }
 
-    private toAxiosConfig(params?:IHttpParams):AxiosRequestConfig {
-        if( ! params ) {
+    private toAxiosConfig(params?: IHttpParams): AxiosRequestConfig {
+        if (!params) {
             return this.axios.defaults;
         } else {
-            let p = Object.assign( {}, this.axios.defaults);
+            let p = Object.assign({}, this.axios.defaults);
             // TODO au cas par cas
             p.params = params;  // Axios will serialize parameters, see https://github.com/axios/axios#request-config
             //if( params. )   p. = params.
@@ -25,8 +26,8 @@ export class Http implements IHttp {
         }
     }
 
-    private fromAxiosConfig(config?:AxiosRequestConfig):IHttpParams {
-        if( ! config ) {
+    private fromAxiosConfig(config?: AxiosRequestConfig): IHttpParams {
+        if (!config) {
             config = this.axios.defaults;
         }
         let params = {};
@@ -34,71 +35,105 @@ export class Http implements IHttp {
         return params;
     }
 
-    private mapAxiosResponse<R>(response:AxiosResponse<R>):R {
+    private mapAxiosError<R>(error: AxiosError<R>): R {
+        // AxiosError.response and our HttpResponse share the same properties.
+        // So we can use it directly, saving CPU and memory.
+        // Otherwise, we would map the axios response to our own model.
+        if (error.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            this._latestResponse = error.response;
+        } else if (error.request) {
+            // The request was made but no response was received
+            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+            // http.ClientRequest in node.js
+            this._latestResponse = {
+                status: 408,
+                statusText: ERROR_CODE.TIME_OUT
+            };
+        } else {
+            // Something happened in setting up the request that triggered an Error
+            this._latestResponse = {
+                status: 500,
+                statusText: ERROR_CODE.UNKNOWN
+            };
+        }
+        throw new Error( ERROR_CODE.TRANSPORT_ERROR );
+    }
+
+    private mapAxiosResponse<R>(response: AxiosResponse<R>): R {
         // AxiosResponse and our HttpResponse share the same properties.
         // So we can use it directly, saving CPU and memory.
         // Otherwise, we would map the axios response to our own model.
-        this._latestResponse = response;   
+        this._latestResponse = response;
         return response.data;
     }
 
-    get config():IHttpParams {
+    get config(): IHttpParams {
         return this.fromAxiosConfig();
     }
 
-    get latestResponse():IHttpResponse {
+    get latestResponse(): IHttpResponse {
         return this._latestResponse;
     }
 
-    get<T=any, R=any>( url:string, params?:IHttpParams ): Promise<R> {
-        return this.axios.get<T,AxiosResponse<R>>(url, this.toAxiosConfig(params))
-        .then( this.mapAxiosResponse );
+    get<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
+        return this.axios.get<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
-    post<T=any, R=any>( url:string, data?:any, params?:IHttpParams ): Promise<R> {
-        return this.axios.post<T,AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
-        .then( this.mapAxiosResponse );
+    post<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
+        return this.axios.post<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
-    postFile<T=any, R=any>( url:string, data:any, params?:IHttpParams ): Promise<R> {
-        const p = this.toAxiosConfig( params );
-        if( p.headers['Content-Type'] ) {
+    postFile<T = any, R = any>(url: string, data: any, params?: IHttpParams): Promise<R> {
+        const p = this.toAxiosConfig(params);
+        if (p.headers['Content-Type']) {
             delete p.headers['Content-Type'];
         }
-        return this.axios.post<T,AxiosResponse<R>>(url, data, p)
-        .then( this.mapAxiosResponse );
+        return this.axios.post<T, AxiosResponse<R>>(url, data, p)
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
-    postJson<T=any, R=any>( url:string, json:any, params?:IHttpParams ): Promise<R> {
+    postJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig();
         p.headers['Content-Type'] = 'application/json';
-        return this.axios.post<T,AxiosResponse<R>>(url, json, this.toAxiosConfig(params))
-        .then( this.mapAxiosResponse );
+        return this.axios.post<T, AxiosResponse<R>>(url, json, this.toAxiosConfig(params))
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
-    put<T=any, R=any>( url:string, data?:any, params?:IHttpParams ): Promise<R> {
-        return this.axios.put<T,AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
-        .then( this.mapAxiosResponse );
+    put<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
+        return this.axios.put<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
-/*
-    putFile(url: string, data:FormData, opt?:any) {
-        //TODO
-        return this.axios.putFile(url, data, opt).then( this.mapAxiosResponse);
-    }
-*/
-    putJson<T=any, R=any>( url:string, json:any, params?:IHttpParams ): Promise<R> {
-        const p = this.toAxiosConfig( params );
+    /*
+        putFile(url: string, data:FormData, opt?:any) {
+            //TODO
+            return this.axios.putFile(url, data, opt).then( this.mapAxiosResponse);
+        }
+    */
+    putJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
+        const p = this.toAxiosConfig(params);
         p.headers['Content-Type'] = 'application/json';
-        return this.axios.put<T,AxiosResponse<R>>(url, json, p)
-        .then( this.mapAxiosResponse );
+        return this.axios.put<T, AxiosResponse<R>>(url, json, p)
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
-    delete<T=any, R=any>( url:string, params?:IHttpParams ): Promise<R> {
-        return this.axios.delete<T,AxiosResponse<R>>(url, this.toAxiosConfig(params))
-        .then( this.mapAxiosResponse );
+    delete<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
+        return this.axios.delete<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
-    deleteJson<T=any, R=any>( url:string, json:any ): Promise<R> {
+    deleteJson<T = any, R = any>(url: string, json: any): Promise<R> {
         // TODO code review
-        return this.axios.delete<T,AxiosResponse<R>>(url, json)
-        .then( this.mapAxiosResponse );
+        return this.axios.delete<T, AxiosResponse<R>>(url, json)
+            .then(this.mapAxiosResponse)
+            .catch<R>(this.mapAxiosError);
     }
 
-    loadScript( url: string, data?:any, params?:IHttpParams, requestName?:string ): Promise<void> {
+    loadScript(url: string, data?: any, params?: IHttpParams, requestName?: string): Promise<void> {
         // TODO code review
         const p = Object.assign({}, data, params);
         return (loadedScripts[url]) ? Promise.resolve() : this.get(url, p).then(() => {

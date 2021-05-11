@@ -1,7 +1,7 @@
 import "jasmine";
 import * as UserInfoData from './mocks/data/userinfo.json';
 import { APP, explorer, IContext, IExplorerContext, ISearchResults, RESOURCE } from "../ts/index";
-import { ExplorerFramework } from "../ts/explorer/ExplorerFramework";
+import { ExplorerFramework } from "../ts/explore/Framework";
 import { MockedAgentLoader } from "./mocks/agents/MockedAgentLoader";
 import { Subscription } from "rxjs";
 

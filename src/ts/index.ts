@@ -1,8 +1,6 @@
 export * from './globals';
 
-//------------------------------------------
-//-------------------------------- EXPLORER
-//------------------------------------------
+//-------------------------------- EXPLORER ----------------------------------
 /* These interfaces describe, from the UI point of view :
  * - Data types and contants, with a semantic meaning : applications, resources, actions on resources...
  * - High-level API : an explorer context (IExplorerContext),
@@ -20,18 +18,20 @@ export { explorer } from "./explore/Framework";
  */
 export { IAbstractBusAgent, AbstractBusAgent } from './explore/Agent';
 
-//------------------------------------------
-//------------------------------- TRANSPORT
-//------------------------------------------
+//---------------------------------- NOTIFY ----------------------------------
+export * from './notify/interfaces';
+/* Entry point of the Transport framework. */
+export { notify } from "./notify/Framework";
+
+//------------------------------- TRANSPORT ----------------------------------
 export * from './transport/interfaces';
 /* Entry point of the Transport framework. */
 export { transport } from "./transport/Framework";
 
-//------------------------------------------
-//---------------------------------- CONFIG
-//------------------------------------------
+//---------------------------------- CONFIG ----------------------------------
+export * from './configure/interfaces';
 /* Entry point of the Configuration framework. */
-//export { config } from "./configure/Framework";
+export { config } from "./configure/Framework";
 
 
 /** Hack pour rendre compatible le module commonjs avec une balise <script> dans un navigateur. */

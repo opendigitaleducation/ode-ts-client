@@ -1,5 +1,6 @@
 import { Observable } from "rxjs";
-import { ACTION, ActionType, ERROR_CODE, ExplorerFrameworkFactory, IActionParameters, IActionResult, IBusAgent, ResourceType } from "./interfaces";
+import { ERROR_CODE } from "../globals";
+import { ACTION, ActionType, ExplorerFrameworkFactory, IActionParameters, IActionResult, IBusAgent, ResourceType } from "./interfaces";
 
 /**
  * Inner representation of an agent, from the bus' perspective.

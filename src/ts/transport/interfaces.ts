@@ -2,7 +2,7 @@ export type IHttpParams = {};
 export type IHttpResponse = {
     status: number;
     statusText: string;
-    headers: any;
+    headers?: any;
 };
 
 //-------------------------------------

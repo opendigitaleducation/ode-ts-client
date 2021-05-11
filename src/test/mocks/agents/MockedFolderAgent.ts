@@ -1,5 +1,5 @@
-import { ACTION, GetContextParameters, GetContextResult, GetResourcesParameters, GetResourcesResult, IContext, ID, CreateFolderParameters, CreateFolderResult, RESOURCE } from "../../../ts/explorer/interfaces";
-import { AbstractBusAgent, IHandler } from "../../../ts/explorer/Agent";
+import { ACTION, GetContextParameters, GetContextResult, GetResourcesParameters, GetResourcesResult, IContext, ID, CreateFolderParameters, CreateFolderResult, RESOURCE } from "../../../ts/explore/interfaces";
+import { AbstractBusAgent, IHandler } from "../../../ts/explore/Agent";
 import * as ContextData from '../data/MockedContextData.json';
 
 /**
