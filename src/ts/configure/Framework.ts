@@ -1,19 +1,20 @@
-import { ConfigurationFrameworkFactory, IConfigurationFramework, IGlobal, IIdiom, IMe, ITheme } from "./interfaces";
+import { ConfigurationFrameworkFactory, IConfigurationFramework } from "./interfaces";
 import { Global } from "./Global";
 import { Theme } from "./Theme";
 import { Idiom } from "./Idiom";
 import { Me } from "./Me";
 
 export class ConfigurationFramework implements IConfigurationFramework {
-    global: IGlobal = new Global();
-    theme: ITheme = new Theme();
-    idiom: IIdiom = new Idiom();
-    me: IMe = new Me();
+    global:Global = new Global();
+    theme:Theme = new Theme();
+    idiom:Idiom = new Idiom();
+    me:Me = new Me();
 
     initialize():void {
         // TODO check if user is logged in
         const loggedIn = false;
-        (this.global as Global).initialize( loggedIn );
+        this.global.initialize( loggedIn );
+        this.me.bootstrap();
     }
 }
 

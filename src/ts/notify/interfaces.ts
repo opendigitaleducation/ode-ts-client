@@ -3,6 +3,7 @@ import { Subject } from "rxjs";
 export const EVENT_NAME = {
 	LANG_CHANGED: "langChanged"
 ,	BOOTSTRAPPED: "bootstrapped"	// Success and error are both notified. Check BootstrappedNotice content.
+,	PREFERENCES_UPDATED:"preferences-updated"
 } as const;
 export type EventName = typeof EVENT_NAME[keyof typeof EVENT_NAME];
 
@@ -29,6 +30,15 @@ export class BootstrappedNotice implements INotice {
 	constructor( 
 		public me?:any,
 		public failureText?:string
+	) {}
+}
+
+//-------------------------------------
+export class PreferencesUpdated implements INotice {
+//-------------------------------------
+	readonly eventName:EventName = EVENT_NAME.PREFERENCES_UPDATED;
+	constructor( 
+		public preferences:any
 	) {}
 }
 
