@@ -1,7 +1,8 @@
 import { ConfigurationFrameworkFactory, IConfigurationFramework, IGlobal, IIdiom, IMe, ITheme } from "./interfaces";
 import { Global } from "./Global";
-import { Me } from "./Me";
+import { Theme } from "./Theme";
 import { Idiom } from "./Idiom";
+import { Me } from "./Me";
 
 export class ConfigurationFramework implements IConfigurationFramework {
     global: IGlobal = new Global();

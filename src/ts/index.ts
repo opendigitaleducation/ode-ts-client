@@ -20,24 +20,18 @@ export { IAbstractBusAgent, AbstractBusAgent } from './explore/Agent';
 
 //---------------------------------- NOTIFY ----------------------------------
 export * from './notify/interfaces';
-/* Entry point of the Transport framework. */
-export { notify } from "./notify/Framework";
 
 //------------------------------- TRANSPORT ----------------------------------
 export * from './transport/interfaces';
-/* Entry point of the Transport framework. */
-export { transport } from "./transport/Framework";
 
 //---------------------------------- CONFIG ----------------------------------
 export * from './configure/interfaces';
-/* Entry point of the Configuration framework. */
-export { config } from "./configure/Framework";
 
 
 /** Hack pour rendre compatible le module commonjs avec une balise <script> dans un navigateur. */
 declare var window:any;
 declare var module:any;
 if(typeof window!=='undefined') {
-    window.entcore = window.entcore||{};
-    window.entcore["ode-ts-client"] = module.exports;
+    window.entcore = window.entcore ?? {};
+    window.entcore["ode-ts-client"] = window.entcore["ode-ts-client"] ?? module.exports;
 }

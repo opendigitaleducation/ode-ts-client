@@ -13,7 +13,7 @@ export class Me implements IMe {
     private setCurrentModel( me:any ) {
         this._me = me;
         // Notify that current model has changed.
-        notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).next( new BootstrappedNotice(me, true) );
+        notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).next( new BootstrappedNotice(me) );
     }
 
     bootstrap() {

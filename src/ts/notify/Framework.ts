@@ -21,4 +21,4 @@ class NotifyFramework implements INotifyFramework {
 }
 
 /** The whole framework is a singleton. */
-export const notify:INotifyFramework = (NotifyFrameworkFactory as any).instance = new NotifyFramework();
+export const notify:NotifyFramework = (NotifyFrameworkFactory as any).instance = new NotifyFramework();
