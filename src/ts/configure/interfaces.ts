@@ -92,13 +92,14 @@ export interface IMe {
   readonly keepOpenOnLogout:boolean;
   hasWorkflow( workflowName:string ):boolean;
   hasRight(resource:any, right:any):boolean;
-  
 
+  // TODO Finir l'interface, voir infra-front/me.ts
 }
 
 //-------------------------------------
 export interface IConfigurationFramework {
 //-------------------------------------
+  initialize( loggedIn:boolean ):void;
   readonly global:IGlobal;
   readonly theme:ITheme;
   readonly idiom:IIdiom;

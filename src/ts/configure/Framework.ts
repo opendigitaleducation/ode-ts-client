@@ -10,14 +10,13 @@ export class ConfigurationFramework implements IConfigurationFramework {
     idiom:Idiom = new Idiom();
     me:Me = new Me();
 
-    initialize():void {
-        // TODO check if user is logged in
-        const loggedIn = false;
+    initialize( loggedIn:boolean ):void {
         this.global.initialize( loggedIn );
         this.me.bootstrap();
+
+        // TODO Finir le bootstrapping, voir infra-front/lib.ts
     }
 }
 
 /** The whole framework is a singleton. */
 export const configure:ConfigurationFramework = (ConfigurationFrameworkFactory as any).instance = new ConfigurationFramework();
-configure.initialize();
