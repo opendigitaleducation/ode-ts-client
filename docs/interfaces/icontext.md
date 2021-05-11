@@ -26,7 +26,7 @@
 
 • **actions**: [*IAction*](iaction.md)[]
 
-Defined in: [interfaces.ts:167](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L167)
+Defined in: [explore/interfaces.ts:148](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L148)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **filters**: [*IFilter*](ifilter.md)[]
 
-Defined in: [interfaces.ts:165](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L165)
+Defined in: [explore/interfaces.ts:146](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L146)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 Inherited from: [ISearchResults](isearchresults.md).[folders](isearchresults.md#folders)
 
-Defined in: [interfaces.ts:158](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L158)
+Defined in: [explore/interfaces.ts:139](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L139)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **orders**: [*IOrder*](iorder.md)[]
 
-Defined in: [interfaces.ts:166](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L166)
+Defined in: [explore/interfaces.ts:147](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L147)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 Inherited from: [ISearchResults](isearchresults.md).[pagination](isearchresults.md#pagination)
 
-Defined in: [interfaces.ts:159](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L159)
+Defined in: [explore/interfaces.ts:140](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L140)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **preferences**: [*IPreferences*](ipreferences.md)
 
-Defined in: [interfaces.ts:168](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L168)
+Defined in: [explore/interfaces.ts:149](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L149)
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 Inherited from: [ISearchResults](isearchresults.md).[resources](isearchresults.md#resources)
 
-Defined in: [interfaces.ts:160](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L160)
+Defined in: [explore/interfaces.ts:141](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L141)

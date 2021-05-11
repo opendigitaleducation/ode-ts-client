@@ -45,7 +45,7 @@ Name | Type |
 
 **Returns:** [*AbstractBusAgent*](abstractbusagent.md)
 
-Defined in: [foundation/Agent.ts:21](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L21)
+Defined in: [explore/Agent.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L22)
 
 ## Properties
 
@@ -72,7 +72,7 @@ Name | Type |
 `search` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
 `share` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
 
-Defined in: [foundation/Agent.ts:31](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L31)
+Defined in: [explore/Agent.ts:32](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L32)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • `Protected` **initialized**: *boolean*= false
 
-Defined in: [foundation/Agent.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L27)
+Defined in: [explore/Agent.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L28)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 Type of resource this agent can manage.
 
-Defined in: [foundation/Agent.ts:26](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L26)
+Defined in: [explore/Agent.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L27)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 ▪ `Static` `Protected` **defaultHandler**: IHandler
 
-Defined in: [foundation/Agent.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L28)
+Defined in: [explore/Agent.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L29)
 
 ## Methods
 
@@ -120,7 +120,7 @@ Name | Type |
 
 Implementation of: [IAbstractBusAgent](../interfaces/iabstractbusagent.md)
 
-Defined in: [foundation/Agent.ts:81](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L81)
+Defined in: [explore/Agent.ts:82](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L82)
 
 ___
 
@@ -137,7 +137,7 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [foundation/Agent.ts:60](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L60)
+Defined in: [explore/Agent.ts:61](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L61)
 
 ___
 
@@ -153,7 +153,7 @@ Name | Type |
 
 **Returns:** IHandler
 
-Defined in: [foundation/Agent.ts:57](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L57)
+Defined in: [explore/Agent.ts:58](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L58)
 
 ___
 
@@ -172,7 +172,7 @@ Name | Type |
 
 Implementation of: [IAbstractBusAgent](../interfaces/iabstractbusagent.md)
 
-Defined in: [foundation/Agent.ts:67](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L67)
+Defined in: [explore/Agent.ts:68](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L68)
 
 ___
 
@@ -184,7 +184,7 @@ Override to register handlers for actions this agent support.
 
 **Returns:** *void*
 
-Defined in: [foundation/Agent.ts:65](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L65)
+Defined in: [explore/Agent.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L66)
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 **Returns:** *void*
 
-Defined in: [foundation/Agent.ts:48](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L48)
+Defined in: [explore/Agent.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L49)
 
 ___
 
@@ -211,4 +211,4 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [foundation/Agent.ts:53](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/foundation/Agent.ts#L53)
+Defined in: [explore/Agent.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L54)

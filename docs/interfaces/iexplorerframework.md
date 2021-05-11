@@ -28,7 +28,7 @@ Name | Type | Description |
 
 **Returns:** [*IExplorerContext*](iexplorercontext.md)
 
-Defined in: [interfaces.ts:354](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L354)
+Defined in: [explore/interfaces.ts:335](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L335)
 
 ___
 
@@ -40,4 +40,4 @@ Retrieve the underlying communication bus.
 
 **Returns:** [*IBus*](ibus.md)
 
-Defined in: [interfaces.ts:359](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L359)
+Defined in: [explore/interfaces.ts:340](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L340)

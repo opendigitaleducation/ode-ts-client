@@ -26,6 +26,6 @@ Framework is a singleton.
 
 ### instance
 
-▪ `Static` **instance**: [*IExplorerFramework*](../interfaces/iexplorerframework.md)
+▪ `Static` `Readonly` **instance**: [*IExplorerFramework*](../interfaces/iexplorerframework.md)
 
-Defined in: [interfaces.ts:342](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L342)
+Defined in: [explore/interfaces.ts:323](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L323)

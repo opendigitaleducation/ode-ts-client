@@ -15,7 +15,7 @@
 
 • **available**: *boolean*
 
-Defined in: [interfaces.ts:175](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L175)
+Defined in: [explore/interfaces.ts:156](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L156)
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **id**: [*ActionType*](../modules.md#actiontype)
 
-Defined in: [interfaces.ts:174](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L174)
+Defined in: [explore/interfaces.ts:155](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L155)

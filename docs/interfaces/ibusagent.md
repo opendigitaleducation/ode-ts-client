@@ -32,4 +32,4 @@ Name | Type |
 
 **Returns:** *Observable*<[*IActionResult*](iactionresult.md)\>
 
-Defined in: [interfaces.ts:487](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L487)
+Defined in: [explore/interfaces.ts:468](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L468)

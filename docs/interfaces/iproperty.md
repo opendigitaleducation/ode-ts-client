@@ -15,7 +15,7 @@
 
 • `Optional` **i18n**: *string*
 
-Defined in: [interfaces.ts:216](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L216)
+Defined in: [explore/interfaces.ts:197](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L197)
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **key**: [*PropKeyType*](../modules.md#propkeytype)
 
-Defined in: [interfaces.ts:215](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L215)
+Defined in: [explore/interfaces.ts:196](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L196)

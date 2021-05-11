@@ -16,7 +16,7 @@
 
 • `Optional` **defaultValue**: *asc* \| *desc*
 
-Defined in: [interfaces.ts:200](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L200)
+Defined in: [explore/interfaces.ts:181](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L181)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **i18n**: *string*
 
-Defined in: [interfaces.ts:201](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L201)
+Defined in: [explore/interfaces.ts:182](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L182)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **id**: [*SortByType*](../modules.md#sortbytype)
 
-Defined in: [interfaces.ts:199](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L199)
+Defined in: [explore/interfaces.ts:180](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L180)

@@ -16,7 +16,7 @@
 
 • `Optional` **defaultValue**: *string* \| *boolean* \| *string*[] \| *boolean*[]
 
-Defined in: [interfaces.ts:192](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L192)
+Defined in: [explore/interfaces.ts:173](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L173)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **id**: [*BooleanFilterType*](../modules.md#booleanfiltertype)
 
-Defined in: [interfaces.ts:191](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L191)
+Defined in: [explore/interfaces.ts:172](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L172)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • `Optional` **values**: [*StringFilterValue*](../modules.md#stringfiltervalue)[]
 
-Defined in: [interfaces.ts:193](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L193)
+Defined in: [explore/interfaces.ts:174](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L174)

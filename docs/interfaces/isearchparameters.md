@@ -19,7 +19,7 @@
 
 • **app**: [*App*](../modules.md#app)
 
-Defined in: [interfaces.ts:149](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L149)
+Defined in: [explore/interfaces.ts:130](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L130)
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **filters**: [*FilterValues*](../modules.md#filtervalues)
 
-Defined in: [interfaces.ts:150](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L150)
+Defined in: [explore/interfaces.ts:131](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L131)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • `Optional` **orders**: [*OrderValues*](../modules.md#ordervalues)
 
-Defined in: [interfaces.ts:151](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L151)
+Defined in: [explore/interfaces.ts:132](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L132)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **pagination**: [*IPagination*](ipagination.md)
 
-Defined in: [interfaces.ts:152](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L152)
+Defined in: [explore/interfaces.ts:133](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L133)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **search**: String
 
-Defined in: [interfaces.ts:153](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L153)
+Defined in: [explore/interfaces.ts:134](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L134)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • **types**: [*ResourceType*](../modules.md#resourcetype)[]
 
-Defined in: [interfaces.ts:148](https://github.com/opendigitaleducation/infrontexplore/blob/640dc21/src/ts/interfaces.ts#L148)
+Defined in: [explore/interfaces.ts:129](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L129)
