@@ -79,13 +79,13 @@ export class Http implements IHttp {
 
     get<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
         return this.axios.get<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then( r => this.mapAxiosResponse(r) )
+            .catch<R>(Http.prototype.mapAxiosError);
     }
     post<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
         return this.axios.post<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then(r => this.mapAxiosResponse(r))
+            .catch<R>(e => this.mapAxiosError(e));
     }
     postFile<T = any, R = any>(url: string, data: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig(params);
@@ -93,44 +93,44 @@ export class Http implements IHttp {
             delete p.headers['Content-Type'];
         }
         return this.axios.post<T, AxiosResponse<R>>(url, data, p)
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then(r => this.mapAxiosResponse(r))
+            .catch<R>(e => this.mapAxiosError(e));
     }
     postJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig();
         p.headers['Content-Type'] = 'application/json';
         return this.axios.post<T, AxiosResponse<R>>(url, json, this.toAxiosConfig(params))
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then(r => this.mapAxiosResponse(r))
+            .catch<R>(e => this.mapAxiosError(e));
     }
     put<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
         return this.axios.put<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then(r => this.mapAxiosResponse(r))
+            .catch<R>(e => this.mapAxiosError(e));
     }
     /*
         putFile(url: string, data:FormData, opt?:any) {
             //TODO
-            return this.axios.putFile(url, data, opt).then( this.mapAxiosResponse);
+            return this.axios.putFile(url, data, opt).then( r => this.mapAxiosResponse(r));
         }
     */
     putJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig(params);
         p.headers['Content-Type'] = 'application/json';
         return this.axios.put<T, AxiosResponse<R>>(url, json, p)
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then(r => this.mapAxiosResponse(r))
+            .catch<R>(e => this.mapAxiosError(e));
     }
     delete<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
         return this.axios.delete<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then(r => this.mapAxiosResponse(r))
+            .catch<R>(e => this.mapAxiosError(e));
     }
     deleteJson<T = any, R = any>(url: string, json: any): Promise<R> {
         // TODO code review
         return this.axios.delete<T, AxiosResponse<R>>(url, json)
-            .then(this.mapAxiosResponse)
-            .catch<R>(this.mapAxiosError);
+            .then(r => this.mapAxiosResponse(r))
+            .catch<R>(e => this.mapAxiosError(e));
     }
 
     loadScript(url: string, data?: any, params?: IHttpParams, requestName?: string): Promise<void> {
@@ -141,11 +141,11 @@ export class Http implements IHttp {
         }
         return (loadedScripts[url])
             ? Promise.resolve()
-            : this.axios.get(url, p).then(this.mapAxiosResponse).then(() => {
+            : this.axios.get(url, p).then(r => this.mapAxiosResponse(r)).then(() => {
                 loadedScripts[url] = true;
                 return;
             })
-            .catch<void>(this.mapAxiosError);
+            .catch<void>(e => this.mapAxiosError(e));
     }
 }
 

@@ -3,7 +3,7 @@ import { EVENT_NAME, LangChangedNotice } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
 
-const http      = transport.http;
+const http = transport.http;
 
 export class Global implements IGlobal {
     private _currentLanguage:string = '';
@@ -19,7 +19,7 @@ export class Global implements IGlobal {
 
     public initialize( loggedIn:boolean ):void {
         this._notLoggedIn = !loggedIn;
-        (loggedIn ? this.loadUserLanguage() : this.loadDefaultLanguage()).then( this.setCurrentLanguage );
+        (loggedIn ? this.loadUserLanguage() : this.loadDefaultLanguage()).then( l => this.setCurrentLanguage(l) );
     }
 
     private setCurrentLanguage( lang:string ) {
@@ -58,9 +58,9 @@ export class Global implements IGlobal {
     }
 
     private loadUserLanguage():Promise<string> {
-        return http.get<void, string>( '/userbook/preference/language' ).then( responseText => {
+        return http.get<void, any>( '/userbook/preference/language' ).then( responseText => {
             try {
-                return JSON.parse(JSON.parse(responseText).preference)['default-domain'];
+                return JSON.parse(responseText.preference)['default-domain'];
             } catch(e) {
                 return this.loadDefaultLanguage();
             }
