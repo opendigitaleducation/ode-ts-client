@@ -1,3 +1,18 @@
+//-------------------------------------
+export abstract class ConfigurationFrameworkFactory {
+//-------------------------------------
+  static readonly instance: IConfigurationFramework;
+}
+  
+//-------------------------------------
+export interface IConfigurationFramework {
+//-------------------------------------
+  initialize( loggedIn:boolean ):void;
+  readonly global:IGlobal;
+  readonly theme:ITheme;
+  readonly idiom:IIdiom;
+  readonly me:IMe;
+}
 
 //-------------------------------------
 export interface IGlobal {
@@ -96,18 +111,3 @@ export interface IMe {
   // TODO Finir l'interface, voir infra-front/me.ts
 }
 
-//-------------------------------------
-export interface IConfigurationFramework {
-//-------------------------------------
-  initialize( loggedIn:boolean ):void;
-  readonly global:IGlobal;
-  readonly theme:ITheme;
-  readonly idiom:IIdiom;
-  readonly me:IMe;
-}
-
-//-------------------------------------
-export abstract class ConfigurationFrameworkFactory {
-//-------------------------------------
-  static readonly instance: IConfigurationFramework;
-}
