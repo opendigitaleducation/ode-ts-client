@@ -135,11 +135,17 @@ export class Http implements IHttp {
 
     loadScript(url: string, data?: any, params?: IHttpParams, requestName?: string): Promise<void> {
         // TODO code review
-        const p = Object.assign({}, data, params);
-        return (loadedScripts[url]) ? Promise.resolve() : this.get(url, p).then(() => {
-            loadedScripts[url] = true;
-            return;
-        });
+        const p = this.toAxiosConfig(params);
+        if(typeof data === 'object' || typeof data === 'string') {
+            p.params = data;
+        }
+        return (loadedScripts[url])
+            ? Promise.resolve()
+            : this.axios.get(url, p).then(this.mapAxiosResponse).then(() => {
+                loadedScripts[url] = true;
+                return;
+            })
+            .catch<void>(this.mapAxiosError);
     }
 }
 

@@ -6,7 +6,7 @@ import { ExplorerContext } from "./Context";
 import { ActionType, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "./interfaces";
 
 export class ExplorerFramework implements IExplorerFramework {
-    private agentLoader:AgentLoader = new AgentLoader();
+    private agentLoader:IAgentLoader = new AgentLoader();
 
     /* This is useful for mocking data. */
     setAgentLoader( loader:IAgentLoader ): void {

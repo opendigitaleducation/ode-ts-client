@@ -18,6 +18,7 @@ export interface IHttp {
     putJson<T=any,R=any>( url:string, json:any, params?:IHttpParams ): Promise<R>;
     delete<T=any,R=any>( url:string, params?:IHttpParams ): Promise<R>;
     deleteJson<T=any,R=any>( url:string, json:any ): Promise<R>;
+    loadScript(url: string, data?: any, params?: IHttpParams, requestName?: string): Promise<void>;
 }
 
 //-------------------------------------
