@@ -37,4 +37,4 @@ export class ExplorerFramework implements IExplorerFramework {
 }
 
 /** The whole framework is a singleton. */
-export const explorer:IExplorerFramework = (ExplorerFrameworkFactory as any).instance = new ExplorerFramework();
+export const explorer:IExplorerFramework = new ExplorerFramework();

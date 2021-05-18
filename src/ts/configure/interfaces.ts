@@ -1,9 +1,11 @@
+import { configure } from "./Framework";
+
 //-------------------------------------
 export abstract class ConfigurationFrameworkFactory {
 //-------------------------------------
-  static readonly instance: IConfigurationFramework;
+  static readonly instance: IConfigurationFramework = configure;
 }
-  
+
 //-------------------------------------
 export interface IConfigurationFramework {
 //-------------------------------------

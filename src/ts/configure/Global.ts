@@ -1,10 +1,9 @@
-import { ConfigurationFrameworkFactory, IGlobal } from "./interfaces";
-import { TransportFrameworkFactory } from "../transport/interfaces";
-import { EVENT_NAME, LangChangedNotice, NotifyFrameworkFactory } from "../notify/interfaces";
+import { IGlobal } from "./interfaces";
+import { EVENT_NAME, LangChangedNotice } from "../notify/interfaces";
+import { transport } from "../transport/Framework";
+import { notify } from "../notify/Framework";
 
-const notify    = NotifyFrameworkFactory.instance;
-const http      = TransportFrameworkFactory.instance.http;
-const idiom     = ConfigurationFrameworkFactory.instance.idiom;
+const http      = transport.http;
 
 export class Global implements IGlobal {
     private _currentLanguage:string = '';

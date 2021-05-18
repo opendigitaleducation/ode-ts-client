@@ -16,9 +16,9 @@ export class Http implements IHttp {
 
     private toAxiosConfig(params?: IHttpParams): AxiosRequestConfig {
         if (!params) {
-            return this.axios.defaults;
+            return axios.defaults;
         } else {
-            let p = Object.assign({}, this.axios.defaults);
+            let p = Object.assign({}, axios.defaults);
             // TODO au cas par cas
             p.params = params;  // Axios will serialize parameters, see https://github.com/axios/axios#request-config
             //if( params. )   p. = params.

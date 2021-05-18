@@ -1,11 +1,9 @@
-import { ConfigurationFrameworkFactory, IMe, IUserInfo } from "./interfaces";
-import { TransportFrameworkFactory } from "../transport/interfaces";
-import { EVENT_NAME, BootstrappedNotice, PreferencesUpdated, NotifyFrameworkFactory } from "../notify/interfaces";
+import { IMe, IUserInfo } from "./interfaces";
+import { EVENT_NAME, BootstrappedNotice, PreferencesUpdated } from "../notify/interfaces";
+import { transport } from "../transport/Framework";
+import { notify } from "../notify/Framework";
 
-const notify    = NotifyFrameworkFactory.instance;
-
-const http = TransportFrameworkFactory.instance.http;
-const idiom = ConfigurationFrameworkFactory.instance.idiom;
+const http = transport.http;
 
 class UserPreferences {
     [pref:string]: any;

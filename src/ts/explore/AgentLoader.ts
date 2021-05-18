@@ -1,6 +1,7 @@
 import { appNameForResource, ResourceType } from "./interfaces";
 import { IAbstractBusAgent } from "./Agent";
 import { IHttp, TransportFrameworkFactory } from "../transport/interfaces";
+import { Http } from "../transport/Http";
 
 /**
  * Inner representation of an agent loader, from the bus' perspective.
@@ -13,7 +14,7 @@ export interface IAgentLoader {
  * Default implementation of the loader.
  */
  export class AgentLoader implements IAgentLoader {
-    private http:IHttp = TransportFrameworkFactory.instance.newHttpInstance();
+    private http:IHttp = new Http();
 
     load(res: ResourceType): Promise<void> {
         let appName = appNameForResource[res];

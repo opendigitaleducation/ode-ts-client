@@ -1,4 +1,4 @@
-import { ConfigurationFrameworkFactory, IConfigurationFramework } from "./interfaces";
+import { IConfigurationFramework } from "./interfaces";
 import { Global } from "./Global";
 import { Theme } from "./Theme";
 import { Idiom } from "./Idiom";
@@ -19,4 +19,4 @@ export class ConfigurationFramework implements IConfigurationFramework {
 }
 
 /** The whole framework is a singleton. */
-export const configure:ConfigurationFramework = (ConfigurationFrameworkFactory as any).instance = new ConfigurationFramework();
+export const configure:ConfigurationFramework = new ConfigurationFramework();

@@ -1,9 +1,24 @@
+import { transport } from "./Framework";
+
 export type IHttpParams = {};
 export type IHttpResponse = {
     status: number;
     statusText: string;
     headers?: any;
 };
+
+//-------------------------------------
+export abstract class TransportFrameworkFactory {
+//-------------------------------------
+    static readonly instance: ITransportFramework = transport;
+}
+
+//-------------------------------------
+export interface ITransportFramework {
+//-------------------------------------
+    readonly http:IHttp;
+    newHttpInstance( params?:IHttpParams ):IHttp;
+}
 
 //-------------------------------------
 export interface IHttp {
@@ -19,17 +34,4 @@ export interface IHttp {
     delete<T=any,R=any>( url:string, params?:IHttpParams ): Promise<R>;
     deleteJson<T=any,R=any>( url:string, json:any ): Promise<R>;
     loadScript(url: string, data?: any, params?: IHttpParams, requestName?: string): Promise<void>;
-}
-
-//-------------------------------------
-export interface ITransportFramework {
-//-------------------------------------
-    readonly http:IHttp;
-    newHttpInstance( params?:IHttpParams ):IHttp;
-}
-
-//-------------------------------------
-export abstract class TransportFrameworkFactory {
-//-------------------------------------
-    static readonly instance: ITransportFramework;
 }

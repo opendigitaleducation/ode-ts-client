@@ -1,4 +1,5 @@
 import { Subject } from "rxjs";
+import { notify } from "./Framework";
 
 export const EVENT_NAME = {
 	LANG_CHANGED: "langChanged"
@@ -6,6 +7,18 @@ export const EVENT_NAME = {
 ,	PREFERENCES_UPDATED:"preferences-updated"
 } as const;
 export type EventName = typeof EVENT_NAME[keyof typeof EVENT_NAME];
+
+//-------------------------------------
+export abstract class NotifyFrameworkFactory {
+//-------------------------------------
+	static readonly instance: INotifyFramework = notify;
+}
+
+//-------------------------------------
+export abstract class INotifyFramework {
+//-------------------------------------
+	abstract onEvent<T extends INotice>(eventName: string): Subject<T>;
+}
 
 //-------------------------------------
 export interface INotice {
@@ -40,16 +53,4 @@ export class PreferencesUpdated implements INotice {
 	constructor( 
 		public preferences:any
 	) {}
-}
-
-//-------------------------------------
-export interface INotifyFramework {
-//-------------------------------------
-	onEvent<T extends INotice>(eventName: string): Subject<T>;
-}
-
-//-------------------------------------
-export abstract class NotifyFrameworkFactory {
-//-------------------------------------
-	static readonly instance: INotifyFramework;
 }
