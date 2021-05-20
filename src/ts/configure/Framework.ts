@@ -1,20 +1,23 @@
 import { IConfigurationFramework } from "./interfaces";
-import { Global } from "./Global";
 import { Theme } from "./Theme";
 import { Idiom } from "./Idiom";
-import { Me } from "./Me";
+import { User } from "./User";
 
 export class ConfigurationFramework implements IConfigurationFramework {
-    global:Global = new Global();
-    theme:Theme = new Theme();
-    idiom:Idiom = new Idiom();
-    me:Me = new Me();
+    readonly Platform = {
+        theme: new Theme(),
+        //analytics;
+        idiom: new Idiom(),
+        //widgets;
+    }
+    readonly School = {
+        //widgets;
+        //apps; -> pinnedApps;
+    }
+    readonly User = new User();
 
-    initialize( loggedIn:boolean ):void {
-        this.global.initialize( loggedIn );
-        this.me.bootstrap();
-
-        // TODO Finir le bootstrapping, voir infra-front/lib.ts
+    initialize():void {
+        this.User.initialize();
     }
 }
 

@@ -1,4 +1,5 @@
 import { Subject } from "rxjs";
+import { IUserInfo } from "../session/interfaces";
 import { notify } from "./Framework";
 
 export const EVENT_NAME = {
@@ -36,12 +37,13 @@ export class LangChangedNotice implements INotice {
 	) {}
 }
 
+/** Notified when the current session is bootstrapped, or when an error prevent it. */
 //-------------------------------------
 export class BootstrappedNotice implements INotice {
 //-------------------------------------
 	readonly eventName:EventName = EVENT_NAME.BOOTSTRAPPED;
 	constructor( 
-		public me?:any,
+		public userInfo?:IUserInfo,
 		public failureText?:string
 	) {}
 }
@@ -51,6 +53,7 @@ export class PreferencesUpdated implements INotice {
 //-------------------------------------
 	readonly eventName:EventName = EVENT_NAME.PREFERENCES_UPDATED;
 	constructor( 
-		public preferences:any
+		public key:string,
+		public data: any
 	) {}
 }

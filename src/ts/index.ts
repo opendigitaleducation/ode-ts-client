@@ -27,6 +27,9 @@ export * from './transport/interfaces';
 //---------------------------------- CONFIG ----------------------------------
 export * from './configure/interfaces';
 
+//---------------------------------- SESSION ----------------------------------
+export * from './session/interfaces';
+
 
 /** Hack pour rendre compatible le module commonjs avec une balise <script> dans un navigateur. */
 declare var window:any;
