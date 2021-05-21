@@ -9,8 +9,10 @@ export abstract class ConfigurationFrameworkFactory {
 //-------------------------------------
 export interface IConfigurationFramework {
 //-------------------------------------
-  initialize():void;
+  initialize( version:string|null, cdnDomain:string|null ):void;
   readonly Platform:{
+      readonly deploymentTag:string;
+      readonly cdnDomain:string;
       readonly theme:ITheme;
       //analytics;
       readonly idiom:IIdiom;
@@ -29,6 +31,51 @@ export interface IConfigurationFramework {
 //-------------------------------------
 export interface ITheme {
 //-------------------------------------
+  readonly skinName:string;
+  readonly themeName:string;
+  readonly skin:string;
+  readonly themeUrl:string;
+  readonly portalTemplate: string;
+  readonly basePath: string;
+  readonly logoutCallback: string;
+/* FIXME faire le tri
+listThemes():Promise<Array<IThemeDesc>>;
+setTheme( themeDesc:IThemeDesc ):Promise<void>;
+skins: [];
+pickSkin: boolean;
+themeConf: undefined,
+themeConfPromise: Promise<void>;
+listSkins(): Promise<any>;
+getHelpPath(): Promise<String>;
+*/
+  getConf( version?:string ): Promise<IThemeConf>;
+  onSkinReady():Promise<ITheme>;
+}
+
+//-------------------------------------
+export interface IThemeDesc {
+//-------------------------------------
+  _id: string;
+  displayName: string;
+  path: string;
+}
+
+//-------------------------------------
+export interface IThemeConf {
+//-------------------------------------
+	dependencies: {
+		themes: { [name:string]:/*pathRegex*/string };
+		widgets: { [name:string]:/*pathRegex*/string };
+	},
+	emitWrapper: boolean,
+	overriding: Array<{
+		edumedia: string;
+		parent: string;
+		child: string;
+		bootstrapVersion: string;
+		skins: string;
+		help: string;
+	}>
 }
 
 export type AddBundleCallback = () => void|Promise<void>;

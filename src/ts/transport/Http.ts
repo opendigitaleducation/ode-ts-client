@@ -1,5 +1,7 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import { ERROR_CODE } from "../globals";
+import { notify } from "../notify/Framework";
+import { EVENT_NAME, HttpErrorNotice } from "../notify/interfaces";
 import { IHttp, IHttpParams, IHttpResponse } from "./interfaces";
 
 const loadedScripts: { [url: string]: boolean } = {};
@@ -19,9 +21,12 @@ export class Http implements IHttp {
             return axios.defaults;
         } else {
             let p = Object.assign({}, axios.defaults);
-            // TODO au cas par cas
-            p.params = params;  // Axios will serialize parameters, see https://github.com/axios/axios#request-config
-            //if( params. )   p. = params.
+            // Axios will serialize parameters, see https://github.com/axios/axios#request-config
+            p.params = Object.assign({}, params);
+            // Remove non-axios parameters
+            if( p.params.disableNotifications ) {
+                delete p.params.disableNotifications;
+            }
             return p;
         }
     }
@@ -31,11 +36,11 @@ export class Http implements IHttp {
             config = this.axios.defaults;
         }
         let params = {};
-        // TODO au cas par cas
+        // TODO filter non-axios parameters.
         return params;
     }
 
-    private mapAxiosError<R>(error: AxiosError<R>): R {
+    private mapAxiosError<R>(error: AxiosError<R>, params?:IHttpParams): R {
         // AxiosError.response and our HttpResponse share the same properties.
         // So we can use it directly, saving CPU and memory.
         // Otherwise, we would map the axios response to our own model.
@@ -58,10 +63,17 @@ export class Http implements IHttp {
                 statusText: ERROR_CODE.UNKNOWN
             };
         }
-        throw new Error( ERROR_CODE.TRANSPORT_ERROR );
+
+        // Notify error unless disabled.
+        if( !params || params.disableNotifications===false ) {
+            notify.onEvent( EVENT_NAME.HTTP_ERROR ).next( new HttpErrorNotice(''+this._latestResponse.status, this._latestResponse.statusText) );
+        }
+
+        return this._latestResponse;
+//        throw new Error( ERROR_CODE.TRANSPORT_ERROR );
     }
 
-    private mapAxiosResponse<R>(response: AxiosResponse<R>): R {
+    private mapAxiosResponse<R>(response: AxiosResponse<R>, params?:IHttpParams): R {
         // AxiosResponse and our HttpResponse share the same properties.
         // So we can use it directly, saving CPU and memory.
         // Otherwise, we would map the axios response to our own model.
@@ -79,13 +91,13 @@ export class Http implements IHttp {
 
     get<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
         return this.axios.get<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
-            .then( r => this.mapAxiosResponse(r) )
-            .catch<R>(Http.prototype.mapAxiosError);
+            .then( r => this.mapAxiosResponse(r,params) )
+            .catch<R>(e => this.mapAxiosError(e,params));
     }
     post<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
         return this.axios.post<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
-            .then(r => this.mapAxiosResponse(r))
-            .catch<R>(e => this.mapAxiosError(e));
+            .then(r => this.mapAxiosResponse(r,params))
+            .catch<R>(e => this.mapAxiosError(e,params));
     }
     postFile<T = any, R = any>(url: string, data: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig(params);
@@ -93,59 +105,72 @@ export class Http implements IHttp {
             delete p.headers['Content-Type'];
         }
         return this.axios.post<T, AxiosResponse<R>>(url, data, p)
-            .then(r => this.mapAxiosResponse(r))
-            .catch<R>(e => this.mapAxiosError(e));
+            .then(r => this.mapAxiosResponse(r,params))
+            .catch<R>(e => this.mapAxiosError(e,params));
     }
     postJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig();
         p.headers['Content-Type'] = 'application/json';
         return this.axios.post<T, AxiosResponse<R>>(url, json, this.toAxiosConfig(params))
-            .then(r => this.mapAxiosResponse(r))
-            .catch<R>(e => this.mapAxiosError(e));
+            .then(r => this.mapAxiosResponse(r,params))
+            .catch<R>(e => this.mapAxiosError(e,params));
     }
     put<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
         return this.axios.put<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
-            .then(r => this.mapAxiosResponse(r))
-            .catch<R>(e => this.mapAxiosError(e));
+            .then(r => this.mapAxiosResponse(r,params))
+            .catch<R>(e => this.mapAxiosError(e,params));
     }
     /*
         putFile(url: string, data:FormData, opt?:any) {
             //TODO
-            return this.axios.putFile(url, data, opt).then( r => this.mapAxiosResponse(r));
+            return this.axios.putFile(url, data, opt).then( r => this.mapAxiosResponse(r,params));
         }
     */
     putJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig(params);
         p.headers['Content-Type'] = 'application/json';
         return this.axios.put<T, AxiosResponse<R>>(url, json, p)
-            .then(r => this.mapAxiosResponse(r))
-            .catch<R>(e => this.mapAxiosError(e));
+            .then(r => this.mapAxiosResponse(r,params))
+            .catch<R>(e => this.mapAxiosError(e,params));
     }
     delete<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
         return this.axios.delete<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
-            .then(r => this.mapAxiosResponse(r))
-            .catch<R>(e => this.mapAxiosError(e));
+            .then(r => this.mapAxiosResponse(r,params))
+            .catch<R>(e => this.mapAxiosError(e,params));
     }
     deleteJson<T = any, R = any>(url: string, json: any): Promise<R> {
-        // TODO code review
+        // TODO code review, Is this used ?
         return this.axios.delete<T, AxiosResponse<R>>(url, json)
             .then(r => this.mapAxiosResponse(r))
             .catch<R>(e => this.mapAxiosError(e));
     }
 
-    loadScript(url: string, data?: any, params?: IHttpParams, requestName?: string): Promise<void> {
-        // TODO code review
+    getScript<T = any, R = any>(url: string, params?: IHttpParams, variableName?:string): Promise<R> {
+        const resultName = variableName ?? "exports";
         const p = this.toAxiosConfig(params);
-        if(typeof data === 'object' || typeof data === 'string') {
-            p.params = data;
-        }
+        p.headers['Accept'] = 'application/javascript';
+        return this.axios.get<T, AxiosResponse<string>>(url, p)
+            .then( r => this.mapAxiosResponse(r,params) )
+            .then( r => {
+                try {
+                    // FIXME ne semble pas bien fonctionner car SyntaxError. Tester avec point d'arrêt dans le navigateur.
+                    const result = Function(`"use strict";return (${r})`)();
+                    return result;
+                } catch( e ) {
+                    const result = eval(r);
+                    return result;
+                }
+                //return result && result[resultName] ? result[resultName] : result;
+            })
+            .catch<R>(e => this.mapAxiosError(e,params));
+    }
+
+    loadScript(url:string, params?:IHttpParams): Promise<void> {
         return (loadedScripts[url])
             ? Promise.resolve()
-            : this.axios.get(url, p).then(r => this.mapAxiosResponse(r)).then(() => {
-                loadedScripts[url] = true;
-                return;
-            })
-            .catch<void>(e => this.mapAxiosError(e));
+            : this.getScript<any,any>(url,params)
+                .then( res => {loadedScripts[url] = true;})
+                .catch<void>(e => this.mapAxiosError(e,params));
     }
 }
 

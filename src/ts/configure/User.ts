@@ -39,7 +39,7 @@ export class User {
         return this._preferences;
     }
 
-    initialize() {
+    initialize( version?:string ) {
         this.loadPublicConf();
         const sessionSubscription = notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).subscribe(
             notice => {
@@ -61,6 +61,60 @@ export class User {
             return publicConf;
 		});
     }
+
+    //TODO : bookmarks (raccourcis mes applis)
+    /*
+    loadBookmarks: async function(){
+        return new Promise<void>((resolve, reject) => {
+          http().get('/userbook/preference/apps').done(function(data){
+            if(!data.preference){
+              data.preference = null;
+            }
+            model.me.myApps = JSON.parse(data.preference);
+            if (_.isArray(model.me.myApps)) {
+              model.me.bookmarkedApps = model.me.myApps;
+              model.me.myApps = {
+                bookmarks: _.map(model.me.myApps, app => app.name),
+                applications: []
+              }
+              http().putJson('/userbook/preference/apps', model.me.myApps);
+              resolve();
+              return;
+            }
+            if (!model.me.myApps){
+              model.me.myApps = {
+                bookmarks: [],
+                applications: []
+              }
+            }
+            model.me.bookmarkedApps = [];
+            var upToDate = true;
+            let remove = [];
+            model.me.myApps.bookmarks.forEach(function(appName, index){
+              var foundApp = _.findWhere(model.me.apps, { name: appName });
+              if(foundApp){
+                var app = {};
+                for(var property in foundApp){
+                  app[property] = foundApp[property];
+                }
+                model.me.bookmarkedApps.push(app);
+              }
+              else{
+                remove.push(appName);
+                upToDate = false;
+              }
+            });
+            remove.forEach(function(app) {
+              var index = model.me.myApps.bookmarks.indexOf(app);
+              model.me.myApps.bookmarks.splice(index, 1);
+            });
+            if(!upToDate){
+              http().putJson('/userbook/preference/apps', model.me.myApps);
+            }
+            resolve();
+          });
+        });
+    */
 
       // TODO Finir l'interface, voir infra-front/me.ts
 
