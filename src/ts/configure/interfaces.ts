@@ -1,3 +1,4 @@
+import { App } from "../globals";
 import { configure } from "./Framework";
 
 //-------------------------------------
@@ -48,8 +49,14 @@ themeConfPromise: Promise<void>;
 listSkins(): Promise<any>;
 getHelpPath(): Promise<String>;
 */
+  /** Get the theme/skin configuration. */
   getConf( version?:string ): Promise<IThemeConf>;
+
+  /** Await for skin conf to be loaded. */
   onSkinReady():Promise<ITheme>;
+
+  /** Await for overrides conf to be loaded. */
+  onOverrideReady():Promise<IThemeOverrides>;
 }
 
 //-------------------------------------
@@ -78,6 +85,12 @@ export interface IThemeConf {
 	}>
 }
 
+//-------------------------------------
+//-------------------------------------
+export type IThemeOverrides = {
+  [app in App]?: string;
+};
+
 export type AddBundleCallback = () => void|Promise<void>;
 //-------------------------------------
 export interface IIdiom {
@@ -90,10 +103,11 @@ export interface IIdiom {
   removeAccents( str:string ):string;
 }
 
+export type UserPreferenceKey = 'apps'|string;
 //-------------------------------------
 export interface IUserPreferences {
 //-------------------------------------
   [pref:string]: any;
-  update( pref:string, data:any ):IUserPreferences;
-  save( key:string ):Promise<void>
+  update( key:UserPreferenceKey, data:any ):IUserPreferences;
+  save( key:UserPreferenceKey ):Promise<void>
 }

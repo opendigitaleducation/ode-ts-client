@@ -3,7 +3,7 @@ import { BootstrappedNotice, EVENT_NAME } from "../notify/interfaces";
 import { session } from "../session/Framework";
 import { transport } from "../transport/Framework";
 import { configure } from "./Framework";
-import { ITheme, IThemeConf } from "./interfaces";
+import { ITheme, IThemeConf, IThemeOverrides } from "./interfaces";
 
 export class Theme implements ITheme {
 	private _conf?:IThemeConf;
@@ -14,7 +14,7 @@ export class Theme implements ITheme {
 	themeName='';
 	skin= 'raw';
 	themeUrl= '/assets/themes/raw/default/';
-	templateMapping= {};
+	templateOverrides:IThemeOverrides= {};
 	portalTemplate= '/assets/themes/raw/portal.html';
 	basePath= '';
 	logoutCallback= '/';
@@ -48,6 +48,16 @@ export class Theme implements ITheme {
 		return this._onSkinReady;
 	}
 
+	private _overrideResolved?: (value: IThemeOverrides | PromiseLike<IThemeOverrides>) => void;
+	private _overrideRejected?: (reason?: any) => void;
+	private _onOverrideReady = new Promise<IThemeOverrides>((_resolve, _reject) => {
+		this._overrideResolved = _resolve;
+		this._overrideRejected = _reject;
+	});
+	onOverrideReady():Promise<IThemeOverrides>{
+		return this._onOverrideReady;
+	}
+
     async getConf( version?:string ): Promise<IThemeConf> {
 		version = version ?? this.version;
         this._conf = this._conf ?? await transport.http.getScript<any,IThemeConf>( "/assets/theme-conf.js", {v:this.version}, "exports.conf" );
@@ -76,8 +86,11 @@ export class Theme implements ITheme {
 				}
 				transport.http.get(`/assets/themes/${data.skin}/template/override.json`, {v:version, disableNotifications:true})
 				.then( override => {
-					this.templateMapping = override;
-					resolve();
+					this.templateOverrides = override;
+						if( this._overrideResolved ) {
+							this._overrideResolved( this.templateOverrides );
+						}
+						resolve();
 				})
 				.catch( e => {
 					if( transport.http.latestResponse.status===404 ) {
@@ -90,6 +103,9 @@ export class Theme implements ITheme {
 			.catch( e => {
 				if( this._skinRejected ) {
 					this._skinRejected(e);
+				}
+				if( this._overrideRejected ) {
+					this._overrideRejected( e );
 				}
 				reject();
 			});
@@ -112,7 +128,10 @@ export class Theme implements ITheme {
 				}
 				transport.http.get(`/assets/themes/${this.skin}/template/override.json`, {v:version, disableNotifications:true})
 				.then( override => {
-					this.templateMapping = override;
+					this.templateOverrides = override;
+					if( this._overrideResolved ) {
+						this._overrideResolved( this.templateOverrides );
+					}
 					/* FIXME templates... go to ode-ngjs-front or die.
 					if (window.entcore.template) {
 						window.entcore.template.loadPortalTemplates();
@@ -125,6 +144,9 @@ export class Theme implements ITheme {
 						resolve();
 						if( this._skinRejected ) {
 							this._skinRejected();
+						}
+						if( this._overrideRejected ) {
+							this._overrideRejected( e );
 						}
 					} else {
 						throw e;

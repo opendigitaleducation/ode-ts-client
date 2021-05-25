@@ -73,7 +73,7 @@ export class Session implements ISession {
     ////////////////////////////////////////////////////////// Rights management
 
     hasWorkflow( workflowName:string ):boolean {
-        return workflowName === undefined || this._me.authorizedActions.findIndex( workflowRight => {
+        return workflowName === undefined || this._me?.authorizedActions.findIndex( workflowRight => {
             return workflowRight.name === workflowName;
         }) !== -1;
     }

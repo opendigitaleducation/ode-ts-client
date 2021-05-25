@@ -1,4 +1,4 @@
-import { IUserPreferences } from "./interfaces";
+import { IUserPreferences, UserPreferenceKey } from "./interfaces";
 import { EVENT_NAME, BootstrappedNotice, PreferencesUpdated } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
@@ -9,113 +9,118 @@ const http = transport.http;
 //-------------------------------------
 class UserPreferences implements IUserPreferences {
 //-------------------------------------
-    [key:string]: any;
-    
-    update( key:string, data:any ):UserPreferences {
-        if(data !== undefined){
-            this[key] = data;
-        }
-        notify.onEvent<PreferencesUpdated>( EVENT_NAME.PREFERENCES_UPDATED ).next( new PreferencesUpdated(key, data) );
-        return this;
-    }
+	[key:string]: any;
+	
+	update( key:UserPreferenceKey, data:any ):UserPreferences {
+		if(data !== undefined){
+				this[key] = data;
+		}
+		notify.onEvent<PreferencesUpdated>( EVENT_NAME.PREFERENCES_UPDATED ).next( new PreferencesUpdated(key, data) );
+		return this;
+	}
 
-    save( key:string ):Promise<void> {
-        //FIXME code review
-        return http.put('/userbook/preference/' + key, this[key]);
-    }
+	save( key:UserPreferenceKey ):Promise<void> {
+		//FIXME code review
+		return http.put('/userbook/preference/' + key, this[key]);
+	}
+}
+
+type AppModel = {
+	name:string;
 }
 
 //-------------------------------------
 export class User {
 //-------------------------------------
-    private _keepOpenOnLogout:boolean = false;
-    private _preferences:IUserPreferences = new UserPreferences();
+	private _me:IUserInfo = null as unknown as IUserInfo;
+	private _keepOpenOnLogout:boolean = false;
+	private _preferences:IUserPreferences = new UserPreferences();
+	private _bookmarkedApps:Array<AppModel> = [];
 
-    get keepOpenOnLogout():boolean {
-        return this._keepOpenOnLogout;
-    }
+	get keepOpenOnLogout():boolean {
+		return this._keepOpenOnLogout;
+	}
 
-    get preferences():IUserPreferences {
-        return this._preferences;
-    }
+	get preferences():IUserPreferences {
+		return this._preferences;
+	}
 
-    initialize( version?:string ) {
-        this.loadPublicConf();
-        const sessionSubscription = notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).subscribe(
-            notice => {
-                sessionSubscription?.unsubscribe();
-                if(notice.userInfo) {
-                    this.setCurrentModel(notice.userInfo);
-                }
-            }
-        );
-    }
+	get bookmarkedApps():Array<AppModel> {
+		return this._bookmarkedApps;
+	}
 
-    private setCurrentModel( me:IUserInfo ) {
-        this._preferences = new UserPreferences();
-    }
-
-    private loadPublicConf():Promise<any> {
-        return http.get<void, any>( '/conf/public' ).then( publicConf => {
-            this._keepOpenOnLogout = publicConf?.keepOpenOnLogout || false;
-            return publicConf;
+	initialize( version?:string ) {
+		this.loadPublicConf();
+		const sessionSubscription = notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).subscribe( notice => {
+			sessionSubscription?.unsubscribe();
+			if(notice.userInfo) {
+				this.setCurrentModel(notice.userInfo);
+			}
 		});
-    }
+	}
 
-    //TODO : bookmarks (raccourcis mes applis)
-    /*
-    loadBookmarks: async function(){
-        return new Promise<void>((resolve, reject) => {
-          http().get('/userbook/preference/apps').done(function(data){
-            if(!data.preference){
-              data.preference = null;
-            }
-            model.me.myApps = JSON.parse(data.preference);
-            if (_.isArray(model.me.myApps)) {
-              model.me.bookmarkedApps = model.me.myApps;
-              model.me.myApps = {
-                bookmarks: _.map(model.me.myApps, app => app.name),
-                applications: []
-              }
-              http().putJson('/userbook/preference/apps', model.me.myApps);
-              resolve();
-              return;
-            }
-            if (!model.me.myApps){
-              model.me.myApps = {
-                bookmarks: [],
-                applications: []
-              }
-            }
-            model.me.bookmarkedApps = [];
-            var upToDate = true;
-            let remove = [];
-            model.me.myApps.bookmarks.forEach(function(appName, index){
-              var foundApp = _.findWhere(model.me.apps, { name: appName });
-              if(foundApp){
-                var app = {};
-                for(var property in foundApp){
-                  app[property] = foundApp[property];
-                }
-                model.me.bookmarkedApps.push(app);
-              }
-              else{
-                remove.push(appName);
-                upToDate = false;
-              }
-            });
-            remove.forEach(function(app) {
-              var index = model.me.myApps.bookmarks.indexOf(app);
-              model.me.myApps.bookmarks.splice(index, 1);
-            });
-            if(!upToDate){
-              http().putJson('/userbook/preference/apps', model.me.myApps);
-            }
-            resolve();
-          });
-        });
-    */
+	private setCurrentModel( me:IUserInfo ) {
+		this._me = me;
+		this._preferences = new UserPreferences();
+		this.loadBookmarks();
+	}
 
-      // TODO Finir l'interface, voir infra-front/me.ts
+	private loadPublicConf():Promise<any> {
+		return http.get<void, any>( '/conf/public' ).then( publicConf => {
+			this._keepOpenOnLogout = publicConf?.keepOpenOnLogout || false;
+			return publicConf;
+		});
+	}
 
+	/** Bookmarks : pinned apps */
+	private loadBookmarks() {
+		return http.get('/userbook/preference/apps').then( data => {
+			if(!data.preference){
+				data.preference = null;
+			}
+			const tmp = JSON.parse(data.preference) as Array<AppModel>;
+			let myApps:{
+				bookmarks:Array<string>,	// Array of app names
+				applications: []
+			};
+
+			// If myApps is array
+			if( tmp && tmp.length && typeof tmp.concat==="function" ) {
+				this._bookmarkedApps = tmp;
+				myApps = {
+					bookmarks: tmp.map( app => app.name ),
+					applications: []
+				}
+				http.putJson('/userbook/preference/apps', myApps);
+				return;
+			}
+
+			myApps = {
+				bookmarks: [],
+				applications: []
+			}
+
+			let upToDate = true;
+			const remove:Array<string> = [];
+			myApps.bookmarks.forEach( (appName, index) => {
+				const foundApp = this._me.apps.find( app => app.name===appName );
+				if(foundApp){
+					let app = Object.assign( {}, foundApp );
+					this._bookmarkedApps.push( app );
+				} else {
+					remove.push(appName);
+					upToDate = false;
+				}
+			});
+			remove.forEach( appName => {
+				let index = myApps.bookmarks.indexOf( appName );
+				myApps.bookmarks.splice(index, 1);
+			});
+			if(!upToDate){
+				http.putJson('/userbook/preference/apps', myApps);
+			}
+		});
+
+		// TODO Finir l'interface, voir infra-front/me.ts
+	}
 }

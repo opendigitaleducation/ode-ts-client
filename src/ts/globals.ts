@@ -19,6 +19,7 @@ export type ErrorCode = typeof ERROR_CODE[keyof typeof ERROR_CODE];
 //-- Applications
 export const APP = {
   EXPLORER:   "explorer"
+ ,PORTAL:     "portal"
  ,BLOG:       "blog"
  ,EXERCIZER:  "exercizer"
  // TODO compléter
