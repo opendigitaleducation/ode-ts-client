@@ -110,7 +110,7 @@ export class Theme implements ITheme {
 				if( this._skinResolved ) {
 					this._skinResolved( this );
 				}
-				transport.http.get(`/assets/themes/${data.skin}/template/override.json`, {v:version, disableNotifications:true})
+				transport.http.get(`/assets/themes/${this.skin}/template/override.json`, {v:version, disableNotifications:true})
 				.then( override => {
 					this.templateMapping = override;
 					/* FIXME templates... go to ode-ngjs-front or die.
