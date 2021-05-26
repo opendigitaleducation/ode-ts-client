@@ -28,6 +28,7 @@ export interface IConfigurationFramework {
   readonly User:{
     readonly preferences:IUserPreferences;
     readonly keepOpenOnLogout:boolean;
+    readonly bookmarkedApps:Array<AppModel>;
   }
 }
 
@@ -105,6 +106,12 @@ export interface IIdiom {
   removeAccents( str:string ):string;
 }
 
+//-------------------------------------
+export type AppModel = {
+//-------------------------------------
+  name:string;
+}
+
 export type UserPreferenceKey = 'apps'|string;
 //-------------------------------------
 export interface IUserPreferences {
@@ -113,3 +120,4 @@ export interface IUserPreferences {
   update( key:UserPreferenceKey, data:any ):IUserPreferences;
   save( key:UserPreferenceKey ):Promise<void>
 }
+

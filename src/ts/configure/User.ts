@@ -1,4 +1,4 @@
-import { IUserPreferences, UserPreferenceKey } from "./interfaces";
+import { AppModel, IUserPreferences, UserPreferenceKey } from "./interfaces";
 import { EVENT_NAME, BootstrappedNotice, PreferencesUpdated } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
@@ -25,10 +25,6 @@ class UserPreferences implements IUserPreferences {
 	}
 }
 
-type AppModel = {
-	name:string;
-}
-
 //-------------------------------------
 export class User {
 //-------------------------------------
@@ -46,6 +42,7 @@ export class User {
 	}
 
 	get bookmarkedApps():Array<AppModel> {
+		// will be empty if initialize() was not called.
 		return this._bookmarkedApps;
 	}
 
@@ -73,8 +70,8 @@ export class User {
 	}
 
 	/** Bookmarks : pinned apps */
-	private loadBookmarks() {
-		return http.get('/userbook/preference/apps').then( data => {
+	private async loadBookmarks() {
+		return await http.get('/userbook/preference/apps').then( data => {
 			if(!data.preference){
 				data.preference = null;
 			}

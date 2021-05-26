@@ -1,7 +1,7 @@
 import { BootstrappedNotice, EVENT_NAME, LangChangedNotice } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
-import { ISession, IUserInfo } from "./interfaces";
+import { ISession, IUserDescription, IUserInfo } from "./interfaces";
 
 const http = transport.http;
 
@@ -13,6 +13,8 @@ export class Session implements ISession {
 
     private _currentLanguage:string = '';
     private _notLoggedIn:boolean = true;
+	private _description?:IUserDescription;
+
 
     get currentLanguage():string {
         return this._currentLanguage;
@@ -21,6 +23,11 @@ export class Session implements ISession {
     get notLoggedIn():boolean {
         return this._notLoggedIn;
     }
+
+	get description():IUserDescription {
+		// will be undefined if initialize() was not called.
+		return this._description as unknown as IUserDescription;
+	}
 
     public initialize():void {
         http.get<void, IUserInfo>( '/auth/oauth2/userinfo' )
@@ -42,6 +49,7 @@ export class Session implements ISession {
     private setCurrentModel( me:IUserInfo ) {
         this._me = me;
         this._notLoggedIn = (me && me.sessionMetadata && me.sessionMetadata.userId) ? false : true;
+        this.loadDescription();
 /*
 		me.workflow = {
 			load: async function(services): Promise<void>{
@@ -146,4 +154,18 @@ export class Session implements ISession {
             return this.loadDefaultLanguage();
         });
     }
+
+    ////////////////////////////////////////////////////////// Description management
+
+	private async loadDescription():Promise<IUserDescription> {
+		return await Promise.all([
+			http.get<string, IUserDescription>('/userbook/api/person', {requestName: "refreshAvatar"}),
+			http.get<string, IUserDescription>('/directory/userbook/'+ this._me.userId)
+		]).then( result => {
+			this._description = result[0];
+			Object.assign( this._description, result[1]);
+			this._description.profiles = this._description.type;
+			return this._description;
+		});
+	}
 }
