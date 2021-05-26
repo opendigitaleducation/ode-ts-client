@@ -3,7 +3,7 @@ import { IAbstractBusAgent } from "./Agent";
 import { AgentLoader, IAgentLoader } from "./AgentLoader";
 import { BusFactory } from "./Bus";
 import { ExplorerContext } from "./Context";
-import { ActionType, ExplorerFrameworkFactory, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "./interfaces";
+import { ActionType, IBus, IExplorerContext, IExplorerFramework, ResourceType } from "./interfaces";
 
 export class ExplorerFramework implements IExplorerFramework {
     private agentLoader:IAgentLoader = new AgentLoader();

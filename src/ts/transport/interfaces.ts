@@ -13,7 +13,9 @@ export type IHttpResponse = {
 //-------------------------------------
 export abstract class TransportFrameworkFactory {
 //-------------------------------------
-    static readonly instance: ITransportFramework = transport;
+    static instance(): ITransportFramework {
+        return transport;
+    }
 }
 
 //-------------------------------------

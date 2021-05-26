@@ -4,7 +4,9 @@ import { configure } from "./Framework";
 //-------------------------------------
 export abstract class ConfigurationFrameworkFactory {
 //-------------------------------------
-  static readonly instance: IConfigurationFramework = configure;
+  static instance(): IConfigurationFramework { 
+    return configure;
+  }
 }
 
 //-------------------------------------

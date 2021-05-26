@@ -1,5 +1,5 @@
 import { ReplaySubject, Subject } from "rxjs";
-import { EVENT_NAME, INotice, INotifyFramework, LangChangedNotice, NotifyFrameworkFactory } from "./interfaces";
+import { EVENT_NAME, INotice, INotifyFramework, LangChangedNotice } from "./interfaces";
 
 type SubjectRegistry = { [name:string]:Subject<INotice> };
 

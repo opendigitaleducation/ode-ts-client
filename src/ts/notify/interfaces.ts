@@ -13,7 +13,9 @@ export type EventName = typeof EVENT_NAME[keyof typeof EVENT_NAME];
 //-------------------------------------
 export abstract class NotifyFrameworkFactory {
 //-------------------------------------
-	static readonly instance: INotifyFramework = notify;
+	static instance():INotifyFramework {
+		return notify;
+	}
 }
 
 //-------------------------------------

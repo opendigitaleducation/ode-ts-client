@@ -27,6 +27,11 @@ export class Http implements IHttp {
             if( p.params.disableNotifications ) {
                 delete p.params.disableNotifications;
             }
+            if( p.params.requestName ) {
+                /* TODO : manage params.requestName through an events[]. See infra-front http.ts */
+                delete p.params.requestName;
+            }
+
             return p;
         }
     }
@@ -64,6 +69,8 @@ export class Http implements IHttp {
             };
         }
 
+        /* TODO : manage params.requestName through an events[]. See infra-front http.ts */
+
         // Notify error unless disabled.
         if( !params || params.disableNotifications===false ) {
             notify.onEvent( EVENT_NAME.HTTP_ERROR ).next( new HttpErrorNotice(''+this._latestResponse.status, this._latestResponse.statusText) );
@@ -78,6 +85,7 @@ export class Http implements IHttp {
         // So we can use it directly, saving CPU and memory.
         // Otherwise, we would map the axios response to our own model.
         this._latestResponse = response;
+        /* TODO : manage params.requestName through an events[]. See infra-front http.ts */
         return response.data;
     }
 

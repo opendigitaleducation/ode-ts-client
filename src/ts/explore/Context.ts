@@ -10,7 +10,7 @@ export class ExplorerContext implements IExplorerContext {
 
     constructor( types:ResourceType[], app:App ) {
         this.context = null;
-        this.bus = ExplorerFrameworkFactory.instance.getBus();
+        this.bus = ExplorerFrameworkFactory.instance().getBus();
         
         this.searchParameters = {
             types: types,

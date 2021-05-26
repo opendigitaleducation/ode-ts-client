@@ -3,7 +3,9 @@ import { session } from "./Framework";
 //-------------------------------------
 export abstract class SessionFrameworkFactory {
 //-------------------------------------
-  static readonly instance:ISessionFramework = session;
+  static instance():ISessionFramework {
+    return session
+  };
 }
 
 //-------------------------------------

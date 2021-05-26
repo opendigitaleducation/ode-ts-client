@@ -5,7 +5,9 @@ import { explorer } from "./Framework";
 //-------------------------------------
 export abstract class ExplorerFrameworkFactory {
 //-------------------------------------
-  static readonly instance: IExplorerFramework = explorer;
+  static instance(): IExplorerFramework {
+    return explorer;
+  }
 }
 
 /** Framework exploration capabilities offered to the client. */

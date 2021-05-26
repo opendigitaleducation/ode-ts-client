@@ -52,7 +52,7 @@ export abstract class AbstractBusAgent implements IAbstractBusAgent {
         }
     }
     protected setHandler( action:ActionType, handler:IHandler ): void {
-        ExplorerFrameworkFactory.instance.getBus().consumer(this.managedResource, action, this);
+        ExplorerFrameworkFactory.instance().getBus().consumer(this.managedResource, action, this);
         this.handlerFor[action] = handler;
     }
     protected getHandler( action:ActionType ): IHandler {
