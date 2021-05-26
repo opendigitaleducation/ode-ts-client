@@ -29,14 +29,16 @@ export class Session implements ISession {
 		return this._description as unknown as IUserDescription;
 	}
 
-    public initialize():void {
-        http.get<void, IUserInfo>( '/auth/oauth2/userinfo' )
+    public initialize():Promise<void> {
+        return http.get<void, IUserInfo>( '/auth/oauth2/userinfo' )
         .then( u => { 
             this.setCurrentModel( u );
             return this._notLoggedIn ? this.loadDefaultLanguage() : this.loadUserLanguage();
         })
         .then( lang => {
             this.setCurrentLanguage( lang );
+            return this.loadDescription();
+        }).then( ()=>{
             notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).next( new BootstrappedNotice(this._me) );
         })
         .catch( (e:Error) => {
@@ -49,7 +51,6 @@ export class Session implements ISession {
     private setCurrentModel( me:IUserInfo ) {
         this._me = me;
         this._notLoggedIn = (me && me.sessionMetadata && me.sessionMetadata.userId) ? false : true;
-        this.loadDescription();
 /*
 		me.workflow = {
 			load: async function(services): Promise<void>{

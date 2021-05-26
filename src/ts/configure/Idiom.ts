@@ -124,7 +124,7 @@ export class Idiom implements IIdiom {
             // Then load the bundle.
             http.get<string, string>( path ).then( response => {
                 try {
-                    this.addKeys( JSON.parse(response) );
+                    this.addKeys( response );
                     if(typeof callback === "function"){
                         callback();
                     }

@@ -12,7 +12,7 @@ export abstract class ConfigurationFrameworkFactory {
 //-------------------------------------
 export interface IConfigurationFramework {
 //-------------------------------------
-  initialize( version:string|null, cdnDomain:string|null ):void;
+  initialize( version:string|null, cdnDomain:string|null ):Promise<void>;
   readonly Platform:{
       readonly deploymentTag:string;
       readonly cdnDomain:string;

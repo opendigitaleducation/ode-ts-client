@@ -11,7 +11,7 @@ export abstract class SessionFrameworkFactory {
 //-------------------------------------
 export interface ISessionFramework {
 //-------------------------------------
-  initialize():void;
+  initialize():Promise<void>;
   session:ISession;
 }
 

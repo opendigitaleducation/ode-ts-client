@@ -4,8 +4,8 @@ import { Session } from "./Session";
 export class SessionFramework implements ISessionFramework {
     session:Session = new Session();
 
-    public initialize():void {
-        this.session.initialize();
+    public initialize():Promise<void> {
+        return this.session.initialize();
         // TODO Finir le bootstrapping, voir infra-front/lib.ts
     }
 }

@@ -18,7 +18,7 @@ export class ConfigurationFramework implements IConfigurationFramework {
     }
     readonly User = new User();
 
-    initialize( version?:string|null, cdnDomain?:string|null ):void {
+    initialize( version?:string|null, cdnDomain?:string|null ):Promise<void> {
         // If version is undefined, default to a new tag every day.
         if( !version ) {
             const now = new Date();
@@ -27,11 +27,13 @@ export class ConfigurationFramework implements IConfigurationFramework {
             var d = now.getDate();
             version = '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
         }
+        const v = version;
         this.Platform.deploymentTag = version;
         this.Platform.cdnDomain = cdnDomain ?? '';
-
-        this.Platform.theme.initialize( version );
-        this.User.initialize( version );
+        return this.Platform.idiom.addBundlePromise('/i18n').then( ()=>{
+            this.Platform.theme.initialize( v );
+            this.User.initialize( v );
+        });
     }
 }
 
