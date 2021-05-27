@@ -9,12 +9,16 @@ class NotifyFramework implements INotifyFramework {
     onEvent<T extends INotice>( eventName:string ):Subject<T> {
         if( typeof this.subjects[eventName] === "undefined" ) {
             // Create specific subjects if needed.
-            if( EVENT_NAME.LANG_CHANGED === eventName ) {
-                // Replays or emits the latest value to the subscribers.
-                // See https://www.learnrxjs.io/learn-rxjs/subjects/replaysubject
-                this.subjects[eventName] = new ReplaySubject<LangChangedNotice>(1) as unknown as Subject<INotice>;
-            } else {
-                this.subjects[eventName] = new Subject<T>()  as unknown as Subject<INotice>;
+            switch( eventName ) {
+                case EVENT_NAME.LANG_CHANGED:
+                    // Replays or emits the latest value to the subscribers.
+                    // See https://www.learnrxjs.io/learn-rxjs/subjects/replaysubject
+                    this.subjects[eventName] = new ReplaySubject<LangChangedNotice>(1) as unknown as Subject<INotice>;
+                break;
+                
+                default:
+                    this.subjects[eventName] = new Subject<T>()  as unknown as Subject<INotice>;
+                break;
             }
         }
         return this.subjects[eventName] as unknown as Subject<T>;

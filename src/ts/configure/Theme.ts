@@ -60,7 +60,11 @@ export class Theme implements ITheme {
 
     async getConf( version?:string ): Promise<IThemeConf> {
 		version = version ?? this.version;
-        this._conf = this._conf ?? await transport.http.getScript<any,IThemeConf>( "/assets/theme-conf.js", {v:this.version}, "exports.conf" );
+        this._conf = this._conf ?? await transport.http.getScript<IThemeConf>( 
+			"/assets/theme-conf.js",
+			{queryParams:{v:this.version}}, 
+			"exports.conf"
+		);
 		return this._conf;
     }
 
@@ -76,7 +80,7 @@ export class Theme implements ITheme {
 
 	private loadDisconnected( version:string ): Promise<void>{
 		return new Promise<void>((resolve, reject) => {
-			transport.http.get('/skin', {v:version})
+			transport.http.get('/skin', {queryParams:{v:this.version}})
 			.then( data => {
 				this.skin = data.skin;
 				this.themeUrl = `${this.cdnDomain}/assets/themes/${data.skin}/skins/default/`;
@@ -84,8 +88,10 @@ export class Theme implements ITheme {
 				if( this._skinResolved ) {
 					this._skinResolved( this );
 				}
-				transport.http.get(`/assets/themes/${data.skin}/template/override.json`, {v:version, disableNotifications:true})
-				.then( override => {
+				transport.http.get(
+					`/assets/themes/${data.skin}/template/override.json`, 
+					{disableNotifications:true, queryParams:{v:version}}
+				).then( override => {
 					this.templateOverrides = override;
 						if( this._overrideResolved ) {
 							this._overrideResolved( this.templateOverrides );
@@ -114,7 +120,7 @@ export class Theme implements ITheme {
 
 	private loadConnected( version:string ): Promise<void>{
 		return new Promise<void>((resolve, reject) => {
-			transport.http.get('/theme', {"_":version})
+			transport.http.get('/theme', {queryParams:{"_":version}})
 			.then( data => {
 				this.skinName = data.skinName;
 				this.themeName = data.themeName;
@@ -126,17 +132,14 @@ export class Theme implements ITheme {
 				if( this._skinResolved ) {
 					this._skinResolved( this );
 				}
-				transport.http.get(`/assets/themes/${this.skin}/template/override.json`, {v:version, disableNotifications:true})
-				.then( override => {
+				transport.http.get(
+					`/assets/themes/${this.skin}/template/override.json`, 
+					{disableNotifications:true, queryParams:{v:version}}
+				).then( override => {
 					this.templateOverrides = override;
 					if( this._overrideResolved ) {
 						this._overrideResolved( this.templateOverrides );
 					}
-					/* FIXME templates... go to ode-ngjs-front or die.
-					if (window.entcore.template) {
-						window.entcore.template.loadPortalTemplates();
-					}
-					*/
 					resolve();
 				})
 				.catch( e => {

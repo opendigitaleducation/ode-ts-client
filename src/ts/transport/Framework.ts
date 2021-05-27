@@ -8,7 +8,7 @@ class TransportFramework implements ITransportFramework {
         return this._http;
     }
 
-    newHttpInstance( params?:IHttpParams ):IHttp {
+    newHttpInstance( params?:any ):IHttp {
         return new Http( params );
     }
 }

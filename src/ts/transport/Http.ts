@@ -12,37 +12,30 @@ export class Http implements IHttp {
 
     private _latestResponse: any;
 
-    constructor(params?: IHttpParams) {
-        this.axios = axios.create(this.toAxiosConfig(params));
+    constructor(params?: any) {
+        this.axios = axios.create( params );
     }
 
     private toAxiosConfig(params?: IHttpParams): AxiosRequestConfig {
         if (!params) {
-            return axios.defaults;
+            return this.axios.defaults;
         } else {
-            let p = Object.assign({}, axios.defaults);
-            // Axios will serialize parameters, see https://github.com/axios/axios#request-config
-            p.params = Object.assign({}, params);
-            // Remove non-axios parameters
-            if( p.params.disableNotifications ) {
-                delete p.params.disableNotifications;
+            const p:AxiosRequestConfig = Object.assign({}, this.axios.defaults);
+
+            if( params.headers ) {
+                p.headers = Object.assign({}, this.axios.defaults.headers);
+                Object.assign(p.headers, params.headers);
             }
-            if( p.params.requestName ) {
-                /* TODO : manage params.requestName through an events[]. See infra-front http.ts */
-                delete p.params.requestName;
+
+            if( params.queryParams ) {
+                // Axios will serialize parameters, see https://github.com/axios/axios#request-config
+                p.params = Object.assign({}, params.queryParams);
             }
+
+            /* TODO : manage params.requestName through an events[]. See infra-front http.ts */
 
             return p;
         }
-    }
-
-    private fromAxiosConfig(config?: AxiosRequestConfig): IHttpParams {
-        if (!config) {
-            config = this.axios.defaults;
-        }
-        let params = {};
-        // TODO filter non-axios parameters.
-        return params;
     }
 
     private mapAxiosError<R>(error: AxiosError<R>, params?:IHttpParams): R {
@@ -77,7 +70,6 @@ export class Http implements IHttp {
         }
 
         return this._latestResponse;
-//        throw new Error( ERROR_CODE.TRANSPORT_ERROR );
     }
 
     private mapAxiosResponse<R>(response: AxiosResponse<R>, params?:IHttpParams): R {
@@ -89,75 +81,71 @@ export class Http implements IHttp {
         return response.data;
     }
 
-    get config(): IHttpParams {
-        return this.fromAxiosConfig();
-    }
-
     get latestResponse(): IHttpResponse {
         return this._latestResponse;
     }
 
-    get<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
-        return this.axios.get<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
+    get<R=any>(url: string, params?: IHttpParams): Promise<R> {
+        return this.axios.get<R>(url, this.toAxiosConfig(params))
             .then( r => this.mapAxiosResponse(r,params) )
             .catch<R>(e => this.mapAxiosError(e,params));
     }
-    post<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
-        return this.axios.post<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
+    post<R=any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
+        return this.axios.post<R>(url, data, this.toAxiosConfig(params))
             .then(r => this.mapAxiosResponse(r,params))
             .catch<R>(e => this.mapAxiosError(e,params));
     }
-    postFile<T = any, R = any>(url: string, data: any, params?: IHttpParams): Promise<R> {
+    postFile<R=any>(url: string, data: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig(params);
         if (p.headers['Content-Type']) {
             delete p.headers['Content-Type'];
         }
-        return this.axios.post<T, AxiosResponse<R>>(url, data, p)
+        return this.axios.post<R>(url, data, p)
             .then(r => this.mapAxiosResponse(r,params))
             .catch<R>(e => this.mapAxiosError(e,params));
     }
-    postJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
+    postJson<R=any>(url: string, json: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig();
         p.headers['Content-Type'] = 'application/json';
-        return this.axios.post<T, AxiosResponse<R>>(url, json, this.toAxiosConfig(params))
+        return this.axios.post<R>(url, json, this.toAxiosConfig(params))
             .then(r => this.mapAxiosResponse(r,params))
             .catch<R>(e => this.mapAxiosError(e,params));
     }
-    put<T = any, R = any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
-        return this.axios.put<T, AxiosResponse<R>>(url, data, this.toAxiosConfig(params))
+    put<R=any>(url: string, data?: any, params?: IHttpParams): Promise<R> {
+        return this.axios.put<R>(url, data, this.toAxiosConfig(params))
             .then(r => this.mapAxiosResponse(r,params))
             .catch<R>(e => this.mapAxiosError(e,params));
     }
-    /*
-        putFile(url: string, data:FormData, opt?:any) {
-            //TODO
-            return this.axios.putFile(url, data, opt).then( r => this.mapAxiosResponse(r,params));
-        }
-    */
-    putJson<T = any, R = any>(url: string, json: any, params?: IHttpParams): Promise<R> {
+/*
+    putFile(url: string, data:FormData, opt?:any) {
+        //TODO
+        return this.axios.putFile(url, data, opt).then( r => this.mapAxiosResponse(r,params));
+    }
+*/
+    putJson<R=any>(url: string, json: any, params?: IHttpParams): Promise<R> {
         const p = this.toAxiosConfig(params);
         p.headers['Content-Type'] = 'application/json';
-        return this.axios.put<T, AxiosResponse<R>>(url, json, p)
+        return this.axios.put<R>(url, json, p)
             .then(r => this.mapAxiosResponse(r,params))
             .catch<R>(e => this.mapAxiosError(e,params));
     }
-    delete<T = any, R = any>(url: string, params?: IHttpParams): Promise<R> {
-        return this.axios.delete<T, AxiosResponse<R>>(url, this.toAxiosConfig(params))
+    delete<R=any>(url: string, params?: IHttpParams): Promise<R> {
+        return this.axios.delete<R>(url, this.toAxiosConfig(params))
             .then(r => this.mapAxiosResponse(r,params))
             .catch<R>(e => this.mapAxiosError(e,params));
     }
-    deleteJson<T = any, R = any>(url: string, json: any): Promise<R> {
+    deleteJson<R=any>(url: string, json: any): Promise<R> {
         // TODO code review, Is this used ?
-        return this.axios.delete<T, AxiosResponse<R>>(url, json)
+        return this.axios.delete<R>(url, json)
             .then(r => this.mapAxiosResponse(r))
             .catch<R>(e => this.mapAxiosError(e));
     }
 
-    getScript<T = any, R = any>(url: string, params?: IHttpParams, variableName?:string): Promise<R> {
+    getScript<R=any>(url: string, params?: IHttpParams, variableName?:string): Promise<R> {
         const resultName = variableName ?? "exports";
         const p = this.toAxiosConfig(params);
         p.headers['Accept'] = 'application/javascript';
-        return this.axios.get<T, AxiosResponse<string>>(url, p)
+        return this.axios.get<string>(url, p)
             .then( r => this.mapAxiosResponse(r,params) )
             .then( r => {
                 try {
@@ -168,7 +156,6 @@ export class Http implements IHttp {
                     const result = eval(r);
                     return result;
                 }
-                //return result && result[resultName] ? result[resultName] : result;
             })
             .catch<R>(e => this.mapAxiosError(e,params));
     }
@@ -176,7 +163,7 @@ export class Http implements IHttp {
     loadScript(url:string, params?:IHttpParams): Promise<void> {
         return (loadedScripts[url])
             ? Promise.resolve()
-            : this.getScript<any,any>(url,params)
+            : this.getScript(url,params)
                 .then( res => {loadedScripts[url] = true;})
                 .catch<void>(e => this.mapAxiosError(e,params));
     }
@@ -254,12 +241,12 @@ export class Http {
         }
 
         this.xhr = $.ajax(params)
-            .done(function (e, statusText, xhr) {
+            .done(function (e, statusTexvoid, xhr) {
                 if (typeof that.statusCallbacks.done === 'function') {
                     if (document.cookie === '' && typeof Http.prototype.events.disconnected === 'function') {
-                        that.events.disconnected(e, statusText, xhr);
+                        that.events.disconnected(e, statusTexvoid, xhr);
                     }
-                    that.statusCallbacks.done(e, statusText, xhr);
+                    that.statusCallbacks.done(e, statusTexvoid, xhr);
                 }
                 if (requestName && that.events['request-ended.' + requestName]) {
                     that.events['request-ended.' + requestName]();
@@ -271,10 +258,10 @@ export class Http {
                 }
 
                 if (typeof that.statusCallbacks['e' + e.status] === 'function') {
-                    that.statusCallbacks['e' + e.status].call(that, e);
+                    that.statusCallbacks['e' + e.status].call(thavoid, e);
                 }
                 else if (typeof that.statusCallbacks.error === 'function') {
-                    that.statusCallbacks.error.call(that, e);
+                    that.statusCallbacks.error.call(thavoid, e);
                 }
                 else {
                     if (!params.disableNotifications && e.status !== 0) {

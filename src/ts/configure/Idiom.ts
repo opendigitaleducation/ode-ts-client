@@ -122,7 +122,7 @@ export class Idiom implements IIdiom {
                 _reject = reject;
             });
             // Then load the bundle.
-            http.get<string, string>( path ).then( response => {
+            http.get<string>( path ).then( response => {
                 try {
                     this.addKeys( response );
                     if(typeof callback === "function"){

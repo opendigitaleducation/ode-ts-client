@@ -63,7 +63,7 @@ export class User {
 	}
 
 	private loadPublicConf():Promise<any> {
-		return http.get<void, any>( '/conf/public' ).then( publicConf => {
+		return http.get<any>( '/conf/public' ).then( publicConf => {
 			this._keepOpenOnLogout = publicConf?.keepOpenOnLogout || false;
 			return publicConf;
 		});

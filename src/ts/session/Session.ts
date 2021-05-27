@@ -30,7 +30,7 @@ export class Session implements ISession {
 	}
 
     public initialize():Promise<void> {
-        return http.get<void, IUserInfo>( '/auth/oauth2/userinfo' )
+        return http.get<IUserInfo>( '/auth/oauth2/userinfo' )
         .then( u => { 
             this.setCurrentModel( u );
             return this._notLoggedIn ? this.loadDefaultLanguage() : this.loadUserLanguage();
@@ -117,7 +117,7 @@ export class Session implements ISession {
     }
 
     private loadDefaultLanguage():Promise<string> {
-        return http.get<void, string>( '/locale' ).then( responseText => {
+        return http.get<string>( '/locale' ).then( responseText => {
             return JSON.parse(responseText).locale;
             /*TODO porter ce code à l'aide des notifications
             if((window as any).moment){
@@ -145,7 +145,7 @@ export class Session implements ISession {
     }
 
     private loadUserLanguage():Promise<string> {
-        return http.get<void, any>( '/userbook/preference/language' ).then( responseText => {
+        return http.get<any>( '/userbook/preference/language' ).then( responseText => {
             try {
                 return JSON.parse(responseText.preference)['default-domain'];
             } catch(e) {
@@ -160,8 +160,8 @@ export class Session implements ISession {
 
 	private async loadDescription():Promise<IUserDescription> {
 		return await Promise.all([
-			http.get<string, IUserDescription>('/userbook/api/person', {requestName: "refreshAvatar"}),
-			http.get<string, IUserDescription>('/directory/userbook/'+ this._me.userId)
+			http.get<IUserDescription>('/userbook/api/person', {requestName: "refreshAvatar"}),
+			http.get<IUserDescription>('/directory/userbook/'+ this._me.userId)
 		]).then( result => {
 			this._description = result[0];
 			Object.assign( this._description, result[1]);
