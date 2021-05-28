@@ -3,7 +3,7 @@ import { BootstrappedNotice, EVENT_NAME } from "../notify/interfaces";
 import { session } from "../session/Framework";
 import { transport } from "../transport/Framework";
 import { configure } from "./Framework";
-import { ITheme, IThemeConf, IThemeOverrides } from "./interfaces";
+import { ITheme, IThemeConf, IThemeDesc, IThemeOverrides } from "./interfaces";
 
 export class Theme implements ITheme {
 	private _conf?:IThemeConf;
@@ -159,15 +159,13 @@ export class Theme implements ITheme {
 		});
 	}
 
-	loadThemeJs( theme:string, version:string ) {
-        /* TODO si besoin
-        const style = jQuery('<script>', {
-            type: 'text/javascript',
-            src: (window as any).CDN_DOMAIN+`/assets/themes/${theme}/js/theme.js?version=${version}`,
-            id: 'themeJS'
-        });
-        */
-    }
+	listThemes():Promise<IThemeDesc[]>{
+		return transport.http.get<IThemeDesc[]>('/themes');
+	}
+
+	setDefaultTheme( theme:IThemeDesc ):void {
+		transport.http.get('/userbook/api/edit-userbook-info?prop=theme-' + this.skin + '&value=' + theme._id);
+	}
 }
 
 /*

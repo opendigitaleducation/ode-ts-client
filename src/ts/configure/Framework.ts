@@ -2,11 +2,13 @@ import { IConfigurationFramework } from "./interfaces";
 import { Theme } from "./Theme";
 import { Idiom } from "./Idiom";
 import { User } from "./User";
+import { AppConf } from "./AppConf";
 
 export class ConfigurationFramework implements IConfigurationFramework {
     readonly Platform = {
         deploymentTag: '',
         cdnDomain: '',
+        apps: new AppConf(),
         theme: new Theme(),
         //analytics;
         idiom: new Idiom(),

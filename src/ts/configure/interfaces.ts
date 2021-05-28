@@ -16,6 +16,14 @@ export interface IConfigurationFramework {
   readonly Platform:{
       readonly deploymentTag:string;
       readonly cdnDomain:string;
+      readonly apps: {
+        /** Initialize an app (preload its public conf and i18n) */
+        initialize(app:App):void;
+        /** Load and return the public conf of an app. */
+        getPublicConf(app:App):any;
+        /** Load the i18n of an app. */
+        loadI18n(app:App):Promise<void>;
+      };
       readonly theme:ITheme;
       //analytics;
       readonly idiom:IIdiom;
@@ -42,16 +50,7 @@ export interface ITheme {
   readonly portalTemplate: string;
   readonly basePath: string;
   readonly logoutCallback: string;
-/* FIXME faire le tri
-listThemes():Promise<Array<IThemeDesc>>;
-setTheme( themeDesc:IThemeDesc ):Promise<void>;
-skins: [];
-pickSkin: boolean;
-themeConf: undefined,
-themeConfPromise: Promise<void>;
-listSkins(): Promise<any>;
-getHelpPath(): Promise<String>;
-*/
+
   /** Get the theme/skin configuration. */
   getConf( version?:string ): Promise<IThemeConf>;
 
@@ -60,6 +59,21 @@ getHelpPath(): Promise<String>;
 
   /** Await for overrides conf to be loaded. */
   onOverrideReady():Promise<IThemeOverrides>;
+
+  /** List available themes. */
+  listThemes():Promise<IThemeDesc[]>;
+
+  /** Configure UI with this theme by default. */
+  setDefaultTheme( theme:IThemeDesc ):void; // TODO: refactor, move to user's configuration ?
+
+/* FIXME faire le tri parmi les membres restants : on garde, on bouge, on jette ?
+skins: [];
+pickSkin: boolean;
+themeConf: undefined,
+themeConfPromise: Promise<void>;
+listSkins(): Promise<any>;
+getHelpPath(): Promise<String>;
+*/
 }
 
 //-------------------------------------
