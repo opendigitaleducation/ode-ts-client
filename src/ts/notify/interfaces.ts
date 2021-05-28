@@ -1,4 +1,5 @@
 import { Subject } from "rxjs";
+import { ITheme, IThemeOverrides } from "../configure/interfaces";
 import { IUserInfo } from "../session/interfaces";
 import { notify } from "./Framework";
 
@@ -21,7 +22,31 @@ export abstract class NotifyFrameworkFactory {
 //-------------------------------------
 export abstract class INotifyFramework {
 //-------------------------------------
+	/**
+	 * Notify / be notified of events. 
+	 * Those events may happen many times (stream of events).
+	 */
 	abstract onEvent<T extends INotice>(eventName: string): Subject<T>;
+
+	/**
+	 * Promise / resolve / reject of asynchronous skin.
+	 * This data is not intended to change after being resolved.
+	 */
+	 abstract onSkinReady():IPromisified<ITheme>;
+
+	/**
+	 * Promise / resolve / reject of asynchronous skin overrides.
+	 * This data is not intended to change after being resolved.
+	 */
+	 abstract onOverridesReady():IPromisified<IThemeOverrides>;
+}
+
+//-------------------------------------
+export interface IPromisified<T> {
+//-------------------------------------
+	readonly promise: Promise<T>;
+    resolve: (value: T | PromiseLike<T>)=>void;
+    reject: (reason?: any)=>void;
 }
 
 //-------------------------------------

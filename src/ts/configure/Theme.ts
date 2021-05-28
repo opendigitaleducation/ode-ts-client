@@ -38,24 +38,13 @@ export class Theme implements ITheme {
         return configure.Platform.cdnDomain;
     }
 
-	private _skinResolved?: (value: ITheme | PromiseLike<ITheme>) => void;
-	private _skinRejected?: (reason?: any) => void;
-	private _onSkinReady = new Promise<ITheme>((_resolve, _reject) => {
-		this._skinResolved = _resolve;
-		this._skinRejected = _reject;
-	});
+	private _onSkinReady = notify.onSkinReady();
 	onSkinReady():Promise<ITheme>{
-		return this._onSkinReady;
+		return this._onSkinReady.promise;
 	}
-
-	private _overrideResolved?: (value: IThemeOverrides | PromiseLike<IThemeOverrides>) => void;
-	private _overrideRejected?: (reason?: any) => void;
-	private _onOverrideReady = new Promise<IThemeOverrides>((_resolve, _reject) => {
-		this._overrideResolved = _resolve;
-		this._overrideRejected = _reject;
-	});
+	private _onOverrideReady = notify.onOverridesReady();
 	onOverrideReady():Promise<IThemeOverrides>{
-		return this._onOverrideReady;
+		return this._onOverrideReady.promise;
 	}
 
     async getConf( version?:string ): Promise<IThemeConf> {
@@ -85,18 +74,14 @@ export class Theme implements ITheme {
 				this.skin = data.skin;
 				this.themeUrl = `${this.cdnDomain}/assets/themes/${data.skin}/skins/default/`;
 				this.basePath = this.themeUrl + '../../';
-				if( this._skinResolved ) {
-					this._skinResolved( this );
-				}
+				this._onSkinReady.resolve( this );
 				transport.http.get(
 					`/assets/themes/${data.skin}/template/override.json`, 
 					{disableNotifications:true, queryParams:{v:version}}
 				).then( override => {
 					this.templateOverrides = override;
-						if( this._overrideResolved ) {
-							this._overrideResolved( this.templateOverrides );
-						}
-						resolve();
+					this._onOverrideReady.resolve( override );
+					resolve();
 				})
 				.catch( e => {
 					if( transport.http.latestResponse.status===404 ) {
@@ -107,12 +92,8 @@ export class Theme implements ITheme {
 				});
 			})
 			.catch( e => {
-				if( this._skinRejected ) {
-					this._skinRejected(e);
-				}
-				if( this._overrideRejected ) {
-					this._overrideRejected( e );
-				}
+				this._onSkinReady.reject(e);
+				this._onOverrideReady.reject( e );
 				reject();
 			});
 		});
@@ -129,28 +110,20 @@ export class Theme implements ITheme {
 				this.skin = this.themeUrl.split('/assets/themes/')[1].split('/')[0];
 				this.portalTemplate = `${this.cdnDomain}/assets/themes/${this.skin}/portal.html`;
 				this.logoutCallback = data.logoutCallback;
-				if( this._skinResolved ) {
-					this._skinResolved( this );
-				}
+				this._onSkinReady.resolve( this );
 				transport.http.get(
 					`/assets/themes/${this.skin}/template/override.json`, 
 					{disableNotifications:true, queryParams:{v:version}}
 				).then( override => {
 					this.templateOverrides = override;
-					if( this._overrideResolved ) {
-						this._overrideResolved( this.templateOverrides );
-					}
+					this._onOverrideReady.resolve( override );
 					resolve();
 				})
 				.catch( e => {
 					if( transport.http.latestResponse.status===404 ) {
 						resolve();
-						if( this._skinRejected ) {
-							this._skinRejected();
-						}
-						if( this._overrideRejected ) {
-							this._overrideRejected( e );
-						}
+						this._onSkinReady.reject(e);	// FIXME semble mal placé car a peut-être déjà été résolu !
+						this._onOverrideReady.reject( e );
 					} else {
 						throw e;
 					}
