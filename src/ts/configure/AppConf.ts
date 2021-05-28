@@ -3,7 +3,6 @@ import { App } from "../globals";
 import { configure } from "./Framework";
 
 const http = transport.http;
-const lang = configure.Platform.idiom;
 
 //-------------------------------------
 export class AppConf {
@@ -30,6 +29,7 @@ export class AppConf {
 	}
 
 	public loadI18n(app:App):Promise<void> {
+		const lang = configure.Platform.idiom;
 		return lang.addBundlePromise(`/${app}/i18n`);
 	}
 }
