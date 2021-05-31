@@ -110,8 +110,11 @@ export interface IUserInfo {
   widgets: Array<IWidgetModel>;
 }
 
+export type WidgetPosition = "left"|"right"; // TODO: position pourrait être étendu à d'autres valeurs: |“top” ou “bottom” ou “fixed”...
+
 export interface IWidgetModel {
   application?: string;   // "Actualites"
+  position?: WidgetPosition;  
   i18n: string;           // "/actualites/public/widgets/last-infos-widget/i18n"
   id: string;
   js: string;             // "/actualites/public/widgets/last-infos-widget/last-infos-widget.js"

@@ -12,7 +12,9 @@ export abstract class ConfigurationFrameworkFactory {
 //-------------------------------------
 export interface IConfigurationFramework {
 //-------------------------------------
+  /** Framework initialization */
   initialize( version:string|null, cdnDomain:string|null ):Promise<void>;
+
   readonly Platform:{
       readonly deploymentTag:string;
       readonly cdnDomain:string;
@@ -27,10 +29,8 @@ export interface IConfigurationFramework {
       readonly theme:ITheme;
       //analytics;
       readonly idiom:IIdiom;
-      //widgets;
   }
   readonly School:{
-      //widgets;
       //apps; -> pinnedApps;
   }
   readonly User:{
@@ -50,6 +50,7 @@ export interface ITheme {
   readonly portalTemplate: string;
   readonly basePath: string;
   readonly logoutCallback: string;
+  readonly skins:Array<IThemeConfOverriding>;
 
   /** Get the theme/skin configuration. */
   getConf( version?:string ): Promise<IThemeConf>;
@@ -66,12 +67,12 @@ export interface ITheme {
   /** Configure UI with this theme by default. */
   setDefaultTheme( theme:IThemeDesc ):void; // TODO: refactor, move to user's configuration ?
 
+  /** List available skins. */
+  listSkins():Promise<IThemeConfOverriding[]>;
+
 /* FIXME faire le tri parmi les membres restants : on garde, on bouge, on jette ?
-skins: [];
-pickSkin: boolean;
 themeConf: undefined,
 themeConfPromise: Promise<void>;
-listSkins(): Promise<any>;
 getHelpPath(): Promise<String>;
 */
 }
@@ -92,18 +93,25 @@ export interface IThemeConf {
 		widgets: { [name:string]:/*pathRegex*/string };
 	},
 	emitWrapper: boolean,
-	overriding: Array<{
-		edumedia: string;
-		parent: string;
-		child: string;
-		bootstrapVersion: string;
-		skins: string;
-		help: string;
-	}>
+	overriding: Array<IThemeConfOverriding>;
 }
 
 //-------------------------------------
+export interface IThemeConfOverriding {
 //-------------------------------------
+  parent: "panda" | "theme-open-ent";
+  child: string;
+  bootstrapVersion: string;
+  skins: string;
+  help: string;
+  group?: string;
+  edumedia: {
+    uri: string;
+    pattern: string;
+    ignoreSubjects?: Array<string>;
+  };
+}
+
 export type IThemeOverrides = {
   [app in App]?: string;
 };
@@ -116,6 +124,7 @@ export interface IIdiom {
   addBundlePromise(path:string):Promise<void>;
   addBundle(path:string, callback?:AddBundleCallback):void;
   addTranslations(folder:string, callback?:AddBundleCallback):void;
+  addAllTranslations(folders:string[]):Promise<void>;
   addKeys(keys:any):void;
   removeAccents( str:string ):string;
 }

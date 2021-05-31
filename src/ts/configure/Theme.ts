@@ -3,7 +3,7 @@ import { BootstrappedNotice, EVENT_NAME } from "../notify/interfaces";
 import { session } from "../session/Framework";
 import { transport } from "../transport/Framework";
 import { configure } from "./Framework";
-import { ITheme, IThemeConf, IThemeDesc, IThemeOverrides } from "./interfaces";
+import { ITheme, IThemeConf, IThemeDesc, IThemeOverrides, IThemeConfOverriding } from "./interfaces";
 
 export class Theme implements ITheme {
 	private _conf?:IThemeConf;
@@ -18,6 +18,8 @@ export class Theme implements ITheme {
 	portalTemplate= '/assets/themes/raw/portal.html';
 	basePath= '';
 	logoutCallback= '/';
+	skins:Array<IThemeConfOverriding>= [];
+
 
     initialize( version?:string ) {
         const sessionSubscription = notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).subscribe(
@@ -48,10 +50,9 @@ export class Theme implements ITheme {
 	}
 
     async getConf( version?:string ): Promise<IThemeConf> {
-		version = version ?? this.version;
         this._conf = this._conf ?? await transport.http.getScript<IThemeConf>( 
 			"/assets/theme-conf.js",
-			{queryParams:{v:this.version}}, 
+			{queryParams:{v: version ?? this.version}}, 
 			"exports.conf"
 		);
 		return this._conf;
@@ -139,6 +140,20 @@ export class Theme implements ITheme {
 	setDefaultTheme( theme:IThemeDesc ):void {
 		transport.http.get('/userbook/api/edit-userbook-info?prop=theme-' + this.skin + '&value=' + theme._id);
 	}
+
+	listSkins(): Promise<IThemeConfOverriding[]> {
+		return (this.skins.length > 0)
+			? Promise.resolve(this.skins)
+			: this.getConf().then( conf => {
+				const currentTheme = conf.overriding.find(t => t.child === this.skin);
+				if(currentTheme?.group){
+					this.skins.concat( conf.overriding.filter(t => t.group === currentTheme.group) );
+				}else{
+					this.skins.concat( conf.overriding );
+				}
+				return this.skins;
+			});
+	}
 }
 
 /*
@@ -146,49 +161,9 @@ let _skinResolved, _skinRejected = null;
 export var skin = {
 	private addDirectives: undefined as any,
 	private templateMapping: {},
-	listThemes: function(cb){
-		http().get('/themes').done(function(themes){
-			if(typeof cb === 'function'){
-				cb(themes);
-			}
-		});
-	},
-	setTheme: function(theme){
-		ui.setStyle(theme.path);
-		http().get('/userbook/api/edit-userbook-info?prop=theme-' + skin + '&value=' + theme._id);
-	},
-	
-	skins: [],
-	pickSkin: false,
+
 	themeConf: undefined,
 	themeConfPromise: undefined,
-	listSkins: function(): Promise<any>{
-		let conf = { overriding:[] };
-		if(this.themeConfPromise){
-			return this.themeConfPromise;
-		}
-		this.themeConfPromise = new Promise<void>((resolve, reject) => {
-			const xhr = new XMLHttpRequest();
-			xhr.open('get', '/assets/theme-conf.js');
-			xhr.onload = async () => {
-				eval(xhr.responseText.split('exports.')[1]);
-				this.themeConf = this.conf = conf;
-				const currentTheme = this.conf.overriding.find(t => t.child === skin.skin);
-				if(currentTheme.group){
-					this.skins = this.conf.overriding.filter(t => t.group === currentTheme.group);
-				}
-				else{
-					this.skins = this.conf.overriding;
-				}
-				if(this.skins.length > 1){
-					this.pickSkin = true;
-				}
-				resolve();
-			};
-			xhr.send();
-		});
-		return this.themeConfPromise;
-	},
 	loadBookmarks: async function(){
 		return new Promise<void>((resolve, reject) => {
 			http().get('/userbook/preference/apps').done(function(data){

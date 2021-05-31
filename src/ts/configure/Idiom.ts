@@ -149,6 +149,23 @@ export class Idiom implements IIdiom {
         });
     }
 
+    addAllTranslations(folders:string[]):Promise<void> {
+        if( folders && folders.length>0 ) {
+            return new Promise<void>( (resolve, reject) => {
+                // Load all translations once language is known.
+                const subscription = notify.onEvent<LangChangedNotice>( EVENT_NAME.LANG_CHANGED )
+                .subscribe( notice => {
+                    subscription.unsubscribe();
+                    Promise.all( 
+                        folders.map( folder => this.addBundlePromise(folder + '/' + notice.newLanguage + '.json') )
+                    ).then( r => { resolve(); } );
+                });
+            });
+        } else {
+            return Promise.resolve();
+        }
+    }
+
     addKeys(keys:any):void {
         Object.assign( bundle, keys );
     }

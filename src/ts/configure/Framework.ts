@@ -3,8 +3,25 @@ import { Theme } from "./Theme";
 import { Idiom } from "./Idiom";
 import { User } from "./User";
 import { AppConf } from "./AppConf";
+import { IWidgetModel, WidgetPosition } from "../session/interfaces";
+import { notify, Promisified } from "../notify/Framework";
+import { BootstrappedNotice, IPromisified, EVENT_NAME } from "../notify/interfaces";
+import { transport } from "../transport/Framework";
 
+const firstLevelWidgets = ["birthday", "mood"];
+const secondLevelWidgets = [
+    "agenda-widget", 
+    "carnet-de-bord", 
+    "my-apps", 
+    "rss-widget", 
+    "bookmark-widget", 
+    "cursus-widget",
+    "maxicours-widget"
+];
+
+//-------------------------------------
 export class ConfigurationFramework implements IConfigurationFramework {
+//-------------------------------------
     readonly Platform = {
         deploymentTag: '',
         cdnDomain: '',
@@ -12,10 +29,8 @@ export class ConfigurationFramework implements IConfigurationFramework {
         theme: new Theme(),
         //analytics;
         idiom: new Idiom(),
-        //widgets;
     }
     readonly School = {
-        //widgets;
         //apps; -> pinnedApps;
     }
     readonly User = new User();
@@ -34,6 +49,7 @@ export class ConfigurationFramework implements IConfigurationFramework {
         this.Platform.cdnDomain = cdnDomain ?? '';
         return this.Platform.idiom.addBundlePromise('/i18n').then( ()=>{
             this.Platform.theme.initialize( v );
+            //TODO this.School.initialize( v );
             this.User.initialize( v );
         });
     }

@@ -14,7 +14,7 @@ type AsyncDataName = typeof ASYNC_DATA_NAME[keyof typeof ASYNC_DATA_NAME];
 
 /** Utility class */
 //-------------------------------------
-class Promisified<T> implements IPromisified<T> {
+export class Promisified<T> implements IPromisified<T> {
 //-------------------------------------
     private _resolution?: (value: T | PromiseLike<T>) => void;
 	private _rejection?: (reason?: any) => void;
