@@ -52,6 +52,10 @@ export class WidgetFramework implements IWidgetFramework {
         return this._widgets;
     }
 
+    lookup( widgetName:string ):IWidget|undefined {
+        return this._widgets.find( w => w.platformConf.name===widgetName );
+    }
+
     ////////////////////////////////////// USER PREFERENCES
     private _userPrefs:IWidgetUserPrefs= {};
     get userPrefs() {
@@ -154,6 +158,8 @@ class Widget implements IWidget {
         // Sanity check
         this._userPref.position = this._userPref.position ?? "left";
     }
+
+    
 }
 
 //-------------------------------------

@@ -20,6 +20,9 @@ export interface IWidgetFramework {
 
   /** List widgets that are visible to the connected user. */
   readonly list: IWidget[];
+
+  /** Retrieve a widget by name. */
+  lookup( widgetName:string ):IWidget|undefined;
 }
 
 //-------------------------------------

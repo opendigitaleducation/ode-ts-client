@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [ "$#" -gt 2 ]; then
-  echo "Usage: $0 <clean|init|build|watch|publish>"
+  echo "Usage: $0 <clean|init|build|install|watch>"
   echo "Example: $0 clean"
   echo "Example: $0 init"
   echo "Example: $0 build"
+  echo "Example: $0 install"
   echo "Example: $0 [--springboard=recette] watch"
-  echo "Example: $0 publish"
   exit 1
 fi
 
@@ -36,15 +36,24 @@ esac
 done
 
 clean () {
-  rm -rf node_modules dist
+  rm -rf node_modules dist .gradle package.json package-lock.json deployment
 }
 
 init () {
+  echo "[init] Get branch name from jenkins env..."
+  BRANCH_NAME=`echo $GIT_BRANCH | sed -e "s|origin/||g"`
+  if [ "$BRANCH_NAME" = "" ]; then
+    echo "[init] Get branch name from git..."
+    BRANCH_NAME=`git branch | sed -n -e "s/^\* \(.*\)/\1/p"`
+  fi
+  docker-compose run -e BRANCH_NAME=$BRANCH_NAME --rm -u "$USER_UID:$GROUP_GID" gradle sh -c "gradle generateTemplate"
   docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm install --production=false"
 }
 
 build () {
   docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm run test && npm run docs && npm run build"
+  VERSION=`grep "version="  gradle.properties| sed 's/version=//g'`
+  echo "ode-ts-client=$VERSION `date +'%d/%m/%Y %H:%M:%S'`" >> dist/version.txt
 }
 
 watch () {
@@ -52,12 +61,27 @@ watch () {
     --rm \
     -u "$USER_UID:$GROUP_GID" \
     -v $PWD/../$SPRINGBOARD:/home/node/springboard \
-    node sh -c "npm run watch --springboard=/home/node/springboard"
+    node sh -c "npm run watch --watch_springboard=/home/node/springboard"
 }
 
-publish () {
+publishNPM () {
   LOCAL_BRANCH=`echo $GIT_BRANCH | sed -e "s|origin/||g"`
   docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm publish --tag $LOCAL_BRANCH"
+}
+
+publishNexus () {
+  if [ -e "?/.gradle" ] && [ ! -e "?/.gradle/gradle.properties" ]
+  then
+    echo "odeUsername=$NEXUS_ODE_USERNAME" > "?/.gradle/gradle.properties"
+    echo "odePassword=$NEXUS_ODE_PASSWORD" >> "?/.gradle/gradle.properties"
+    echo "sonatypeUsername=$NEXUS_SONATYPE_USERNAME" >> "?/.gradle/gradle.properties"
+    echo "sonatypePassword=$NEXUS_SONATYPE_PASSWORD" >> "?/.gradle/gradle.properties"
+  fi
+  docker-compose run --rm -u "$USER_UID:$GROUP_GID" gradle sh -c "gradle deploymentJar fatJar publish"
+}
+
+publishMavenLocal(){
+  docker-compose run --rm -u "$USER_UID:$GROUP_GID" gradle sh -c "gradle deploymentJar fatJar publishToMavenLocal"
 }
 
 for param in "$@"
@@ -72,11 +96,17 @@ do
     build)
       build
       ;;
+    install)
+      build && publishMavenLocal
+      ;;
     watch)
       watch
       ;;
-    publish)
-      publish
+    publishNPM)
+      publishNPM
+      ;;
+    publishNexus)
+      publishNexus
       ;;
     *)
       echo "Invalid argument : $action"
