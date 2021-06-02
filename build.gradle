@@ -8,44 +8,6 @@ plugins {
 group = "${modowner}"
 version = "$version"
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId "${modowner}"
-            artifactId "$modname"
-            version "$version"
-            artifact("build/libs/${modowner}~${modname}~$version-fat.jar") { classifier "fat" }
-        }
-        maven(MavenPublication) {
-            groupId "${modowner}"
-            artifactId "${modname}"
-            version "$version"
-            artifact("build/libs/${modowner}~${modname}~$version-deployment.jar") { classifier "deployment" }
-        }
-    }
-    repositories {
-        if (version.endsWith("SNAPSHOT")) {
-            maven {
-            name 'Snapshots'
-                url 'https://maven.opendigitaleducation.com/nexus/content/repositories/snapshots/'
-                credentials {
-                username "${odeUsername}"
-                    password "${odePassword}"
-                }
-            }
-        } else {
-            maven {
-            name 'Releases'
-                url 'https://maven.opendigitaleducation.com/nexus/content/repositories/releases/'
-                credentials {
-                username "${odeUsername}"
-                    password "${odePassword}"
-                }
-            }
-        }
-    }
-}
-
 //begin generateTemplate
 task generateDeployment(type: Copy)  {
     from 'conf.deployment'
