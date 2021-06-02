@@ -15,30 +15,38 @@
 
 ### childNumber
 
-• **childNumber**: *number*
+• **childNumber**: `number`
 
-Defined in: [explore/interfaces.ts:166](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L166)
+#### Defined in
+
+[explore/interfaces.ts:298](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L298)
 
 ___
 
 ### id
 
-• **id**: *string*
+• **id**: `string`
 
-Defined in: [explore/interfaces.ts:163](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L163)
+#### Defined in
+
+[explore/interfaces.ts:295](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L295)
 
 ___
 
 ### name
 
-• **name**: *string*
+• **name**: `string`
 
-Defined in: [explore/interfaces.ts:164](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L164)
+#### Defined in
+
+[explore/interfaces.ts:296](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L296)
 
 ___
 
 ### type
 
-• **type**: *string*
+• **type**: `string`
 
-Defined in: [explore/interfaces.ts:165](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L165)
+#### Defined in
+
+[explore/interfaces.ts:297](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L297)

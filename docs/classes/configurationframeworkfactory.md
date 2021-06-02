@@ -8,7 +8,7 @@
 
 - [constructor](configurationframeworkfactory.md#constructor)
 
-### Properties
+### Methods
 
 - [instance](configurationframeworkfactory.md#instance)
 
@@ -16,14 +16,18 @@
 
 ### constructor
 
-\+ **new ConfigurationFrameworkFactory**(): [*ConfigurationFrameworkFactory*](configurationframeworkfactory.md)
+• **new ConfigurationFrameworkFactory**()
 
-**Returns:** [*ConfigurationFrameworkFactory*](configurationframeworkfactory.md)
-
-## Properties
+## Methods
 
 ### instance
 
-▪ `Static` `Readonly` **instance**: [*IConfigurationFramework*](../interfaces/iconfigurationframework.md)
+▸ `Static` **instance**(): [IConfigurationFramework](../interfaces/iconfigurationframework.md)
 
-Defined in: [configure/interfaces.ts:43](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L43)
+#### Returns
+
+[IConfigurationFramework](../interfaces/iconfigurationframework.md)
+
+#### Defined in
+
+[configure/interfaces.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L7)

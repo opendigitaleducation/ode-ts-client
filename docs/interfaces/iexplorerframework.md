@@ -15,29 +15,37 @@ Framework exploration capabilities offered to the client.
 
 ### createContext
 
-▸ **createContext**(`types`: [*ResourceType*](../modules.md#resourcetype)[], `app`: [*App*](../modules.md#app)): [*IExplorerContext*](iexplorercontext.md)
+▸ **createContext**(`types`, `app`): [IExplorerContext](iexplorercontext.md)
 
 Create a new context to explore resources from an application.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`types` | [*ResourceType*](../modules.md#resourcetype)[] | Types of resource to be managed in this context.   |
-`app` | [*App*](../modules.md#app) | Application which creates the new context.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `types` | [ResourceType](../modules.md#resourcetype)[] | Types of resource to be managed in this context. |
+| `app` | [App](../modules.md#app) | Application which creates the new context. |
 
-**Returns:** [*IExplorerContext*](iexplorercontext.md)
+#### Returns
 
-Defined in: [explore/interfaces.ts:335](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L335)
+[IExplorerContext](iexplorercontext.md)
+
+#### Defined in
+
+[explore/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L22)
 
 ___
 
 ### getBus
 
-▸ **getBus**(): [*IBus*](ibus.md)
+▸ **getBus**(): [IBus](ibus.md)
 
 Retrieve the underlying communication bus.
 
-**Returns:** [*IBus*](ibus.md)
+#### Returns
 
-Defined in: [explore/interfaces.ts:340](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L340)
+[IBus](ibus.md)
+
+#### Defined in
+
+[explore/interfaces.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L27)

@@ -16,22 +16,32 @@
 
 ### http
 
-• `Readonly` **http**: [*IHttp*](ihttp.md)
+• `Readonly` **http**: [IHttp](ihttp.md)
 
-Defined in: [transport/interfaces.ts:26](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L26)
+Default instance.
+
+#### Defined in
+
+[transport/interfaces.ts:15](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L15)
 
 ## Methods
 
 ### newHttpInstance
 
-▸ **newHttpInstance**(`params?`: [*IHttpParams*](../modules.md#ihttpparams)): [*IHttp*](ihttp.md)
+▸ **newHttpInstance**(`params?`): [IHttp](ihttp.md)
 
-#### Parameters:
+Creates a new IHttp object with a custom configuration;
 
-Name | Type |
-:------ | :------ |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** [*IHttp*](ihttp.md)
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `params?` | `any` | see available options at https://axios-http.com/docs/req_config |
 
-Defined in: [transport/interfaces.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L27)
+#### Returns
+
+[IHttp](ihttp.md)
+
+#### Defined in
+
+[transport/interfaces.ts:21](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L21)

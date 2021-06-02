@@ -4,7 +4,7 @@
 
 ## Implements
 
-* [*INotice*](../interfaces/inotice.md)
+- [INotice](../interfaces/inotice.md)
 
 ## Table of contents
 
@@ -22,37 +22,41 @@
 
 ### constructor
 
-\+ **new LangChangedNotice**(`oldLanguage`: *string*, `newLanguage`: *string*): [*LangChangedNotice*](langchangednotice.md)
+• **new LangChangedNotice**(`oldLanguage`, `newLanguage`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`oldLanguage` | *string* |
-`newLanguage` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `oldLanguage` | `string` |
+| `newLanguage` | `string` |
 
-**Returns:** [*LangChangedNotice*](langchangednotice.md)
+#### Defined in
 
-Defined in: [notify/interfaces.ts:18](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L18)
+[notify/interfaces.ts:61](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L61)
 
 ## Properties
 
 ### eventName
 
-• `Readonly` **eventName**: [*EventName*](../modules.md#eventname)
+• `Readonly` **eventName**: [EventName](../modules.md#eventname)
 
-Implementation of: [INotice](../interfaces/inotice.md).[eventName](../interfaces/inotice.md#eventname)
+#### Implementation of
 
-Defined in: [notify/interfaces.ts:18](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L18)
+[INotice](../interfaces/inotice.md).[eventName](../interfaces/inotice.md#eventname)
+
+#### Defined in
+
+[notify/interfaces.ts:61](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L61)
 
 ___
 
 ### newLanguage
 
-• **newLanguage**: *string*
+• **newLanguage**: `string`
 
 ___
 
 ### oldLanguage
 
-• **oldLanguage**: *string*
+• **oldLanguage**: `string`

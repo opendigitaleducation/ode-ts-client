@@ -14,22 +14,28 @@
 
 ### defaultValue
 
-• `Optional` **defaultValue**: *asc* \| *desc*
+• `Optional` **defaultValue**: [SortOrderType](../modules.md#sortordertype)
 
-Defined in: [explore/interfaces.ts:181](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L181)
+#### Defined in
+
+[explore/interfaces.ts:313](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L313)
 
 ___
 
 ### i18n
 
-• **i18n**: *string*
+• **i18n**: `string`
 
-Defined in: [explore/interfaces.ts:182](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L182)
+#### Defined in
+
+[explore/interfaces.ts:314](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L314)
 
 ___
 
 ### id
 
-• **id**: [*SortByType*](../modules.md#sortbytype)
+• **id**: [SortByType](../modules.md#sortbytype)
 
-Defined in: [explore/interfaces.ts:180](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L180)
+#### Defined in
+
+[explore/interfaces.ts:312](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L312)

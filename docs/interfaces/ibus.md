@@ -14,57 +14,69 @@
 
 ### consumer
 
-▸ **consumer**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype), `agent`: [*IBusAgent*](ibusagent.md)): *void*
+▸ **consumer**(`res`, `action`, `agent`): `void`
 
 Allows registering an agent as being able to resolve 1 or more action on a type of resource.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
-`agent` | [*IBusAgent*](ibusagent.md) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
+| `agent` | [IBusAgent](ibusagent.md) |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [explore/interfaces.ts:455](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L455)
+`void`
+
+#### Defined in
+
+[explore/interfaces.ts:454](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L454)
 
 ___
 
 ### getAgentFor
 
-▸ **getAgentFor**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype)): *null* \| [*IBusAgent*](ibusagent.md)
+▸ **getAgentFor**(`res`, `action`): ``null`` \| [IBusAgent](ibusagent.md)
 
 Utility function for retrieving an agent.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
 
-**Returns:** *null* \| [*IBusAgent*](ibusagent.md)
+#### Returns
 
-Defined in: [explore/interfaces.ts:461](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L461)
+``null`` \| [IBusAgent](ibusagent.md)
+
+#### Defined in
+
+[explore/interfaces.ts:460](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L460)
 
 ___
 
 ### send
 
-▸ **send**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype), `parameters`: [*IActionParameters*](iactionparameters.md)): *Promise*<[*IActionResult*](iactionresult.md)\>
+▸ **send**(`res`, `action`, `parameters`): `Promise`<[IActionResult](iactionresult.md)\>
 
 Allows delegating an action on a type of resource, to a registered agent on the bus.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
-`parameters` | [*IActionParameters*](iactionparameters.md) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
+| `parameters` | [IActionParameters](iactionparameters.md) |
 
-**Returns:** *Promise*<[*IActionResult*](iactionresult.md)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:458](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L458)
+`Promise`<[IActionResult](iactionresult.md)\>
+
+#### Defined in
+
+[explore/interfaces.ts:457](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L457)

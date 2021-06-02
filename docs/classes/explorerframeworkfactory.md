@@ -2,15 +2,13 @@
 
 # Class: ExplorerFrameworkFactory
 
-Framework is a singleton.
-
 ## Table of contents
 
 ### Constructors
 
 - [constructor](explorerframeworkfactory.md#constructor)
 
-### Properties
+### Methods
 
 - [instance](explorerframeworkfactory.md#instance)
 
@@ -18,14 +16,18 @@ Framework is a singleton.
 
 ### constructor
 
-\+ **new ExplorerFrameworkFactory**(): [*ExplorerFrameworkFactory*](explorerframeworkfactory.md)
+• **new ExplorerFrameworkFactory**()
 
-**Returns:** [*ExplorerFrameworkFactory*](explorerframeworkfactory.md)
-
-## Properties
+## Methods
 
 ### instance
 
-▪ `Static` `Readonly` **instance**: [*IExplorerFramework*](../interfaces/iexplorerframework.md)
+▸ `Static` **instance**(): [IExplorerFramework](../interfaces/iexplorerframework.md)
 
-Defined in: [explore/interfaces.ts:323](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L323)
+#### Returns
+
+[IExplorerFramework](../interfaces/iexplorerframework.md)
+
+#### Defined in
+
+[explore/interfaces.ts:8](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L8)

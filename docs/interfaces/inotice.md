@@ -4,8 +4,10 @@
 
 ## Implemented by
 
-* [*BootstrappedNotice*](../classes/bootstrappednotice.md)
-* [*LangChangedNotice*](../classes/langchangednotice.md)
+- [BootstrappedNotice](../classes/bootstrappednotice.md)
+- [HttpErrorNotice](../classes/httperrornotice.md)
+- [LangChangedNotice](../classes/langchangednotice.md)
+- [PreferencesUpdated](../classes/preferencesupdated.md)
 
 ## Table of contents
 
@@ -17,6 +19,8 @@
 
 ### eventName
 
-• `Readonly` **eventName**: [*EventName*](../modules.md#eventname)
+• `Readonly` **eventName**: [EventName](../modules.md#eventname)
 
-Defined in: [notify/interfaces.ts:12](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L12)
+#### Defined in
+
+[notify/interfaces.ts:55](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L55)

@@ -6,6 +6,7 @@
 
 ### Methods
 
+- [addAllTranslations](iidiom.md#addalltranslations)
 - [addBundle](iidiom.md#addbundle)
 - [addBundlePromise](iidiom.md#addbundlepromise)
 - [addKeys](iidiom.md#addkeys)
@@ -15,98 +16,142 @@
 
 ## Methods
 
+### addAllTranslations
+
+▸ **addAllTranslations**(`folders`): `Promise`<void\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `folders` | `string`[] |
+
+#### Returns
+
+`Promise`<void\>
+
+#### Defined in
+
+[configure/interfaces.ts:127](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L127)
+
+___
+
 ### addBundle
 
-▸ **addBundle**(`path`: *string*, `callback?`: [*AddBundleCallback*](../modules.md#addbundlecallback)): *void*
+▸ **addBundle**(`path`, `callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
-`callback?` | [*AddBundleCallback*](../modules.md#addbundlecallback) |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
+| `callback?` | [AddBundleCallback](../modules.md#addbundlecallback) |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [configure/interfaces.ts:20](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L20)
+`void`
+
+#### Defined in
+
+[configure/interfaces.ts:125](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L125)
 
 ___
 
 ### addBundlePromise
 
-▸ **addBundlePromise**(`path`: *string*): *Promise*<void\>
+▸ **addBundlePromise**(`path`): `Promise`<void\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`path` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `path` | `string` |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: [configure/interfaces.ts:19](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L19)
+`Promise`<void\>
+
+#### Defined in
+
+[configure/interfaces.ts:124](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L124)
 
 ___
 
 ### addKeys
 
-▸ **addKeys**(`keys`: *any*): *void*
+▸ **addKeys**(`keys`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`keys` | *any* |
+| Name | Type |
+| :------ | :------ |
+| `keys` | `any` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [configure/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L22)
+`void`
+
+#### Defined in
+
+[configure/interfaces.ts:128](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L128)
 
 ___
 
 ### addTranslations
 
-▸ **addTranslations**(`folder`: *string*, `callback?`: [*AddBundleCallback*](../modules.md#addbundlecallback)): *void*
+▸ **addTranslations**(`folder`, `callback?`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`folder` | *string* |
-`callback?` | [*AddBundleCallback*](../modules.md#addbundlecallback) |
+| Name | Type |
+| :------ | :------ |
+| `folder` | `string` |
+| `callback?` | [AddBundleCallback](../modules.md#addbundlecallback) |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [configure/interfaces.ts:21](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L21)
+`void`
+
+#### Defined in
+
+[configure/interfaces.ts:126](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L126)
 
 ___
 
 ### removeAccents
 
-▸ **removeAccents**(`str`: *string*): *string*
+▸ **removeAccents**(`str`): `string`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`str` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `str` | `string` |
 
-**Returns:** *string*
+#### Returns
 
-Defined in: [configure/interfaces.ts:23](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L23)
+`string`
+
+#### Defined in
+
+[configure/interfaces.ts:129](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L129)
 
 ___
 
 ### translate
 
-▸ **translate**(`key`: *string*): *string*
+▸ **translate**(`key`): `string`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`key` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `key` | `string` |
 
-**Returns:** *string*
+#### Returns
 
-Defined in: [configure/interfaces.ts:18](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L18)
+`string`
+
+#### Defined in
+
+[configure/interfaces.ts:123](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L123)

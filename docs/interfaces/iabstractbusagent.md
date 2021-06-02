@@ -6,13 +6,13 @@ Inner representation of an agent, from the bus' perspective.
 
 ## Hierarchy
 
-* [*IBusAgent*](ibusagent.md)
+- [IBusAgent](ibusagent.md)
 
   ↳ **IAbstractBusAgent**
 
 ## Implemented by
 
-* [*AbstractBusAgent*](../classes/abstractbusagent.md)
+- [AbstractBusAgent](../classes/abstractbusagent.md)
 
 ## Table of contents
 
@@ -25,37 +25,47 @@ Inner representation of an agent, from the bus' perspective.
 
 ### activate
 
-▸ **activate**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype), `parameters`: [*IActionParameters*](iactionparameters.md)): *Observable*<[*IActionResult*](iactionresult.md)\>
+▸ **activate**(`res`, `action`, `parameters`): `Observable`<[IActionResult](iactionresult.md)\>
 
 Ask this agent to resolve an action.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
-`parameters` | [*IActionParameters*](iactionparameters.md) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
+| `parameters` | [IActionParameters](iactionparameters.md) |
 
-**Returns:** *Observable*<[*IActionResult*](iactionresult.md)\>
+#### Returns
 
-Inherited from: [IBusAgent](ibusagent.md)
+`Observable`<[IActionResult](iactionresult.md)\>
 
-Defined in: [explore/interfaces.ts:468](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L468)
+#### Inherited from
+
+[IBusAgent](ibusagent.md).[activate](ibusagent.md#activate)
+
+#### Defined in
+
+[explore/interfaces.ts:467](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L467)
 
 ___
 
 ### initialize
 
-▸ **initialize**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype)): *Promise*<[*IAbstractBusAgent*](iabstractbusagent.md)\>
+▸ **initialize**(`res`, `action`): `Promise`<[IAbstractBusAgent](iabstractbusagent.md)\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
 
-**Returns:** *Promise*<[*IAbstractBusAgent*](iabstractbusagent.md)\>
+#### Returns
 
-Defined in: [explore/Agent.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L14)
+`Promise`<[IAbstractBusAgent](iabstractbusagent.md)\>
+
+#### Defined in
+
+[explore/Agent.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L14)

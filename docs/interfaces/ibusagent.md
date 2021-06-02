@@ -4,9 +4,9 @@
 
 ## Hierarchy
 
-* **IBusAgent**
+- **IBusAgent**
 
-  ↳ [*IAbstractBusAgent*](iabstractbusagent.md)
+  ↳ [IAbstractBusAgent](iabstractbusagent.md)
 
 ## Table of contents
 
@@ -18,18 +18,22 @@
 
 ### activate
 
-▸ **activate**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype), `parameters`: [*IActionParameters*](iactionparameters.md)): *Observable*<[*IActionResult*](iactionresult.md)\>
+▸ **activate**(`res`, `action`, `parameters`): `Observable`<[IActionResult](iactionresult.md)\>
 
 Ask this agent to resolve an action.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
-`parameters` | [*IActionParameters*](iactionparameters.md) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
+| `parameters` | [IActionParameters](iactionparameters.md) |
 
-**Returns:** *Observable*<[*IActionResult*](iactionresult.md)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:468](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L468)
+`Observable`<[IActionResult](iactionresult.md)\>
+
+#### Defined in
+
+[explore/interfaces.ts:467](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L467)

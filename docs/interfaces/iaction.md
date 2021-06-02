@@ -13,14 +13,18 @@
 
 ### available
 
-• **available**: *boolean*
+• **available**: `boolean`
 
-Defined in: [explore/interfaces.ts:156](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L156)
+#### Defined in
+
+[explore/interfaces.ts:288](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L288)
 
 ___
 
 ### id
 
-• **id**: [*ActionType*](../modules.md#actiontype)
+• **id**: [ActionType](../modules.md#actiontype)
 
-Defined in: [explore/interfaces.ts:155](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L155)
+#### Defined in
+
+[explore/interfaces.ts:287](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L287)

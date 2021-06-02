@@ -28,248 +28,308 @@ Context to explore resources from an application.
 
 ### clear
 
-▸ **clear**(): *void*
+▸ **clear**(): `void`
 
 Clear and reset the underlying context.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [explore/interfaces.ts:367](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L367)
+`void`
+
+#### Defined in
+
+[explore/interfaces.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L54)
 
 ___
 
 ### copy
 
-▸ **copy**(`targetId`: *string*, `resourceIds`: *string*[], `folderIds`: *string*[]): *Promise*<void\>
+▸ **copy**(`targetId`, `resourceIds`, `folderIds`): `Promise`<void\>
 
 Copy resources and folders into a folder.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`targetId` | *string* | ID of the destination folder.   |
-`resourceIds` | *string*[] | Array of resources ID to copy.   |
-`folderIds` | *string*[] | Array of folders ID to copy.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `targetId` | `string` | ID of the destination folder. |
+| `resourceIds` | `string`[] | Array of resources ID to copy. |
+| `folderIds` | `string`[] | Array of folders ID to copy. |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:413](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L413)
+`Promise`<void\>
+
+#### Defined in
+
+[explore/interfaces.ts:100](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L100)
 
 ___
 
 ### createFolder
 
-▸ **createFolder**(`resourceType`: [*ResourceType*](../modules.md#resourcetype), `parentId`: *string*, `name`: *string*): *Promise*<[*CreateFolderResult*](../modules.md#createfolderresult)\>
+▸ **createFolder**(`resourceType`, `parentId`, `name`): `Promise`<[CreateFolderResult](../modules.md#createfolderresult)\>
 
 Create a new [sub]folder.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`resourceType` | [*ResourceType*](../modules.md#resourcetype) | Type of resources the created folder will contain.   |
-`parentId` | *string* | ID of the parent folder, or "default" for the root folder.   |
-`name` | *string* | Name of the created folder.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `resourceType` | [ResourceType](../modules.md#resourcetype) | Type of resources the created folder will contain. |
+| `parentId` | `string` | ID of the parent folder, or "default" for the root folder. |
+| `name` | `string` | Name of the created folder. |
 
-**Returns:** *Promise*<[*CreateFolderResult*](../modules.md#createfolderresult)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:396](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L396)
+`Promise`<[CreateFolderResult](../modules.md#createfolderresult)\>
+
+#### Defined in
+
+[explore/interfaces.ts:83](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L83)
 
 ___
 
 ### delete
 
-▸ **delete**(`resourceIds`: *string*[], `folderIds`: *string*[]): *Promise*<void\>
+▸ **delete**(`resourceIds`, `folderIds`): `Promise`<void\>
 
 Delete resources and folders.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`resourceIds` | *string*[] | Array of resources ID to delete.   |
-`folderIds` | *string*[] | Array of folders ID to delete.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `resourceIds` | `string`[] | Array of resources ID to delete. |
+| `folderIds` | `string`[] | Array of folders ID to delete. |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:428](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L428)
+`Promise`<void\>
+
+#### Defined in
+
+[explore/interfaces.ts:115](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L115)
 
 ___
 
 ### getContext
 
-▸ **getContext**(): *undefined* \| [*IContext*](icontext.md)
+▸ **getContext**(): `undefined` \| [IContext](icontext.md)
 
-**Returns:** *undefined* \| [*IContext*](icontext.md)
+#### Returns
+
+`undefined` \| [IContext](icontext.md)
 
 The initialized search context, or undefined if initialize() has not been called before.
 
-Defined in: [explore/interfaces.ts:354](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L354)
+#### Defined in
+
+[explore/interfaces.ts:41](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L41)
 
 ___
 
 ### getResources
 
-▸ **getResources**(): *Promise*<[*GetResourcesResult*](../modules.md#getresourcesresult)\>
+▸ **getResources**(): `Promise`<[GetResourcesResult](../modules.md#getresourcesresult)\>
 
 Retrieve a page of listed resources from the server.
 Observers of the latestResources() will be notified.
 Search parameters can be adjusted beforehand, @see getSearchParameters().
 
-**Returns:** *Promise*<[*GetResourcesResult*](../modules.md#getresourcesresult)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:382](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L382)
+`Promise`<[GetResourcesResult](../modules.md#getresourcesresult)\>
+
+#### Defined in
+
+[explore/interfaces.ts:69](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L69)
 
 ___
 
 ### getSearchParameters
 
-▸ **getSearchParameters**(): [*ISearchParameters*](isearchparameters.md)
+▸ **getSearchParameters**(): [ISearchParameters](isearchparameters.md)
 
-**Returns:** [*ISearchParameters*](isearchparameters.md)
+#### Returns
+
+[ISearchParameters](isearchparameters.md)
 
 search parameters in the current context, modifiable before any call to getResources() or initialize().
 
-Defined in: [explore/interfaces.ts:358](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L358)
+#### Defined in
+
+[explore/interfaces.ts:45](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L45)
 
 ___
 
 ### getSubFolders
 
-▸ **getSubFolders**(`parentId`: *string*): *Promise*<[*GetSubFoldersResult*](../modules.md#getsubfoldersresult)\>
+▸ **getSubFolders**(`parentId`): `Promise`<[GetSubFoldersResult](../modules.md#getsubfoldersresult)\>
 
 Retrieve subfolders of a parent folder, from the server.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`parentId` | *string* | ID of the parent folder.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parentId` | `string` | ID of the parent folder. |
 
-**Returns:** *Promise*<[*GetSubFoldersResult*](../modules.md#getsubfoldersresult)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:388](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L388)
+`Promise`<[GetSubFoldersResult](../modules.md#getsubfoldersresult)\>
+
+#### Defined in
+
+[explore/interfaces.ts:75](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L75)
 
 ___
 
 ### initialize
 
-▸ **initialize**(): *Promise*<[*IContext*](icontext.md)\>
+▸ **initialize**(): `Promise`<[IContext](icontext.md)\>
 
 Retrieve the first page of listed resources from the server.
 Observers of the latestResources() will be notified.
 Search parameters can be adjusted beforehand, @see getSearchParameters().
 
-**Returns:** *Promise*<[*IContext*](icontext.md)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:375](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L375)
+`Promise`<[IContext](icontext.md)\>
+
+#### Defined in
+
+[explore/interfaces.ts:62](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L62)
 
 ___
 
 ### isInitialized
 
-▸ **isInitialized**(): *boolean*
+▸ **isInitialized**(): `boolean`
 
-**Returns:** *boolean*
+#### Returns
+
+`boolean`
 
 true, if the context is initialized.
 
-Defined in: [explore/interfaces.ts:350](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L350)
+#### Defined in
+
+[explore/interfaces.ts:37](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L37)
 
 ___
 
 ### latestResources
 
-▸ **latestResources**(): *Observable*<{ `input`: [*ISearchParameters*](isearchparameters.md) ; `output`: [*ISearchResults*](isearchresults.md)  }\>
+▸ **latestResources**(): `Observable`<`Object`\>
 
-**Returns:** *Observable*<{ `input`: [*ISearchParameters*](isearchparameters.md) ; `output`: [*ISearchResults*](isearchresults.md)  }\>
+#### Returns
+
+`Observable`<`Object`\>
 
 a flow of objects, generated by initialize() and getResources() which should be called by your searches or pagination.
 
-Defined in: [explore/interfaces.ts:362](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L362)
+#### Defined in
+
+[explore/interfaces.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L49)
 
 ___
 
 ### manageProperties
 
-▸ **manageProperties**(`resourceType`: [*ResourceType*](../modules.md#resourcetype), `resources`: [*IResource*](iresource.md)[]): *Promise*<[*ManagePropertiesResult*](../modules.md#managepropertiesresult)\>
+▸ **manageProperties**(`resourceType`, `resources`): `Promise`<[ManagePropertiesResult](../modules.md#managepropertiesresult)\>
 
 Retrieves which properties of the resource(s) are manageable.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`resourceType` | [*ResourceType*](../modules.md#resourcetype) |
-`resources` | [*IResource*](iresource.md)[] |
+| Name | Type |
+| :------ | :------ |
+| `resourceType` | [ResourceType](../modules.md#resourcetype) |
+| `resources` | [IResource](iresource.md)[] |
 
-**Returns:** *Promise*<[*ManagePropertiesResult*](../modules.md#managepropertiesresult)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:431](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L431)
+`Promise`<[ManagePropertiesResult](../modules.md#managepropertiesresult)\>
+
+#### Defined in
+
+[explore/interfaces.ts:118](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L118)
 
 ___
 
 ### move
 
-▸ **move**(`targetId`: *string*, `resourceIds`: *string*[], `folderIds`: *string*[]): *Promise*<void\>
+▸ **move**(`targetId`, `resourceIds`, `folderIds`): `Promise`<void\>
 
 Move resources and folders into a folder.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`targetId` | *string* | ID of the destination folder.   |
-`resourceIds` | *string*[] | Array of resources ID to move.   |
-`folderIds` | *string*[] | Array of folders ID to move.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `targetId` | `string` | ID of the destination folder. |
+| `resourceIds` | `string`[] | Array of resources ID to move. |
+| `folderIds` | `string`[] | Array of folders ID to move. |
 
-**Returns:** *Promise*<void\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:421](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L421)
+`Promise`<void\>
+
+#### Defined in
+
+[explore/interfaces.ts:108](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L108)
 
 ___
 
 ### updateFolder
 
-▸ **updateFolder**(`folderId`: *string*, `resourceType`: [*ResourceType*](../modules.md#resourcetype), `parentId`: *string*, `name`: *string*): *Promise*<[*UpdateFolderResult*](../modules.md#updatefolderresult)\>
+▸ **updateFolder**(`folderId`, `resourceType`, `parentId`, `name`): `Promise`<[UpdateFolderResult](../modules.md#updatefolderresult)\>
 
 Modify the properties of a folder.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`folderId` | *string* | ID of the folder to modify.   |
-`resourceType` | [*ResourceType*](../modules.md#resourcetype) | Type of resources the modified folder will contain.   |
-`parentId` | *string* | ID of the parent folder.   |
-`name` | *string* | Name of the folder.    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `folderId` | `string` | ID of the folder to modify. |
+| `resourceType` | [ResourceType](../modules.md#resourcetype) | Type of resources the modified folder will contain. |
+| `parentId` | `string` | ID of the parent folder. |
+| `name` | `string` | Name of the folder. |
 
-**Returns:** *Promise*<[*UpdateFolderResult*](../modules.md#updatefolderresult)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:405](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L405)
+`Promise`<[UpdateFolderResult](../modules.md#updatefolderresult)\>
+
+#### Defined in
+
+[explore/interfaces.ts:92](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L92)
 
 ___
 
 ### updateProperties
 
-▸ **updateProperties**(`resourceType`: [*ResourceType*](../modules.md#resourcetype), `resources`: [*IResource*](iresource.md)[], `props`: { `color`:  ; `description`:  ; `image`:  ; `title`:  ; `url`:   }): *Promise*<[*UpdatePropertiesResult*](../modules.md#updatepropertiesresult)\>
+▸ **updateProperties**(`resourceType`, `resources`, `props`): `Promise`<[UpdatePropertiesResult](../modules.md#updatepropertiesresult)\>
 
 Update managed properties.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`resourceType` | [*ResourceType*](../modules.md#resourcetype) |
-`resources` | [*IResource*](iresource.md)[] |
-`props` | *object* |
-`props.color` | - |
-`props.description` | - |
-`props.image` | - |
-`props.title` | - |
-`props.url` | - |
+| Name | Type |
+| :------ | :------ |
+| `resourceType` | [ResourceType](../modules.md#resourcetype) |
+| `resources` | [IResource](iresource.md)[] |
+| `props` | `Object` |
+| `props.color` |  |
+| `props.description` |  |
+| `props.image` |  |
+| `props.title` |  |
+| `props.url` |  |
 
-**Returns:** *Promise*<[*UpdatePropertiesResult*](../modules.md#updatepropertiesresult)\>
+#### Returns
 
-Defined in: [explore/interfaces.ts:433](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L433)
+`Promise`<[UpdatePropertiesResult](../modules.md#updatepropertiesresult)\>
+
+#### Defined in
+
+[explore/interfaces.ts:120](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L120)

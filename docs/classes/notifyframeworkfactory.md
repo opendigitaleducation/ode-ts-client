@@ -8,7 +8,7 @@
 
 - [constructor](notifyframeworkfactory.md#constructor)
 
-### Properties
+### Methods
 
 - [instance](notifyframeworkfactory.md#instance)
 
@@ -16,14 +16,18 @@
 
 ### constructor
 
-\+ **new NotifyFrameworkFactory**(): [*NotifyFrameworkFactory*](notifyframeworkfactory.md)
+• **new NotifyFrameworkFactory**()
 
-**Returns:** [*NotifyFrameworkFactory*](notifyframeworkfactory.md)
-
-## Properties
+## Methods
 
 ### instance
 
-▪ `Static` `Readonly` **instance**: [*INotifyFramework*](../interfaces/inotifyframework.md)
+▸ `Static` **instance**(): [INotifyFramework](inotifyframework.md)
 
-Defined in: [notify/interfaces.ts:44](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L44)
+#### Returns
+
+[INotifyFramework](inotifyframework.md)
+
+#### Defined in
+
+[notify/interfaces.ts:17](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L17)

@@ -2,9 +2,11 @@
 
 # Class: BootstrappedNotice
 
+Notified when the current session is bootstrapped, or when an error prevent it.
+
 ## Implements
 
-* [*INotice*](../interfaces/inotice.md)
+- [INotice](../interfaces/inotice.md)
 
 ## Table of contents
 
@@ -16,43 +18,47 @@
 
 - [eventName](bootstrappednotice.md#eventname)
 - [failureText](bootstrappednotice.md#failuretext)
-- [me](bootstrappednotice.md#me)
+- [userInfo](bootstrappednotice.md#userinfo)
 
 ## Constructors
 
 ### constructor
 
-\+ **new BootstrappedNotice**(`me?`: *any*, `failureText?`: *string*): [*BootstrappedNotice*](bootstrappednotice.md)
+• **new BootstrappedNotice**(`userInfo?`, `failureText?`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`me?` | *any* |
-`failureText?` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `userInfo?` | [IUserInfo](../interfaces/iuserinfo.md) |
+| `failureText?` | `string` |
 
-**Returns:** [*BootstrappedNotice*](bootstrappednotice.md)
+#### Defined in
 
-Defined in: [notify/interfaces.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L28)
+[notify/interfaces.ts:84](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L84)
 
 ## Properties
 
 ### eventName
 
-• `Readonly` **eventName**: [*EventName*](../modules.md#eventname)
+• `Readonly` **eventName**: [EventName](../modules.md#eventname)
 
-Implementation of: [INotice](../interfaces/inotice.md).[eventName](../interfaces/inotice.md#eventname)
+#### Implementation of
 
-Defined in: [notify/interfaces.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L28)
+[INotice](../interfaces/inotice.md).[eventName](../interfaces/inotice.md#eventname)
+
+#### Defined in
+
+[notify/interfaces.ts:84](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L84)
 
 ___
 
 ### failureText
 
-• `Optional` **failureText**: *string*
+• `Optional` **failureText**: `string`
 
 ___
 
-### me
+### userInfo
 
-• `Optional` **me**: *any*
+• `Optional` **userInfo**: [IUserInfo](../interfaces/iuserinfo.md)

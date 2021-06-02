@@ -6,7 +6,7 @@ Manage a generic RESOURCE
 
 ## Implements
 
-* [*IAbstractBusAgent*](../interfaces/iabstractbusagent.md)
+- [IAbstractBusAgent](../interfaces/iabstractbusagent.md)
 
 ## Table of contents
 
@@ -35,180 +35,220 @@ Manage a generic RESOURCE
 
 ### constructor
 
-\+ **new AbstractBusAgent**(`managedResource`: [*ResourceType*](../modules.md#resourcetype)): [*AbstractBusAgent*](abstractbusagent.md)
+• **new AbstractBusAgent**(`managedResource`)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`managedResource` | [*ResourceType*](../modules.md#resourcetype) |
+| Name | Type |
+| :------ | :------ |
+| `managedResource` | [ResourceType](../modules.md#resourcetype) |
 
-**Returns:** [*AbstractBusAgent*](abstractbusagent.md)
+#### Defined in
 
-Defined in: [explore/Agent.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L22)
+[explore/Agent.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L22)
 
 ## Properties
 
 ### handlerFor
 
-• `Protected` **handlerFor**: *object*
+• `Protected` **handlerFor**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`comment` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`copy` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`create` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`delete` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`export` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`initialize` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`manage` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`move` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`open` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`print` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`properties` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`publish` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`search` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
-`share` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
+| Name | Type |
+| :------ | :------ |
+| `comment` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `copy` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `create` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `delete` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `export` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `initialize` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `manage` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `move` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `open` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `print` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `properties` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `publish` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `search` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
+| `share` | (`parameters`: [IActionParameters](../interfaces/iactionparameters.md)) => `Promise`<[IActionResult](../interfaces/iactionresult.md)\> |
 
-Defined in: [explore/Agent.ts:32](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L32)
+#### Defined in
+
+[explore/Agent.ts:32](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L32)
 
 ___
 
 ### initialized
 
-• `Protected` **initialized**: *boolean*= false
+• `Protected` **initialized**: `boolean` = false
 
-Defined in: [explore/Agent.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L28)
+#### Defined in
+
+[explore/Agent.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L28)
 
 ___
 
 ### managedResource
 
-• `Protected` **managedResource**: [*ResourceType*](../modules.md#resourcetype)
+• `Protected` **managedResource**: [ResourceType](../modules.md#resourcetype)
 
 Type of resource this agent can manage.
 
-Defined in: [explore/Agent.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L27)
+#### Defined in
+
+[explore/Agent.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L27)
 
 ___
 
 ### defaultHandler
 
-▪ `Static` `Protected` **defaultHandler**: IHandler
+▪ `Static` `Protected` **defaultHandler**: `IHandler`
 
-Defined in: [explore/Agent.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L29)
+#### Defined in
+
+[explore/Agent.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L29)
 
 ## Methods
 
 ### activate
 
-▸ **activate**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype), `parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)): *Observable*<[*IActionResult*](../interfaces/iactionresult.md)\>
+▸ **activate**(`res`, `action`, `parameters`): `Observable`<[IActionResult](../interfaces/iactionresult.md)\>
 
 Ask this agent to resolve an action.
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
-`parameters` | [*IActionParameters*](../interfaces/iactionparameters.md) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
+| `parameters` | [IActionParameters](../interfaces/iactionparameters.md) |
 
-**Returns:** *Observable*<[*IActionResult*](../interfaces/iactionresult.md)\>
+#### Returns
 
-Implementation of: [IAbstractBusAgent](../interfaces/iabstractbusagent.md)
+`Observable`<[IActionResult](../interfaces/iactionresult.md)\>
 
-Defined in: [explore/Agent.ts:82](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L82)
+#### Implementation of
+
+[IAbstractBusAgent](../interfaces/iabstractbusagent.md).[activate](../interfaces/iabstractbusagent.md#activate)
+
+#### Defined in
+
+[explore/Agent.ts:82](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L82)
 
 ___
 
 ### canHandle
 
-▸ `Protected`**canHandle**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype)): *boolean*
+▸ `Protected` **canHandle**(`res`, `action`): `boolean`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
 
-**Returns:** *boolean*
+#### Returns
 
-Defined in: [explore/Agent.ts:61](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L61)
+`boolean`
+
+#### Defined in
+
+[explore/Agent.ts:61](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L61)
 
 ___
 
 ### getHandler
 
-▸ `Protected`**getHandler**(`action`: [*ActionType*](../modules.md#actiontype)): IHandler
+▸ `Protected` **getHandler**(`action`): `IHandler`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`action` | [*ActionType*](../modules.md#actiontype) |
+| Name | Type |
+| :------ | :------ |
+| `action` | [ActionType](../modules.md#actiontype) |
 
-**Returns:** IHandler
+#### Returns
 
-Defined in: [explore/Agent.ts:58](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L58)
+`IHandler`
+
+#### Defined in
+
+[explore/Agent.ts:58](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L58)
 
 ___
 
 ### initialize
 
-▸ **initialize**(`res`: [*ResourceType*](../modules.md#resourcetype), `action`: [*ActionType*](../modules.md#actiontype)): *Promise*<[*IAbstractBusAgent*](../interfaces/iabstractbusagent.md)\>
+▸ **initialize**(`res`, `action`): `Promise`<[IAbstractBusAgent](../interfaces/iabstractbusagent.md)\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`res` | [*ResourceType*](../modules.md#resourcetype) |
-`action` | [*ActionType*](../modules.md#actiontype) |
+| Name | Type |
+| :------ | :------ |
+| `res` | [ResourceType](../modules.md#resourcetype) |
+| `action` | [ActionType](../modules.md#actiontype) |
 
-**Returns:** *Promise*<[*IAbstractBusAgent*](../interfaces/iabstractbusagent.md)\>
+#### Returns
 
-Implementation of: [IAbstractBusAgent](../interfaces/iabstractbusagent.md)
+`Promise`<[IAbstractBusAgent](../interfaces/iabstractbusagent.md)\>
 
-Defined in: [explore/Agent.ts:68](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L68)
+#### Implementation of
+
+[IAbstractBusAgent](../interfaces/iabstractbusagent.md).[initialize](../interfaces/iabstractbusagent.md#initialize)
+
+#### Defined in
+
+[explore/Agent.ts:68](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L68)
 
 ___
 
 ### registerHandlers
 
-▸ `Protected` `Abstract`**registerHandlers**(): *void*
+▸ `Protected` `Abstract` **registerHandlers**(): `void`
 
 Override to register handlers for actions this agent support.
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [explore/Agent.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L66)
+`void`
+
+#### Defined in
+
+[explore/Agent.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L66)
 
 ___
 
 ### resetHandlers
 
-▸ `Protected`**resetHandlers**(): *void*
+▸ `Protected` **resetHandlers**(): `void`
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [explore/Agent.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L49)
+`void`
+
+#### Defined in
+
+[explore/Agent.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L49)
 
 ___
 
 ### setHandler
 
-▸ `Protected`**setHandler**(`action`: [*ActionType*](../modules.md#actiontype), `handler`: IHandler): *void*
+▸ `Protected` **setHandler**(`action`, `handler`): `void`
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`action` | [*ActionType*](../modules.md#actiontype) |
-`handler` | IHandler |
+| Name | Type |
+| :------ | :------ |
+| `action` | [ActionType](../modules.md#actiontype) |
+| `handler` | `IHandler` |
 
-**Returns:** *void*
+#### Returns
 
-Defined in: [explore/Agent.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Agent.ts#L54)
+`void`
+
+#### Defined in
+
+[explore/Agent.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L54)

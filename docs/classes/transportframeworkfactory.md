@@ -8,7 +8,7 @@
 
 - [constructor](transportframeworkfactory.md#constructor)
 
-### Properties
+### Methods
 
 - [instance](transportframeworkfactory.md#instance)
 
@@ -16,14 +16,18 @@
 
 ### constructor
 
-\+ **new TransportFrameworkFactory**(): [*TransportFrameworkFactory*](transportframeworkfactory.md)
+• **new TransportFrameworkFactory**()
 
-**Returns:** [*TransportFrameworkFactory*](transportframeworkfactory.md)
-
-## Properties
+## Methods
 
 ### instance
 
-▪ `Static` `Readonly` **instance**: [*ITransportFramework*](../interfaces/itransportframework.md)
+▸ `Static` **instance**(): [ITransportFramework](../interfaces/itransportframework.md)
 
-Defined in: [transport/interfaces.ts:33](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L33)
+#### Returns
+
+[ITransportFramework](../interfaces/itransportframework.md)
+
+#### Defined in
+
+[transport/interfaces.ts:6](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L6)

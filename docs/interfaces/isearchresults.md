@@ -4,9 +4,9 @@
 
 ## Hierarchy
 
-* **ISearchResults**
+- **ISearchResults**
 
-  ↳ [*IContext*](icontext.md)
+  ↳ [IContext](icontext.md)
 
 ## Table of contents
 
@@ -20,22 +20,28 @@
 
 ### folders
 
-• **folders**: [*IFolder*](ifolder.md)[]
+• **folders**: [IFolder](ifolder.md)[]
 
-Defined in: [explore/interfaces.ts:139](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L139)
+#### Defined in
+
+[explore/interfaces.ts:271](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L271)
 
 ___
 
 ### pagination
 
-• **pagination**: [*IPagination*](ipagination.md)
+• **pagination**: [IPagination](ipagination.md)
 
-Defined in: [explore/interfaces.ts:140](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L140)
+#### Defined in
+
+[explore/interfaces.ts:272](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L272)
 
 ___
 
 ### resources
 
-• **resources**: [*IResource*](iresource.md)[]
+• **resources**: [IResource](iresource.md)[]
 
-Defined in: [explore/interfaces.ts:141](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L141)
+#### Defined in
+
+[explore/interfaces.ts:273](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L273)

@@ -6,39 +6,84 @@
 
 ### Properties
 
-- [global](iconfigurationframework.md#global)
-- [idiom](iconfigurationframework.md#idiom)
-- [me](iconfigurationframework.md#me)
-- [theme](iconfigurationframework.md#theme)
+- [Platform](iconfigurationframework.md#platform)
+- [School](iconfigurationframework.md#school)
+- [User](iconfigurationframework.md#user)
+
+### Methods
+
+- [initialize](iconfigurationframework.md#initialize)
 
 ## Properties
 
-### global
+### Platform
 
-• `Readonly` **global**: [*IGlobal*](iglobal.md)
+• `Readonly` **Platform**: `Object`
 
-Defined in: [configure/interfaces.ts:34](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L34)
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `apps` | `Object` |
+| `apps.getPublicConf` | [object Object] |
+| `apps.initialize` | [object Object] |
+| `apps.loadI18n` | [object Object] |
+| `cdnDomain` | `string` |
+| `deploymentTag` | `string` |
+| `idiom` | [IIdiom](iidiom.md) |
+| `theme` | [ITheme](itheme.md) |
+
+#### Defined in
+
+[configure/interfaces.ts:18](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L18)
 
 ___
 
-### idiom
+### School
 
-• `Readonly` **idiom**: [*IIdiom*](iidiom.md)
+• `Readonly` **School**: `Object`
 
-Defined in: [configure/interfaces.ts:36](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L36)
+#### Defined in
 
-___
-
-### me
-
-• `Readonly` **me**: [*IMe*](ime.md)
-
-Defined in: [configure/interfaces.ts:37](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L37)
+[configure/interfaces.ts:33](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L33)
 
 ___
 
-### theme
+### User
 
-• `Readonly` **theme**: [*ITheme*](itheme.md)
+• `Readonly` **User**: `Object`
 
-Defined in: [configure/interfaces.ts:35](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L35)
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `bookmarkedApps` | [AppModel](../modules.md#appmodel)[] |
+| `keepOpenOnLogout` | `boolean` |
+| `preferences` | [IUserPreferences](iuserpreferences.md) |
+
+#### Defined in
+
+[configure/interfaces.ts:36](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L36)
+
+## Methods
+
+### initialize
+
+▸ **initialize**(`version`, `cdnDomain`): `Promise`<void\>
+
+Framework initialization
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `version` | ``null`` \| `string` |
+| `cdnDomain` | ``null`` \| `string` |
+
+#### Returns
+
+`Promise`<void\>
+
+#### Defined in
+
+[configure/interfaces.ts:16](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L16)

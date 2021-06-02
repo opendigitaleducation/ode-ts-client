@@ -13,6 +13,8 @@
 - [delete](ihttp.md#delete)
 - [deleteJson](ihttp.md#deletejson)
 - [get](ihttp.md#get)
+- [getScript](ihttp.md#getscript)
+- [loadScript](ihttp.md#loadscript)
 - [post](ihttp.md#post)
 - [postFile](ihttp.md#postfile)
 - [postJson](ihttp.md#postjson)
@@ -23,203 +25,305 @@
 
 ### latestResponse
 
-• `Readonly` **latestResponse**: [*IHttpResponse*](../modules.md#ihttpresponse)
+• `Readonly` **latestResponse**: [IHttpResponse](../modules.md#ihttpresponse)
 
-Defined in: [transport/interfaces.ts:11](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L11)
+Latest available HTTP response, valid during your get|post|put...then() and catch() handlers.
+
+#### Defined in
+
+[transport/interfaces.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L28)
 
 ## Methods
 
 ### delete
 
-▸ **delete**<T, R\>(`url`: *string*, `params?`: [*IHttpParams*](../modules.md#ihttpparams)): *Promise*<R\>
+▸ **delete**<T, R\>(`url`, `params?`): `Promise`<R\>
 
-#### Type parameters:
+HTTP DELETE
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` = `any` |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
 
-Defined in: [transport/interfaces.ts:19](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L19)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:57](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L57)
 
 ___
 
 ### deleteJson
 
-▸ **deleteJson**<T, R\>(`url`: *string*, `json`: *any*): *Promise*<R\>
+▸ **deleteJson**<T, R\>(`url`, `json`): `Promise`<R\>
 
-#### Type parameters:
+HTTP DELETE, Accept: application/json
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` = `any` |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`json` | *any* |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `json` | `any` |
 
-Defined in: [transport/interfaces.ts:20](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L20)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:60](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L60)
 
 ___
 
 ### get
 
-▸ **get**<T, R\>(`url`: *string*, `params?`: [*IHttpParams*](../modules.md#ihttpparams)): *Promise*<R\>
+▸ **get**<R\>(`url`, `params?`): `Promise`<R\>
 
-#### Type parameters:
+HTTP GET Accept: application/json
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
 
-Defined in: [transport/interfaces.ts:12](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L12)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:31](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L31)
+
+___
+
+### getScript
+
+▸ **getScript**<R\>(`url`, `params?`, `exportedVariableName?`): `Promise`<R\>
+
+HTTP GET, Accept: application/javascript
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `R` | `R` = `any` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
+| `exportedVariableName?` | `string` |
+
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L66)
+
+___
+
+### loadScript
+
+▸ **loadScript**(`url`, `params?`): `Promise`<void\>
+
+HTTP GET, Accept: application/javascript
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
+
+#### Returns
+
+`Promise`<void\>
+
+#### Defined in
+
+[transport/interfaces.ts:69](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L69)
 
 ___
 
 ### post
 
-▸ **post**<T, R\>(`url`: *string*, `data?`: *any*, `params?`: [*IHttpParams*](../modules.md#ihttpparams)): *Promise*<R\>
+▸ **post**<R\>(`url`, `data?`, `params?`): `Promise`<R\>
 
-#### Type parameters:
+HTTP POST, Accept: application/json
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`data?` | *any* |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `data?` | `any` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
 
-Defined in: [transport/interfaces.ts:13](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L13)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:34](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L34)
 
 ___
 
 ### postFile
 
-▸ **postFile**<T, R\>(`url`: *string*, `data`: *any*, `params?`: [*IHttpParams*](../modules.md#ihttpparams)): *Promise*<R\>
+▸ **postFile**<R\>(`url`, `data`, `params?`): `Promise`<R\>
 
-#### Type parameters:
+HTTP POST
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`data` | *any* |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `url` | `string` | - |
+| `data` | `any` | must be of one of the following types: string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams Browser only: FormData, File, Blob Node only: Stream, Buffer |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) | - |
 
-Defined in: [transport/interfaces.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L14)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:43](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L43)
 
 ___
 
 ### postJson
 
-▸ **postJson**<T, R\>(`url`: *string*, `json`: *any*, `params?`: [*IHttpParams*](../modules.md#ihttpparams)): *Promise*<R\>
+▸ **postJson**<T, R\>(`url`, `json`, `params?`): `Promise`<R\>
 
-#### Type parameters:
+HTTP POST, Accept: application/json, Content-type: application/json
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` = `any` |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`json` | *any* |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `json` | `any` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
 
-Defined in: [transport/interfaces.ts:15](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L15)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:46](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L46)
 
 ___
 
 ### put
 
-▸ **put**<T, R\>(`url`: *string*, `data?`: *any*, `params?`: [*IHttpParams*](../modules.md#ihttpparams)): *Promise*<R\>
+▸ **put**<T, R\>(`url`, `data?`, `params?`): `Promise`<R\>
 
-#### Type parameters:
+HTTP PUT, Accept: application/json
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` = `any` |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`data?` | *any* |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `data?` | `any` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
 
-Defined in: [transport/interfaces.ts:16](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L16)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L49)
 
 ___
 
 ### putJson
 
-▸ **putJson**<T, R\>(`url`: *string*, `json`: *any*, `params?`: [*IHttpParams*](../modules.md#ihttpparams)): *Promise*<R\>
+▸ **putJson**<T, R\>(`url`, `json`, `params?`): `Promise`<R\>
 
-#### Type parameters:
+HTTP PUT, Accept: application/json, Content-type: application/json
 
-Name | Default |
-:------ | :------ |
-`T` | *any* |
-`R` | *any* |
+#### Type parameters
 
-#### Parameters:
+| Name | Type |
+| :------ | :------ |
+| `T` | `T` = `any` |
+| `R` | `R` = `any` |
 
-Name | Type |
-:------ | :------ |
-`url` | *string* |
-`json` | *any* |
-`params?` | [*IHttpParams*](../modules.md#ihttpparams) |
+#### Parameters
 
-**Returns:** *Promise*<R\>
+| Name | Type |
+| :------ | :------ |
+| `url` | `string` |
+| `json` | `any` |
+| `params?` | [IHttpParams](../modules.md#ihttpparams) |
 
-Defined in: [transport/interfaces.ts:18](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L18)
+#### Returns
+
+`Promise`<R\>
+
+#### Defined in
+
+[transport/interfaces.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L54)

@@ -10,9 +10,14 @@
 - [BootstrappedNotice](classes/bootstrappednotice.md)
 - [ConfigurationFrameworkFactory](classes/configurationframeworkfactory.md)
 - [ExplorerFrameworkFactory](classes/explorerframeworkfactory.md)
+- [HttpErrorNotice](classes/httperrornotice.md)
+- [INotifyFramework](classes/inotifyframework.md)
 - [LangChangedNotice](classes/langchangednotice.md)
 - [NotifyFrameworkFactory](classes/notifyframeworkfactory.md)
+- [PreferencesUpdated](classes/preferencesupdated.md)
+- [SessionFrameworkFactory](classes/sessionframeworkfactory.md)
 - [TransportFrameworkFactory](classes/transportframeworkfactory.md)
+- [WidgetFrameworkFactory](classes/widgetframeworkfactory.md)
 
 ### Interfaces
 
@@ -28,27 +33,39 @@
 - [IExplorerFramework](interfaces/iexplorerframework.md)
 - [IFilter](interfaces/ifilter.md)
 - [IFolder](interfaces/ifolder.md)
-- [IGlobal](interfaces/iglobal.md)
 - [IHttp](interfaces/ihttp.md)
 - [IIdiom](interfaces/iidiom.md)
-- [IMe](interfaces/ime.md)
 - [INotice](interfaces/inotice.md)
-- [INotifyFramework](interfaces/inotifyframework.md)
 - [IOrder](interfaces/iorder.md)
 - [IPagination](interfaces/ipagination.md)
 - [IPreferences](interfaces/ipreferences.md)
+- [IPromisified](interfaces/ipromisified.md)
 - [IProperty](interfaces/iproperty.md)
 - [IResource](interfaces/iresource.md)
 - [ISearchParameters](interfaces/isearchparameters.md)
 - [ISearchResults](interfaces/isearchresults.md)
+- [ISession](interfaces/isession.md)
+- [ISessionFramework](interfaces/isessionframework.md)
 - [ITheme](interfaces/itheme.md)
+- [IThemeConf](interfaces/ithemeconf.md)
+- [IThemeConfOverriding](interfaces/ithemeconfoverriding.md)
+- [IThemeDesc](interfaces/ithemedesc.md)
 - [ITransportFramework](interfaces/itransportframework.md)
+- [IUserDescription](interfaces/iuserdescription.md)
+- [IUserInfo](interfaces/iuserinfo.md)
+- [IUserPreferences](interfaces/iuserpreferences.md)
+- [IWebApp](interfaces/iwebapp.md)
+- [IWidget](interfaces/iwidget.md)
+- [IWidgetFramework](interfaces/iwidgetframework.md)
+- [IWidgetModel](interfaces/iwidgetmodel.md)
+- [IWorkflowAuth](interfaces/iworkflowauth.md)
 
 ### Type aliases
 
 - [ActionType](modules.md#actiontype)
 - [AddBundleCallback](modules.md#addbundlecallback)
 - [App](modules.md#app)
+- [AppModel](modules.md#appmodel)
 - [BooleanFilterType](modules.md#booleanfiltertype)
 - [CopyParameters](modules.md#copyparameters)
 - [CreateFolderParameters](modules.md#createfolderparameters)
@@ -63,9 +80,11 @@
 - [GetResourcesParameters](modules.md#getresourcesparameters)
 - [GetResourcesResult](modules.md#getresourcesresult)
 - [GetSubFoldersResult](modules.md#getsubfoldersresult)
+- [Hobby](modules.md#hobby)
 - [ID](modules.md#id)
 - [IHttpParams](modules.md#ihttpparams)
 - [IHttpResponse](modules.md#ihttpresponse)
+- [IThemeOverrides](modules.md#ithemeoverrides)
 - [ManagePropertiesParameters](modules.md#managepropertiesparameters)
 - [ManagePropertiesResult](modules.md#managepropertiesresult)
 - [MoveParameters](modules.md#moveparameters)
@@ -75,6 +94,7 @@
 - [PropModeType](modules.md#propmodetype)
 - [PropTypeType](modules.md#proptypetype)
 - [ResourceType](modules.md#resourcetype)
+- [Shool](modules.md#shool)
 - [SortByType](modules.md#sortbytype)
 - [SortOrderType](modules.md#sortordertype)
 - [StringFilterType](modules.md#stringfiltertype)
@@ -83,6 +103,9 @@
 - [UpdateFolderResult](modules.md#updatefolderresult)
 - [UpdatePropertiesParameters](modules.md#updatepropertiesparameters)
 - [UpdatePropertiesResult](modules.md#updatepropertiesresult)
+- [UserPreferenceKey](modules.md#userpreferencekey)
+- [WidgetPosition](modules.md#widgetposition)
+- [WidgetUserPref](modules.md#widgetuserpref)
 
 ### Variables
 
@@ -107,201 +130,300 @@
 
 ### ActionType
 
-Ƭ **ActionType**: *typeof* [*ACTION*](modules.md#action)[keyof *typeof* [*ACTION*](modules.md#action)]
+Ƭ **ActionType**: typeof [ACTION](modules.md#action)[keyof typeof [ACTION](modules.md#action)]
 
-Defined in: [explore/interfaces.ts:37](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L37)
+#### Defined in
+
+[explore/interfaces.ts:169](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L169)
 
 ___
 
 ### AddBundleCallback
 
-Ƭ **AddBundleCallback**: () => *void* \| *Promise*<void\>
+Ƭ **AddBundleCallback**: () => `void` \| `Promise`<void\>
 
-#### Type declaration:
+#### Type declaration
 
-▸ (): *void* \| *Promise*<void\>
+▸ (): `void` \| `Promise`<void\>
 
-**Returns:** *void* \| *Promise*<void\>
+##### Returns
 
-Defined in: [configure/interfaces.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/configure/interfaces.ts#L14)
+`void` \| `Promise`<void\>
+
+#### Defined in
+
+[configure/interfaces.ts:119](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L119)
 
 ___
 
 ### App
 
-Ƭ **App**: *typeof* [*APP*](modules.md#app)[keyof *typeof* [*APP*](modules.md#app)]
+Ƭ **App**: typeof [APP](modules.md#app)[keyof typeof [APP](modules.md#app)]
 
-Defined in: [globals.ts:26](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/globals.ts#L26)
+#### Defined in
+
+[globals.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L27)
+
+___
+
+### AppModel
+
+Ƭ **AppModel**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `name` | `string` |
+
+#### Defined in
+
+[configure/interfaces.ts:133](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L133)
 
 ___
 
 ### BooleanFilterType
 
-Ƭ **BooleanFilterType**: *typeof* [*BOOLEAN\_FILTER*](modules.md#boolean_filter)[keyof *typeof* [*BOOLEAN\_FILTER*](modules.md#boolean_filter)]
+Ƭ **BooleanFilterType**: typeof [BOOLEAN\_FILTER](modules.md#boolean_filter)[keyof typeof [BOOLEAN\_FILTER](modules.md#boolean_filter)]
 
-Defined in: [explore/interfaces.ts:53](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L53)
+#### Defined in
+
+[explore/interfaces.ts:185](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L185)
 
 ___
 
 ### CopyParameters
 
-Ƭ **CopyParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderId`: [*ID*](modules.md#id) ; `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
+Ƭ **CopyParameters**: [IActionParameters](interfaces/iactionparameters.md) & { `folderId`: [ID](modules.md#id) ; `folderIds`: [ID](modules.md#id)[] ; `resourceIds`: [ID](modules.md#id)[]  }
 
-Defined in: [explore/interfaces.ts:259](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L259)
+#### Defined in
+
+[explore/interfaces.ts:391](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L391)
 
 ___
 
 ### CreateFolderParameters
 
-Ƭ **CreateFolderParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `app`: [*App*](modules.md#app) ; `name`: *string* ; `parentId`: [*ID*](modules.md#id) \| *default* ; `type`: [*ResourceType*](modules.md#resourcetype)  }
+Ƭ **CreateFolderParameters**: [IActionParameters](interfaces/iactionparameters.md) & { `app`: [App](modules.md#app) ; `name`: `string` ; `parentId`: [ID](modules.md#id) \| ``"default"`` ; `type`: [ResourceType](modules.md#resourcetype)  }
 
-Defined in: [explore/interfaces.ts:246](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L246)
+#### Defined in
+
+[explore/interfaces.ts:378](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L378)
 
 ___
 
 ### CreateFolderResult
 
-Ƭ **CreateFolderResult**: [*IActionResult*](interfaces/iactionresult.md) & [*IFolder*](interfaces/ifolder.md) & { `createdAt`: *string*  }
+Ƭ **CreateFolderResult**: [IActionResult](interfaces/iactionresult.md) & [IFolder](interfaces/ifolder.md) & { `createdAt`: `string`  }
 
-Defined in: [explore/interfaces.ts:307](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L307)
+#### Defined in
+
+[explore/interfaces.ts:439](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L439)
 
 ___
 
 ### DeleteParameters
 
-Ƭ **DeleteParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
+Ƭ **DeleteParameters**: [IActionParameters](interfaces/iactionparameters.md) & { `folderIds`: [ID](modules.md#id)[] ; `resourceIds`: [ID](modules.md#id)[]  }
 
-Defined in: [explore/interfaces.ts:269](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L269)
+#### Defined in
+
+[explore/interfaces.ts:401](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L401)
 
 ___
 
 ### ErrorCode
 
-Ƭ **ErrorCode**: *typeof* [*ERROR\_CODE*](modules.md#error_code)[keyof *typeof* [*ERROR\_CODE*](modules.md#error_code)]
+Ƭ **ErrorCode**: typeof [ERROR\_CODE](modules.md#error_code)[keyof typeof [ERROR\_CODE](modules.md#error_code)]
 
-Defined in: [globals.ts:17](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/globals.ts#L17)
+#### Defined in
+
+[globals.ts:17](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L17)
 
 ___
 
 ### EventName
 
-Ƭ **EventName**: *typeof* [*EVENT\_NAME*](modules.md#event_name)[keyof *typeof* [*EVENT\_NAME*](modules.md#event_name)]
+Ƭ **EventName**: typeof [EVENT\_NAME](modules.md#event_name)[keyof typeof [EVENT\_NAME](modules.md#event_name)]
 
-Defined in: [notify/interfaces.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L7)
+#### Defined in
+
+[notify/interfaces.ts:12](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L12)
 
 ___
 
 ### FilterValues
 
-Ƭ **FilterValues**: { [B in BooleanFilterType]?: boolean} & { [S in StringFilterType]?: string} & { `folder?`: [*ID*](modules.md#id)  }
+Ƭ **FilterValues**: { [B in BooleanFilterType]?: boolean} & { [S in StringFilterType]?: string} & { `folder?`: [ID](modules.md#id)  }
 
-Defined in: [explore/interfaces.ts:292](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L292)
+#### Defined in
+
+[explore/interfaces.ts:424](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L424)
 
 ___
 
 ### FolderType
 
-Ƭ **FolderType**: *typeof* [*FOLDER*](modules.md#folder)[keyof *typeof* [*FOLDER*](modules.md#folder)]
+Ƭ **FolderType**: typeof [FOLDER](modules.md#folder)[keyof typeof [FOLDER](modules.md#folder)]
 
-Defined in: [explore/interfaces.ts:44](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L44)
+#### Defined in
+
+[explore/interfaces.ts:176](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L176)
 
 ___
 
 ### GetContextParameters
 
-Ƭ **GetContextParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & [*ISearchParameters*](interfaces/isearchparameters.md)
+Ƭ **GetContextParameters**: [IActionParameters](interfaces/iactionparameters.md) & [ISearchParameters](interfaces/isearchparameters.md)
 
-Defined in: [explore/interfaces.ts:244](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L244)
+#### Defined in
+
+[explore/interfaces.ts:376](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L376)
 
 ___
 
 ### GetContextResult
 
-Ƭ **GetContextResult**: [*IActionResult*](interfaces/iactionresult.md) & [*IContext*](interfaces/icontext.md)
+Ƭ **GetContextResult**: [IActionResult](interfaces/iactionresult.md) & [IContext](interfaces/icontext.md)
 
-Defined in: [explore/interfaces.ts:302](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L302)
+#### Defined in
+
+[explore/interfaces.ts:434](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L434)
 
 ___
 
 ### GetResourcesParameters
 
-Ƭ **GetResourcesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & [*ISearchParameters*](interfaces/isearchparameters.md)
+Ƭ **GetResourcesParameters**: [IActionParameters](interfaces/iactionparameters.md) & [ISearchParameters](interfaces/isearchparameters.md)
 
-Defined in: [explore/interfaces.ts:245](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L245)
+#### Defined in
+
+[explore/interfaces.ts:377](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L377)
 
 ___
 
 ### GetResourcesResult
 
-Ƭ **GetResourcesResult**: [*IActionResult*](interfaces/iactionresult.md) & [*ISearchResults*](interfaces/isearchresults.md)
+Ƭ **GetResourcesResult**: [IActionResult](interfaces/iactionresult.md) & [ISearchResults](interfaces/isearchresults.md)
 
-Defined in: [explore/interfaces.ts:304](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L304)
+#### Defined in
+
+[explore/interfaces.ts:436](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L436)
 
 ___
 
 ### GetSubFoldersResult
 
-Ƭ **GetSubFoldersResult**: [*IActionResult*](interfaces/iactionresult.md) & { `folders`: [*IFolder*](interfaces/ifolder.md)[]  }
+Ƭ **GetSubFoldersResult**: [IActionResult](interfaces/iactionresult.md) & { `folders`: [IFolder](interfaces/ifolder.md)[]  }
 
-Defined in: [explore/interfaces.ts:306](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L306)
+#### Defined in
+
+[explore/interfaces.ts:438](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L438)
+
+___
+
+### Hobby
+
+Ƭ **Hobby**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `category` | ``"sport"`` \| ``"cinema"`` \| ``"animals"`` \| ``"music"`` \| ``"places"`` \| ``"books"`` |
+| `values` | `string` |
+| `visibility` | ``"PRIVE"`` \| ``"PUBLIC"`` |
+
+#### Defined in
+
+[session/interfaces.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L29)
 
 ___
 
 ### ID
 
-Ƭ **ID**: *string*
+Ƭ **ID**: `string`
 
-Defined in: [explore/interfaces.ts:87](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L87)
+#### Defined in
+
+[explore/interfaces.ts:219](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L219)
 
 ___
 
 ### IHttpParams
 
-Ƭ **IHttpParams**: *object*
+Ƭ **IHttpParams**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Defined in: [transport/interfaces.ts:1](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L1)
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `disableNotifications?` | `boolean` | Set to true to prevent sending notifications. |
+| `headers?` | `Object` | HTTP headers to apply to the request. |
+| `queryParams?` | `Object` | Object to serialize as query parameters and append to the request URL. |
+| `requestName?` | `string` | Request the API to send a notification when done. |
+
+#### Defined in
+
+[transport/interfaces.ts:73](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L73)
 
 ___
 
 ### IHttpResponse
 
-Ƭ **IHttpResponse**: *object*
+Ƭ **IHttpResponse**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`headers`? | *any* |
-`status` | *number* |
-`statusText` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `headers?` | `any` |
+| `status` | `number` |
+| `statusText` | `string` |
 
-Defined in: [transport/interfaces.ts:2](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/transport/interfaces.ts#L2)
+#### Defined in
+
+[transport/interfaces.ts:88](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L88)
+
+___
+
+### IThemeOverrides
+
+Ƭ **IThemeOverrides**: { [app in App]?: string}
+
+#### Defined in
+
+[configure/interfaces.ts:115](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L115)
 
 ___
 
 ### ManagePropertiesParameters
 
-Ƭ **ManagePropertiesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `resources`: [*IResource*](interfaces/iresource.md)[]  }
+Ƭ **ManagePropertiesParameters**: [IActionParameters](interfaces/iactionparameters.md) & { `resources`: [IResource](interfaces/iresource.md)[]  }
 
-Defined in: [explore/interfaces.ts:273](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L273)
+#### Defined in
+
+[explore/interfaces.ts:405](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L405)
 
 ___
 
 ### ManagePropertiesResult
 
-Ƭ **ManagePropertiesResult**: [*IActionResult*](interfaces/iactionresult.md) & { `genericProps`: [*IProperty*](interfaces/iproperty.md)[]  }
+Ƭ **ManagePropertiesResult**: [IActionResult](interfaces/iactionresult.md) & { `genericProps`: [IProperty](interfaces/iproperty.md)[]  }
 
-Defined in: [explore/interfaces.ts:312](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L312)
+#### Defined in
+
+[explore/interfaces.ts:444](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L444)
 
 ___
 
 ### MoveParameters
 
-Ƭ **MoveParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderId`: [*ID*](modules.md#id) ; `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
+Ƭ **MoveParameters**: [IActionParameters](interfaces/iactionparameters.md) & { `folderId`: [ID](modules.md#id) ; `folderIds`: [ID](modules.md#id)[] ; `resourceIds`: [ID](modules.md#id)[]  }
 
-Defined in: [explore/interfaces.ts:264](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L264)
+#### Defined in
+
+[explore/interfaces.ts:396](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L396)
 
 ___
 
@@ -309,350 +431,463 @@ ___
 
 Ƭ **OrderValues**: { [O in SortByType]?: SortOrderType}
 
-Defined in: [explore/interfaces.ts:293](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L293)
+#### Defined in
+
+[explore/interfaces.ts:425](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L425)
 
 ___
 
 ### PropFormatType
 
-Ƭ **PropFormatType**: *typeof* [*PROP\_FORMAT*](modules.md#prop_format)[keyof *typeof* [*PROP\_FORMAT*](modules.md#prop_format)]
+Ƭ **PropFormatType**: typeof [PROP\_FORMAT](modules.md#prop_format)[keyof typeof [PROP\_FORMAT](modules.md#prop_format)]
 
-Defined in: [explore/interfaces.ts:123](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L123)
+#### Defined in
+
+[explore/interfaces.ts:255](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L255)
 
 ___
 
 ### PropKeyType
 
-Ƭ **PropKeyType**: *typeof* [*PROP\_KEY*](modules.md#prop_key)[keyof *typeof* [*PROP\_KEY*](modules.md#prop_key)]
+Ƭ **PropKeyType**: typeof [PROP\_KEY](modules.md#prop_key)[keyof typeof [PROP\_KEY](modules.md#prop_key)]
 
-Defined in: [explore/interfaces.ts:102](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L102)
+#### Defined in
+
+[explore/interfaces.ts:234](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L234)
 
 ___
 
 ### PropModeType
 
-Ƭ **PropModeType**: *typeof* [*PROP\_MODE*](modules.md#prop_mode)[keyof *typeof* [*PROP\_MODE*](modules.md#prop_mode)]
+Ƭ **PropModeType**: typeof [PROP\_MODE](modules.md#prop_mode)[keyof typeof [PROP\_MODE](modules.md#prop_mode)]
 
-Defined in: [explore/interfaces.ts:108](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L108)
+#### Defined in
+
+[explore/interfaces.ts:240](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L240)
 
 ___
 
 ### PropTypeType
 
-Ƭ **PropTypeType**: *typeof* [*PROP\_TYPE*](modules.md#prop_type)[keyof *typeof* [*PROP\_TYPE*](modules.md#prop_type)]
+Ƭ **PropTypeType**: typeof [PROP\_TYPE](modules.md#prop_type)[keyof typeof [PROP\_TYPE](modules.md#prop_type)]
 
-Defined in: [explore/interfaces.ts:117](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L117)
+#### Defined in
+
+[explore/interfaces.ts:249](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L249)
 
 ___
 
 ### ResourceType
 
-Ƭ **ResourceType**: *typeof* [*RESOURCE*](modules.md#resource)[keyof *typeof* [*RESOURCE*](modules.md#resource)]
+Ƭ **ResourceType**: typeof [RESOURCE](modules.md#resource)[keyof typeof [RESOURCE](modules.md#resource)]
 
-Defined in: [explore/interfaces.ts:11](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L11)
+#### Defined in
+
+[explore/interfaces.ts:143](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L143)
+
+___
+
+### Shool
+
+Ƭ **Shool**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `classes` | `string`[] |
+| `id` | `string` |
+| `name` | `string` |
+
+#### Defined in
+
+[session/interfaces.ts:34](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L34)
 
 ___
 
 ### SortByType
 
-Ƭ **SortByType**: *typeof* [*SORT\_BY*](modules.md#sort_by)[keyof *typeof* [*SORT\_BY*](modules.md#sort_by)]
+Ƭ **SortByType**: typeof [SORT\_BY](modules.md#sort_by)[keyof typeof [SORT\_BY](modules.md#sort_by)]
 
-Defined in: [explore/interfaces.ts:84](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L84)
+#### Defined in
+
+[explore/interfaces.ts:216](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L216)
 
 ___
 
 ### SortOrderType
 
-Ƭ **SortOrderType**: *typeof* [*SORT\_ORDER*](modules.md#sort_order)[keyof *typeof* [*SORT\_ORDER*](modules.md#sort_order)]
+Ƭ **SortOrderType**: typeof [SORT\_ORDER](modules.md#sort_order)[keyof typeof [SORT\_ORDER](modules.md#sort_order)]
 
-Defined in: [explore/interfaces.ts:64](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L64)
+#### Defined in
+
+[explore/interfaces.ts:196](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L196)
 
 ___
 
 ### StringFilterType
 
-Ƭ **StringFilterType**: *typeof* [*STRING\_FILTER*](modules.md#string_filter)[keyof *typeof* [*STRING\_FILTER*](modules.md#string_filter)]
+Ƭ **StringFilterType**: typeof [STRING\_FILTER](modules.md#string_filter)[keyof typeof [STRING\_FILTER](modules.md#string_filter)]
 
-Defined in: [explore/interfaces.ts:57](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L57)
+#### Defined in
+
+[explore/interfaces.ts:189](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L189)
 
 ___
 
 ### StringFilterValue
 
-Ƭ **StringFilterValue**: *object*
+Ƭ **StringFilterValue**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`i18n` | *string* |
-`value` | *string* |
+| Name | Type |
+| :------ | :------ |
+| `i18n` | `string` |
+| `value` | `string` |
 
-Defined in: [explore/interfaces.ts:88](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L88)
+#### Defined in
+
+[explore/interfaces.ts:220](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L220)
 
 ___
 
 ### UpdateFolderParameters
 
-Ƭ **UpdateFolderParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `app`: [*App*](modules.md#app) ; `folderId`: [*ID*](modules.md#id) ; `name`: *string* ; `parentId`: [*ID*](modules.md#id) \| *default* ; `type`: [*ResourceType*](modules.md#resourcetype)  }
+Ƭ **UpdateFolderParameters**: [IActionParameters](interfaces/iactionparameters.md) & { `app`: [App](modules.md#app) ; `folderId`: [ID](modules.md#id) ; `name`: `string` ; `parentId`: [ID](modules.md#id) \| ``"default"`` ; `type`: [ResourceType](modules.md#resourcetype)  }
 
-Defined in: [explore/interfaces.ts:252](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L252)
+#### Defined in
+
+[explore/interfaces.ts:384](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L384)
 
 ___
 
 ### UpdateFolderResult
 
-Ƭ **UpdateFolderResult**: [*CreateFolderResult*](modules.md#createfolderresult) & { `parentId`: [*ID*](modules.md#id) \| *default* ; `updatedAt`: *string*  }
+Ƭ **UpdateFolderResult**: [CreateFolderResult](modules.md#createfolderresult) & { `parentId`: [ID](modules.md#id) \| ``"default"`` ; `updatedAt`: `string`  }
 
-Defined in: [explore/interfaces.ts:308](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L308)
+#### Defined in
+
+[explore/interfaces.ts:440](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L440)
 
 ___
 
 ### UpdatePropertiesParameters
 
-Ƭ **UpdatePropertiesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `props`: { [key in PropKeyType]?: string} ; `resources`: [*IResource*](interfaces/iresource.md)[]  }
+Ƭ **UpdatePropertiesParameters**: [IActionParameters](interfaces/iactionparameters.md) & { `props`: { [key in PropKeyType]?: string} ; `resources`: [IResource](interfaces/iresource.md)[]  }
 
-Defined in: [explore/interfaces.ts:274](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L274)
+#### Defined in
+
+[explore/interfaces.ts:406](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L406)
 
 ___
 
 ### UpdatePropertiesResult
 
-Ƭ **UpdatePropertiesResult**: [*IActionResult*](interfaces/iactionresult.md) & { `resources`: [*IResource*](interfaces/iresource.md)[]  }
+Ƭ **UpdatePropertiesResult**: [IActionResult](interfaces/iactionresult.md) & { `resources`: [IResource](interfaces/iresource.md)[]  }
 
-Defined in: [explore/interfaces.ts:313](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L313)
+#### Defined in
+
+[explore/interfaces.ts:445](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L445)
+
+___
+
+### UserPreferenceKey
+
+Ƭ **UserPreferenceKey**: ``"apps"`` \| `string`
+
+#### Defined in
+
+[configure/interfaces.ts:138](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L138)
+
+___
+
+### WidgetPosition
+
+Ƭ **WidgetPosition**: ``"left"`` \| ``"right"``
+
+#### Defined in
+
+[session/interfaces.ts:113](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L113)
+
+___
+
+### WidgetUserPref
+
+Ƭ **WidgetUserPref**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `index` | `number` |
+| `position?` | [WidgetPosition](modules.md#widgetposition) |
+| `show` | `boolean` |
+
+#### Defined in
+
+[widget/interfaces.ts:37](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/widget/interfaces.ts#L37)
 
 ## Variables
 
 ### ACTION
 
-• `Const` **ACTION**: *object*
+• `Const` **ACTION**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`COMMENT` | *comment* |
-`COPY` | *copy* |
-`CREATE` | *create* |
-`DELETE` | *delete* |
-`EXPORT` | *export* |
-`INITIALIZE` | *initialize* |
-`MANAGE` | *manage* |
-`MOVE` | *move* |
-`OPEN` | *open* |
-`PRINT` | *print* |
-`PUBLISH` | *publish* |
-`SEARCH` | *search* |
-`SHARE` | *share* |
-`UPD_PROPS` | *properties* |
+| Name | Type |
+| :------ | :------ |
+| `COMMENT` | ``"comment"`` |
+| `COPY` | ``"copy"`` |
+| `CREATE` | ``"create"`` |
+| `DELETE` | ``"delete"`` |
+| `EXPORT` | ``"export"`` |
+| `INITIALIZE` | ``"initialize"`` |
+| `MANAGE` | ``"manage"`` |
+| `MOVE` | ``"move"`` |
+| `OPEN` | ``"open"`` |
+| `PRINT` | ``"print"`` |
+| `PUBLISH` | ``"publish"`` |
+| `SEARCH` | ``"search"`` |
+| `SHARE` | ``"share"`` |
+| `UPD_PROPS` | ``"properties"`` |
 
-Defined in: [explore/interfaces.ts:21](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L21)
+#### Defined in
+
+[explore/interfaces.ts:153](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L153)
 
 ___
 
 ### APP
 
-• `Const` **APP**: *object*
+• `Const` **APP**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`BLOG` | *blog* |
-`EXERCIZER` | *exercizer* |
-`EXPLORER` | *explorer* |
+| Name | Type |
+| :------ | :------ |
+| `BLOG` | ``"blog"`` |
+| `EXERCIZER` | ``"exercizer"`` |
+| `EXPLORER` | ``"explorer"`` |
+| `PORTAL` | ``"portal"`` |
 
-Defined in: [globals.ts:20](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/globals.ts#L20)
+#### Defined in
+
+[globals.ts:20](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L20)
 
 ___
 
 ### BOOLEAN\_FILTER
 
-• `Const` **BOOLEAN\_FILTER**: *object*
+• `Const` **BOOLEAN\_FILTER**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`FAVORITE` | *favorite* |
-`OWNER` | *owner* |
-`PUBLIC` | *public* |
-`SHARED` | *shared* |
+| Name | Type |
+| :------ | :------ |
+| `FAVORITE` | ``"favorite"`` |
+| `OWNER` | ``"owner"`` |
+| `PUBLIC` | ``"public"`` |
+| `SHARED` | ``"shared"`` |
 
-Defined in: [explore/interfaces.ts:47](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L47)
+#### Defined in
+
+[explore/interfaces.ts:179](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L179)
 
 ___
 
 ### ERROR\_CODE
 
-• `Const` **ERROR\_CODE**: *object*
+• `Const` **ERROR\_CODE**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`AGENT_NOT_FOUND` | *0050* |
-`APP_NOT_FOUND` | *0040* |
-`NOT_INITIALIZED` | *0020* |
-`NOT_SUPPORTED` | *0030* |
-`SUCCESS` | *0000* |
-`TIME_OUT` | *0070* |
-`TRANSPORT_ERROR` | *0060* |
-`UNKNOWN` | *0010* |
+| Name | Type |
+| :------ | :------ |
+| `AGENT_NOT_FOUND` | ``"0050"`` |
+| `APP_NOT_FOUND` | ``"0040"`` |
+| `NOT_INITIALIZED` | ``"0020"`` |
+| `NOT_SUPPORTED` | ``"0030"`` |
+| `SUCCESS` | ``"0000"`` |
+| `TIME_OUT` | ``"0070"`` |
+| `TRANSPORT_ERROR` | ``"0060"`` |
+| `UNKNOWN` | ``"0010"`` |
 
-Defined in: [globals.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/globals.ts#L7)
+#### Defined in
+
+[globals.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L7)
 
 ___
 
 ### EVENT\_NAME
 
-• `Const` **EVENT\_NAME**: *object*
+• `Const` **EVENT\_NAME**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`BOOTSTRAPPED` | *bootstrapped* |
-`LANG_CHANGED` | *langChanged* |
+| Name | Type |
+| :------ | :------ |
+| `BOOTSTRAPPED` | ``"bootstrapped"`` |
+| `HTTP_ERROR` | ``"httpError"`` |
+| `LANG_CHANGED` | ``"langChanged"`` |
+| `PREFERENCES_UPDATED` | ``"preferences-updated"`` |
 
-Defined in: [notify/interfaces.ts:3](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/notify/interfaces.ts#L3)
+#### Defined in
+
+[notify/interfaces.ts:6](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L6)
 
 ___
 
 ### FOLDER
 
-• `Const` **FOLDER**: *object*
+• `Const` **FOLDER**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`BIN` | *bin* |
-`DEFAULT` | *default* |
+| Name | Type |
+| :------ | :------ |
+| `BIN` | ``"bin"`` |
+| `DEFAULT` | ``"default"`` |
 
-Defined in: [explore/interfaces.ts:40](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L40)
+#### Defined in
+
+[explore/interfaces.ts:172](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L172)
 
 ___
 
 ### PROP\_FORMAT
 
-• `Const` **PROP\_FORMAT**: *object*
+• `Const` **PROP\_FORMAT**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`PLAIN` | *plain* |
+| Name | Type |
+| :------ | :------ |
+| `PLAIN` | ``"plain"`` |
 
-Defined in: [explore/interfaces.ts:119](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L119)
+#### Defined in
+
+[explore/interfaces.ts:251](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L251)
 
 ___
 
 ### PROP\_KEY
 
-• `Const` **PROP\_KEY**: *object*
+• `Const` **PROP\_KEY**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`COLOR` | *color* |
-`DESCRIPTION` | *description* |
-`IMAGE` | *image* |
-`TITLE` | *title* |
-`URL` | *url* |
+| Name | Type |
+| :------ | :------ |
+| `COLOR` | ``"color"`` |
+| `DESCRIPTION` | ``"description"`` |
+| `IMAGE` | ``"image"`` |
+| `TITLE` | ``"title"`` |
+| `URL` | ``"url"`` |
 
-Defined in: [explore/interfaces.ts:94](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L94)
+#### Defined in
+
+[explore/interfaces.ts:226](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L226)
 
 ___
 
 ### PROP\_MODE
 
-• `Const` **PROP\_MODE**: *object*
+• `Const` **PROP\_MODE**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`READONLY` | *RO* |
-`READWRITE` | *RW* |
+| Name | Type |
+| :------ | :------ |
+| `READONLY` | ``"RO"`` |
+| `READWRITE` | ``"RW"`` |
 
-Defined in: [explore/interfaces.ts:104](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L104)
+#### Defined in
+
+[explore/interfaces.ts:236](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L236)
 
 ___
 
 ### PROP\_TYPE
 
-• `Const` **PROP\_TYPE**: *object*
+• `Const` **PROP\_TYPE**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`DATE` | *date* |
-`IMAGE` | *image* |
-`NUMBER` | *number* |
-`TEXT` | *text* |
+| Name | Type |
+| :------ | :------ |
+| `DATE` | ``"date"`` |
+| `IMAGE` | ``"image"`` |
+| `NUMBER` | ``"number"`` |
+| `TEXT` | ``"text"`` |
 
-Defined in: [explore/interfaces.ts:110](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L110)
+#### Defined in
+
+[explore/interfaces.ts:242](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L242)
 
 ___
 
 ### RESOURCE
 
-• `Const` **RESOURCE**: *object*
+• `Const` **RESOURCE**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`BLOG` | *blog* |
-`EXERCISE` | *exercise* |
-`FOLDER` | *folder* |
+| Name | Type |
+| :------ | :------ |
+| `BLOG` | ``"blog"`` |
+| `EXERCISE` | ``"exercise"`` |
+| `FOLDER` | ``"folder"`` |
 
-Defined in: [explore/interfaces.ts:6](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L6)
+#### Defined in
+
+[explore/interfaces.ts:138](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L138)
 
 ___
 
 ### SORT\_BY
 
-• `Const` **SORT\_BY**: *object*
+• `Const` **SORT\_BY**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`MODIFY_DATE` | *modifiedAt* |
-`NAME` | *name* |
-`VIEWS` | *views* |
+| Name | Type |
+| :------ | :------ |
+| `MODIFY_DATE` | ``"modifiedAt"`` |
+| `NAME` | ``"name"`` |
+| `VIEWS` | ``"views"`` |
 
-Defined in: [explore/interfaces.ts:65](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L65)
+#### Defined in
+
+[explore/interfaces.ts:197](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L197)
 
 ___
 
 ### SORT\_ORDER
 
-• `Const` **SORT\_ORDER**: *object*
+• `Const` **SORT\_ORDER**: `Object`
 
-#### Type declaration:
+#### Type declaration
 
-Name | Type |
-:------ | :------ |
-`ASC` | *asc* |
-`DESC` | *desc* |
+| Name | Type |
+| :------ | :------ |
+| `ASC` | ``"asc"`` |
+| `DESC` | ``"desc"`` |
 
-Defined in: [explore/interfaces.ts:60](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L60)
+#### Defined in
+
+[explore/interfaces.ts:192](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L192)
 
 ___
 
 ### STRING\_FILTER
 
-• `Const` **STRING\_FILTER**: *object*
+• `Const` **STRING\_FILTER**: `Object`
 
-#### Type declaration:
+#### Defined in
 
-Defined in: [explore/interfaces.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L54)
+[explore/interfaces.ts:186](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L186)
 
 ___
 
@@ -660,14 +895,18 @@ ___
 
 • `Const` **appNameForResource**: { [R in ResourceType]: App}
 
-Defined in: [explore/interfaces.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L14)
+#### Defined in
+
+[explore/interfaces.ts:146](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L146)
 
 ___
 
 ### explorer
 
-• `Const` **explorer**: [*IExplorerFramework*](interfaces/iexplorerframework.md)
+• `Const` **explorer**: [IExplorerFramework](interfaces/iexplorerframework.md)
 
 The whole framework is a singleton.
 
-Defined in: [explore/Framework.ts:40](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/Framework.ts#L40)
+#### Defined in
+
+[explore/Framework.ts:40](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Framework.ts#L40)

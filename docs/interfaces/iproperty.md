@@ -13,14 +13,18 @@
 
 ### i18n
 
-• `Optional` **i18n**: *string*
+• `Optional` **i18n**: `string`
 
-Defined in: [explore/interfaces.ts:197](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L197)
+#### Defined in
+
+[explore/interfaces.ts:329](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L329)
 
 ___
 
 ### key
 
-• **key**: [*PropKeyType*](../modules.md#propkeytype)
+• **key**: [PropKeyType](../modules.md#propkeytype)
 
-Defined in: [explore/interfaces.ts:196](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L196)
+#### Defined in
+
+[explore/interfaces.ts:328](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L328)

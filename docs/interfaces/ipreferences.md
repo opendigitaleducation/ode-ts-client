@@ -12,6 +12,8 @@
 
 ### view
 
-• **view**: *card* \| *list*
+• **view**: ``"card"`` \| ``"list"``
 
-Defined in: [explore/interfaces.ts:236](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L236)
+#### Defined in
+
+[explore/interfaces.ts:368](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L368)

@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-* [*ISearchResults*](isearchresults.md)
+- [ISearchResults](isearchresults.md)
 
   ↳ **IContext**
 
@@ -24,60 +24,80 @@
 
 ### actions
 
-• **actions**: [*IAction*](iaction.md)[]
+• **actions**: [IAction](iaction.md)[]
 
-Defined in: [explore/interfaces.ts:148](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L148)
+#### Defined in
+
+[explore/interfaces.ts:280](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L280)
 
 ___
 
 ### filters
 
-• **filters**: [*IFilter*](ifilter.md)[]
+• **filters**: [IFilter](ifilter.md)[]
 
-Defined in: [explore/interfaces.ts:146](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L146)
+#### Defined in
+
+[explore/interfaces.ts:278](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L278)
 
 ___
 
 ### folders
 
-• **folders**: [*IFolder*](ifolder.md)[]
+• **folders**: [IFolder](ifolder.md)[]
 
-Inherited from: [ISearchResults](isearchresults.md).[folders](isearchresults.md#folders)
+#### Inherited from
 
-Defined in: [explore/interfaces.ts:139](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L139)
+[ISearchResults](isearchresults.md).[folders](isearchresults.md#folders)
+
+#### Defined in
+
+[explore/interfaces.ts:271](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L271)
 
 ___
 
 ### orders
 
-• **orders**: [*IOrder*](iorder.md)[]
+• **orders**: [IOrder](iorder.md)[]
 
-Defined in: [explore/interfaces.ts:147](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L147)
+#### Defined in
+
+[explore/interfaces.ts:279](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L279)
 
 ___
 
 ### pagination
 
-• **pagination**: [*IPagination*](ipagination.md)
+• **pagination**: [IPagination](ipagination.md)
 
-Inherited from: [ISearchResults](isearchresults.md).[pagination](isearchresults.md#pagination)
+#### Inherited from
 
-Defined in: [explore/interfaces.ts:140](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L140)
+[ISearchResults](isearchresults.md).[pagination](isearchresults.md#pagination)
+
+#### Defined in
+
+[explore/interfaces.ts:272](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L272)
 
 ___
 
 ### preferences
 
-• **preferences**: [*IPreferences*](ipreferences.md)
+• **preferences**: [IPreferences](ipreferences.md)
 
-Defined in: [explore/interfaces.ts:149](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L149)
+#### Defined in
+
+[explore/interfaces.ts:281](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L281)
 
 ___
 
 ### resources
 
-• **resources**: [*IResource*](iresource.md)[]
+• **resources**: [IResource](iresource.md)[]
 
-Inherited from: [ISearchResults](isearchresults.md).[resources](isearchresults.md#resources)
+#### Inherited from
 
-Defined in: [explore/interfaces.ts:141](https://github.com/opendigitaleducation/infrontexplore/blob/08d2f8c/src/ts/explore/interfaces.ts#L141)
+[ISearchResults](isearchresults.md).[resources](isearchresults.md#resources)
+
+#### Defined in
+
+[explore/interfaces.ts:273](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L273)
