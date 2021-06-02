@@ -70,23 +70,3 @@ task generateTemplate(type: Copy,dependsOn: 'generateDeployment') {
   }
 }
 //end generateTemplate
-
-
-task deploymentJar(type: Jar) {
-    classifier = 'deployment'
-    archiveName = "${modowner}~${modname}~$version-$classifier.$extension"
-    from 'deployment'
-}
-
-task fatJar(type: Jar) {
-    classifier = 'fat'
-    archiveName = "${modowner}~${modname}~$version-$classifier.$extension"
-    includes = ["dist/**"]
-    from "."
-}
-
-
-artifacts {
-  archives fatJar
-  archives deploymentJar
-}

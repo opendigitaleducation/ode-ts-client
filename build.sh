@@ -69,19 +69,37 @@ publishNPM () {
   docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm publish --tag $LOCAL_BRANCH"
 }
 
+packageJar () {
+  rm -rf ode-ts-client.tar.gz ode-ts-client
+  mkdir ode-ts-client && mv dist/version.txt ode-ts-client && cp dist/bundle ode-ts-client/assets
+  tar cfzh ode-ts-client.tar.gz ode-ts-client
+}
+
+publishCmd(){
+  local deploymentString=$1
+  echo "Publish command is: $ $deploymentString"
+  docker-compose run \
+    --rm \
+    --no-deps \
+    -u "$USER_UID:$GROUP_GID" \
+    -w /usr/src \
+    -e MAVEN_CONFIG=/var/maven/.m2 \
+    maven sh -c "$deploymentString"
+}
+
 publishNexus () {
-  if [ -e "?/.gradle" ] && [ ! -e "?/.gradle/gradle.properties" ]
-  then
-    echo "odeUsername=$NEXUS_ODE_USERNAME" > "?/.gradle/gradle.properties"
-    echo "odePassword=$NEXUS_ODE_PASSWORD" >> "?/.gradle/gradle.properties"
-    echo "sonatypeUsername=$NEXUS_SONATYPE_USERNAME" >> "?/.gradle/gradle.properties"
-    echo "sonatypePassword=$NEXUS_SONATYPE_PASSWORD" >> "?/.gradle/gradle.properties"
-  fi
-  docker-compose run --rm -u "$USER_UID:$GROUP_GID" gradle sh -c "gradle deploymentJar fatJar publish"
+  VERSION=`grep "version="  gradle.properties| sed 's/version=//g'`
+  case "$VERSION" in
+    *SNAPSHOT) nexusRepository='snapshots' ;;
+    *)         nexusRepository='releases' ;;
+  esac
+  publishCmd "mvn deploy:deploy-file -DgroupId=com.opendigitaleducation -DartifactId=ode-ts-client -Dversion=$VERSION -Dpackaging=tar.gz -Dfile=ode-ts-client.tar.gz -Duser.home=/var/maven -DrepositoryId=wse -Durl=https://maven.opendigitaleducation.com/nexus/content/repositories/$nexusRepository/"
 }
 
 publishMavenLocal(){
-  docker-compose run --rm -u "$USER_UID:$GROUP_GID" gradle sh -c "gradle deploymentJar fatJar publishToMavenLocal"
+  VERSION=`grep "version="  gradle.properties| sed 's/version=//g'`
+  publishCmd "mvn install:install-file -DgroupId=com.opendigitaleducation -DartifactId=ode-ts-client -Dversion=$VERSION -Dpackaging=tar.gz -Dfile=ode-ts-client.tar.gz -Duser.home=/var/maven"
+  rm -rf ode-ts-client ode-ts-client.tar.gz
 }
 
 for param in "$@"
@@ -97,7 +115,7 @@ do
       build
       ;;
     install)
-      build && publishMavenLocal
+      build && packageJar && publishMavenLocal
       ;;
     watch)
       watch
@@ -106,7 +124,7 @@ do
       publishNPM
       ;;
     publishNexus)
-      publishNexus
+      packageJar && publishNexus
       ;;
     *)
       echo "Invalid argument : $action"
