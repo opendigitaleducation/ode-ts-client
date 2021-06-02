@@ -71,20 +71,8 @@ publishNPM () {
 
 packageJar () {
   rm -rf ode-ts-client.tar.gz ode-ts-client
-  mkdir ode-ts-client && mv dist/version.txt ode-ts-client && cp dist/bundle ode-ts-client/assets
+  mkdir ode-ts-client && mv dist/version.txt ode-ts-client && cp -R dist/bundle/* ode-ts-client
   tar cfzh ode-ts-client.tar.gz ode-ts-client
-}
-
-publishCmd(){
-  local deploymentString=$1
-  echo "Publish command is: $ $deploymentString"
-  docker-compose run \
-    --rm \
-    --no-deps \
-    -u "$USER_UID:$GROUP_GID" \
-    -w /usr/src \
-    -e MAVEN_CONFIG=/var/maven/.m2 \
-    maven sh -c "$deploymentString"
 }
 
 publishNexus () {
@@ -100,6 +88,18 @@ publishMavenLocal(){
   VERSION=`grep "version="  gradle.properties| sed 's/version=//g'`
   publishCmd "mvn install:install-file -DgroupId=com.opendigitaleducation -DartifactId=ode-ts-client -Dversion=$VERSION -Dpackaging=tar.gz -Dfile=ode-ts-client.tar.gz -Duser.home=/var/maven"
   rm -rf ode-ts-client ode-ts-client.tar.gz
+}
+
+publishCmd(){
+  local deploymentString=$1
+  echo "Publish command is: $ $deploymentString"
+  docker-compose run \
+    --rm \
+    --no-deps \
+    -u "$USER_UID:$GROUP_GID" \
+    -w /usr/src \
+    -e MAVEN_CONFIG=/var/maven/.m2 \
+    maven sh -c "$deploymentString"
 }
 
 for param in "$@"
