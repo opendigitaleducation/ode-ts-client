@@ -155,14 +155,14 @@ export class Idiom implements IIdiom {
                 // Load all translations once language is known.
                 const subscription = notify.onEvent<LangChangedNotice>( EVENT_NAME.LANG_CHANGED )
                 .subscribe( notice => {
-                    subscription.unsubscribe();
                     Promise.all( 
                         folders.map( folder => this.addBundlePromise(folder + '/' + notice.newLanguage + '.json') )
                     ).then( r => { resolve(); } );
+                    subscription?.unsubscribe();
                 });
             });
         } else {
-            return Promise.resolve();
+            return Promise.reject();
         }
     }
 

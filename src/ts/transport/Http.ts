@@ -157,15 +157,17 @@ export class Http implements IHttp {
                     return result;
                 }
             })
-            .catch<R>(e => this.mapAxiosError(e,params));
+            .catch<R>(e => {
+                this.mapAxiosError(e,params);
+                throw e;
+            });
     }
 
     loadScript(url:string, params?:IHttpParams): Promise<void> {
         return (loadedScripts[url])
             ? Promise.resolve()
             : this.getScript(url,params)
-                .then( res => {loadedScripts[url] = true;})
-                .catch<void>(e => this.mapAxiosError(e,params));
+                .then( res => {loadedScripts[url] = true;});
     }
 }
 
