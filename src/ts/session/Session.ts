@@ -29,6 +29,10 @@ export class Session implements ISession {
 		return this._description as unknown as IUserDescription;
 	}
 
+    get user():IUserInfo {
+        return this._me;
+    }
+
     public initialize():Promise<void> {
         return http.get<IUserInfo>( '/auth/oauth2/userinfo' )
         .then( u => { 

@@ -21,6 +21,7 @@ export interface ISession {
   readonly currentLanguage:string;
   readonly notLoggedIn:boolean;
   readonly description:IUserDescription;
+  readonly user:IUserInfo;
 
   hasWorkflow( workflowName:string ):boolean;
   hasRight(resource:any, right:any):boolean;
