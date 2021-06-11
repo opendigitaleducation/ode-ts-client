@@ -22,6 +22,7 @@ export const APP = {
  ,PORTAL:     "portal"
  ,BLOG:       "blog"
  ,EXERCIZER:  "exercizer"
+ ,TIMELINE:   "timeline" 
  // TODO compléter
 } as const;
 export type App = typeof APP[keyof typeof APP];   // type App = "explorer" | "blog" | "exercizer"...

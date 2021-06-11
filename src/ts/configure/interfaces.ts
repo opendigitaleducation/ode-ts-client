@@ -37,6 +37,8 @@ export interface IConfigurationFramework {
     readonly preferences:IUserPreferences;
     readonly keepOpenOnLogout:boolean;
     readonly bookmarkedApps:Array<AppModel>;
+
+    loadAppPrefs(app:App):Promise<any>;
   }
 }
 
@@ -135,7 +137,7 @@ export type AppModel = {
   name:string;
 }
 
-export type UserPreferenceKey = 'apps'|string;
+export type UserPreferenceKey = 'apps'|App;
 //-------------------------------------
 export interface IUserPreferences {
 //-------------------------------------

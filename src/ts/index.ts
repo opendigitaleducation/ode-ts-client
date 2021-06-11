@@ -33,6 +33,10 @@ export * from './session/interfaces';
 //---------------------------------- WIDGET ----------------------------------
 export * from './widget/interfaces';
 
+//---------------------------------- APPS ----------------------------------
+export * from './apps/timeline/interfaces';
+
+
 /** Hack pour rendre compatible le module commonjs avec une balise <script> dans un navigateur. */
 declare var window:any;
 declare var module:any;

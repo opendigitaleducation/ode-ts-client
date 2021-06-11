@@ -1,3 +1,4 @@
+import { App } from "../globals";
 import { AppModel, IUserPreferences, UserPreferenceKey } from "./interfaces";
 import { EVENT_NAME, BootstrappedNotice, PreferencesUpdated } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
@@ -120,4 +121,21 @@ export class User {
 
 		// TODO Finir l'interface, voir infra-front/me.ts
 	}
+
+	public loadAppPrefs(app:App):Promise<any> {
+		return http.get('/userbook/preference/'+app)
+		.then( data => {
+			try {
+				return JSON.parse(data.preference);
+			} catch(e) {
+				return {};
+			}
+		})
+		.then( prefs => {
+			this.preferences[app] = prefs;
+			return prefs;
+		});
+	}
+
+
 }
