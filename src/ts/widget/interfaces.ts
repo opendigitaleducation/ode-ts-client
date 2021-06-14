@@ -40,3 +40,8 @@ export type WidgetUserPref = {
     show:boolean;
     position?: WidgetPosition;
 };
+
+//-------------------------------------
+// WIDGETS
+//-------------------------------------
+export * from "./LastInfos.widget";
