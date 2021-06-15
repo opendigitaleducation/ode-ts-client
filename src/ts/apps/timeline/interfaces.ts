@@ -14,6 +14,8 @@ export interface ITimelineApp {
     initialize():Promise<void>;
 
     readonly notificationTypes: Array<string>;
+	readonly selectedNotificationTypes: Array<string>;
+	
     readonly notifications: Array<ITimelineNotification>;
     readonly preferences: any;
     // registeredNotifications: any;
