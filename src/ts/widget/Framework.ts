@@ -63,15 +63,14 @@ export class WidgetFramework implements IWidgetFramework {
     }
     
     private async loadUserPrefs():Promise<void> {
-        await transport.http.get("/userbook/preference/widgets")
+        await configure.User.preferences.load("widgets", {})
             .then( prefs => {
-                prefs = prefs?.preference ?? {preference:null};
-                return this.applyUserPrefs(JSON.parse(prefs.preference) as IWidgetUserPrefs);
+                return this.applyUserPrefs( prefs as IWidgetUserPrefs );
             });
     }
 
     saveUserPrefs() {
-        return transport.http.putJson('/userbook/preference/widgets', this._userPrefs);
+        return configure.User.preferences.update('widgets', this._userPrefs).save('widgets');
     }
 
     private async applyUserPrefs( prefs:IWidgetUserPrefs ):Promise<void> {

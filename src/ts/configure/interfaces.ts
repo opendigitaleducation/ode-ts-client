@@ -143,7 +143,7 @@ export type AppModel = {
   name:string;
 }
 
-export type UserPreferenceKey = 'apps'|'language'|App;
+export type UserPreferenceKey = 'apps'|'widgets'|'language'|App;
 //-------------------------------------
 export interface IUserPreferences {
 //-------------------------------------
