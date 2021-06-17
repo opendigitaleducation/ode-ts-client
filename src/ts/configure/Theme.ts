@@ -147,9 +147,9 @@ export class Theme implements ITheme {
 			: this.getConf().then( conf => {
 				const currentTheme = conf.overriding.find(t => t.child === this.skin);
 				if(currentTheme?.group){
-					this.skins.concat( conf.overriding.filter(t => t.group === currentTheme.group) );
+					this.skins = this.skins.concat( conf.overriding.filter(t => t.group === currentTheme.group) );
 				}else{
-					this.skins.concat( conf.overriding );
+					this.skins = this.skins.concat( conf.overriding );
 				}
 				return this.skins;
 			});

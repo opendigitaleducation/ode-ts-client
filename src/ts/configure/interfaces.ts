@@ -1,4 +1,4 @@
-import { App } from "../globals";
+import { APP, App } from "../globals";
 import { configure } from "./Framework";
 
 //-------------------------------------
@@ -29,6 +29,7 @@ export interface IConfigurationFramework {
       readonly theme:ITheme;
       //analytics;
       readonly idiom:IIdiom;
+      listLanguages():Promise<string[]>;
   }
   readonly School:{
       //apps; -> pinnedApps;
@@ -39,6 +40,11 @@ export interface IConfigurationFramework {
     readonly bookmarkedApps:Array<AppModel>;
 
     loadAppPrefs(app:App):Promise<any>;
+    saveAppPrefs(app:App):Promise<void>;
+
+    loadLanguage():Promise<string>;
+    saveLanguage( lang:string ):Promise<void>;
+  
   }
 }
 
@@ -137,12 +143,14 @@ export type AppModel = {
   name:string;
 }
 
-export type UserPreferenceKey = 'apps'|App;
+export type UserPreferenceKey = 'apps'|'language'|App;
 //-------------------------------------
 export interface IUserPreferences {
 //-------------------------------------
-  [pref:string]: any;
-  update( key:UserPreferenceKey, data:any ):IUserPreferences;
-  save( key:UserPreferenceKey ):Promise<void>
-}
+  data: {[key in UserPreferenceKey]?: any};
+  get(key: UserPreferenceKey):any; 
+  load(key: UserPreferenceKey, defaultTo?: any): Promise<any>;
+  update(key: UserPreferenceKey, data: any): IUserPreferences;
+  save(key: UserPreferenceKey): Promise<void>;
+};
 

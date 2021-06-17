@@ -29,6 +29,9 @@ export class ConfigurationFramework implements IConfigurationFramework {
         theme: new Theme(),
         //analytics;
         idiom: new Idiom(),
+        listLanguages: () => {
+            return transport.http.get("/languages");
+        }
     }
     readonly School = {
         //apps; -> pinnedApps;

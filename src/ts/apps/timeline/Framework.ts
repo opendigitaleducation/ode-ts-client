@@ -10,7 +10,6 @@ export class TimelineApp implements ITimelineApp {
 
     private _notifications:Array<Notification> = [];
     private _notificationTypes:Array<string> = [];      // ex: ["BLOG"]
-    private _selectedNotificationTypes:Array<string> = [];
     private _pageNumber = 0;
     private _lastPage = false;
     private _loading = false;
@@ -33,10 +32,20 @@ export class TimelineApp implements ITimelineApp {
         return this._notificationTypes;
     }
     get selectedNotificationTypes():Array<string> {
-        return this._selectedNotificationTypes;
+        return this.preferences.type;
     }
     get preferences():any {
-        return configure.User.preferences[APP.TIMELINE];
+        return configure.User.preferences.data[APP.TIMELINE];
+    }
+
+    public savePreferences() {
+        return configure.User.saveAppPrefs(APP.TIMELINE);
+    }
+
+    public resetPagination():void {
+        this._pageNumber = 0;
+        this._lastPage = false;
+        this._loading = false;
     }
 
     async initialize() {
@@ -51,12 +60,12 @@ export class TimelineApp implements ITimelineApp {
         });
     }
 
-    private loadNotifications( paginate?:boolean ):Promise<void> {
+    public loadNotifications( paginate?:boolean ):Promise<void> {
         if(this._loading || (paginate && this._lastPage)) {
             return Promise.resolve();
         }
 
-        let types = this._selectedNotificationTypes;
+        let types = this.selectedNotificationTypes;
         if(types.length===0) {
             types = this._notificationTypes;
         }

@@ -91,7 +91,7 @@ export interface IUserInfo {
   federatedIDP?: any;
   firstName: string;
   forceChangePassword?: any;
-  functions: { ADMIN_LOCAL?: {code:string, scope: Array<string>} };
+  functions: { ADMIN_LOCAL?: {code:string, scope: Array<string>}, SUPER_ADMIN:{code:string, scope: Array<string>} };
   groupsIds: Array<string>;
   hasApp: boolean;
   hasPw: boolean;
