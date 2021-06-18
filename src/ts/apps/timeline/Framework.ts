@@ -1,5 +1,5 @@
 import { APP } from "../../globals";
-import { ITimelineApp, NotificationModel } from "./interfaces";
+import { IFlashMessageModel, ITimelineApp, NotificationModel } from "./interfaces";
 import { configure } from "../../configure/Framework";
 import { transport } from "../../transport/Framework";
 import { Notification } from "./Notification.model";
@@ -10,9 +10,11 @@ export class TimelineApp implements ITimelineApp {
 
     private _notifications:Array<Notification> = [];
     private _notificationTypes:Array<string> = [];      // ex: ["BLOG"]
+    private _flashMessages:Array<IFlashMessageModel> = [];
     private _pageNumber = 0;
     private _lastPage = false;
     private _loading = false;
+    
     
     public showMine:boolean = true;
 
@@ -36,6 +38,9 @@ export class TimelineApp implements ITimelineApp {
     }
     get preferences():any {
         return configure.User.preferences.data[APP.TIMELINE];
+    }
+    get flashMessages() {
+        return this._flashMessages;
     }
 
     public savePreferences() {
@@ -113,5 +118,15 @@ export class TimelineApp implements ITimelineApp {
             this._loading = false;
             //FIXME notify.error(data);
         });
+    }
+
+    loadFlashMessages():Promise<void> {
+        return transport.http.get<Array<IFlashMessageModel>>("/timeline/flashmsg/listuser").then( results => {
+            this._flashMessages = results;
+        });
+    }
+
+    markAsRead(msg:IFlashMessageModel):Promise<void> {
+        return transport.http.put("/timeline/flashmsg/" + msg.id + "/markasread");
     }
 }

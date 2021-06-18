@@ -12,18 +12,25 @@ export abstract class ITimelineFactory {
 export interface ITimelineApp {
 //-------------------------------------
     initialize():Promise<void>;
-	loadNotifications( paginate?:boolean ):Promise<void>;
-	savePreferences():Promise<void>;
-	resetPagination():void;
-
     readonly notificationTypes: Array<string>;
 	readonly selectedNotificationTypes: Array<string>;
 
+	showMine:boolean;
+	loadNotifications( paginate?:boolean ):Promise<void>;
     readonly notifications: Array<ITimelineNotification>;
+
+	resetPagination():void;
+    readonly isLoading:boolean;
+    readonly page:number;
+    readonly hasMorePage:boolean;
+
+	savePreferences():Promise<void>;
     readonly preferences: any;
     // registeredNotifications: any;
-    // me: any;
-    // trigger: any;
+
+	loadFlashMessages():Promise<void>;
+	readonly flashMessages: Array<IFlashMessageModel>;
+	markAsRead(msg:IFlashMessageModel):Promise<void>;
 }
 
 //-------------------------------------
@@ -65,4 +72,22 @@ export type NotificationModel = {
 export interface Recipient {
 //-------------------------------------
 	userId:string;
+}
+
+//-------------------------------------
+export interface IFlashMessageModel {
+//-------------------------------------
+	readonly id: string;
+    readonly title?: string;
+    readonly contents?: Object;
+    readonly startDate?: string;
+    readonly endDate?: string;
+    readonly readCount?: number;
+    readonly author?: string;
+    readonly profiles?: string[];
+    readonly color?: string;
+    readonly customColor?: string|null;
+    readonly lastModifier?: string;
+    readonly structureId?: string;
+	readonly subStructures?: string[];
 }

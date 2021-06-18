@@ -1,9 +1,7 @@
 import { AddBundleCallback, IIdiom } from "./interfaces";
 import { EVENT_NAME, LangChangedNotice } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
-import { notify } from "../notify/Framework";
-
-const http      = transport.http;
+import { notify, Promisified } from "../notify/Framework";
 
 const bundle:{[key:string]:string} = {};
 const promises:{[path:string]:Promise<void>} = {};
@@ -116,25 +114,22 @@ export class Idiom implements IIdiom {
             }
         } else {
             // Create a Promise now, to avoid loading a bundle more than once.
-            let _resolve:AddBundleCallback, _reject:AddBundleCallback;
-            promises[path] = new Promise((resolve, reject) => {
-                _resolve = resolve;
-                _reject = reject;
-            });
+            const load = new Promisified<void>();
+            promises[path] = load.promise;
             // Then load the bundle.
-            http.get<string>( path ).then( response => {
+            transport.http.get<string>( path ).then( response => {
                 try {
                     this.addKeys( response );
                     if(typeof callback === "function"){
                         callback();
                     }
-                    _resolve();
+                    load.resolve();
                 }
                 catch(e){
                     if(typeof callback === "function"){
                         callback();
                     }
-                    _reject();
+                    load.reject();
                 }
             });
         }
