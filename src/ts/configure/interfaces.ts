@@ -20,9 +20,9 @@ export interface IConfigurationFramework {
       readonly cdnDomain:string;
       readonly apps: {
         /** Initialize an app (preload its public conf and i18n) */
-        initialize(app:App):void;
+        initialize(app:App):Promise<void>;
         /** Load and return the public conf of an app. */
-        getPublicConf(app:App):any;
+        getPublicConf(app:App):Promise<any>;
         /** Load the i18n of an app. */
         loadI18n(app:App):Promise<void>;
       };
