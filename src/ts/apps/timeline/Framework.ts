@@ -34,7 +34,7 @@ export class TimelineApp implements ITimelineApp {
         return this._notificationTypes;
     }
     get selectedNotificationTypes():Array<string> {
-        return this.preferences.type;
+        return this.preferences?.type || [];
     }
     get preferences():any {
         return configure.User.preferences.data[APP.TIMELINE];
