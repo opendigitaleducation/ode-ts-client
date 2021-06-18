@@ -34,10 +34,10 @@ export class TimelineApp implements ITimelineApp {
         return this._notificationTypes;
     }
     get selectedNotificationTypes():Array<string> {
-        return this.preferences?.type || [];
+        return this.preferences && this.preferences.type;
     }
     get preferences():any {
-        return configure.User.preferences.data[APP.TIMELINE];
+        return configure.User.preferences.get(APP.TIMELINE);
     }
     get flashMessages() {
         return this._flashMessages;
@@ -53,10 +53,11 @@ export class TimelineApp implements ITimelineApp {
         this._loading = false;
     }
 
-    async initialize() {
-        await configure.User.loadAppPrefs(APP.TIMELINE);
-        return this.loadNotificationTypes()
-        .then( () => this.loadNotifications( true ) );
+    initialize():Promise<void> {
+        return configure.User.loadAppPrefs(APP.TIMELINE)
+        .then( () => {
+            return this.loadNotificationTypes();
+         });
     }
 
     private loadNotificationTypes() {
@@ -65,15 +66,21 @@ export class TimelineApp implements ITimelineApp {
         });
     }
 
-    public loadNotifications( paginate?:boolean ):Promise<void> {
+    public loadNotifications( force?:boolean ):Promise<void> {
+        const paginate = true;  // Let's paginate, that's all.
         if(this._loading || (paginate && this._lastPage)) {
             return Promise.resolve();
         }
 
-        let types = this.selectedNotificationTypes;
-        if(types.length===0) {
-            types = this._notificationTypes;
+        if( force ) {
+            this._pageNumber++;
+            this._lastPage = false;
         }
+
+        let types = this.selectedNotificationTypes;
+        // if(types.length===0) {
+        //     types = this._notificationTypes;
+        // }
 
         if(types.length === 0) {
             this._lastPage = true;

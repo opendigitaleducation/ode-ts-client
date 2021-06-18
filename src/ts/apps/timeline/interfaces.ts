@@ -16,7 +16,8 @@ export interface ITimelineApp {
 	readonly selectedNotificationTypes: Array<string>;
 
 	showMine:boolean;
-	loadNotifications( paginate?:boolean ):Promise<void>;
+    /** Load more notifications, or force loading more by virtually incrementing the page. */
+	loadNotifications( force?:boolean ):Promise<void>;
     readonly notifications: Array<ITimelineNotification>;
 
 	resetPagination():void;
