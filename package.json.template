@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opendigitaleducation/infrontexplore.git"
+    "url": "git+https://github.com/opendigitaleducation/ode-ts-client.git"
   },
   "author": "Open Digital Education",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/opendigitaleducation/infrontexplore/issues"
+    "url": "https://github.com/opendigitaleducation/ode-ts-client/issues"
   },
-  "homepage": "https://github.com/opendigitaleducation/infrontexplore#readme",
+  "homepage": "https://github.com/opendigitaleducation/ode-ts-client#readme",
   "devDependencies": {
     "@types/jasmine": "^3.6.3",
     "@types/node": "^14.14.28",
