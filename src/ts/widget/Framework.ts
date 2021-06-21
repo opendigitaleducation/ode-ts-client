@@ -1,5 +1,5 @@
-import { IWidgetFramework, IWidget, WidgetUserPref,  } from "./interfaces";
-import { IWidgetModel } from "../session/interfaces";
+import { IWidgetFramework, IWidget, WidgetUserPref, WidgetName,  } from "./interfaces";
+import { IWidgetModel, WidgetPosition, WIDGET_POSITION } from "../session/interfaces";
 import { notify, Promisified } from "../notify/Framework";
 import { BootstrappedNotice, IPromisified, EVENT_NAME } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
@@ -15,6 +15,24 @@ const secondLevelWidgets = [
     "cursus-widget",
     "maxicours-widget"
 ];
+
+const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
+    "last-infos-widget":    WIDGET_POSITION.LEFT,
+    "birthday":             WIDGET_POSITION.LEFT,
+    "calendar-widget":      WIDGET_POSITION.RIGHT,
+    "carnet-de-bord":       WIDGET_POSITION.LEFT,
+    "record-me":            WIDGET_POSITION.RIGHT,
+    "mood":                 WIDGET_POSITION.LEFT,
+    "my-apps":              WIDGET_POSITION.RIGHT,
+    "notes":                WIDGET_POSITION.RIGHT,
+    "rss-widget":           WIDGET_POSITION.LEFT,
+    "bookmark-widget":      WIDGET_POSITION.RIGHT,
+    "qwant":                WIDGET_POSITION.RIGHT,
+    "qwant-junior":         WIDGET_POSITION.LEFT,
+    "agenda-widget":        WIDGET_POSITION.LEFT,
+    "cursus-widget":        WIDGET_POSITION.LEFT,
+    "maxicours-widget":     WIDGET_POSITION.RIGHT,
+}
 
 //-------------------------------------
 export class WidgetFramework implements IWidgetFramework {
@@ -54,6 +72,10 @@ export class WidgetFramework implements IWidgetFramework {
 
     lookup( widgetName:string ):IWidget|undefined {
         return this._widgets.find( w => w.platformConf.name===widgetName );
+    }
+
+    public lookupDefaultPosition( widgetName:WidgetName ):WidgetPosition|undefined {
+        return defaultWidgetPosition[widgetName];
     }
 
     ////////////////////////////////////// USER PREFERENCES
@@ -108,22 +130,6 @@ export class WidgetFramework implements IWidgetFramework {
             // TODO Wait for the translation to be loaded ? => uncomment "return" below.
             /*return*/ configure.Platform.idiom.addAllTranslations( i18nFolders );
         });
-
-        // FIXME in ode-ngs-front
-        // for(var i = 0; i < data.length; i++){
-        //     var widget = data[i];
-        //     (function(widget){
-        //         if (widget.i18n) {
-        //             lang.addTranslations(widget.i18n, function(){
-        //                 that.push(widget)
-        //                 http().loadScript(widget.js,undefined,{disableNotifications:true})
-        //             })
-        //         } else {
-        //             that.push(widget)
-        //             http().loadScript(widget.js,undefined,{disableNotifications:true})
-        //         }
-        //     })(widget)
-        // }
     }
 
 }
@@ -155,9 +161,8 @@ class Widget implements IWidget {
     applyUserPref( pref:WidgetUserPref ) {
         this._userPref = pref;
         // Sanity check
-        this._userPref.position = this._userPref.position ?? "left";
+        this._userPref.position = this._userPref.position ?? widgets.lookupDefaultPosition(this._platformConf.name) ?? "left";
     }
-
     
 }
 

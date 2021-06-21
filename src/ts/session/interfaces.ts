@@ -1,3 +1,4 @@
+import { WidgetName } from "../widget/interfaces";
 import { session } from "./Framework";
 
 //-------------------------------------
@@ -111,7 +112,13 @@ export interface IUserInfo {
   widgets: Array<IWidgetModel>;
 }
 
-export type WidgetPosition = "left"|"right"; // TODO: position pourrait être étendu à d'autres valeurs: |“top” ou “bottom” ou “fixed”...
+//-- Widgets position
+export const WIDGET_POSITION = {
+  LEFT:     "left"
+ ,RIGHT:    "right"
+// TODO: position pourrait être étendu à d'autres valeurs: |“top” ou “bottom” ou “fixed”...
+} as const;
+export type WidgetPosition = typeof WIDGET_POSITION[keyof typeof WIDGET_POSITION];
 
 export interface IWidgetModel {
   application?: string;   // "Actualites"
@@ -120,7 +127,7 @@ export interface IWidgetModel {
   id: string;
   js: string;             // "/actualites/public/widgets/last-infos-widget/last-infos-widget.js"
   mandatory: boolean;
-  name: string;           // "last-infos-widget"
+  name: WidgetName;       // "last-infos-widget"
   path: string;           // "/actualites/public/widgets/last-infos-widget/last-infos-widget.html"
 }
 

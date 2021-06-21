@@ -3,21 +3,7 @@ import { Theme } from "./Theme";
 import { Idiom } from "./Idiom";
 import { User } from "./User";
 import { AppConf } from "./AppConf";
-import { IWidgetModel, WidgetPosition } from "../session/interfaces";
-import { notify, Promisified } from "../notify/Framework";
-import { BootstrappedNotice, IPromisified, EVENT_NAME } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
-
-const firstLevelWidgets = ["birthday", "mood"];
-const secondLevelWidgets = [
-    "agenda-widget", 
-    "carnet-de-bord", 
-    "my-apps", 
-    "rss-widget", 
-    "bookmark-widget", 
-    "cursus-widget",
-    "maxicours-widget"
-];
 
 //-------------------------------------
 export class ConfigurationFramework implements IConfigurationFramework {
