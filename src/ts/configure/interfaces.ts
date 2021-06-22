@@ -27,7 +27,10 @@ export interface IConfigurationFramework {
         loadI18n(app:App):Promise<void>;
       };
       readonly theme:ITheme;
-      //analytics;
+      readonly analytics:{
+        parameters<T extends ITrackingParams>(type:TrackingType):Promise<T|undefined>;
+        readonly status:AnalyticStatus;
+      };
       readonly idiom:IIdiom;
       listLanguages():Promise<string[]>;
   }
@@ -44,8 +47,23 @@ export interface IConfigurationFramework {
 
     loadLanguage():Promise<string>;
     saveLanguage( lang:string ):Promise<void>;
-  
   }
+}
+
+export type AnalyticStatus = "void" | "pending" | "ready" | "failed";
+export type TrackingType = "matomo" | "internal";
+export interface ITrackingParams {
+    trackOnly: string[];
+    doNotTrack: string[];
+    detailApps: boolean;
+}
+export interface IMatomoTrackingParams extends ITrackingParams {
+  url:string;
+  siteId: number;
+  UserId: string;
+  Profile: string;
+  School: string;
+  Project: string;
 }
 
 //-------------------------------------

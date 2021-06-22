@@ -123,25 +123,6 @@ export class Session implements ISession {
     private loadDefaultLanguage():Promise<string> {
         return http.get<string>( '/locale' ).then( responseText => {
             return JSON.parse(responseText).locale;
-            /*TODO porter ce code à l'aide des notifications
-            if((window as any).moment){
-                if (currentLanguage === 'fr') {
-                    moment.updateLocale(currentLanguage, {
-                        calendar: {
-                            lastDay: '[Hier à] HH[h]mm',
-                            sameDay: '[Aujourd\'hui à] HH[h]mm',
-                            nextDay: '[Demain à] HH[h]mm',
-                            lastWeek: 'dddd [dernier à] HH[h]mm',
-                            nextWeek: 'dddd [prochain à] HH[h]mm',
-                            sameElse: 'dddd LL'
-                        }
-                    });
-                }
-                else {
-                    moment.lang(currentLanguage);
-                }
-            }
-            */
         }).catch( () => {
             // void
             return this._currentLanguage;

@@ -4,6 +4,7 @@ import { Idiom } from "./Idiom";
 import { User } from "./User";
 import { AppConf } from "./AppConf";
 import { transport } from "../transport/Framework";
+import { Analytics } from "./Analytics";
 
 //-------------------------------------
 export class ConfigurationFramework implements IConfigurationFramework {
@@ -13,7 +14,7 @@ export class ConfigurationFramework implements IConfigurationFramework {
         cdnDomain: '',
         apps: new AppConf(),
         theme: new Theme(),
-        //analytics;
+        analytics: new Analytics(),
         idiom: new Idiom(),
         listLanguages: () => {
             return transport.http.get("/languages");
