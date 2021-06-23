@@ -1,7 +1,6 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 import { ERROR_CODE } from "../globals";
 import { notify } from "../notify/Framework";
-import { EVENT_NAME, HttpErrorNotice } from "../notify/interfaces";
 import { IHttp, IHttpParams, IHttpResponse } from "./interfaces";
 
 const loadedScripts: { [url: string]: boolean } = {};
@@ -66,7 +65,8 @@ export class Http implements IHttp {
 
         // Notify error unless disabled.
         if( !params || params.disableNotifications===false ) {
-            notify.onEvent( EVENT_NAME.HTTP_ERROR ).next( new HttpErrorNotice(''+this._latestResponse.status, this._latestResponse.statusText) );
+            // FIXME This really should be an rxjs Subject
+            // notify.onEvent( EVENT_NAME.HTTP_ERROR ).next( new HttpErrorNotice(''+this._latestResponse.status, this._latestResponse.statusText) );
         }
 
         return this._latestResponse;

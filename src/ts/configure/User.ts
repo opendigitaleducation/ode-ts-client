@@ -1,6 +1,5 @@
 import { App } from "../globals";
 import { AppModel, IUserPreferences, UserPreferenceKey } from "./interfaces";
-import { EVENT_NAME, BootstrappedNotice, PreferencesUpdated } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
 import { IUserInfo } from "../session/interfaces";
@@ -34,7 +33,7 @@ class UserPreferences implements IUserPreferences {
 		if(data !== undefined){
 			this.data[key] = data;
 		}
-		notify.onEvent<PreferencesUpdated>( EVENT_NAME.PREFERENCES_UPDATED ).next( new PreferencesUpdated(key, data) );
+		//notify.onEvent<PreferencesUpdated>( EVENT_NAME.PREFERENCES_UPDATED ).next( new PreferencesUpdated(key, data) );
 		return this;
 	}
 
@@ -67,10 +66,9 @@ export class User {
 
 	initialize( version?:string ) {
 		this.loadPublicConf();
-		const sessionSubscription = notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).subscribe( notice => {
-			sessionSubscription?.unsubscribe();
-			if(notice.userInfo) {
-				this.setCurrentModel(notice.userInfo);
+		notify.onSessionReady().promise.then( userInfo => {
+			if(userInfo) {
+				this.setCurrentModel(userInfo);
 			}
 		});
 	}
@@ -90,7 +88,8 @@ export class User {
 
 	/** Bookmarks : pinned apps */
 	private async loadBookmarks() {
-		return await transport.http.get('/userbook/preference/apps').then( data => {
+		await transport.http.get('/userbook/preference/apps')
+		.then( data => {
 			if(!data.preference){
 				data.preference = null;
 			}

@@ -1,5 +1,4 @@
 import { AddBundleCallback, IIdiom } from "./interfaces";
-import { EVENT_NAME, LangChangedNotice } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
 import { notify, Promisified } from "../notify/Framework";
 
@@ -137,25 +136,17 @@ export class Idiom implements IIdiom {
 
     addTranslations(folder:string, callback?:AddBundleCallback):void {
         // Load translations once language is known.
-        const subscription = notify.onEvent<LangChangedNotice>( EVENT_NAME.LANG_CHANGED )
-        .subscribe( notice => {
-            this.addBundle(folder + '/' + notice.newLanguage + '.json', callback);
-            subscription.unsubscribe();
+        notify.onLangReady().promise.then( lang => {
+            this.addBundle(folder + '/' + lang + '.json', callback);
         });
     }
 
     addAllTranslations(folders:string[]):Promise<void> {
         if( folders && folders.length>0 ) {
-            return new Promise<void>( (resolve, reject) => {
-                // Load all translations once language is known.
-                const subscription = notify.onEvent<LangChangedNotice>( EVENT_NAME.LANG_CHANGED )
-                .subscribe( notice => {
-                    Promise.all( 
-                        folders.map( folder => this.addBundlePromise(folder + '/' + notice.newLanguage + '.json') )
-                    ).then( r => { resolve(); } );
-                    subscription?.unsubscribe();
-                });
-            });
+            // Load all translations once language is known.
+            return notify.onLangReady().promise
+            .then( lang => Promise.all( folders.map(folder => this.addBundlePromise(folder + '/' + lang + '.json')) ) )
+            .then( () => {} );
         } else {
             return Promise.reject();
         }

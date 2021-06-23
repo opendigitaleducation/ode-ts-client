@@ -1,5 +1,4 @@
 import { notify } from "../notify/Framework";
-import { BootstrappedNotice, EVENT_NAME } from "../notify/interfaces";
 import { session } from "../session/Framework";
 import { transport } from "../transport/Framework";
 import { configure } from "./Framework";
@@ -22,14 +21,7 @@ export class Theme implements ITheme {
 
 
     initialize( version?:string ) {
-        const sessionSubscription = notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).subscribe(
-            notice => {
-                sessionSubscription?.unsubscribe();
-                if(notice.userInfo) {
-                    this.load( version );
-                }
-            }
-        );
+        notify.onSessionReady().promise.then( () => {this.load( version )});
     }
 
     private get version():string {

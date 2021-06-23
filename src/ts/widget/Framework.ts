@@ -1,8 +1,7 @@
 import { IWidgetFramework, IWidget, WidgetUserPref, WidgetName,  } from "./interfaces";
 import { IWidgetModel, WidgetPosition, WIDGET_POSITION } from "../session/interfaces";
 import { notify, Promisified } from "../notify/Framework";
-import { BootstrappedNotice, IPromisified, EVENT_NAME } from "../notify/interfaces";
-import { transport } from "../transport/Framework";
+import { IPromisified } from "../notify/interfaces";
 import { configure } from "../configure/Framework";
 
 const firstLevelWidgets = ["birthday", "mood"];
@@ -45,10 +44,9 @@ export class WidgetFramework implements IWidgetFramework {
             this._initialized = new Promisified<void>();
 
             // Wait for /auth/oauth2/userinfo and read the widget conf.
-            const sessionSubscription = notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).subscribe( notice => {
-                sessionSubscription?.unsubscribe();
-                if(notice.userInfo && notice.userInfo.widgets) {
-                    notice.userInfo.widgets.forEach( w => {
+            notify.onSessionReady().promise.then( userInfo => {
+                if(userInfo && userInfo.widgets) {
+                    userInfo.widgets.forEach( w => {
                         this._widgets.push( new Widget(w) );
                     });
                     this.loadUserPrefs().then( ()=> {
@@ -60,7 +58,7 @@ export class WidgetFramework implements IWidgetFramework {
                 } else {
                     this._initialized?.reject();
                 }
-            });
+            })
         }
         return this._initialized.promise;
     }

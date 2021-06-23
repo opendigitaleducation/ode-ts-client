@@ -1,4 +1,3 @@
-import { BootstrappedNotice, EVENT_NAME, LangChangedNotice } from "../notify/interfaces";
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
 import { ISession, IUserDescription, IUserInfo } from "./interfaces";
@@ -43,12 +42,11 @@ export class Session implements ISession {
             this.setCurrentLanguage( lang );
             return this.loadDescription();
         }).then( ()=>{
-            notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).next( new BootstrappedNotice(this._me) );
+            notify.onSessionReady().resolve( this._me );
         })
         .catch( (e:Error) => {
             // Note : do not log error in the browser console here, since this code may run outside a browser !
-            // TODO Subscribe to this notice in ode-ngjs-front.
-            notify.onEvent<BootstrappedNotice>( EVENT_NAME.BOOTSTRAPPED ).next( new BootstrappedNotice(undefined, e.message) );
+            notify.onSessionReady().reject( e );
         });
     }
 
@@ -114,10 +112,9 @@ export class Session implements ISession {
     ////////////////////////////////////////////////////////// Language management
 
     private setCurrentLanguage( lang:string ) {
-        const notice:LangChangedNotice = new LangChangedNotice( this._currentLanguage, lang );
         this._currentLanguage = lang;
         // Notify that current language has changed.
-        notify.onEvent<LangChangedNotice>( EVENT_NAME.LANG_CHANGED ).next( notice );
+        notify.onLangReady().resolve( lang );
     }
 
     private loadDefaultLanguage():Promise<string> {

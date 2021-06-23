@@ -37,11 +37,10 @@ export class ConfigurationFramework implements IConfigurationFramework {
         const v = version;
         this.Platform.deploymentTag = version;
         this.Platform.cdnDomain = cdnDomain ?? '';
-        return this.Platform.idiom.addBundlePromise('/i18n').then( ()=>{
-            this.Platform.theme.initialize( v );
-            //TODO this.School.initialize( v );
-            this.User.initialize( v );
-        });
+        return this.Platform.idiom.addBundlePromise('/i18n')
+            .then( () => this.Platform.theme.initialize(v) )
+            //TODO .then( () => this.School.initialize( v )
+            .then( () => this.User.initialize(v) );
     }
 }
 

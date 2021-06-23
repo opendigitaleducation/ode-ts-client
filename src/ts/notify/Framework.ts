@@ -1,12 +1,14 @@
 import { ReplaySubject, Subject } from "rxjs";
 import { ITheme, IThemeOverrides } from "../configure/interfaces";
-import { EVENT_NAME, IPromisified, INotice, INotifyFramework, LangChangedNotice } from "./interfaces";
+import { IUserInfo } from "../session/interfaces";
+import { IPromisified, INotifyFramework } from "./interfaces";
 
-type SubjectRegistry = { [name:string]:Subject<INotice> };
 type PromiseRegistry = { [name:string]:Promisified<any> };
 
 const ASYNC_DATA_NAME = {
-	SKIN_READY:		"skinReady"
+    SESSION_READY:  "sessionReady"
+,   LANG_READY:     "langReady"
+,   SKIN_READY:		"skinReady"
 ,	OVERRIDE_READY:	"overrideReady"
 } as const;
 type AsyncDataName = typeof ASYNC_DATA_NAME[keyof typeof ASYNC_DATA_NAME];
@@ -37,32 +39,21 @@ export class Promisified<T> implements IPromisified<T> {
 //-------------------------------------
 class NotifyFramework implements INotifyFramework {
 //-------------------------------------
-    private subjects:SubjectRegistry = {};
     private promises:PromiseRegistry = {};
-
-    onEvent<T extends INotice>( eventName:string ):Subject<T> {
-        if( typeof this.subjects[eventName] === "undefined" ) {
-            // Create specific subjects if needed.
-            switch( eventName ) {
-                case EVENT_NAME.LANG_CHANGED:
-                    // Replays or emits the latest value to the subscribers.
-                    // See https://www.learnrxjs.io/learn-rxjs/subjects/replaysubject
-                    this.subjects[eventName] = new ReplaySubject<LangChangedNotice>(1) as unknown as Subject<INotice>;
-                break;
-                
-                default:
-                    this.subjects[eventName] = new Subject<T>()  as unknown as Subject<INotice>;
-                break;
-            }
-        }
-        return this.subjects[eventName] as unknown as Subject<T>;
-    }
 
     private asyncData<T>( asyncDataName:string ):Promisified<T> {
         if( typeof this.promises[asyncDataName] === "undefined" ) {
-            this.promises[asyncDataName] = new Promisified<T>()  as unknown as Promisified<INotice>;
+            this.promises[asyncDataName] = new Promisified<T>()  as unknown as Promisified<any>;
         }
-        return this.promises[asyncDataName]  as unknown as Promisified<T>;
+        return this.promises[asyncDataName] as unknown as Promisified<T>;
+    }
+
+	public onSessionReady():IPromisified<IUserInfo> {
+        return this.asyncData<IUserInfo>(ASYNC_DATA_NAME.SESSION_READY);
+    }
+
+	public onLangReady():IPromisified<string> {
+        return this.asyncData<string>(ASYNC_DATA_NAME.LANG_READY);
     }
 
     public onSkinReady():Promisified<ITheme> {
@@ -71,6 +62,10 @@ class NotifyFramework implements INotifyFramework {
 
     public onOverridesReady():Promisified<IThemeOverrides> {
         return this.asyncData<IThemeOverrides>(ASYNC_DATA_NAME.OVERRIDE_READY);
+    }
+
+    public promisify<T>():IPromisified<T> {
+        return new Promisified<T>();
     }
 }
 

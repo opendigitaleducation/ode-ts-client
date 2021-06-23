@@ -8,14 +8,21 @@ const http = transport.http;
 export class AppConf {
 //-------------------------------------
 	private _publicConf:{[key in App]?: any} = {};
+	private _currentApp?:App;
 
-	initialize(app:App):Promise<void> {
-		return Promise.all([
+	setCurrentApp(app:App):AppConf {
+		this._currentApp = app;
+		return this;
+	}
+
+	async initialize(app:App, alternativeApp:boolean = false):Promise<void> {
+		if( !alternativeApp ) {
+			this.setCurrentApp(app);
+		}
+		await Promise.all([
 			this.getPublicConf(app),
 			this.loadI18n(app)
-		]).then( res => {
-			//void
-		});
+		]);
 	}
 
 	public async getPublicConf(app:App):Promise<any> {
