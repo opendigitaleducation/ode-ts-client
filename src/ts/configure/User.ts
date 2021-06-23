@@ -1,8 +1,8 @@
 import { App } from "../globals";
-import { AppModel, IUserPreferences, UserPreferenceKey } from "./interfaces";
+import { IUserPreferences, UserPreferenceKey } from "./interfaces";
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
-import { IUserInfo } from "../session/interfaces";
+import { IUserInfo, IWebApp } from "../session/interfaces";
 import { session } from "../session/Framework";
 
 //-------------------------------------
@@ -49,7 +49,7 @@ export class User {
 	private _me:IUserInfo = null as unknown as IUserInfo;
 	private _keepOpenOnLogout:boolean = false;
 	private _preferences:IUserPreferences = new UserPreferences();
-	private _bookmarkedApps:Array<AppModel> = [];
+	private _bookmarkedApps:Array<IWebApp> = [];
 
 	get keepOpenOnLogout():boolean {
 		return this._keepOpenOnLogout;
@@ -59,7 +59,7 @@ export class User {
 		return this._preferences;
 	}
 
-	get bookmarkedApps():Array<AppModel> {
+	get bookmarkedApps():Array<IWebApp> {
 		// will be empty if initialize() was not called.
 		return this._bookmarkedApps;
 	}
@@ -93,7 +93,7 @@ export class User {
 			if(!data.preference){
 				data.preference = null;
 			}
-			const tmp = JSON.parse(data.preference) as Array<AppModel>;
+			const tmp = JSON.parse(data.preference) as Array<IWebApp>/*| {bookmarks:string[],applications:[]}*/;
 			let myApps:{
 				bookmarks:Array<string>,	// Array of app names
 				applications: []
@@ -109,7 +109,7 @@ export class User {
 				transport.http.putJson('/userbook/preference/apps', myApps);
 				return;
 			} else {
-				myApps = tmp as any;
+				myApps = tmp as unknown as {bookmarks:string[],applications:[]};
 			}
 
 			if( ! myApps ) {

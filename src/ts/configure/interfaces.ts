@@ -1,4 +1,5 @@
-import { APP, App } from "../globals";
+import { App } from "../globals";
+import { IWebApp } from "../session/interfaces";
 import { configure } from "./Framework";
 
 //-------------------------------------
@@ -40,7 +41,7 @@ export interface IConfigurationFramework {
   readonly User:{
     readonly preferences:IUserPreferences;
     readonly keepOpenOnLogout:boolean;
-    readonly bookmarkedApps:Array<AppModel>;
+    readonly bookmarkedApps:Array<IWebApp>;
 
     loadAppPrefs(app:App):Promise<any>;
     saveAppPrefs(app:App):Promise<void>;
@@ -153,12 +154,6 @@ export interface IIdiom {
   addAllTranslations(folders:string[]):Promise<void>;
   addKeys(keys:any):void;
   removeAccents( str:string ):string;
-}
-
-//-------------------------------------
-export type AppModel = {
-//-------------------------------------
-  name:string;
 }
 
 export type UserPreferenceKey = 'apps'|'widgets'|'language'|App;
