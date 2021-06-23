@@ -108,11 +108,15 @@ export class User {
 				}
 				transport.http.putJson('/userbook/preference/apps', myApps);
 				return;
+			} else {
+				myApps = tmp as any;
 			}
 
-			myApps = {
-				bookmarks: [],
-				applications: []
+			if( ! myApps ) {
+				myApps = {
+					bookmarks: [],
+					applications: []
+				}
 			}
 
 			let upToDate = true;
@@ -129,7 +133,9 @@ export class User {
 			});
 			remove.forEach( appName => {
 				let index = myApps.bookmarks.indexOf( appName );
-				myApps.bookmarks.splice(index, 1);
+				if( index !== -1 ) {
+					myApps.bookmarks.splice(index, 1);
+				}
 			});
 			if(!upToDate){
 				transport.http.putJson('/userbook/preference/apps', myApps);
