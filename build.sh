@@ -51,7 +51,7 @@ init () {
 }
 
 build () {
-  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm run test && npm run docs && npm run build"
+  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm run test && npm run build"
   VERSION=`grep "version="  gradle.properties| sed 's/version=//g'`
   echo "ode-ts-client=$VERSION `date +'%d/%m/%Y %H:%M:%S'`" >> dist/version.txt
 }
