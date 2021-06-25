@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[explore/interfaces.ts:262](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L262)
+[explore/interfaces.ts:262](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L262)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:263](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L263)
+[explore/interfaces.ts:263](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L263)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:264](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L264)
+[explore/interfaces.ts:264](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L264)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:265](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L265)
+[explore/interfaces.ts:265](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L265)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:266](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L266)
+[explore/interfaces.ts:266](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L266)
 
 ___
 
@@ -71,4 +71,4 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:261](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L261)
+[explore/interfaces.ts:261](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L261)

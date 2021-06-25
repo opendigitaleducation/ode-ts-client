@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[explore/interfaces.ts:329](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L329)
+[explore/interfaces.ts:329](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L329)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:328](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L328)
+[explore/interfaces.ts:328](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L328)

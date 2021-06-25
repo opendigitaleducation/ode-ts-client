@@ -32,7 +32,7 @@ Create a new context to explore resources from an application.
 
 #### Defined in
 
-[explore/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L22)
+[explore/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L22)
 
 ___
 
@@ -48,4 +48,4 @@ Retrieve the underlying communication bus.
 
 #### Defined in
 
-[explore/interfaces.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L27)
+[explore/interfaces.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L27)

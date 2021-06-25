@@ -28,7 +28,7 @@
 
 #### Defined in
 
-[explore/interfaces.ts:280](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L280)
+[explore/interfaces.ts:280](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L280)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:278](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L278)
+[explore/interfaces.ts:278](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L278)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:271](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L271)
+[explore/interfaces.ts:271](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L271)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:279](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L279)
+[explore/interfaces.ts:279](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L279)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:272](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L272)
+[explore/interfaces.ts:272](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L272)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:281](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L281)
+[explore/interfaces.ts:281](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L281)
 
 ___
 
@@ -100,4 +100,4 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:273](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L273)
+[explore/interfaces.ts:273](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L273)

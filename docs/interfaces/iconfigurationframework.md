@@ -24,6 +24,9 @@
 
 | Name | Type |
 | :------ | :------ |
+| `analytics` | `Object` |
+| `analytics.status` | [AnalyticStatus](../modules.md#analyticstatus) |
+| `analytics.parameters` | [object Object] |
 | `apps` | `Object` |
 | `apps.getPublicConf` | [object Object] |
 | `apps.initialize` | [object Object] |
@@ -32,10 +35,11 @@
 | `deploymentTag` | `string` |
 | `idiom` | [IIdiom](iidiom.md) |
 | `theme` | [ITheme](itheme.md) |
+| `listLanguages` | () => `Promise`<string[]\> |
 
 #### Defined in
 
-[configure/interfaces.ts:18](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L18)
+[configure/interfaces.ts:19](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L19)
 
 ___
 
@@ -45,7 +49,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:33](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L33)
+[configure/interfaces.ts:38](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L38)
 
 ___
 
@@ -57,13 +61,17 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `bookmarkedApps` | [AppModel](../modules.md#appmodel)[] |
+| `bookmarkedApps` | [IWebApp](iwebapp.md)[] |
 | `keepOpenOnLogout` | `boolean` |
 | `preferences` | [IUserPreferences](iuserpreferences.md) |
+| `loadAppPrefs` | (`app`: [App](../modules.md#app)) => `Promise`<any\> |
+| `loadLanguage` | () => `Promise`<string\> |
+| `saveAppPrefs` | (`app`: [App](../modules.md#app)) => `Promise`<void\> |
+| `saveLanguage` | (`lang`: `string`) => `Promise`<void\> |
 
 #### Defined in
 
-[configure/interfaces.ts:36](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L36)
+[configure/interfaces.ts:41](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L41)
 
 ## Methods
 
@@ -86,4 +94,4 @@ Framework initialization
 
 #### Defined in
 
-[configure/interfaces.ts:16](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L16)
+[configure/interfaces.ts:17](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L17)

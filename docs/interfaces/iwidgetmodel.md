@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[session/interfaces.ts:116](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L116)
+[session/interfaces.ts:124](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L124)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:118](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L118)
+[session/interfaces.ts:126](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L126)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:119](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L119)
+[session/interfaces.ts:127](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L127)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:120](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L120)
+[session/interfaces.ts:128](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L128)
 
 ___
 
@@ -63,17 +63,17 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:121](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L121)
+[session/interfaces.ts:129](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L129)
 
 ___
 
 ### name
 
-• **name**: `string`
+• **name**: [WidgetName](../modules.md#widgetname)
 
 #### Defined in
 
-[session/interfaces.ts:122](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L122)
+[session/interfaces.ts:130](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L130)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:123](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L123)
+[session/interfaces.ts:131](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L131)
 
 ___
 
@@ -93,4 +93,4 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:117](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L117)
+[session/interfaces.ts:125](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L125)

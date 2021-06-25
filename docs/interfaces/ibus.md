@@ -32,7 +32,7 @@ Allows registering an agent as being able to resolve 1 or more action on a type 
 
 #### Defined in
 
-[explore/interfaces.ts:454](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L454)
+[explore/interfaces.ts:454](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L454)
 
 ___
 
@@ -55,7 +55,7 @@ Utility function for retrieving an agent.
 
 #### Defined in
 
-[explore/interfaces.ts:460](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L460)
+[explore/interfaces.ts:460](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L460)
 
 ___
 
@@ -79,4 +79,4 @@ Allows delegating an action on a type of resource, to a registered agent on the 
 
 #### Defined in
 
-[explore/interfaces.ts:457](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L457)
+[explore/interfaces.ts:457](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L457)

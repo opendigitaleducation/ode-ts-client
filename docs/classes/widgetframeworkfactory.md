@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[widget/interfaces.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/widget/interfaces.ts#L7)
+[widget/interfaces.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L27)

@@ -22,7 +22,7 @@ Default instance.
 
 #### Defined in
 
-[transport/interfaces.ts:15](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L15)
+[transport/interfaces.ts:15](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L15)
 
 ## Methods
 
@@ -44,4 +44,4 @@ Creates a new IHttp object with a custom configuration;
 
 #### Defined in
 
-[transport/interfaces.ts:21](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L21)
+[transport/interfaces.ts:21](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L21)

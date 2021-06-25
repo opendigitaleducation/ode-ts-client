@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[session/interfaces.ts:15](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L15)
+[session/interfaces.ts:16](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L16)
 
 ## Methods
 
@@ -34,4 +34,4 @@
 
 #### Defined in
 
-[session/interfaces.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L14)
+[session/interfaces.ts:15](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L15)

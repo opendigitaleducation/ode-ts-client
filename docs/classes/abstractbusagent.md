@@ -45,7 +45,7 @@ Manage a generic RESOURCE
 
 #### Defined in
 
-[explore/Agent.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L22)
+[explore/Agent.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L22)
 
 ## Properties
 
@@ -74,7 +74,7 @@ Manage a generic RESOURCE
 
 #### Defined in
 
-[explore/Agent.ts:32](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L32)
+[explore/Agent.ts:32](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L32)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L28)
+[explore/Agent.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L28)
 
 ___
 
@@ -96,7 +96,7 @@ Type of resource this agent can manage.
 
 #### Defined in
 
-[explore/Agent.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L27)
+[explore/Agent.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L27)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L29)
+[explore/Agent.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L29)
 
 ## Methods
 
@@ -134,7 +134,7 @@ Ask this agent to resolve an action.
 
 #### Defined in
 
-[explore/Agent.ts:82](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L82)
+[explore/Agent.ts:82](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L82)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:61](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L61)
+[explore/Agent.ts:61](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L61)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:58](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L58)
+[explore/Agent.ts:58](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L58)
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:68](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L68)
+[explore/Agent.ts:68](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L68)
 
 ___
 
@@ -216,7 +216,7 @@ Override to register handlers for actions this agent support.
 
 #### Defined in
 
-[explore/Agent.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L66)
+[explore/Agent.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L66)
 
 ___
 
@@ -230,7 +230,7 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L49)
+[explore/Agent.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L49)
 
 ___
 
@@ -251,4 +251,4 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L54)
+[explore/Agent.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L54)

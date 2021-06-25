@@ -47,7 +47,7 @@ Ask this agent to resolve an action.
 
 #### Defined in
 
-[explore/interfaces.ts:467](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L467)
+[explore/interfaces.ts:467](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L467)
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 #### Defined in
 
-[explore/Agent.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Agent.ts#L14)
+[explore/Agent.ts:14](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Agent.ts#L14)

@@ -31,7 +31,7 @@ Latest available HTTP response, valid during your get|post|put...then() and catc
 
 #### Defined in
 
-[transport/interfaces.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L28)
+[transport/interfaces.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L28)
 
 ## Methods
 
@@ -61,7 +61,7 @@ HTTP DELETE
 
 #### Defined in
 
-[transport/interfaces.ts:57](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L57)
+[transport/interfaces.ts:57](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L57)
 
 ___
 
@@ -91,7 +91,7 @@ HTTP DELETE, Accept: application/json
 
 #### Defined in
 
-[transport/interfaces.ts:60](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L60)
+[transport/interfaces.ts:60](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L60)
 
 ___
 
@@ -120,7 +120,7 @@ HTTP GET Accept: application/json
 
 #### Defined in
 
-[transport/interfaces.ts:31](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L31)
+[transport/interfaces.ts:31](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L31)
 
 ___
 
@@ -150,7 +150,7 @@ HTTP GET, Accept: application/javascript
 
 #### Defined in
 
-[transport/interfaces.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L66)
+[transport/interfaces.ts:66](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L66)
 
 ___
 
@@ -173,7 +173,7 @@ HTTP GET, Accept: application/javascript
 
 #### Defined in
 
-[transport/interfaces.ts:69](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L69)
+[transport/interfaces.ts:69](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L69)
 
 ___
 
@@ -203,7 +203,7 @@ HTTP POST, Accept: application/json
 
 #### Defined in
 
-[transport/interfaces.ts:34](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L34)
+[transport/interfaces.ts:34](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L34)
 
 ___
 
@@ -233,7 +233,7 @@ HTTP POST
 
 #### Defined in
 
-[transport/interfaces.ts:43](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L43)
+[transport/interfaces.ts:43](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L43)
 
 ___
 
@@ -264,7 +264,7 @@ HTTP POST, Accept: application/json, Content-type: application/json
 
 #### Defined in
 
-[transport/interfaces.ts:46](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L46)
+[transport/interfaces.ts:46](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L46)
 
 ___
 
@@ -295,7 +295,7 @@ HTTP PUT, Accept: application/json
 
 #### Defined in
 
-[transport/interfaces.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L49)
+[transport/interfaces.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L49)
 
 ___
 
@@ -326,4 +326,4 @@ HTTP PUT, Accept: application/json, Content-type: application/json
 
 #### Defined in
 
-[transport/interfaces.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L54)
+[transport/interfaces.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L54)

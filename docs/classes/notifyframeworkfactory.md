@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[notify/interfaces.ts:17](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L17)
+[notify/interfaces.ts:8](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/notify/interfaces.ts#L8)

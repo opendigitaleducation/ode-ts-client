@@ -10,9 +10,11 @@
 
 ### Methods
 
-- [onEvent](inotifyframework.md#onevent)
+- [onLangReady](inotifyframework.md#onlangready)
 - [onOverridesReady](inotifyframework.md#onoverridesready)
+- [onSessionReady](inotifyframework.md#onsessionready)
 - [onSkinReady](inotifyframework.md#onskinready)
+- [promisify](inotifyframework.md#promisify)
 
 ## Constructors
 
@@ -22,32 +24,19 @@
 
 ## Methods
 
-### onEvent
+### onLangReady
 
-▸ `Abstract` **onEvent**<T\>(`eventName`): `Subject`<T\>
+▸ `Abstract` **onLangReady**(): [IPromisified](../interfaces/ipromisified.md)<string\>
 
-Notify / be notified of events.
-Those events may happen many times (stream of events).
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | `T`: [INotice](../interfaces/inotice.md) |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | `string` |
+Promise / resolve / reject of current user's language.
 
 #### Returns
 
-`Subject`<T\>
+[IPromisified](../interfaces/ipromisified.md)<string\>
 
 #### Defined in
 
-[notify/interfaces.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L29)
+[notify/interfaces.ts:25](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/notify/interfaces.ts#L25)
 
 ___
 
@@ -64,7 +53,23 @@ This data is not intended to change after being resolved.
 
 #### Defined in
 
-[notify/interfaces.ts:41](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L41)
+[notify/interfaces.ts:42](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/notify/interfaces.ts#L42)
+
+___
+
+### onSessionReady
+
+▸ `Abstract` **onSessionReady**(): [IPromisified](../interfaces/ipromisified.md)<[IUserInfo](../interfaces/iuserinfo.md)\>
+
+Promise / resolve / reject of current user's session.
+
+#### Returns
+
+[IPromisified](../interfaces/ipromisified.md)<[IUserInfo](../interfaces/iuserinfo.md)\>
+
+#### Defined in
+
+[notify/interfaces.ts:30](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/notify/interfaces.ts#L30)
 
 ___
 
@@ -81,4 +86,27 @@ This data is not intended to change after being resolved.
 
 #### Defined in
 
-[notify/interfaces.ts:35](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L35)
+[notify/interfaces.ts:36](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/notify/interfaces.ts#L36)
+
+___
+
+### promisify
+
+▸ `Abstract` **promisify**<T\>(): [IPromisified](../interfaces/ipromisified.md)<T\>
+
+Utility method : wrap your own Promise.
+Or use one of the predefined promises.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Returns
+
+[IPromisified](../interfaces/ipromisified.md)<T\>
+
+#### Defined in
+
+[notify/interfaces.ts:20](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/notify/interfaces.ts#L20)

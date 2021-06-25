@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[configure/interfaces.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L7)
+[configure/interfaces.ts:8](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L8)

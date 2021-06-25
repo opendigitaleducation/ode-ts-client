@@ -9,6 +9,7 @@
 - [currentLanguage](isession.md#currentlanguage)
 - [description](isession.md#description)
 - [notLoggedIn](isession.md#notloggedin)
+- [user](isession.md#user)
 
 ### Methods
 
@@ -23,7 +24,7 @@
 
 #### Defined in
 
-[session/interfaces.ts:21](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L21)
+[session/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L22)
 
 ___
 
@@ -33,7 +34,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:23](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L23)
+[session/interfaces.ts:24](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L24)
 
 ___
 
@@ -43,7 +44,17 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L22)
+[session/interfaces.ts:23](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L23)
+
+___
+
+### user
+
+• `Readonly` **user**: [IUserInfo](iuserinfo.md)
+
+#### Defined in
+
+[session/interfaces.ts:25](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L25)
 
 ## Methods
 
@@ -64,7 +75,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:26](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L26)
+[session/interfaces.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L28)
 
 ___
 
@@ -84,4 +95,4 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:25](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L25)
+[session/interfaces.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L27)

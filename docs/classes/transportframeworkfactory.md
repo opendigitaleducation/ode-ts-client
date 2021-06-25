@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[transport/interfaces.ts:6](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L6)
+[transport/interfaces.ts:6](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L6)

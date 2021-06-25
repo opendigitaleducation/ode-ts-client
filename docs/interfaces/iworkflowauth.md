@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[session/interfaces.ts:140](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L140)
+[session/interfaces.ts:148](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L148)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:141](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L141)
+[session/interfaces.ts:149](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L149)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:142](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L142)
+[session/interfaces.ts:150](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L150)

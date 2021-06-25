@@ -24,7 +24,7 @@ List widgets that are visible to the connected user.
 
 #### Defined in
 
-[widget/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/widget/interfaces.ts#L22)
+[widget/interfaces.ts:42](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L42)
 
 ## Methods
 
@@ -47,7 +47,7 @@ Loads the widget configuration.
 
 #### Defined in
 
-[widget/interfaces.ts:16](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/widget/interfaces.ts#L16)
+[widget/interfaces.ts:36](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L36)
 
 ___
 
@@ -69,7 +69,7 @@ Retrieve a widget by name.
 
 #### Defined in
 
-[widget/interfaces.ts:25](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/widget/interfaces.ts#L25)
+[widget/interfaces.ts:45](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L45)
 
 ___
 
@@ -85,4 +85,4 @@ Save user preferences
 
 #### Defined in
 
-[widget/interfaces.ts:19](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/widget/interfaces.ts#L19)
+[widget/interfaces.ts:39](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L39)

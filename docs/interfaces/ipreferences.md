@@ -16,4 +16,4 @@
 
 #### Defined in
 
-[explore/interfaces.ts:368](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L368)
+[explore/interfaces.ts:368](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L368)

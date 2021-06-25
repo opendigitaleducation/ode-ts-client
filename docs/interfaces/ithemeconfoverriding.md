@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[configure/interfaces.ts:104](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L104)
+[configure/interfaces.ts:131](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L131)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:103](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L103)
+[configure/interfaces.ts:130](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L130)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:108](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L108)
+[configure/interfaces.ts:135](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L135)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:107](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L107)
+[configure/interfaces.ts:134](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L134)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:106](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L106)
+[configure/interfaces.ts:133](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L133)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:102](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L102)
+[configure/interfaces.ts:129](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L129)
 
 ___
 
@@ -90,4 +90,4 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:105](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L105)
+[configure/interfaces.ts:132](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L132)

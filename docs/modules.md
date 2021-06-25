@@ -7,14 +7,12 @@
 ### Classes
 
 - [AbstractBusAgent](classes/abstractbusagent.md)
-- [BootstrappedNotice](classes/bootstrappednotice.md)
 - [ConfigurationFrameworkFactory](classes/configurationframeworkfactory.md)
 - [ExplorerFrameworkFactory](classes/explorerframeworkfactory.md)
-- [HttpErrorNotice](classes/httperrornotice.md)
 - [INotifyFramework](classes/inotifyframework.md)
-- [LangChangedNotice](classes/langchangednotice.md)
+- [ITimelineFactory](classes/itimelinefactory.md)
+- [LastInfosWidget](classes/lastinfoswidget.md)
 - [NotifyFrameworkFactory](classes/notifyframeworkfactory.md)
-- [PreferencesUpdated](classes/preferencesupdated.md)
 - [SessionFrameworkFactory](classes/sessionframeworkfactory.md)
 - [TransportFrameworkFactory](classes/transportframeworkfactory.md)
 - [WidgetFrameworkFactory](classes/widgetframeworkfactory.md)
@@ -32,10 +30,12 @@
 - [IExplorerContext](interfaces/iexplorercontext.md)
 - [IExplorerFramework](interfaces/iexplorerframework.md)
 - [IFilter](interfaces/ifilter.md)
+- [IFlashMessageModel](interfaces/iflashmessagemodel.md)
 - [IFolder](interfaces/ifolder.md)
 - [IHttp](interfaces/ihttp.md)
 - [IIdiom](interfaces/iidiom.md)
-- [INotice](interfaces/inotice.md)
+- [ILastInfosModel](interfaces/ilastinfosmodel.md)
+- [IMatomoTrackingParams](interfaces/imatomotrackingparams.md)
 - [IOrder](interfaces/iorder.md)
 - [IPagination](interfaces/ipagination.md)
 - [IPreferences](interfaces/ipreferences.md)
@@ -50,6 +50,9 @@
 - [IThemeConf](interfaces/ithemeconf.md)
 - [IThemeConfOverriding](interfaces/ithemeconfoverriding.md)
 - [IThemeDesc](interfaces/ithemedesc.md)
+- [ITimelineApp](interfaces/itimelineapp.md)
+- [ITimelineNotification](interfaces/itimelinenotification.md)
+- [ITrackingParams](interfaces/itrackingparams.md)
 - [ITransportFramework](interfaces/itransportframework.md)
 - [IUserDescription](interfaces/iuserdescription.md)
 - [IUserInfo](interfaces/iuserinfo.md)
@@ -59,20 +62,20 @@
 - [IWidgetFramework](interfaces/iwidgetframework.md)
 - [IWidgetModel](interfaces/iwidgetmodel.md)
 - [IWorkflowAuth](interfaces/iworkflowauth.md)
+- [Recipient](interfaces/recipient.md)
 
 ### Type aliases
 
 - [ActionType](modules.md#actiontype)
 - [AddBundleCallback](modules.md#addbundlecallback)
+- [AnalyticStatus](modules.md#analyticstatus)
 - [App](modules.md#app)
-- [AppModel](modules.md#appmodel)
 - [BooleanFilterType](modules.md#booleanfiltertype)
 - [CopyParameters](modules.md#copyparameters)
 - [CreateFolderParameters](modules.md#createfolderparameters)
 - [CreateFolderResult](modules.md#createfolderresult)
 - [DeleteParameters](modules.md#deleteparameters)
 - [ErrorCode](modules.md#errorcode)
-- [EventName](modules.md#eventname)
 - [FilterValues](modules.md#filtervalues)
 - [FolderType](modules.md#foldertype)
 - [GetContextParameters](modules.md#getcontextparameters)
@@ -88,6 +91,7 @@
 - [ManagePropertiesParameters](modules.md#managepropertiesparameters)
 - [ManagePropertiesResult](modules.md#managepropertiesresult)
 - [MoveParameters](modules.md#moveparameters)
+- [NotificationModel](modules.md#notificationmodel)
 - [OrderValues](modules.md#ordervalues)
 - [PropFormatType](modules.md#propformattype)
 - [PropKeyType](modules.md#propkeytype)
@@ -99,11 +103,13 @@
 - [SortOrderType](modules.md#sortordertype)
 - [StringFilterType](modules.md#stringfiltertype)
 - [StringFilterValue](modules.md#stringfiltervalue)
+- [TrackingType](modules.md#trackingtype)
 - [UpdateFolderParameters](modules.md#updatefolderparameters)
 - [UpdateFolderResult](modules.md#updatefolderresult)
 - [UpdatePropertiesParameters](modules.md#updatepropertiesparameters)
 - [UpdatePropertiesResult](modules.md#updatepropertiesresult)
 - [UserPreferenceKey](modules.md#userpreferencekey)
+- [WidgetName](modules.md#widgetname)
 - [WidgetPosition](modules.md#widgetposition)
 - [WidgetUserPref](modules.md#widgetuserpref)
 
@@ -113,7 +119,6 @@
 - [APP](modules.md#app)
 - [BOOLEAN\_FILTER](modules.md#boolean_filter)
 - [ERROR\_CODE](modules.md#error_code)
-- [EVENT\_NAME](modules.md#event_name)
 - [FOLDER](modules.md#folder)
 - [PROP\_FORMAT](modules.md#prop_format)
 - [PROP\_KEY](modules.md#prop_key)
@@ -123,6 +128,8 @@
 - [SORT\_BY](modules.md#sort_by)
 - [SORT\_ORDER](modules.md#sort_order)
 - [STRING\_FILTER](modules.md#string_filter)
+- [WIDGET\_NAME](modules.md#widget_name)
+- [WIDGET\_POSITION](modules.md#widget_position)
 - [appNameForResource](modules.md#appnameforresource)
 - [explorer](modules.md#explorer)
 
@@ -134,7 +141,7 @@
 
 #### Defined in
 
-[explore/interfaces.ts:169](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L169)
+[explore/interfaces.ts:169](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L169)
 
 ___
 
@@ -152,7 +159,17 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:119](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L119)
+[configure/interfaces.ts:146](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L146)
+
+___
+
+### AnalyticStatus
+
+Ƭ **AnalyticStatus**: ``"void"`` \| ``"pending"`` \| ``"ready"`` \| ``"failed"``
+
+#### Defined in
+
+[configure/interfaces.ts:54](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L54)
 
 ___
 
@@ -162,23 +179,7 @@ ___
 
 #### Defined in
 
-[globals.ts:27](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L27)
-
-___
-
-### AppModel
-
-Ƭ **AppModel**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-
-#### Defined in
-
-[configure/interfaces.ts:133](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L133)
+[globals.ts:28](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/globals.ts#L28)
 
 ___
 
@@ -188,7 +189,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:185](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L185)
+[explore/interfaces.ts:185](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L185)
 
 ___
 
@@ -198,7 +199,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:391](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L391)
+[explore/interfaces.ts:391](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L391)
 
 ___
 
@@ -208,7 +209,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:378](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L378)
+[explore/interfaces.ts:378](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L378)
 
 ___
 
@@ -218,7 +219,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:439](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L439)
+[explore/interfaces.ts:439](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L439)
 
 ___
 
@@ -228,7 +229,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:401](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L401)
+[explore/interfaces.ts:401](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L401)
 
 ___
 
@@ -238,17 +239,7 @@ ___
 
 #### Defined in
 
-[globals.ts:17](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L17)
-
-___
-
-### EventName
-
-Ƭ **EventName**: typeof [EVENT\_NAME](modules.md#event_name)[keyof typeof [EVENT\_NAME](modules.md#event_name)]
-
-#### Defined in
-
-[notify/interfaces.ts:12](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L12)
+[globals.ts:17](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/globals.ts#L17)
 
 ___
 
@@ -258,7 +249,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:424](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L424)
+[explore/interfaces.ts:424](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L424)
 
 ___
 
@@ -268,7 +259,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:176](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L176)
+[explore/interfaces.ts:176](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L176)
 
 ___
 
@@ -278,7 +269,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:376](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L376)
+[explore/interfaces.ts:376](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L376)
 
 ___
 
@@ -288,7 +279,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:434](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L434)
+[explore/interfaces.ts:434](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L434)
 
 ___
 
@@ -298,7 +289,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:377](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L377)
+[explore/interfaces.ts:377](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L377)
 
 ___
 
@@ -308,7 +299,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:436](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L436)
+[explore/interfaces.ts:436](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L436)
 
 ___
 
@@ -318,7 +309,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:438](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L438)
+[explore/interfaces.ts:438](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L438)
 
 ___
 
@@ -336,7 +327,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:29](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L29)
+[session/interfaces.ts:31](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L31)
 
 ___
 
@@ -346,7 +337,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:219](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L219)
+[explore/interfaces.ts:219](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L219)
 
 ___
 
@@ -365,7 +356,7 @@ ___
 
 #### Defined in
 
-[transport/interfaces.ts:73](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L73)
+[transport/interfaces.ts:73](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L73)
 
 ___
 
@@ -383,7 +374,7 @@ ___
 
 #### Defined in
 
-[transport/interfaces.ts:88](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/transport/interfaces.ts#L88)
+[transport/interfaces.ts:88](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/transport/interfaces.ts#L88)
 
 ___
 
@@ -393,7 +384,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:115](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L115)
+[configure/interfaces.ts:142](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L142)
 
 ___
 
@@ -403,7 +394,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:405](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L405)
+[explore/interfaces.ts:405](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L405)
 
 ___
 
@@ -413,7 +404,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:444](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L444)
+[explore/interfaces.ts:444](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L444)
 
 ___
 
@@ -423,7 +414,38 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:396](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L396)
+[explore/interfaces.ts:396](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L396)
+
+___
+
+### NotificationModel
+
+Ƭ **NotificationModel**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `_id` | `string` |
+| `date` | `Object` |
+| `date.$date` | `number` |
+| `eventType` | `string` |
+| `message` | `string` |
+| `params` | `Object` |
+| `params.blogTitle` | `string` |
+| `params.resourceUri` | `string` |
+| `params.uri` | `string` |
+| `params.username` | `string` |
+| `recipients?` | [Recipient](interfaces/recipient.md)[] |
+| `reported?` | `boolean` |
+| `reporters?` | `any` |
+| `resource` | `string` |
+| `sender` | `string` |
+| `type` | `string` |
+
+#### Defined in
+
+[apps/timeline/interfaces.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/apps/timeline/interfaces.ts#L49)
 
 ___
 
@@ -433,7 +455,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:425](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L425)
+[explore/interfaces.ts:425](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L425)
 
 ___
 
@@ -443,7 +465,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:255](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L255)
+[explore/interfaces.ts:255](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L255)
 
 ___
 
@@ -453,7 +475,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:234](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L234)
+[explore/interfaces.ts:234](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L234)
 
 ___
 
@@ -463,7 +485,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:240](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L240)
+[explore/interfaces.ts:240](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L240)
 
 ___
 
@@ -473,7 +495,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:249](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L249)
+[explore/interfaces.ts:249](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L249)
 
 ___
 
@@ -483,7 +505,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:143](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L143)
+[explore/interfaces.ts:143](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L143)
 
 ___
 
@@ -501,7 +523,7 @@ ___
 
 #### Defined in
 
-[session/interfaces.ts:34](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L34)
+[session/interfaces.ts:36](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L36)
 
 ___
 
@@ -511,7 +533,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:216](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L216)
+[explore/interfaces.ts:216](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L216)
 
 ___
 
@@ -521,7 +543,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:196](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L196)
+[explore/interfaces.ts:196](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L196)
 
 ___
 
@@ -531,7 +553,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:189](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L189)
+[explore/interfaces.ts:189](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L189)
 
 ___
 
@@ -548,7 +570,17 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:220](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L220)
+[explore/interfaces.ts:220](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L220)
+
+___
+
+### TrackingType
+
+Ƭ **TrackingType**: ``"matomo"`` \| ``"internal"``
+
+#### Defined in
+
+[configure/interfaces.ts:55](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L55)
 
 ___
 
@@ -558,7 +590,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:384](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L384)
+[explore/interfaces.ts:384](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L384)
 
 ___
 
@@ -568,7 +600,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:440](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L440)
+[explore/interfaces.ts:440](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L440)
 
 ___
 
@@ -578,7 +610,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:406](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L406)
+[explore/interfaces.ts:406](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L406)
 
 ___
 
@@ -588,27 +620,37 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:445](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L445)
+[explore/interfaces.ts:445](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L445)
 
 ___
 
 ### UserPreferenceKey
 
-Ƭ **UserPreferenceKey**: ``"apps"`` \| `string`
+Ƭ **UserPreferenceKey**: ``"apps"`` \| ``"widgets"`` \| ``"language"`` \| [App](modules.md#app)
 
 #### Defined in
 
-[configure/interfaces.ts:138](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L138)
+[configure/interfaces.ts:159](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L159)
+
+___
+
+### WidgetName
+
+Ƭ **WidgetName**: typeof [WIDGET\_NAME](modules.md#widget_name)[keyof typeof [WIDGET\_NAME](modules.md#widget_name)]
+
+#### Defined in
+
+[widget/interfaces.ts:22](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L22)
 
 ___
 
 ### WidgetPosition
 
-Ƭ **WidgetPosition**: ``"left"`` \| ``"right"``
+Ƭ **WidgetPosition**: typeof [WIDGET\_POSITION](modules.md#widget_position)[keyof typeof [WIDGET\_POSITION](modules.md#widget_position)]
 
 #### Defined in
 
-[session/interfaces.ts:113](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/session/interfaces.ts#L113)
+[session/interfaces.ts:121](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L121)
 
 ___
 
@@ -626,7 +668,7 @@ ___
 
 #### Defined in
 
-[widget/interfaces.ts:37](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/widget/interfaces.ts#L37)
+[widget/interfaces.ts:57](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L57)
 
 ## Variables
 
@@ -655,7 +697,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:153](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L153)
+[explore/interfaces.ts:153](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L153)
 
 ___
 
@@ -671,10 +713,11 @@ ___
 | `EXERCIZER` | ``"exercizer"`` |
 | `EXPLORER` | ``"explorer"`` |
 | `PORTAL` | ``"portal"`` |
+| `TIMELINE` | ``"timeline"`` |
 
 #### Defined in
 
-[globals.ts:20](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L20)
+[globals.ts:20](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/globals.ts#L20)
 
 ___
 
@@ -693,7 +736,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:179](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L179)
+[explore/interfaces.ts:179](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L179)
 
 ___
 
@@ -716,26 +759,7 @@ ___
 
 #### Defined in
 
-[globals.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/globals.ts#L7)
-
-___
-
-### EVENT\_NAME
-
-• `Const` **EVENT\_NAME**: `Object`
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `BOOTSTRAPPED` | ``"bootstrapped"`` |
-| `HTTP_ERROR` | ``"httpError"`` |
-| `LANG_CHANGED` | ``"langChanged"`` |
-| `PREFERENCES_UPDATED` | ``"preferences-updated"`` |
-
-#### Defined in
-
-[notify/interfaces.ts:6](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/notify/interfaces.ts#L6)
+[globals.ts:7](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/globals.ts#L7)
 
 ___
 
@@ -752,7 +776,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:172](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L172)
+[explore/interfaces.ts:172](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L172)
 
 ___
 
@@ -768,7 +792,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:251](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L251)
+[explore/interfaces.ts:251](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L251)
 
 ___
 
@@ -788,7 +812,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:226](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L226)
+[explore/interfaces.ts:226](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L226)
 
 ___
 
@@ -805,7 +829,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:236](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L236)
+[explore/interfaces.ts:236](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L236)
 
 ___
 
@@ -824,7 +848,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:242](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L242)
+[explore/interfaces.ts:242](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L242)
 
 ___
 
@@ -842,7 +866,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:138](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L138)
+[explore/interfaces.ts:138](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L138)
 
 ___
 
@@ -860,7 +884,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:197](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L197)
+[explore/interfaces.ts:197](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L197)
 
 ___
 
@@ -877,7 +901,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:192](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L192)
+[explore/interfaces.ts:192](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L192)
 
 ___
 
@@ -887,7 +911,54 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:186](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L186)
+[explore/interfaces.ts:186](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L186)
+
+___
+
+### WIDGET\_NAME
+
+• `Const` **WIDGET\_NAME**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `AGENDA` | ``"agenda-widget"`` |
+| `BIRTHDAY` | ``"birthday"`` |
+| `BOOKMARK` | ``"bookmark-widget"`` |
+| `CALENDAR` | ``"calendar-widget"`` |
+| `CARNET` | ``"carnet-de-bord"`` |
+| `CURSUS` | ``"cursus-widget"`` |
+| `LAST_INFOS` | ``"last-infos-widget"`` |
+| `MAXICOURS` | ``"maxicours-widget"`` |
+| `MOOD` | ``"mood"`` |
+| `MY_APPS` | ``"my-apps"`` |
+| `NOTES` | ``"notes"`` |
+| `QWANT` | ``"qwant"`` |
+| `QWANT_JUNIOR` | ``"qwant-junior"`` |
+| `RECORD` | ``"record-me"`` |
+| `RSS` | ``"rss-widget"`` |
+
+#### Defined in
+
+[widget/interfaces.ts:5](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/widget/interfaces.ts#L5)
+
+___
+
+### WIDGET\_POSITION
+
+• `Const` **WIDGET\_POSITION**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `LEFT` | ``"left"`` |
+| `RIGHT` | ``"right"`` |
+
+#### Defined in
+
+[session/interfaces.ts:116](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/session/interfaces.ts#L116)
 
 ___
 
@@ -897,7 +968,7 @@ ___
 
 #### Defined in
 
-[explore/interfaces.ts:146](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/interfaces.ts#L146)
+[explore/interfaces.ts:146](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/interfaces.ts#L146)
 
 ___
 
@@ -909,4 +980,4 @@ The whole framework is a singleton.
 
 #### Defined in
 
-[explore/Framework.ts:40](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/explore/Framework.ts#L40)
+[explore/Framework.ts:40](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/explore/Framework.ts#L40)

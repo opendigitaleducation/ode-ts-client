@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[configure/interfaces.ts:51](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L51)
+[configure/interfaces.ts:78](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L78)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:52](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L52)
+[configure/interfaces.ts:79](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L79)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:50](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L50)
+[configure/interfaces.ts:77](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L77)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:48](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L48)
+[configure/interfaces.ts:75](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L75)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:46](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L46)
+[configure/interfaces.ts:73](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L73)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:53](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L53)
+[configure/interfaces.ts:80](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L80)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:47](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L47)
+[configure/interfaces.ts:74](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L74)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-[configure/interfaces.ts:49](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L49)
+[configure/interfaces.ts:76](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L76)
 
 ## Methods
 
@@ -124,7 +124,7 @@ Get the theme/skin configuration.
 
 #### Defined in
 
-[configure/interfaces.ts:56](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L56)
+[configure/interfaces.ts:83](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L83)
 
 ___
 
@@ -140,7 +140,7 @@ List available skins.
 
 #### Defined in
 
-[configure/interfaces.ts:71](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L71)
+[configure/interfaces.ts:98](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L98)
 
 ___
 
@@ -156,7 +156,7 @@ List available themes.
 
 #### Defined in
 
-[configure/interfaces.ts:65](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L65)
+[configure/interfaces.ts:92](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L92)
 
 ___
 
@@ -172,7 +172,7 @@ Await for overrides conf to be loaded.
 
 #### Defined in
 
-[configure/interfaces.ts:62](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L62)
+[configure/interfaces.ts:89](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L89)
 
 ___
 
@@ -188,7 +188,7 @@ Await for skin conf to be loaded.
 
 #### Defined in
 
-[configure/interfaces.ts:59](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L59)
+[configure/interfaces.ts:86](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L86)
 
 ___
 
@@ -210,4 +210,4 @@ Configure UI with this theme by default.
 
 #### Defined in
 
-[configure/interfaces.ts:68](https://github.com/opendigitaleducation/infrontexplore/blob/0e8281d/src/ts/configure/interfaces.ts#L68)
+[configure/interfaces.ts:95](https://github.com/opendigitaleducation/infrontexplore/blob/9b53f59/src/ts/configure/interfaces.ts#L95)
