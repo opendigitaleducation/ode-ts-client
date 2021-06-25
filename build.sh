@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$#" -gt 2 ]; then
+if [ "$#" -lt 1 ]; then
   echo "Usage: $0 <clean|init|build|install|watch>"
   echo "Example: $0 clean"
   echo "Example: $0 init"
