@@ -16,11 +16,11 @@ const secondLevelWidgets = [
 ];
 
 const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
-    "last-infos-widget":    WIDGET_POSITION.LEFT,
+    "last-infos-widget":    WIDGET_POSITION.LEFT,       // Actualités
     "birthday":             WIDGET_POSITION.LEFT,
-    "calendar-widget":      WIDGET_POSITION.RIGHT,
+    "calendar-widget":      WIDGET_POSITION.RIGHT,      // Calendrier
     "carnet-de-bord":       WIDGET_POSITION.LEFT,
-    "record-me":            WIDGET_POSITION.RIGHT,
+    "record-me":            WIDGET_POSITION.RIGHT,      // Dictaphone
     "mood":                 WIDGET_POSITION.LEFT,
     "my-apps":              WIDGET_POSITION.RIGHT,
     "notes":                WIDGET_POSITION.RIGHT,
@@ -28,7 +28,7 @@ const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
     "bookmark-widget":      WIDGET_POSITION.RIGHT,
     "qwant":                WIDGET_POSITION.RIGHT,
     "qwant-junior":         WIDGET_POSITION.LEFT,
-    "agenda-widget":        WIDGET_POSITION.LEFT,
+    "agenda-widget":        WIDGET_POSITION.LEFT,       // Agenda
     "cursus-widget":        WIDGET_POSITION.LEFT,
     "maxicours-widget":     WIDGET_POSITION.RIGHT,
 }

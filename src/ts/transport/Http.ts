@@ -150,7 +150,8 @@ export class Http implements IHttp {
             .then( r => {
                 try {
                     // FIXME ne semble pas bien fonctionner car SyntaxError. Tester avec point d'arrêt dans le navigateur.
-                    const result = Function(`"use strict";return (${r})`)();
+                    const securedScript = `"use strict";var ${resultName};${r};return ${resultName};`;
+                    const result = Function(securedScript)();
                     return result;
                 } catch( e ) {
                     const result = eval(r);
