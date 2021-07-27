@@ -33,7 +33,7 @@ export type Hobby = {
   category: "sport"|"cinema"|"animals"|"music"|"places"|"books";
   values: string;
 }
-export type Shool = {
+export type School = {
   classes:Array<string>;  // ["TPS"]
   id: string;             // "09772a06-1362-4802-a475-66a87d9cb679"
   name: string;           // "MY DEV SCHOOL"
@@ -66,7 +66,7 @@ export interface IUserDescription {
   relatedId: any;       // null
   relatedName: any;     // null
   relatedType: any;     // null
-  schools: Array<Shool>;
+  schools: Array<School>;
   tel: string;
   type:Array<string>    // ["Teacher"];
   profiles:Array<string>// ["Teacher"];
