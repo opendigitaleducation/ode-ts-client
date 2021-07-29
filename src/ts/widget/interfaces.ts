@@ -17,7 +17,8 @@ export const WIDGET_NAME = {
   QWANT_JUNIOR: "qwant-junior",
   AGENDA:       "agenda-widget",
   CURSUS:       "cursus-widget",
-  MAXICOURS:    "maxicours-widget"
+  MAXICOURS:    "maxicours-widget",
+  SCHOOL:       "school-widget"
 } as const;
 export type WidgetName = typeof WIDGET_NAME[keyof typeof WIDGET_NAME];
 

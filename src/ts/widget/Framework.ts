@@ -4,15 +4,16 @@ import { notify, Promisified } from "../notify/Framework";
 import { IPromisified } from "../notify/interfaces";
 import { configure } from "../configure/Framework";
 
-const firstLevelWidgets = ["birthday", "mood"];
-const secondLevelWidgets = [
+const firstLevelWidgets:Array<WidgetName> = ["birthday", "mood"];
+const secondLevelWidgets:Array<WidgetName> = [
     "agenda-widget", 
     "carnet-de-bord", 
     "my-apps", 
     "rss-widget", 
     "bookmark-widget", 
     "cursus-widget",
-    "maxicours-widget"
+    "maxicours-widget",
+    "school-widget"
 ];
 
 const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
@@ -31,6 +32,7 @@ const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
     "agenda-widget":        WIDGET_POSITION.LEFT,       // Agenda
     "cursus-widget":        WIDGET_POSITION.LEFT,
     "maxicours-widget":     WIDGET_POSITION.RIGHT,
+    "school-widget":        WIDGET_POSITION.LEFT
 }
 
 //-------------------------------------
@@ -153,13 +155,23 @@ class Widget implements IWidget {
     
     private _userPref:WidgetUserPref;
     get userPref(): WidgetUserPref {
+        // Sanity checks
+        if( this._platformConf.name==="school-widget" ) {
+            // School-widget always has index 0
+            this._userPref.index = 0;
+        }
         return this._userPref;
     }
 
     applyUserPref( pref:WidgetUserPref ) {
         this._userPref = pref;
-        // Sanity check
+        // Sanity checks
+        // Apply default position, left or right.
         this._userPref.position = this._userPref.position ?? widgets.lookupDefaultPosition(this._platformConf.name) ?? "left";
+            // School-widget always has index 0
+        if( this._platformConf.name==="school-widget" ) {
+            this._userPref.index = 0;
+        }
     }
     
 }
