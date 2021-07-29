@@ -6,6 +6,7 @@ const http = transport.http;
 
 /* TODO IResourceRight model */
 type IResourceRight = any;
+type PersonApiResult = {status:"ok"|string, result:Array<IUserDescription>};
 
 export class Session implements ISession {
     private _me:IUserInfo = null as unknown as IUserInfo;
@@ -140,14 +141,21 @@ export class Session implements ISession {
 
     ////////////////////////////////////////////////////////// Description management
 
-	private async loadDescription():Promise<IUserDescription> {
-		return await Promise.all([
-			http.get<IUserDescription>('/userbook/api/person', {requestName: "refreshAvatar"}),
+	private loadDescription():Promise<IUserDescription> {
+		return Promise.all([
+			http.get<PersonApiResult>('/userbook/api/person', {requestName: "refreshAvatar"}),
 			http.get<IUserDescription>('/directory/userbook/'+ this._me.userId)
 		]).then( result => {
-			this._description = result[0];
+            if( result[0].status ==="ok" && result[0].result && result[0].result.length>0 ) {
+                this._description = result[0].result[0];
+            } else {
+                this._description = {} as unknown as IUserDescription;
+            }
+            // "type" field from /userbook/api/person becomes "profiles"
+            if( this._description.type && !this._description.profiles ) {
+                this._description.profiles = this._description.type as unknown as Array<string>;
+            }
 			Object.assign( this._description, result[1]);
-			this._description.profiles = this._description.type;
 			return this._description;
 		});
 	}

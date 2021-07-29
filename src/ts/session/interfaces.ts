@@ -41,35 +41,35 @@ export type School = {
 //-------------------------------------
 export interface IUserDescription {
 //-------------------------------------
-  /*---- From /userbook/api/person ----*/
+  /*---- From /directory/userbook/_user_id_ ----*/
   alertSize: boolean;
-  oldPicture: string;   // "/workspace/document/aaaabbbb-ccdd-dead-beef-0123456789ab"
+  health: string;       // "" ?
+  hobbies: Array<Hobby>;
+  mood: 'default'|'happy'|'proud'|'dreamy'|'love'|'tired'|'angry'|'worried'|'sick'|'joker'|'sad';
+  motto: string;        // "Carpe diem"
+  oldPicture?: string;  // "/workspace/document/aaaabbbb-ccdd-dead-beef-0123456789ab"
   picture: string;      // "no-avatar.jpg"
   quota: number;        // 1048576000
   storage: number;      // 106653578
   theme: string;        // "default"
+  type:string           // "USERBOOK";
   userid: string;       // "12345678-9abc-def0-1234-56789abcdef0"
 
-  /*---- From /directory/userbook/_user_id_ ----*/
+  /*---- From /userbook/api/person ----*/
   address: string;
   birthdate: string;    // "1980-01-20"
   displayName: string;  // "LASTNAME Firstname"
   email: string;
-  health: string;       // ?
-  hobbies: Array<Hobby>;
   id: string;           // "12345678-9abc-def0-1234-56789abcdef0"
   login: string;
   mobile: string;
-  mood: 'default'|'happy'|'proud'|'dreamy'|'love'|'tired'|'angry'|'worried'|'sick'|'joker'|'sad';
-  motto: string;        // "Carpe diem"
   photo: string;        // "no-avatar.jpg"
-  relatedId: any;       // null
-  relatedName: any;     // null
-  relatedType: any;     // null
+  relatedId?: any;       // null
+  relatedName?: any;     // null
+  relatedType?: any;     // null
   schools: Array<School>;
   tel: string;
-  type:Array<string>    // ["Teacher"];
-  profiles:Array<string>// ["Teacher"];
+  profiles:Array<string>// ["Teacher"]; // NOTE: initial field name is "type", but it is renamed to "profiles" internally.
   userId: string;       // "12345678-9abc-def0-1234-56789abcdef0"
   visibleInfos: Array<string>;  // ["SHOW_BIRTHDATE"]
 }
