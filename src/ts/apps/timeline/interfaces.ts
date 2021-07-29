@@ -91,4 +91,6 @@ export interface IFlashMessageModel {
     readonly lastModifier?: string;
     readonly structureId?: string;
 	readonly subStructures?: string[];
+    readonly signature?: string;
+    readonly signatureColor?: string;
 }
