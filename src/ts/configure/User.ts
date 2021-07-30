@@ -24,7 +24,7 @@ class UserPreferences implements IUserPreferences {
 			}
 		})
 		.then( prefs => {
-			this.data[key] = prefs;
+			this.data[key] = prefs ?? {};
 			return prefs;
 		});
 	}
