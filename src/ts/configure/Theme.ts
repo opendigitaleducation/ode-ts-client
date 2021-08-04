@@ -19,9 +19,11 @@ export class Theme implements ITheme {
 	logoutCallback= '/';
 	skins:Array<IThemeConfOverriding>= [];
 
+	is1D= false;
+	is2D= false;
 
     initialize( version?:string ) {
-        notify.onSessionReady().promise.then( () => {this.load( version )});
+        notify.onSessionReady().promise.then( () => this.load(version) );
     }
 
     private get version():string {
@@ -31,6 +33,11 @@ export class Theme implements ITheme {
     private get cdnDomain():string {
         return configure.Platform.cdnDomain;
     }
+
+	async onFullyReady():Promise<ITheme> {
+		await this._loaded;
+		return this;
+	}
 
 	private _onSkinReady = notify.onSkinReady();
 	onSkinReady():Promise<ITheme>{
@@ -53,9 +60,13 @@ export class Theme implements ITheme {
 	load( version?:string ):Promise<void> {
 		version = version ?? this.version;
 		if( !this._loaded ) {
-			this._loaded = session.session.notLoggedIn 
-				? this.loadDisconnected(version) 
-				: this.loadConnected(version);		
+			this._loaded = (session.session.notLoggedIn ? this.loadDisconnected(version) : this.loadConnected(version))
+				.then( async () => {
+					// List skins to determine if current theme is 1D or 2D.
+					const skins = await this.listSkins();
+					this.is1D = skins.find(s => s.child === this.skin)?.parent === "panda";
+					this.is2D = skins.find(s => s.child === this.skin)?.parent === "theme-open-ent";
+				});
 		}
 		return this._loaded;
 	}

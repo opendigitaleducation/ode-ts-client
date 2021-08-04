@@ -79,8 +79,17 @@ export interface ITheme {
   readonly logoutCallback: string;
   readonly skins:Array<IThemeConfOverriding>;
 
+  /** Check if the "school degree" of the current theme is 1D ("panda", or an override of it). */
+  readonly is1D:boolean;
+
+  /** Check if the "school degree" of the current theme is 2D ("theme-open-ent" or an override of it). */
+  readonly is2D:boolean;
+
   /** Get the theme/skin configuration. */
   getConf( version?:string ): Promise<IThemeConf>;
+
+  /** Await for theme to be fully loaded (skin, overrides, degrees...). */
+  onFullyReady():Promise<ITheme>;
 
   /** Await for skin conf to be loaded. */
   onSkinReady():Promise<ITheme>;
