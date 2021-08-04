@@ -165,7 +165,7 @@ export interface IIdiom {
   removeAccents( str:string ):string;
 }
 
-export type UserPreferenceKey = 'apps'|'widgets'|'language'|App;
+export type UserPreferenceKey = 'apps'|'widgets'|'language'|'authenticatedConnectorsAccessed'|App;
 //-------------------------------------
 export interface IUserPreferences {
 //-------------------------------------
