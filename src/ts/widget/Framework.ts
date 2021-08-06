@@ -4,7 +4,7 @@ import { notify, Promisified } from "../notify/Framework";
 import { IPromisified } from "../notify/interfaces";
 import { configure } from "../configure/Framework";
 
-const firstLevelWidgets:Array<WidgetName> = ["birthday", "mood"];
+const firstLevelWidgets:Array<WidgetName> = ["birthday", "mood", "calendar-widget", "notes"];
 const secondLevelWidgets:Array<WidgetName> = [
     "agenda-widget", 
     "carnet-de-bord", 
