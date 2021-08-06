@@ -16,7 +16,7 @@ export class TimelineApp implements ITimelineApp {
     private _loading = false;
     
     
-    public showMine:boolean = true;
+    public showMine:boolean = false;
 
     get notifications():Array<Notification> {
         return this._notifications;
@@ -54,15 +54,12 @@ export class TimelineApp implements ITimelineApp {
     }
 
     initialize():Promise<void> {
-        return configure.User.loadAppPrefs(APP.TIMELINE)
-        .then( () => {
-            return this.loadNotificationTypes();
-         });
-    }
-
-    private loadNotificationTypes() {
-        return transport.http.get('/timeline/types').then( data => {
-            this._notificationTypes = data;
+        return Promise.all([
+            configure.User.loadAppPrefs(APP.TIMELINE),
+            transport.http.get('/timeline/types')
+        ])
+        .then( result => {
+            this._notificationTypes = result[1];
         });
     }
 
