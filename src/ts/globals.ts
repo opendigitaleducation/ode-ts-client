@@ -27,3 +27,13 @@ export const APP = {
  // TODO compléter
 } as const;
 export type App = typeof APP[keyof typeof APP];   // type App = "explorer" | "blog" | "exercizer"...
+
+//-- User preferences keys
+export const USER_PREFS = {
+  APPS:       "apps"
+ ,WIDGETS:    "widgets"
+ ,LANGUAGE:   "language"
+ ,AUTH_CONNECTOR_ACCESSED: "authenticatedConnectorsAccessed"
+ ,CURSUS:     "cursus"
+ // TODO compléter
+} as const;

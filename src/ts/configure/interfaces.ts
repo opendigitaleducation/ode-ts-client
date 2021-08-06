@@ -1,4 +1,4 @@
-import { App } from "../globals";
+import { App, USER_PREFS } from "../globals";
 import { IWebApp } from "../session/interfaces";
 import { configure } from "./Framework";
 
@@ -163,9 +163,9 @@ export interface IIdiom {
   addAllTranslations(folders:string[]):Promise<void>;
   addKeys(keys:any):void;
   removeAccents( str:string ):string;
-}
+};
 
-export type UserPreferenceKey = 'apps'|'widgets'|'language'|'authenticatedConnectorsAccessed'|App;
+export type UserPreferenceKey = typeof USER_PREFS[keyof typeof USER_PREFS]|App;
 //-------------------------------------
 export interface IUserPreferences {
 //-------------------------------------
