@@ -145,9 +145,9 @@ export class Session implements ISession {
 		return Promise.all([
 			http.get<PersonApiResult>('/userbook/api/person', {requestName: "refreshAvatar"}),
 			http.get<IUserDescription>('/directory/userbook/'+ this._me.userId)
-		]).then( result => {
-            if( result[0].status ==="ok" && result[0].result && result[0].result.length>0 ) {
-                this._description = result[0].result[0];
+		]).then( results => {
+            if( results[0].status ==="ok" && results[0].result && results[0].result.length>0 ) {
+                this._description = results[0].result[0];
             } else {
                 this._description = {} as unknown as IUserDescription;
             }
@@ -155,7 +155,7 @@ export class Session implements ISession {
             if( this._description.type && !this._description.profiles ) {
                 this._description.profiles = this._description.type as unknown as Array<string>;
             }
-			Object.assign( this._description, result[1]);
+			Object.assign( this._description, results[1]);
 			return this._description;
 		});
 	}
