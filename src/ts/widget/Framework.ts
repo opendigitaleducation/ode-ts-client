@@ -35,6 +35,25 @@ const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
     "school-widget":        WIDGET_POSITION.LEFT
 }
 
+const defaultWidgetOrder:{ [name in WidgetName]: number} = {
+    "school-widget":        0,
+    "my-apps":              1,
+    "last-infos-widget":    2,       // Actualités
+    "qwant":                3,
+    "qwant-junior":         3,
+    "agenda-widget":        4,       // Agenda
+    "maxicours-widget":     5,
+    "carnet-de-bord":       6,
+    "record-me":            7,       // Dictaphone
+    "cursus-widget":        8,
+    "mood":                 9,
+    "rss-widget":           10,
+    "birthday":             11,
+    "calendar-widget":      12,      // Calendrier
+    "notes":                13,
+    "bookmark-widget":      14
+}
+
 //-------------------------------------
 export class WidgetFramework implements IWidgetFramework {
 //-------------------------------------
@@ -115,8 +134,13 @@ export class WidgetFramework implements IWidgetFramework {
 
                 // Prepare the userPref of this widget.
                 if( !this._userPrefs[widgetName] ) {
-                    this._userPrefs[widgetName] = { index:i, show:true, position:w.platformConf.position };
-                } else if(w.platformConf.mandatory) {
+                    this._userPrefs[widgetName] = { 
+                        index:defaultWidgetOrder[widgetName] ?? 99, 
+                        show:true, 
+                        position:w.platformConf.position
+                    };
+                }
+                if(w.platformConf.mandatory) {
                     this._userPrefs[widgetName].show = true;
                 }
                 // Load its translations.
