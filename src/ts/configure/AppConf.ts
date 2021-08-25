@@ -10,6 +10,14 @@ export class AppConf {
 	private _publicConf:{[key in App]?: any} = {};
 	private _currentApp?:App;
 
+	/**
+	 * Get the currently initialized App.
+	 * @see getter SessionFramework.currentApp
+	 */
+	get currentApp():App|null {
+		return this._currentApp ?? null;
+	}
+
 	setCurrentApp(app:App):AppConf {
 		this._currentApp = app;
 		return this;

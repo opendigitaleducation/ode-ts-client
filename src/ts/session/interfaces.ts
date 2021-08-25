@@ -1,3 +1,4 @@
+import { App } from "../globals";
 import { WidgetName } from "../widget/interfaces";
 import { session } from "./Framework";
 
@@ -23,6 +24,8 @@ export interface ISession {
   readonly notLoggedIn:boolean;
   readonly description:IUserDescription;
   readonly user:IUserInfo;
+  /** Retrieve the current main app, @see ConfigureFramework.Platform.apps */
+  readonly currentApp:App|null;
 
   hasWorkflow( workflowName:string ):boolean;
   hasRight(resource:any, right:any):boolean;

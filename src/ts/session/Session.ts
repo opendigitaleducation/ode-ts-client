@@ -1,6 +1,9 @@
 import { transport } from "../transport/Framework";
 import { notify } from "../notify/Framework";
 import { ISession, IUserDescription, IUserInfo } from "./interfaces";
+import { ConfigurationFramework, configure } from "../configure/Framework";
+import { ConfigurationFrameworkFactory } from "../configure/interfaces";
+import { App } from "../globals";
 
 const http = transport.http;
 
@@ -31,6 +34,10 @@ export class Session implements ISession {
 
     get user():IUserInfo {
         return this._me;
+    }
+
+    get currentApp():App|null {
+        return configure.Platform.apps.currentApp;
     }
 
     public initialize():Promise<void> {
