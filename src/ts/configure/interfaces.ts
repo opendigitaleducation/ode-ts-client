@@ -106,10 +106,12 @@ export interface ITheme {
   /** List available skins. */
   listSkins():Promise<IThemeConfOverriding[]>;
 
+  /** Get the help path, which can be dedicated to 1D or 2D. */
+  getHelpPath(): Promise<String>;
+
 /* FIXME faire le tri parmi les membres restants : on garde, on bouge, on jette ?
 themeConf: undefined,
 themeConfPromise: Promise<void>;
-getHelpPath(): Promise<String>;
 */
 }
 
@@ -138,7 +140,7 @@ export interface IThemeConfOverriding {
   parent: "panda" | "theme-open-ent";
   child: string;
   bootstrapVersion: string;
-  skins: string;
+  skins: Array<string>;
   help: string;
   group?: string;
   edumedia: {

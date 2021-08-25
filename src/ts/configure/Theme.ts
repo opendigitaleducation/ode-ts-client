@@ -157,6 +157,12 @@ export class Theme implements ITheme {
 				return this.skins;
 			});
 	}
+
+	async getHelpPath(): Promise<String> {
+		const overrides = await this.listSkins();
+		const override = overrides.find(t => t.child === this.skin);
+		return override?.help ?? '/help';
+	}
 }
 
 /*
@@ -245,20 +251,6 @@ export var skin = {
 			});
 		});
 	},
-	getHelpPath(): Promise<String> {
-		let conf = { overriding:[] };
-		return new Promise<any>((resolve, reject) => {
-			const xhr = new XMLHttpRequest();
-			xhr.open('get', '/assets/theme-conf.js');
-			xhr.onload = async () => {
-				eval(xhr.responseText.split('exports.')[1]);
-				this.conf = conf;
-				const override = this.conf.overriding.find(it => it.child === skin.skin);
-				resolve((override.help ? override.help : '/help')); 
-			};
-			xhr.send();
-		});
-	}
 };
 */
 
