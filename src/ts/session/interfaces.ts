@@ -23,6 +23,11 @@ export interface ISession {
   readonly currentLanguage:string;
   readonly notLoggedIn:boolean;
   readonly description:IUserDescription;
+  /** 
+   * Get the connected user's avatar URL, or a default one.
+   * Append a query parameter to this URL for it to get resized, for example "?thumbnail=48x48"
+   */
+  readonly avatarUrl:string;
   readonly user:IUserInfo;
   /** Retrieve the current main app, @see ConfigureFramework.Platform.apps */
   readonly currentApp:App|null;

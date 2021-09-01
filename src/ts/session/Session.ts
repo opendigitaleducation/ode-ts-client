@@ -32,6 +32,15 @@ export class Session implements ISession {
 		return this._description as unknown as IUserDescription;
 	}
 
+	public get avatarUrl():string {
+		let avatar = this.description.photo;
+		if (!avatar || avatar === 'no-avatar.jpg' || avatar === 'no-avatar.svg') {
+			const basePath = ConfigurationFrameworkFactory.instance().Platform.theme.basePath;				
+			avatar = basePath + '/img/illustrations/no-avatar.svg';
+		}
+		return avatar;
+	}
+
     get user():IUserInfo {
         return this._me;
     }
