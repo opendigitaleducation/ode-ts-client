@@ -150,10 +150,12 @@ export class WidgetFramework implements IWidgetFramework {
                 w.applyUserPref( this._userPrefs[widgetName] );
                 return true;
             });
-        }).then( () => {
-            // TODO Wait for the translation to be loaded ? => uncomment "return" below.
-            /*return*/ configure.Platform.idiom.addAllTranslations( i18nFolders );
         });
+        // FIXME: this is a port of the old code. No longer required by widgets from ode-ngjs-front.
+        // .then( () => {
+        //     // TODO Wait for the translation to be loaded ? => uncomment "return" below.
+        //     /*return*/ configure.Platform.idiom.addAllTranslations( i18nFolders );
+        // });
     }
 
 }
