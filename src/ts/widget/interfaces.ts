@@ -49,16 +49,21 @@ export interface IWidgetFramework {
 //-------------------------------------
 export interface IWidget {
 //-------------------------------------
+  /** The widgets conf at platform level. */
   readonly platformConf:IWidgetModel;
 /* TODO readonly schoolConf:any; */
+  /** The widgets conf at user level. */
   readonly userPref:WidgetUserPref;
 }
 
 //-------------------------------------
 export type WidgetUserPref = {
 //-------------------------------------
+    /** Integer defining the sort order of this widget. */
     index:number;
+    /** Boolean indicating wether the user wants to see this widget, or not. */
     show:boolean;
+    /** Prefered position on-screen (left, right...). */
     position?: WidgetPosition;
 };
 

@@ -4,7 +4,9 @@ import { notify, Promisified } from "../notify/Framework";
 import { IPromisified } from "../notify/interfaces";
 import { configure } from "../configure/Framework";
 
+// Widgets for 1D ONLY
 const firstLevelWidgets:Array<WidgetName> = ["birthday", "mood", "calendar-widget", "notes"];
+// Widgets for 2D ONLY
 const secondLevelWidgets:Array<WidgetName> = [
     "agenda-widget", 
     "carnet-de-bord", 
@@ -16,6 +18,7 @@ const secondLevelWidgets:Array<WidgetName> = [
     "school-widget"
 ];
 
+// Default position for widgets.
 const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
     "last-infos-widget":    WIDGET_POSITION.LEFT,       // Actualités
     "birthday":             WIDGET_POSITION.LEFT,
@@ -35,23 +38,24 @@ const defaultWidgetPosition:{ [name in WidgetName]: WidgetPosition} = {
     "school-widget":        WIDGET_POSITION.LEFT
 }
 
+// Default sort order for widgets, then overriden by user preferences, if any.
 const defaultWidgetOrder:{ [name in WidgetName]: number} = {
     "school-widget":        0,
-    "my-apps":              1,
-    "last-infos-widget":    2,       // Actualités
-    "qwant":                3,
-    "qwant-junior":         3,
-    "agenda-widget":        4,       // Agenda
-    "maxicours-widget":     5,
-    "carnet-de-bord":       6,
-    "record-me":            7,       // Dictaphone
-    "cursus-widget":        8,
-    "mood":                 9,
-    "rss-widget":           10,
-    "birthday":             11,
-    "calendar-widget":      12,      // Calendrier
-    "notes":                13,
-    "bookmark-widget":      14
+    "my-apps":              10,
+    "last-infos-widget":    20,       // Actualités
+    "qwant":                30,
+    "qwant-junior":         30,
+    "agenda-widget":        40,       // Agenda
+    "bookmark-widget":      50,
+    "carnet-de-bord":       60,
+    "maxicours-widget":     70,
+    "cursus-widget":        80,
+    "record-me":            90,       // Dictaphone
+    "rss-widget":           100,
+    "mood":                 110,
+    "birthday":             120,
+    "calendar-widget":      130,      // Calendrier
+    "notes":                140,
 }
 
 //-------------------------------------
@@ -135,7 +139,7 @@ export class WidgetFramework implements IWidgetFramework {
                 // Prepare the userPref of this widget.
                 if( !this._userPrefs[widgetName] ) {
                     this._userPrefs[widgetName] = { 
-                        index:defaultWidgetOrder[widgetName] ?? 99, 
+                        index:defaultWidgetOrder[widgetName] ?? 999, 
                         show:true, 
                         position:w.platformConf.position
                     };
@@ -167,7 +171,7 @@ class Widget implements IWidget {
         private _platformConf:IWidgetModel
         ) {
         // The widget is constructed by WidgetFramework.initialize(), which also sets this._userPref.
-        // The following line is a typescript fix.
+        // The following line is a pure typescript fix.
         this._userPref = null as any as WidgetUserPref;
     }
     get platformConf():IWidgetModel {
