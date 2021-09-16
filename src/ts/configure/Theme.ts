@@ -105,15 +105,8 @@ export class Theme implements ITheme {
 
 	private loadConnected( version:string ): Promise<void>{
 		return new Promise<void>((resolve, reject) => {
-			transport.http.get('/theme', {queryParams:{"_":version}})
-			.then( data => {
-				this.skinName = data.skinName;
-				this.themeName = data.themeName;
-				this.themeUrl = data.skin;
-				this.basePath = `${this.cdnDomain}${this.themeUrl}../../`;
-				this.skin = this.themeUrl.split('/assets/themes/')[1].split('/')[0];
-				this.portalTemplate = `${this.cdnDomain}/assets/themes/${this.skin}/portal.html`;
-				this.logoutCallback = data.logoutCallback;
+			this.loadDefaultTheme( version )
+			.then( () => {
 				this._onSkinReady.resolve( this );
 				transport.http.get(
 					`/assets/themes/${this.skin}/template/override.json`, 
@@ -136,12 +129,30 @@ export class Theme implements ITheme {
 		});
 	}
 
+	/** Load the user's configured theme. */
+	private async loadDefaultTheme( version:string ) {
+		if( ! session.session.notLoggedIn ) {
+			return transport.http.get('/theme', {queryParams:{"_":version}})
+			.then( data => {
+				this.skinName = data.skinName;
+				this.themeName = data.themeName;
+				this.themeUrl = data.skin;
+				this.basePath = `${this.cdnDomain}${this.themeUrl}../../`;
+				this.skin = this.themeUrl.split('/assets/themes/')[1].split('/')[0];
+				this.portalTemplate = `${this.cdnDomain}/assets/themes/${this.skin}/portal.html`;
+				this.logoutCallback = data.logoutCallback;
+			});
+		}
+		return Promise.reject();
+	}
+
 	listThemes():Promise<IThemeDesc[]>{
 		return transport.http.get<IThemeDesc[]>('/themes');
 	}
 
-	setDefaultTheme( theme:IThemeDesc ):void {
-		transport.http.get('/userbook/api/edit-userbook-info?prop=theme-' + this.skin + '&value=' + theme._id);
+	async setDefaultTheme( theme:IThemeDesc ) {
+		await transport.http.get('/userbook/api/edit-userbook-info?prop=theme-' + this.skin + '&value=' + theme._id);
+		await this.loadDefaultTheme( this.version );
 	}
 
 	listSkins(): Promise<IThemeConfOverriding[]> {
