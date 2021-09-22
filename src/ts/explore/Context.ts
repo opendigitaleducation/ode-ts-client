@@ -56,7 +56,7 @@ export class ExplorerContext implements IExplorerContext {
         const parameters:ISearchParameters = this.duplicateSearchParameters();
         // Using Promise.resolve().then() allows the use of .catch(), .finally() and is considered a good practice.
         return Promise.resolve()
-        .then( () => this.bus.send(RESOURCE.FOLDER, ACTION.INITIALIZE, parameters) )
+        .then( () => this.bus.publish(RESOURCE.FOLDER, ACTION.INITIALIZE, parameters) )
         .then( (ar) => {
             this.context = ar as GetContextResult;
             // TODO data sanity check
@@ -70,7 +70,7 @@ export class ExplorerContext implements IExplorerContext {
     }
     getResources(): Promise<GetResourcesResult> {
         const parameters:ISearchParameters = this.duplicateSearchParameters();
-        return this.bus.send( RESOURCE.FOLDER, ACTION.SEARCH, parameters )
+        return this.bus.publish( RESOURCE.FOLDER, ACTION.SEARCH, parameters )
         .then( (ar) => {
             let result = ar as GetResourcesResult;
             // TODO data sanity check
@@ -91,7 +91,7 @@ export class ExplorerContext implements IExplorerContext {
             parentId: parentId,
             type: resourceType
         };
-        return this.bus.send( RESOURCE.FOLDER, ACTION.CREATE, parameters )
+        return this.bus.publish( RESOURCE.FOLDER, ACTION.CREATE, parameters )
         .then( (ar) => {
             let result = ar as CreateFolderResult;
             // TODO data sanity check
@@ -108,7 +108,7 @@ export class ExplorerContext implements IExplorerContext {
             parentId: parentId,
             type: resourceType
         };
-        return this.bus.send( RESOURCE.FOLDER, ACTION.UPD_PROPS, parameters )
+        return this.bus.publish( RESOURCE.FOLDER, ACTION.UPD_PROPS, parameters )
         .then( (ar) => {
             let result = ar as UpdateFolderResult;
             // TODO data sanity check
@@ -123,7 +123,7 @@ export class ExplorerContext implements IExplorerContext {
             resourceIds: resourceIds,
             folderIds: folderIds
         };
-        return this.bus.send( RESOURCE.FOLDER, ACTION.COPY, parameters )
+        return this.bus.publish( RESOURCE.FOLDER, ACTION.COPY, parameters )
         .then( (ar) => {
             // void
         });
@@ -134,7 +134,7 @@ export class ExplorerContext implements IExplorerContext {
             resourceIds: resourceIds,
             folderIds: folderIds
         };
-        return this.bus.send( RESOURCE.FOLDER, ACTION.MOVE, parameters )
+        return this.bus.publish( RESOURCE.FOLDER, ACTION.MOVE, parameters )
         .then( (ar) => {
             // void
         });
@@ -144,14 +144,14 @@ export class ExplorerContext implements IExplorerContext {
             resourceIds: resourceIds,
             folderIds: folderIds
         };
-        return this.bus.send( RESOURCE.FOLDER, ACTION.DELETE, parameters )
+        return this.bus.publish( RESOURCE.FOLDER, ACTION.DELETE, parameters )
         .then( (ar) => {
             // void
         });
     }
     manageProperties(resourceType:ResourceType, resources:IResource[]): Promise<ManagePropertiesResult> {
         const params:ManagePropertiesParameters = { resources:resources };
-        return this.bus.send( resourceType, ACTION.MANAGE, params )
+        return this.bus.publish( resourceType, ACTION.MANAGE, params )
         .then( (ar) => {
             let result = ar as ManagePropertiesResult;
             // TODO data sanity check
@@ -162,7 +162,7 @@ export class ExplorerContext implements IExplorerContext {
     }
     updateProperties(resourceType:ResourceType, resources:IResource[], props:{[key in PropKeyType]?:string}): Promise<UpdatePropertiesResult> {
         const params:UpdatePropertiesParameters = { resources:resources, props:props };
-        return this.bus.send( resourceType, ACTION.UPD_PROPS, params )
+        return this.bus.publish( resourceType, ACTION.UPD_PROPS, params )
         .then( (ar) => {
             let result = ar as UpdatePropertiesResult;
             // TODO data sanity check

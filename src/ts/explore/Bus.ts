@@ -1,31 +1,46 @@
 import { ActionType, ACTION, IActionResult, IBus, ResourceType, IBusAgent } from "./interfaces";
-import { IAbstractBusAgent } from "./Agent";
 import { ExplorerFramework, explorer } from "./Framework";
+import { filter, Observable, share, Subject, Subscription } from "rxjs";
+import { IActionParameters } from "..";
 
-type AgentByAction = {[B in ActionType]: IAbstractBusAgent|null};
+
+type AgentMessage = {res:ResourceType, action:ActionType, input:IActionParameters, output:IActionResult};
+type AgentByAction = {[B in ActionType]: IBusAgent|null};
+
 
 class Bus implements IBus {
     // Mapping of initialized agents.
     private agents: {[R in ResourceType]?: AgentByAction} = {};
 
-    consumer( res:ResourceType, action:ActionType, agent:IBusAgent ): void {
+    // The communication bus itself
+    private comm: Subject<AgentMessage> = new Subject();
+
+    setAgentFor( res:ResourceType, action:ActionType, agent:IBusAgent ): void {
         let agentByAction = this.getActionMapping(res);
-        agentByAction[action] = agent as IAbstractBusAgent;
+        agentByAction[action] = agent as IBusAgent;
     }
 
-    send( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult> {
-        return Promise.resolve().then( () => {
-            return this.getAgentFor(res,action) || (explorer as ExplorerFramework).requestAgentFor( res, action );
-        }).then( agent => {
-            const obs = agent.activate(res, action, parameters);
-            //TODO FIXME https://indepth.dev/posts/1287/rxjs-heads-up-topromise-is-being-deprecated
-            //return await lastValueFrom(obs);
-            return obs.toPromise();
+    getAgentFor( res:ResourceType, action:ActionType ): IBusAgent|null {
+        return this.getActionMapping(res)[action];
+    }
+
+    publish( res:ResourceType, action:ActionType, parameters:any ): Promise<IActionResult> {
+        return Promise.resolve()
+        .then( () => {
+            return this.getAgentFor(res,action) ?? (explorer as ExplorerFramework).requestAgentFor( res, action );
+        })
+        .then( agent => {
+            const result = agent.activate(res, action, parameters);
+            // Publish this result for any subscriber.
+            this.comm.next( {res:res, action:action, input:parameters, output:result} );
+            return result;
         });
     }
 
-    getAgentFor( res:ResourceType, action:ActionType ): IAbstractBusAgent|null {
-        return this.getActionMapping(res)[action];
+    subscribe( res:ResourceType, action:ActionType ): Observable<{input:IActionParameters,output:IActionResult}> {
+        return this.comm.asObservable().pipe(
+            filter( (msg) => msg.res===res && msg.action===action ) 
+        );
     }
 
     private getActionMapping(res:ResourceType): AgentByAction {
@@ -43,8 +58,8 @@ class Bus implements IBus {
 }
 
 export class BusFactory {
-    private static _instance: IBus;
-    static get instance(): IBus {
+    private static _instance: Bus;
+    static get instance(): Bus {
         return (this._instance = this._instance || new Bus());
     }
 }

@@ -16,7 +16,7 @@ export { explorer } from "./explore/Framework";
  * => Agents will register themselves instead of having the bus asking for it.
  *    The framework would then export a method for agents to register their supported Actions.
  */
-export { IAbstractBusAgent, AbstractBusAgent } from './explore/Agent';
+export { AbstractBusAgent } from './explore/Agent';
 
 //---------------------------------- NOTIFY ----------------------------------
 export * from './notify/interfaces';

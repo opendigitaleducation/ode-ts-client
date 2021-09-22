@@ -1,6 +1,5 @@
 import { appNameForResource, ResourceType } from "./interfaces";
-import { IAbstractBusAgent } from "./Agent";
-import { IHttp, TransportFrameworkFactory } from "../transport/interfaces";
+import { IHttp } from "../transport/interfaces";
 import { Http } from "../transport/Http";
 
 /**

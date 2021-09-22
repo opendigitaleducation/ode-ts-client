@@ -1,5 +1,5 @@
+import { IBusAgent } from "..";
 import { App, ERROR_CODE } from "../globals";
-import { IAbstractBusAgent } from "./Agent";
 import { AgentLoader, IAgentLoader } from "./AgentLoader";
 import { BusFactory } from "./Bus";
 import { ExplorerContext } from "./Context";
@@ -15,15 +15,16 @@ export class ExplorerFramework implements IExplorerFramework {
         }
     }
 
-    requestAgentFor(res:ResourceType, action: ActionType): Promise<IAbstractBusAgent> {
+    /** Load the agent dedicated to resolve this @param action on this @param resource */
+    requestAgentFor(resource:ResourceType, action: ActionType): Promise<IBusAgent> {
         // TODO Check which apps Me can access.
-        return this.agentLoader.load( res ).then( () => {
-            // The agent should be registered on the bus, by itself or by the (mocked) loader. It must be available here.
-            let agent = this.getBus().getAgentFor(res, action) as IAbstractBusAgent;
+        return this.agentLoader.load( resource ).then( () => {
+            // The agent should be registered on the bus, by itself or by the (mocked) loader. It MUST be available right now.
+            let agent = this.getBus().getAgentFor(resource, action) as IBusAgent;
             if( !agent ) {
                 throw new Error(ERROR_CODE.AGENT_NOT_FOUND);
             }
-            return agent.initialize(res,action);
+            return agent;
         });
     }
 

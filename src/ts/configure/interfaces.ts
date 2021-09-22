@@ -27,11 +27,14 @@ export interface IConfigurationFramework {
         /** Load the i18n of an app. */
         loadI18n(app:App):Promise<void>;
       };
+      /** Configured theme. */
       readonly theme:ITheme;
+      /** Configured tracking. */
       readonly analytics:{
         parameters<T extends ITrackingParams>(type:TrackingType):Promise<T|undefined>;
         readonly status:AnalyticStatus;
       };
+      /** I18n (port from legacy infra-front)*/
       readonly idiom:IIdiom;
       listLanguages():Promise<string[]>;
   }
@@ -39,11 +42,16 @@ export interface IConfigurationFramework {
       //apps; -> pinnedApps;
   }
   readonly User:{
+    /** User's preferences.*/
     readonly preferences:IUserPreferences;
+    /** Legacy option (//FIXME which use ?).*/
     readonly keepOpenOnLogout:boolean;
+    /** User's prefered apps. */
     readonly bookmarkedApps:Array<IWebApp>;
 
+    /** Load the user's preferences for the given app. */
     loadAppPrefs(app:App):Promise<any>;
+    /** Save the user's preferences for the given app. */
     saveAppPrefs(app:App):Promise<void>;
 
     loadLanguage():Promise<string>;
@@ -70,13 +78,21 @@ export interface IMatomoTrackingParams extends ITrackingParams {
 //-------------------------------------
 export interface ITheme {
 //-------------------------------------
+  /** (legacy) Name of the currently active skin (user's choice in /timeline) : "default" by default, or another available name. */
   readonly skinName:string;
+  /** (legacy) Name of the currently active theme, derived from a parent which is classified as 1D (panda) or 2D(theme-open-ent). This is a domain-level configurated value. */
   readonly themeName:string;
+  /** (legacy) FIXME Seems to be equal to themeName. */
   readonly skin:string;
+  /** (legacy) URL to the currently active theme/skin folder. */
   readonly themeUrl:string;
+  /** (legacy) URL to the currently active portal.html template. Used in infra-front. */
   readonly portalTemplate: string;
+  /** (legacy) URL to the folder containing assets. */
   readonly basePath: string;
+  /** (legacy) URL where the user is redirected after logout. */
   readonly logoutCallback: string;
+  /** Available skins configuration (also called "overrides"). */
   readonly skins:Array<IThemeConfOverriding>;
 
   /** Check if the "school degree" of the current theme is 1D ("panda", or an override of it). */
@@ -108,11 +124,6 @@ export interface ITheme {
 
   /** Get the help path, which can be dedicated to 1D or 2D. */
   getHelpPath(): Promise<String>;
-
-/* FIXME faire le tri parmi les membres restants : on garde, on bouge, on jette ?
-themeConf: undefined,
-themeConfPromise: Promise<void>;
-*/
 }
 
 //-------------------------------------
