@@ -1,7 +1,7 @@
 import { IWidgetFramework, IWidget, WidgetUserPref, WidgetName,  } from "./interfaces";
 import { IWidgetModel, WidgetPosition, WIDGET_POSITION } from "../session/interfaces";
 import { notify, Promisified } from "../notify/Framework";
-import { IPromisified } from "../notify/interfaces";
+import { IPromisified, EVENT_NAME, LAYER_NAME } from "../notify/interfaces";
 import { configure } from "../configure/Framework";
 
 // Widgets for 1D ONLY
@@ -115,7 +115,13 @@ export class WidgetFramework implements IWidgetFramework {
     }
 
     saveUserPrefs() {
-        return configure.User.preferences.update('widgets', this._userPrefs).save('widgets');
+        return configure.User.preferences.update('widgets', this._userPrefs).save('widgets')
+		.then( () => {
+			notify.events().next({
+				name: EVENT_NAME.USERPREF_CHANGED,
+				layer: LAYER_NAME.WIDGETS
+			});
+		});
     }
 
     private async applyUserPrefs( prefs:IWidgetUserPrefs ):Promise<void> {

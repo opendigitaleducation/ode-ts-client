@@ -1,3 +1,4 @@
+import { Subject } from "rxjs";
 import { ITheme, IThemeOverrides } from "../configure/interfaces";
 import { IUserInfo } from "../session/interfaces";
 import { notify } from "./Framework";
@@ -14,33 +15,45 @@ export abstract class NotifyFrameworkFactory {
 export abstract class INotifyFramework {
 //-------------------------------------
 	/**
+	 * Notify that a process is done and data ready or rejected.
 	 * Utility method : wrap your own Promise.
 	 * Or use one of the predefined promises.
 	 */
 	abstract promisify<T>():IPromisified<T>;
 
 	/**
+	 * Notify that a process is done and data ready or rejected.
 	 * Promise / resolve / reject of current user's language.
 	 */
 	abstract onLangReady():IPromisified<string>;
 
 	/**
+	 * Notify that a process is done and data ready or rejected.
 	 * Promise / resolve / reject of current user's session.
 	 */
 	abstract onSessionReady():IPromisified<IUserInfo>;
 
 	 /**
-	 * Promise / resolve / reject of asynchronous skin.
-	 * This data is not intended to change after being resolved.
-	 */
+	  * Notify that a process is done and data ready or rejected.
+	  * This data is not intended to change after being resolved.
+	  * Promise / resolve / reject of asynchronous skin.
+	  */
 	abstract onSkinReady():IPromisified<ITheme>;
 
 	/**
-	 * Promise / resolve / reject of asynchronous skin overrides.
+	 * Notify that a process is done and data ready or rejected.
 	 * This data is not intended to change after being resolved.
+	 * Promise / resolve / reject of asynchronous skin overrides.
 	 */
 	abstract onOverridesReady():IPromisified<IThemeOverrides>;
 
+
+	/**
+	 * Notify that an event occured.
+	 * By definition, an event can occur multiple times (otherwise it is a one-time "process", see above) and be watched by many targets.
+	 * => We use RxJS Subject to model events stream with many potential subscribers.
+	 */
+	abstract events():Subject<{name:EventName, layer:LayerName|string, data?:any}>;
 }
 
 //-------------------------------------
@@ -50,3 +63,20 @@ export interface IPromisified<T> {
     resolve: (value: T | PromiseLike<T>)=>void;
     reject: (reason?: any)=>void;
 }
+
+//-------------------------------------
+export const LAYER_NAME = {
+//-------------------------------------
+	WIDGETS:  "widgets"
+,	EXPLORER: "explorer"
+} as const;
+export type LayerName = typeof LAYER_NAME[keyof typeof LAYER_NAME];
+
+//-------------------------------------
+export const EVENT_NAME = {
+//-------------------------------------
+	USERPREF_CHANGED:  "userprefChanged"
+,	SEARCH_RESULTED:	"searchResulted"
+} as const;
+export type EventName = typeof EVENT_NAME[keyof typeof EVENT_NAME];
+
