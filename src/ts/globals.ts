@@ -87,5 +87,7 @@ export const USER_PREFS = {
  ,LANGUAGE:   "language"
  ,AUTH_CONNECTOR_ACCESSED: "authenticatedConnectorsAccessed"
  ,CURSUS:     "cursus"
+ ,INFOTIP:      "infotip"
+ ,RGPD_COOKIES: "rgpdCookies"
  // TODO compléter
 } as const;
