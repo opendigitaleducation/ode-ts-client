@@ -84,9 +84,8 @@ export class TimelineApp implements ITimelineApp {
             return Promise.resolve();
         }
 
-        let params:{page:number, type:Array<string>, mine?:number} = {
+        let params:{page:number, mine?:number} = {
             page: this.page,
-            type: types,
             mine: 1
         };
 
@@ -98,7 +97,7 @@ export class TimelineApp implements ITimelineApp {
             this._loading = true;
         }
 
-        return transport.http.get('/timeline/lastNotifications', {queryParams:params})
+        return transport.http.get(`/timeline/lastNotifications?type=${types.join("&type=")}`, {queryParams:params})
         .then( (response:{status:string, number:number, results:Array<NotificationModel>}) => {
             this._loading = false;
 
