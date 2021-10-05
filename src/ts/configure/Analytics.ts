@@ -33,7 +33,7 @@ type XitiConf = {
 	//Xiti conf
 	active:boolean;
 	config:boolean;
-	structureMap:{ [structureId:string]: {id:number; collectiviteId?:any; plateformeId?:any; projetId?:any;}};
+	structureMap?:{ [structureId:string]: {id:number; collectiviteId?:any; plateformeId?:any; projetId?:any;}};
 }
 
 //-------------------------------------
@@ -150,7 +150,7 @@ export class Analytics {
 		};
 
 		xitiConf.ID_COLLECTIVITE = data.ID_COLLECTIVITE;
-		if( me && me.structures && me.structures.length > 0 ) {
+		if( data.structureMap && me && me.structures && me.structures.length > 0 ) {
 			if( data.structureMap[me.structures[0]]?.plateformeId ) {
 				xitiConf.ID_PLATEFORME = data.structureMap[me.structures[0]].plateformeId;
 			}
@@ -194,7 +194,8 @@ export class Analytics {
 				}
 			}
 
-			xitiConf.ID_SERVICE = isNaN(xitiConf.ID_SERVICE as number) ? '' : xitiConf.ID_SERVICE;
+			if( typeof xitiConf.ID_SERVICE === "number" )
+				xitiConf.ID_SERVICE = isNaN(xitiConf.ID_SERVICE) ? '' : xitiConf.ID_SERVICE;
 			xitiConf.LIB_SERVICE = getOrElse(serviceMap, xitiConf.ID_SERVICE, "Page_ENT");
 
 			return xitiConf;
