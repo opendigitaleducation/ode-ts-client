@@ -78,6 +78,7 @@ export class Http implements IHttp {
         // Otherwise, we would map the axios response to our own model.
         this._latestResponse = response;
         /* TODO : manage params.requestName through an events[]. See infra-front http.ts */
+        //FIXME: should we check response.status and only accept if range is 2xx ?
         return response.data;
     }
 

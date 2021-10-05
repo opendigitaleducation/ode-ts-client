@@ -31,7 +31,15 @@ export interface IConfigurationFramework {
       readonly theme:ITheme;
       /** Configured tracking. */
       readonly analytics:{
+        /** Get a tracker parameters. */
         parameters<T extends ITrackingParams>(type:TrackingType):Promise<T|undefined>;
+        /**
+         * Get the XiTi configuration.
+         * This method awaits for the session to be be fully loaded.
+         * //FIXME refactor xiti configuration
+         */
+        xiti():Promise<IXitiTrackingParams|undefined>;
+        /** Check the status, if something goes wrong. */
         readonly status:AnalyticStatus;
       };
       /** I18n (port from legacy infra-front)*/
@@ -73,6 +81,24 @@ export interface IMatomoTrackingParams extends ITrackingParams {
   Profile: string;
   School: string;
   Project: string;
+}
+export interface IXitiTrackingParams {
+  //Springboard constants
+  ID_COLLECTIVITE: number|'';
+  ID_PLATEFORME: number|'';
+  ID_PROJET: number|'';
+
+  //Structure var
+  ID_ETAB: 0|''|{id:number; collectiviteId?:any; plateformeId?:any; projetId?:any;};
+
+  //App vars
+  ID_SERVICE: number|'';
+  LIB_SERVICE: number|string;
+  ENABLE_PROXY?: boolean;
+
+  //User vars
+  ID_PERSO: string;
+  ID_PROFIL: number;
 }
 
 //-------------------------------------
