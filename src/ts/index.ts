@@ -20,6 +20,10 @@ export { AbstractBusAgent } from './explore/Agent';
 
 //---------------------------------- NOTIFY ----------------------------------
 export * from './notify/interfaces';
+// We export RxJS because so that you don't need to bundle it again elsewhere : it is there for you.
+// **But** while importing it directly, you will also create a dependence on its implementation (API).
+// => We should create a facade for it, which would authorize us to later change the implementation with no side-effect.
+export * as RxJS from "rxjs";
 
 //------------------------------- TRANSPORT ----------------------------------
 export * from './transport/interfaces';
