@@ -1,3 +1,5 @@
+ode-ts-client / [Exports](modules.md)
+
 # ode-ts-client
 
 Open Digital Education (ODE) client frameworks definition and implementation.

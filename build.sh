@@ -36,7 +36,7 @@ esac
 done
 
 clean () {
-  rm -rf node_modules dist .gradle package.json package-lock.json deployment
+  rm -rf node_modules dist .husky .gradle package.json package-lock.json deployment
 }
 
 init () {
@@ -47,7 +47,8 @@ init () {
     BRANCH_NAME=`git branch | sed -n -e "s/^\* \(.*\)/\1/p"`
   fi
   docker-compose run -e BRANCH_NAME=$BRANCH_NAME --rm -u "$USER_UID:$GROUP_GID" gradle sh -c "gradle generateTemplate"
-  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm install --production=false"
+  PRECOMMIT_CMD="docker-compose run --rm -u \\\"$USER_UID:$GROUP_GID\\\" node sh -c \\\"npm run test && npm run docs\\\" && git add ./docs/*"
+  docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "npm install --production=false && npm run prepare && npx husky add .husky/pre-commit \"$PRECOMMIT_CMD\"" # && git add .husky/pre-commit"
 }
 
 build () {
