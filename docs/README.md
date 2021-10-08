@@ -15,12 +15,12 @@ It is written in typescript, with minimal dependencies (rxjs and axios at the mo
 As rule of thumb, **ode-ts-client never uses any browser-related technology** (no HTMLElement, Document, navigator...). 
 It focus exclusively on data exchange with the servers.
 
-* __IConfigurationFramework__ is composed of 3 layers
+* [IConfigurationFramework](docs/interfaces/iconfigurationframework.md) is composed of 3 layers
   * Platform (apps, theme, analytics, i18n...)
   * School
   * User (preferences)
 
-* __ISession__ of the connected user
+* [ISession](docs/interfaces/isession.md) of the connected user
   * user
   * description
   * currentLanguage
@@ -30,7 +30,7 @@ It focus exclusively on data exchange with the servers.
   * hasWorkflow
   * hasRight
 
-* __INotifyFramework__ for async messages
+* [INotifyFramework](docs/interfaces/inotifyframework.md) for async messages
   * onLangReady
   * onSessionReady
   * onSkinReady
@@ -38,14 +38,14 @@ It focus exclusively on data exchange with the servers.
   * promisify (generic for creating/resolving/rejecting a Promise)
   * events (a publish/subscribe event broker)
 
-* __ITransportFramework__ wraps the HTTP protocol
+* [ITransportFramework](docs/interfaces/itransportframework.md) wraps the HTTP protocol
 
-* __IExplorerFramework__ to look for resources
+* [IExplorerFramework](docs/interfaces/iexplorerframework.md) to look for resources
 
-* __IWidgetFramework__ dedicated to widgets conf/prefs
+* [IWidgetFramework](docs/interfaces/iwidgetframework.md) dedicated to widgets conf/prefs
 
 * and specific app frameworks for modeling their data
-  * __ITimelineApp__
+  * [ITimelineApp](docs/interfaces/itimelineapp.md)
   * ...
 
 ## Documentation
