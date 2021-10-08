@@ -33,12 +33,8 @@ The amount of time between this value's emission and the previous value's emissi
 If this is the first emitted value, then it will be the amount of time since subscription
 started.
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:51
-
 ___
 
 ### value
 
 • **value**: T
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:45

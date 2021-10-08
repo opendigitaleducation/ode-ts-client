@@ -41,5 +41,3 @@ Name | Type |
 `observer` | *Partial*<[*Observer*](rxjs.observer.md)<T\>\> |
 
 **Returns:** [*Unsubscribable*](rxjs.unsubscribable.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:68

@@ -32,12 +32,8 @@ Name |
 The timestamp. By default, this is in epoch milliseconds.
 Could vary based on the timestamp provider passed to the operator.
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:35
-
 ___
 
 ### value
 
 • **value**: T
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:30

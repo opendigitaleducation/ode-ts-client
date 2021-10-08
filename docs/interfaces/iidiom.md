@@ -28,8 +28,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [src/ts/configure/interfaces.ts:202](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L202)
-
 ___
 
 ### addBundle
@@ -45,8 +43,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/ts/configure/interfaces.ts:200](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L200)
-
 ___
 
 ### addBundlePromise
@@ -61,8 +57,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [src/ts/configure/interfaces.ts:199](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L199)
-
 ___
 
 ### addKeys
@@ -76,8 +70,6 @@ Name | Type |
 `keys` | *any* |
 
 **Returns:** *void*
-
-Defined in: [src/ts/configure/interfaces.ts:203](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L203)
 
 ___
 
@@ -94,8 +86,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/ts/configure/interfaces.ts:201](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L201)
-
 ___
 
 ### removeAccents
@@ -110,8 +100,6 @@ Name | Type |
 
 **Returns:** *string*
 
-Defined in: [src/ts/configure/interfaces.ts:204](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L204)
-
 ___
 
 ### translate
@@ -125,5 +113,3 @@ Name | Type |
 `key` | *string* |
 
 **Returns:** *string*
-
-Defined in: [src/ts/configure/interfaces.ts:198](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L198)

@@ -42,8 +42,6 @@ Name | Type |
 
 **Returns:** [*AbstractBusAgent*](abstractbusagent.md)
 
-Defined in: [src/ts/explore/Agent.ts:10](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L10)
-
 ## Properties
 
 ### handlerFor
@@ -69,8 +67,6 @@ Name | Type |
 `search` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
 `share` | (`parameters`: [*IActionParameters*](../interfaces/iactionparameters.md)) => *Promise*<[*IActionResult*](../interfaces/iactionresult.md)\> |
 
-Defined in: [src/ts/explore/Agent.ts:20](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L20)
-
 ___
 
 ### managedResource
@@ -79,15 +75,11 @@ ___
 
 Type of resource this agent can manage.
 
-Defined in: [src/ts/explore/Agent.ts:16](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L16)
-
 ___
 
 ### defaultHandler
 
 ▪ `Static` `Protected` **defaultHandler**: IHandler
-
-Defined in: [src/ts/explore/Agent.ts:17](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L17)
 
 ## Methods
 
@@ -109,8 +101,6 @@ Name | Type |
 
 Implementation of: [IBusAgent](../interfaces/ibusagent.md)
 
-Defined in: [src/ts/explore/Agent.ts:56](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L56)
-
 ___
 
 ### getHandler
@@ -125,8 +115,6 @@ Name | Type |
 
 **Returns:** IHandler
 
-Defined in: [src/ts/explore/Agent.ts:49](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L49)
-
 ___
 
 ### initialize
@@ -134,8 +122,6 @@ ___
 ▸ `Protected`**initialize**(): *void*
 
 **Returns:** *void*
-
-Defined in: [src/ts/explore/Agent.ts:37](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L37)
 
 ___
 
@@ -146,8 +132,6 @@ ___
 Override to register handlers for actions this agent support.
 
 **Returns:** *void*
-
-Defined in: [src/ts/explore/Agent.ts:54](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L54)
 
 ___
 
@@ -163,5 +147,3 @@ Name | Type |
 `handler` | IHandler |
 
 **Returns:** *void*
-
-Defined in: [src/ts/explore/Agent.ts:44](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Agent.ts#L44)

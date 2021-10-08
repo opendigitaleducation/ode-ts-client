@@ -51,8 +51,6 @@ Name | Type | Description |
 
 Overrides: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:20
-
 ## Properties
 
 ### actions
@@ -60,8 +58,6 @@ Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler
 • **actions**: *AsyncAction*<any\>[]
 
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/AsyncScheduler.d.ts:5
 
 ___
 
@@ -74,8 +70,6 @@ between two "frames" is synonymous with the passage of "virtual time units". So 
 you record `scheduler.frame` to be `1`, then later, observe `scheduler.frame` to be at `11`,
 that means `10` virtual time units have passed.
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:15
-
 ___
 
 ### index
@@ -86,15 +80,11 @@ Used internally to examine the current virtual action index being processed.
 
 **`deprecated`** Internal implementation detail, do not use directly. Will be made internal in v8.
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:20
-
 ___
 
 ### maxFrames
 
 • **maxFrames**: *number*
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:6
 
 ___
 
@@ -116,11 +106,7 @@ have a relation to wall-clock time. May or may not refer to a time unit
 
 **Returns:** *number*
 
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:35
-
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:35
 
 ___
 
@@ -129,8 +115,6 @@ ___
 ▪ `Static` **frameTimeFactor**: *number*
 
 **`deprecated`** Not used in VirtualTimeScheduler directly. Will be removed in v8.
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:8
 
 ___
 
@@ -144,11 +128,7 @@ ___
 
 **Returns:** *number*
 
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:25
-
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:25
 
 ## Methods
 
@@ -162,8 +142,6 @@ clearing its queue.
 **Returns:** *void*
 
 Overrides: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:34
 
 ___
 
@@ -198,5 +176,3 @@ A subscription in order to be able to unsubscribe
 the scheduled work.
 
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:53

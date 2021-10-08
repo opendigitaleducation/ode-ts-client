@@ -31,8 +31,6 @@
 
 • `Readonly` **closed**: *boolean*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:60
-
 ## Methods
 
 ### unsubscribe
@@ -42,5 +40,3 @@ Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:60
 **Returns:** *void*
 
 Overrides: [Unsubscribable](rxjs.unsubscribable.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:59

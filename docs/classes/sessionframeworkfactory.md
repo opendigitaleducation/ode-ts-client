@@ -27,5 +27,3 @@
 ▸ `Static`**instance**(): [*ISessionFramework*](../interfaces/isessionframework.md)
 
 **Returns:** [*ISessionFramework*](../interfaces/isessionframework.md)
-
-Defined in: [src/ts/session/interfaces.ts:8](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L8)

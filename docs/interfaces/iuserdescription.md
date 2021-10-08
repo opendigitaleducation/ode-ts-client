@@ -41,15 +41,11 @@
 
 • **address**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:67](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L67)
-
 ___
 
 ### alertSize
 
 • **alertSize**: *boolean*
-
-Defined in: [src/ts/session/interfaces.ts:53](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L53)
 
 ___
 
@@ -57,15 +53,11 @@ ___
 
 • **birthdate**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:68](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L68)
-
 ___
 
 ### displayName
 
 • **displayName**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:69](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L69)
 
 ___
 
@@ -73,15 +65,11 @@ ___
 
 • **email**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:70](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L70)
-
 ___
 
 ### health
 
 • **health**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:54](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L54)
 
 ___
 
@@ -89,15 +77,11 @@ ___
 
 • **hobbies**: [*Hobby*](../modules.md#hobby)[]
 
-Defined in: [src/ts/session/interfaces.ts:55](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L55)
-
 ___
 
 ### id
 
 • **id**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:71](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L71)
 
 ___
 
@@ -105,15 +89,11 @@ ___
 
 • **login**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:72](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L72)
-
 ___
 
 ### mobile
 
 • **mobile**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:73](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L73)
 
 ___
 
@@ -121,15 +101,11 @@ ___
 
 • **mood**: *default* \| *happy* \| *proud* \| *dreamy* \| *love* \| *tired* \| *angry* \| *worried* \| *sick* \| *joker* \| *sad*
 
-Defined in: [src/ts/session/interfaces.ts:56](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L56)
-
 ___
 
 ### motto
 
 • **motto**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:57](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L57)
 
 ___
 
@@ -137,15 +113,11 @@ ___
 
 • `Optional` **oldPicture**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:58](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L58)
-
 ___
 
 ### photo
 
 • **photo**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:74](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L74)
 
 ___
 
@@ -153,15 +125,11 @@ ___
 
 • **picture**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:59](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L59)
-
 ___
 
 ### profiles
 
 • **profiles**: *string*[]
-
-Defined in: [src/ts/session/interfaces.ts:80](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L80)
 
 ___
 
@@ -169,15 +137,11 @@ ___
 
 • **quota**: *number*
 
-Defined in: [src/ts/session/interfaces.ts:60](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L60)
-
 ___
 
 ### relatedId
 
 • `Optional` **relatedId**: *any*
-
-Defined in: [src/ts/session/interfaces.ts:75](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L75)
 
 ___
 
@@ -185,15 +149,11 @@ ___
 
 • `Optional` **relatedName**: *any*
 
-Defined in: [src/ts/session/interfaces.ts:76](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L76)
-
 ___
 
 ### relatedType
 
 • `Optional` **relatedType**: *any*
-
-Defined in: [src/ts/session/interfaces.ts:77](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L77)
 
 ___
 
@@ -201,15 +161,11 @@ ___
 
 • **schools**: [*School*](../modules.md#school)[]
 
-Defined in: [src/ts/session/interfaces.ts:78](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L78)
-
 ___
 
 ### storage
 
 • **storage**: *number*
-
-Defined in: [src/ts/session/interfaces.ts:61](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L61)
 
 ___
 
@@ -217,15 +173,11 @@ ___
 
 • **tel**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:79](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L79)
-
 ___
 
 ### theme
 
 • **theme**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:62](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L62)
 
 ___
 
@@ -233,15 +185,11 @@ ___
 
 • **type**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:63](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L63)
-
 ___
 
 ### userId
 
 • **userId**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:81](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L81)
 
 ___
 
@@ -249,12 +197,8 @@ ___
 
 • **userid**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:64](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L64)
-
 ___
 
 ### visibleInfos
 
 • **visibleInfos**: *string*[]
-
-Defined in: [src/ts/session/interfaces.ts:82](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L82)

@@ -21,15 +21,11 @@
 
 • **\_id**: *number*
 
-Defined in: [src/ts/widget/LastInfos.widget.ts:11](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L11)
-
 ___
 
 ### date
 
 • **date**: *string*
-
-Defined in: [src/ts/widget/LastInfos.widget.ts:4](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L4)
 
 ___
 
@@ -37,15 +33,11 @@ ___
 
 • **shared**: []
 
-Defined in: [src/ts/widget/LastInfos.widget.ts:5](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L5)
-
 ___
 
 ### thread\_icon
 
 • **thread\_icon**: *string*
-
-Defined in: [src/ts/widget/LastInfos.widget.ts:6](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L6)
 
 ___
 
@@ -53,15 +45,11 @@ ___
 
 • **thread\_id**: *number*
 
-Defined in: [src/ts/widget/LastInfos.widget.ts:7](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L7)
-
 ___
 
 ### thread\_title
 
 • **thread\_title**: *string*
-
-Defined in: [src/ts/widget/LastInfos.widget.ts:8](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L8)
 
 ___
 
@@ -69,12 +57,8 @@ ___
 
 • **title**: *string*
 
-Defined in: [src/ts/widget/LastInfos.widget.ts:9](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L9)
-
 ___
 
 ### username
 
 • **username**: *string*
-
-Defined in: [src/ts/widget/LastInfos.widget.ts:10](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L10)

@@ -37,8 +37,6 @@ By definition, an event can occur multiple times (otherwise it is a one-time "pr
 
 **Returns:** [*Subject*](rxjs.subject.md)<{ `data?`: *any* ; `layer`: *string* ; `name`: [*EventName*](../modules.md#eventname)  }\>
 
-Defined in: [src/ts/notify/interfaces.ts:56](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L56)
-
 ___
 
 ### onLangReady
@@ -49,8 +47,6 @@ Notify that a process is done and data ready or rejected.
 Promise / resolve / reject of current user's language.
 
 **Returns:** [*IPromisified*](../interfaces/ipromisified.md)<string\>
-
-Defined in: [src/ts/notify/interfaces.ts:28](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L28)
 
 ___
 
@@ -64,8 +60,6 @@ Promise / resolve / reject of asynchronous skin overrides.
 
 **Returns:** [*IPromisified*](../interfaces/ipromisified.md)<[*IThemeOverrides*](../modules.md#ithemeoverrides)\>
 
-Defined in: [src/ts/notify/interfaces.ts:48](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L48)
-
 ___
 
 ### onSessionReady
@@ -76,8 +70,6 @@ Notify that a process is done and data ready or rejected.
 Promise / resolve / reject of current user's session.
 
 **Returns:** [*IPromisified*](../interfaces/ipromisified.md)<[*IUserInfo*](../interfaces/iuserinfo.md)\>
-
-Defined in: [src/ts/notify/interfaces.ts:34](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L34)
 
 ___
 
@@ -90,8 +82,6 @@ This data is not intended to change after being resolved.
 Promise / resolve / reject of asynchronous skin.
 
 **Returns:** [*IPromisified*](../interfaces/ipromisified.md)<[*ITheme*](../interfaces/itheme.md)\>
-
-Defined in: [src/ts/notify/interfaces.ts:41](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L41)
 
 ___
 
@@ -110,5 +100,3 @@ Name |
 `T` |
 
 **Returns:** [*IPromisified*](../interfaces/ipromisified.md)<T\>
-
-Defined in: [src/ts/notify/interfaces.ts:22](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L22)

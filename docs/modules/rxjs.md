@@ -261,8 +261,6 @@ Name | Type |
 `X` | - |
 `Y` | readonly *any*[] |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:201
-
 ___
 
 ### FactoryOrValue
@@ -275,8 +273,6 @@ Name |
 :------ |
 `T` |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:19
-
 ___
 
 ### Falsy
@@ -286,8 +282,6 @@ ___
 A simple type to represent a gamut of "falsy" values... with a notable exception:
 `NaN` is "falsy" however, it is not and cannot be typed via TypeScript. See
 comments here: https://github.com/microsoft/TypeScript/issues/28682#issuecomment-707142417
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:231
 
 ___
 
@@ -304,8 +298,6 @@ Name | Type |
 :------ | :------ |
 `X` | readonly *any*[] |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:206
-
 ___
 
 ### ObservableInput
@@ -319,8 +311,6 @@ Valid types that can be converted to observables.
 Name |
 :------ |
 `T` |
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:73
 
 ___
 
@@ -338,8 +328,6 @@ Name |
 :------ |
 `T` |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:194
-
 ___
 
 ### ObservableLike
@@ -354,8 +342,6 @@ Name |
 :------ |
 `T` |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:77
-
 ___
 
 ### ObservableNotification
@@ -369,8 +355,6 @@ Valid observable notification types.
 Name |
 :------ |
 `T` |
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:114
 
 ___
 
@@ -388,8 +372,6 @@ Name |
 :------ |
 `O` |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:166
-
 ___
 
 ### ObservedValueTupleFromArray
@@ -406,8 +388,6 @@ of `[string, number]`.
 Name |
 :------ |
 `X` |
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:186
 
 ___
 
@@ -428,8 +408,6 @@ Name |
 :------ |
 `X` |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:175
-
 ___
 
 ### ObservedValuesFromArray
@@ -444,8 +422,6 @@ Name |
 :------ |
 `X` |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:179
-
 ___
 
 ### PartialObserver
@@ -457,8 +433,6 @@ ___
 Name |
 :------ |
 `T` |
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:134
 
 ___
 
@@ -473,8 +447,6 @@ ___
 Name |
 :------ |
 `T` |
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:65
 
 ___
 
@@ -491,15 +463,11 @@ Name | Type |
 :------ | :------ |
 `X` | readonly *any*[] |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:211
-
 ___
 
 ### TeardownLogic
 
 Ƭ **TeardownLogic**: [*Subscription*](../classes/rxjs.subscription.md) \| [*Unsubscribable*](../interfaces/rxjs.unsubscribable.md) \| () => *void* \| *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:57
 
 ___
 
@@ -512,8 +480,6 @@ ___
 Name |
 :------ |
 `T` |
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:232
 
 ___
 
@@ -531,8 +497,6 @@ Name | Type |
 :------ | :------ |
 `A` | readonly *unknown*[] |
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:217
-
 ___
 
 ### ValueFromNotification
@@ -546,8 +510,6 @@ Gets the value type from an [ObservableNotification](rxjs.md#observablenotificat
 Name |
 :------ |
 `T` |
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:221
 
 ## Variables
 
@@ -563,8 +525,6 @@ Observable, but no such index or position exists in that sequence.
 **`see`** [take](rxjs.md#take)
 
 **`see`** [takeLast](rxjs.md#takelast)
-
-Defined in: node_modules/rxjs/dist/types/internal/util/ArgumentOutOfRangeError.d.ts:20
 
 ___
 
@@ -595,8 +555,6 @@ EMPTY.subscribe({
 // Complete!
 ```
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/empty.d.ts:27
-
 ___
 
 ### EmptyError
@@ -615,8 +573,6 @@ elements.
 **`see`** [firstValueFrom](rxjs.md#firstvaluefrom)
 
 **`see`** [lastValueFrom](rxjs.md#lastvaluefrom)
-
-Defined in: node_modules/rxjs/dist/types/internal/util/EmptyError.d.ts:22
 
 ___
 
@@ -656,8 +612,6 @@ result.subscribe(x => console.log(x), info, info);
 
 **`see`** [throwError](rxjs.md#throwerror)
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/never.d.ts:32
-
 ___
 
 ### NotFoundError
@@ -668,8 +622,6 @@ An error thrown when a value or values are missing from an
 observable sequence.
 
 **`see`** {@link operators/single}
-
-Defined in: node_modules/rxjs/dist/types/internal/util/NotFoundError.d.ts:18
 
 ___
 
@@ -684,8 +636,6 @@ unsubscribed.
 
 **`see`** [BehaviorSubject](../classes/rxjs.behaviorsubject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/util/ObjectUnsubscribedError.d.ts:19
-
 ___
 
 ### SequenceError
@@ -696,8 +646,6 @@ An error thrown when something is wrong with the sequence of
 values arriving on the observable.
 
 **`see`** {@link operators/single}
-
-Defined in: node_modules/rxjs/dist/types/internal/util/SequenceError.d.ts:18
 
 ___
 
@@ -714,8 +662,6 @@ create your own error class and use that.
 
 **`see`** {@link operators/timeout}
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeout.d.ts:70
-
 ___
 
 ### UnsubscriptionError
@@ -725,8 +671,6 @@ ___
 An error thrown when one or more errors have occurred during the
 `unsubscribe` of a [Subscription](../classes/rxjs.subscription.md).
 
-Defined in: node_modules/rxjs/dist/types/internal/util/UnsubscriptionError.d.ts:15
-
 ___
 
 ### animationFrame
@@ -734,8 +678,6 @@ ___
 • `Const` **animationFrame**: AnimationFrameScheduler
 
 **`deprecated`** Renamed to [animationFrameScheduler](rxjs.md#animationframescheduler). Will be removed in v8.
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/animationFrame.d.ts:37
 
 ___
 
@@ -772,8 +714,6 @@ animationFrameScheduler.schedule(function(height) {
 // You will see a div element growing in height
 ```
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/animationFrame.d.ts:33
-
 ___
 
 ### asap
@@ -781,8 +721,6 @@ ___
 • `Const` **asap**: AsapScheduler
 
 **`deprecated`** Renamed to [asapScheduler](rxjs.md#asapscheduler). Will be removed in v8.
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/asap.d.ts:40
 
 ___
 
@@ -822,8 +760,6 @@ asapScheduler.schedule(() => console.log('asap'));
 // ... but 'asap' goes first!
 ```
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/asap.d.ts:36
-
 ___
 
 ### async
@@ -831,8 +767,6 @@ ___
 • `Const` **async**: AsyncScheduler
 
 **`deprecated`** Renamed to [asyncScheduler](rxjs.md#asyncscheduler). Will be removed in v8.
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/async.d.ts:52
 
 ___
 
@@ -884,8 +818,6 @@ asyncScheduler.schedule(task, 3000, 0);
 // 3 after 6s
 ```
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/async.d.ts:48
-
 ___
 
 ### config
@@ -895,8 +827,6 @@ ___
 The [GlobalConfig](../interfaces/rxjs.globalconfig.md) object for RxJS. It is used to configure things
 like how to react on unhandled errors.
 
-Defined in: node_modules/rxjs/dist/types/internal/config.d.ts:7
-
 ___
 
 ### observable
@@ -905,8 +835,6 @@ ___
 
 Symbol.observable or a string "@@observable". Used for interop
 
-Defined in: node_modules/rxjs/dist/types/internal/symbol/observable.d.ts:2
-
 ___
 
 ### queue
@@ -914,8 +842,6 @@ ___
 • `Const` **queue**: QueueScheduler
 
 **`deprecated`** Renamed to [queueScheduler](rxjs.md#queuescheduler). Will be removed in v8.
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/queue.d.ts:68
 
 ___
 
@@ -982,8 +908,6 @@ queueScheduler.schedule(function(state) {
 // "before", 1
 // "after", 1
 ```
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/queue.d.ts:64
 
 ## Functions
 
@@ -1068,8 +992,6 @@ Name | Type | Description |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<{ `elapsed`: *number* ; `timestamp`: *number*  }\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/dom/animationFrames.d.ts:75
-
 ___
 
 ### audit
@@ -1134,8 +1056,6 @@ Name | Type | Description |
 
 A function that returns an Observable that performs rate-limiting of
 emissions from the source Observable.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/audit.d.ts:46
 
 ___
 
@@ -1203,8 +1123,6 @@ Name | Type | Description |
 A function that returns an Observable that performs rate-limiting of
 emissions from the source Observable.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/auditTime.d.ts:49
-
 ___
 
 ### bindCallback
@@ -1220,8 +1138,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** (...`args`: *any*[]) => [*Observable*](../classes/rxjs.observable.md)<any\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/bindCallback.d.ts:3
 
 ▸ **bindCallback**<A, R\>(`callbackFunc`: (...`args`: [...A, (...`res`: R) => *void*]) => *void*, `schedulerLike?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): *function*
 
@@ -1241,8 +1157,6 @@ Name | Type |
 
 **Returns:** (...`arg`: A) => [*Observable*](../classes/rxjs.observable.md)<R *extends* [] ? *void* : R *extends* [*any*] ? R[*0*] : R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/bindCallback.d.ts:4
-
 ___
 
 ### bindNodeCallback
@@ -1258,8 +1172,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** (...`args`: *any*[]) => [*Observable*](../classes/rxjs.observable.md)<any\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/bindNodeCallback.d.ts:3
 
 ▸ **bindNodeCallback**<A, R\>(`callbackFunc`: (...`args`: [...A, (`err`: *any*, ...`res`: R) => *void*]) => *void*, `schedulerLike?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): *function*
 
@@ -1278,8 +1190,6 @@ Name | Type |
 `schedulerLike?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** (...`arg`: A) => [*Observable*](../classes/rxjs.observable.md)<R *extends* [] ? *void* : R *extends* [*any*] ? R[*0*] : R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/bindNodeCallback.d.ts:4
 
 ___
 
@@ -1339,8 +1249,6 @@ Name | Type | Description |
 
 A function that returns an Observable of buffers, which are arrays
 of values.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/buffer.d.ts:41
 
 ___
 
@@ -1415,8 +1323,6 @@ Name | Type | Description |
 
 A function that returns an Observable of arrays of buffered values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/bufferCount.d.ts:55
-
 ___
 
 ### bufferTime
@@ -1438,8 +1344,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/bufferTime.d.ts:2
-
 ▸ **bufferTime**<T\>(`bufferTimeSpan`: *number*, `bufferCreationInterval`: *number* \| *null* \| *undefined*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[]\>
 
 #### Type parameters:
@@ -1457,8 +1361,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/bufferTime.d.ts:3
 
 ▸ **bufferTime**<T\>(`bufferTimeSpan`: *number*, `bufferCreationInterval`: *number* \| *null* \| *undefined*, `maxBufferSize`: *number*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[]\>
 
@@ -1478,8 +1380,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/bufferTime.d.ts:4
 
 ___
 
@@ -1544,8 +1444,6 @@ Name | Type | Description |
 
 A function that returns an Observable of arrays of buffered values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/bufferToggle.d.ts:46
-
 ___
 
 ### bufferWhen
@@ -1606,8 +1504,6 @@ Name | Type | Description |
 
 A function that returns an Observable of arrays of buffered values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/bufferWhen.d.ts:42
-
 ___
 
 ### catchError
@@ -1629,8 +1525,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/catchError.d.ts:3
-
 ___
 
 ### combineAll
@@ -1647,8 +1541,6 @@ Name |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, T[]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineAll.d.ts:5
-
 ▸ `Const`**combineAll**<T\>(): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, T[]\>
 
 **`deprecated`** Renamed to [combineLatestAll](rxjs.md#combinelatestall). Will be removed in v8.
@@ -1660,8 +1552,6 @@ Name |
 `T` |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, T[]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineAll.d.ts:5
 
 ▸ `Const`**combineAll**<T, R\>(`project`: (...`values`: T[]) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, R\>
 
@@ -1682,8 +1572,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineAll.d.ts:5
-
 ▸ `Const`**combineAll**<R\>(`project`: (...`values`: *any*[]) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, R\>
 
 **`deprecated`** Renamed to [combineLatestAll](rxjs.md#combinelatestall). Will be removed in v8.
@@ -1701,8 +1589,6 @@ Name | Type |
 `project` | (...`values`: *any*[]) => R |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineAll.d.ts:5
 
 ___
 
@@ -1727,8 +1613,6 @@ Name | Type | Description |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<unknown\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:10
-
 ▸ **combineLatest**(`sources`: []): [*Observable*](../classes/rxjs.observable.md)<never\>
 
 #### Parameters:
@@ -1738,8 +1622,6 @@ Name | Type |
 `sources` | [] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:11
 
 ▸ **combineLatest**<A\>(`sources`: readonly [...ObservableInputTuple<A\>]): [*Observable*](../classes/rxjs.observable.md)<A\>
 
@@ -1756,8 +1638,6 @@ Name | Type |
 `sources` | readonly [...ObservableInputTuple<A\>] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:12
 
 ▸ **combineLatest**<A, R\>(`sources`: readonly [...ObservableInputTuple<A\>], `resultSelector`: (...`values`: A) => R, `scheduler`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<R\>
 
@@ -1780,8 +1660,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:14
-
 ▸ **combineLatest**<A, R\>(`sources`: readonly [...ObservableInputTuple<A\>], `resultSelector`: (...`values`: A) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
 #### Type parameters:
@@ -1799,8 +1677,6 @@ Name | Type |
 `resultSelector` | (...`values`: A) => R |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:15
 
 ▸ **combineLatest**<A\>(`sources`: readonly [...ObservableInputTuple<A\>], `scheduler`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<A\>
 
@@ -1821,8 +1697,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:17
-
 ▸ **combineLatest**<A\>(...`sources`: [...ObservableInputTuple<A\>]): [*Observable*](../classes/rxjs.observable.md)<A\>
 
 **`deprecated`** Pass an array of sources instead. The rest-parameters signature will be removed in v8. Details: https://rxjs.dev/deprecations/array-argument
@@ -1840,8 +1714,6 @@ Name | Type |
 `...sources` | [...ObservableInputTuple<A\>] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:19
 
 ▸ **combineLatest**<A, R\>(...`sourcesAndResultSelectorAndScheduler`: [...ObservableInputTuple<A\>, (...`values`: A) => R, [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)]): [*Observable*](../classes/rxjs.observable.md)<R\>
 
@@ -1862,8 +1734,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:21
-
 ▸ **combineLatest**<A, R\>(...`sourcesAndResultSelector`: [...ObservableInputTuple<A\>, (...`values`: A) => R]): [*Observable*](../classes/rxjs.observable.md)<R\>
 
 **`deprecated`** Pass an array of sources instead. The rest-parameters signature will be removed in v8. Details: https://rxjs.dev/deprecations/array-argument
@@ -1883,8 +1753,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:23
-
 ▸ **combineLatest**<A\>(...`sourcesAndScheduler`: [...ObservableInputTuple<A\>, [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)]): [*Observable*](../classes/rxjs.observable.md)<A\>
 
 **`deprecated`** The `scheduler` parameter will be removed in v8. Use `scheduled` and `combineLatestAll`. Details: https://rxjs.dev/deprecations/scheduler-argument
@@ -1903,8 +1771,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:25
-
 ▸ **combineLatest**(`sourcesObject`: { [K in any]: never}): [*Observable*](../classes/rxjs.observable.md)<never\>
 
 #### Parameters:
@@ -1914,8 +1780,6 @@ Name | Type |
 `sourcesObject` | { [K in any]: never} |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:26
 
 ▸ **combineLatest**<T\>(`sourcesObject`: T): [*Observable*](../classes/rxjs.observable.md)<{ [K in keyof T]: ObservedValueOf<T[K]\>}\>
 
@@ -1933,8 +1797,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<{ [K in keyof T]: ObservedValueOf<T[K]\>}\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/combineLatest.d.ts:29
-
 ___
 
 ### combineLatestAll
@@ -1949,8 +1811,6 @@ Name |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, T[]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineLatestAll.d.ts:2
-
 ▸ **combineLatestAll**<T\>(): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, T[]\>
 
 #### Type parameters:
@@ -1960,8 +1820,6 @@ Name |
 `T` |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, T[]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineLatestAll.d.ts:3
 
 ▸ **combineLatestAll**<T, R\>(`project`: (...`values`: T[]) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, R\>
 
@@ -1980,8 +1838,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineLatestAll.d.ts:4
-
 ▸ **combineLatestAll**<R\>(`project`: (...`values`: *any*[]) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, R\>
 
 #### Type parameters:
@@ -1997,8 +1853,6 @@ Name | Type |
 `project` | (...`values`: *any*[]) => R |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineLatestAll.d.ts:5
 
 ___
 
@@ -2058,8 +1912,6 @@ Name | Type | Description |
 A function that returns an Observable that emits the latest
 emissions from both source and provided Observables.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/combineLatestWith.d.ts:40
-
 ___
 
 ### concat
@@ -2080,8 +1932,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T[*number*]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/concat.d.ts:3
-
 ▸ **concat**<T\>(...`inputsAndScheduler`: [...ObservableInputTuple<T\>, [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)]): [*Observable*](../classes/rxjs.observable.md)<T[*number*]\>
 
 #### Type parameters:
@@ -2097,8 +1947,6 @@ Name | Type |
 `...inputsAndScheduler` | [...ObservableInputTuple<T\>, [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T[*number*]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/concat.d.ts:4
 
 ___
 
@@ -2177,8 +2025,6 @@ Name | Type |
 A function that returns an Observable emitting values from all the
 inner Observables concatenated.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatAll.d.ts:58
-
 ___
 
 ### concatMap
@@ -2200,8 +2046,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatMap.d.ts:2
-
 ▸ **concatMap**<T, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: *undefined*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `resultSelector` parameter will be removed in v8. Use an inner `map` instead. Details: https://rxjs.dev/deprecations/resultSelector
@@ -2221,8 +2065,6 @@ Name | Type |
 `resultSelector` | *undefined* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatMap.d.ts:4
 
 ▸ **concatMap**<T, R, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -2245,8 +2087,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatMap.d.ts:6
-
 ___
 
 ### concatMapTo
@@ -2267,8 +2107,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatMapTo.d.ts:2
-
 ▸ **concatMapTo**<O\>(`observable`: O, `resultSelector`: *undefined*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `resultSelector` parameter will be removed in v8. Use an inner `map` instead. Details: https://rxjs.dev/deprecations/resultSelector
@@ -2287,8 +2125,6 @@ Name | Type |
 `resultSelector` | *undefined* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatMapTo.d.ts:4
 
 ▸ **concatMapTo**<T, R, O\>(`observable`: O, `resultSelector`: (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -2310,8 +2146,6 @@ Name | Type |
 `resultSelector` | (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatMapTo.d.ts:6
 
 ___
 
@@ -2372,8 +2206,6 @@ Name | Type | Description |
 A function that returns an Observable that concatenates
 subscriptions to the source and provided Observables subscribing to the next
 only once the current subscription completes.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/concatWith.d.ts:43
 
 ___
 
@@ -2463,8 +2295,6 @@ Name | Type | Description |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/connect.d.ts:84
-
 ___
 
 ### connectable
@@ -2490,8 +2320,6 @@ Name | Type | Description |
 
 A "connectable" observable, that has a `connect()` method, that you must call to
 connect the source to all consumers through the subject provided as the connector.
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/connectable.d.ts:26
 
 ___
 
@@ -2564,8 +2392,6 @@ Name | Type | Description |
 
 A function that returns an Observable that emits one number that
 represents the count of emissions.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/count.d.ts:57
 
 ___
 
@@ -2647,8 +2473,6 @@ A function that returns an Observable that delays the emissions of
 the source Observable by the specified duration Observable returned by
 `durationSelector`, and may drop some values if they occur too frequently.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/debounce.d.ts:59
-
 ___
 
 ### debounceTime
@@ -2727,8 +2551,6 @@ A function that returns an Observable that delays the emissions of
 the source Observable by the specified `dueTime`, and may drop some values
 if they occur too frequently.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/debounceTime.d.ts:59
-
 ___
 
 ### defaultIfEmpty
@@ -2781,8 +2603,6 @@ Name | Type | Description |
 A function that returns an Observable that emits either the
 specified `defaultValue` if the source Observable emits no items, or the
 values emitted by the source Observable.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/defaultIfEmpty.d.ts:36
 
 ___
 
@@ -2844,8 +2664,6 @@ Name | Type | Description |
 
 An Observable whose Observers' subscriptions trigger
 an invocation of the given Observable factory function.
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/defer.d.ts:49
 
 ___
 
@@ -2926,8 +2744,6 @@ Name | Type | Description |
 A function that returns an Observable that delays the emissions of
 the source Observable by the specified timeout or Date.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/delay.d.ts:57
-
 ___
 
 ### delayWhen
@@ -2951,8 +2767,6 @@ Name | Type |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/delayWhen.d.ts:4
-
 ▸ **delayWhen**<T\>(`delayDurationSelector`: (`value`: T, `index`: *number*) => [*Observable*](../classes/rxjs.observable.md)<any\>): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -2968,8 +2782,6 @@ Name | Type |
 `delayDurationSelector` | (`value`: T, `index`: *number*) => [*Observable*](../classes/rxjs.observable.md)<any\> |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/delayWhen.d.ts:5
 
 ___
 
@@ -3032,8 +2844,6 @@ Name | Type |
 A function that returns an Observable that emits items and
 notifications embedded in Notification objects emitted by the source
 Observable.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/dematerialize.d.ts:50
 
 ___
 
@@ -3122,8 +2932,6 @@ Name | Type |
 
 A function that returns an Observable that emits items from the
 source Observable with distinct values.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/distinct.d.ts:70
 
 ___
 
@@ -3232,8 +3040,6 @@ Name | Type | Description |
 A function that returns an Observable that emits items from the
 source Observable with distinct values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/distinctUntilChanged.d.ts:92
-
 ▸ **distinctUntilChanged**<T, K\>(`comparator`: (`previous`: K, `current`: K) => *boolean*, `keySelector`: (`value`: T) => K): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 Returns a result [Observable](../classes/rxjs.observable.md) that emits all values pushed by the source observable if they
@@ -3292,8 +3098,6 @@ Name | Type | Description |
 A function that returns an Observable that emits items from the
 source Observable with distinct values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/distinctUntilChanged.d.ts:137
-
 ___
 
 ### distinctUntilKeyChanged
@@ -3314,8 +3118,6 @@ Name | Type |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/distinctUntilKeyChanged.d.ts:2
-
 ▸ **distinctUntilKeyChanged**<T, K\>(`key`: K, `compare`: (`x`: T[K], `y`: T[K]) => *boolean*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -3333,8 +3135,6 @@ Name | Type |
 `compare` | (`x`: T[K], `y`: T[K]) => *boolean* |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/distinctUntilKeyChanged.d.ts:3
 
 ___
 
@@ -3404,8 +3204,6 @@ Name | Type | Description |
 A function that returns an Observable that emits a single item, if
 it is found. Otherwise, it will emit the default value if given. If not, it
 emits an error.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/elementAt.d.ts:49
 
 ___
 
@@ -3479,8 +3277,6 @@ Name | Type | Description |
 An "empty" Observable: emits only the complete
 notification.
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/empty.d.ts:85
-
 ___
 
 ### endWith
@@ -3503,8 +3299,6 @@ Name | Type |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/endWith.d.ts:3
-
 ▸ **endWith**<T, A\>(...`valuesAndScheduler`: [...A, [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)]): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
 **`deprecated`** The `scheduler` parameter will be removed in v8. Use `scheduled` and `concatAll`. Details: https://rxjs.dev/deprecations/scheduler-argument
@@ -3524,8 +3318,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/endWith.d.ts:5
-
 ▸ **endWith**<T, A\>(...`values`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
 #### Type parameters:
@@ -3542,8 +3334,6 @@ Name | Type |
 `...values` | A |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/endWith.d.ts:6
 
 ___
 
@@ -3565,8 +3355,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, *Exclude*<T, [*Falsy*](rxjs.md#falsy)\> *extends* *never* ? *false* : *boolean*\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/every.d.ts:3
-
 ▸ **every**<T\>(`predicate`: BooleanConstructor, `thisArg`: *any*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, *Exclude*<T, [*Falsy*](rxjs.md#falsy)\> *extends* *never* ? *false* : *boolean*\>
 
 **`deprecated`** Use a closure instead of a `thisArg`. Signatures accepting a `thisArg` will be removed in v8.
@@ -3585,8 +3373,6 @@ Name | Type |
 `thisArg` | *any* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, *Exclude*<T, [*Falsy*](rxjs.md#falsy)\> *extends* *never* ? *false* : *boolean*\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/every.d.ts:5
 
 ▸ **every**<T, A\>(`predicate`: (`this`: A, `value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*, `thisArg`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, boolean\>
 
@@ -3608,8 +3394,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, boolean\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/every.d.ts:7
-
 ▸ **every**<T\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, boolean\>
 
 #### Type parameters:
@@ -3626,8 +3410,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, boolean\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/every.d.ts:8
-
 ___
 
 ### exhaust
@@ -3643,8 +3425,6 @@ Name | Type |
 `O` | [*ObservableInput*](rxjs.md#observableinput)<any\> |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<O, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/exhaust.d.ts:5
 
 ___
 
@@ -3708,8 +3488,6 @@ A function that returns an Observable that takes a source of
 Observables and propagates the first Observable exclusively until it
 completes before subscribing to the next.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/exhaustAll.d.ts:45
-
 ___
 
 ### exhaustMap
@@ -3731,8 +3509,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/exhaustMap.d.ts:2
-
 ▸ **exhaustMap**<T, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: *undefined*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `resultSelector` parameter will be removed in v8. Use an inner `map` instead. Details: https://rxjs.dev/deprecations/resultSelector
@@ -3752,8 +3528,6 @@ Name | Type |
 `resultSelector` | *undefined* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/exhaustMap.d.ts:4
 
 ▸ **exhaustMap**<T, I, R\>(`project`: (`value`: T, `index`: *number*) => [*ObservableInput*](rxjs.md#observableinput)<I\>, `resultSelector`: (`outerValue`: T, `innerValue`: I, `outerIndex`: *number*, `innerIndex`: *number*) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -3775,8 +3549,6 @@ Name | Type |
 `resultSelector` | (`outerValue`: T, `innerValue`: I, `outerIndex`: *number*, `innerIndex`: *number*) => R |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/exhaustMap.d.ts:6
 
 ___
 
@@ -3801,8 +3573,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/expand.d.ts:2
-
 ▸ **expand**<T, O\>(`project`: (`value`: T, `index`: *number*) => O, `concurrent`: *number* \| *undefined*, `scheduler`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `scheduler` parameter will be removed in v8. If you need to schedule the inner subscription,
@@ -3825,8 +3595,6 @@ Name | Type |
 `scheduler` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/expand.d.ts:8
 
 ___
 
@@ -3853,8 +3621,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/filter.d.ts:3
-
 ▸ **filter**<T, S\>(`predicate`: (`value`: T, `index`: *number*) => value is S): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
 #### Type parameters:
@@ -3872,8 +3638,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/filter.d.ts:4
-
 ▸ **filter**<T\>(`predicate`: BooleanConstructor): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\>\>
 
 #### Type parameters:
@@ -3889,8 +3653,6 @@ Name | Type |
 `predicate` | BooleanConstructor |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/filter.d.ts:5
 
 ▸ **filter**<T, A\>(`predicate`: (`this`: A, `value`: T, `index`: *number*) => *boolean*, `thisArg`: A): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
@@ -3912,8 +3674,6 @@ Name | Type |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/filter.d.ts:7
-
 ▸ **filter**<T\>(`predicate`: (`value`: T, `index`: *number*) => *boolean*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -3929,8 +3689,6 @@ Name | Type |
 `predicate` | (`value`: T, `index`: *number*) => *boolean* |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/filter.d.ts:8
 
 ___
 
@@ -4006,8 +3764,6 @@ Name | Type | Description |
 A function that returns an Observable that mirrors the source, but
 will call the specified function on termination.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/finalize.d.ts:58
-
 ___
 
 ### find
@@ -4027,8 +3783,6 @@ Name | Type |
 `predicate` | BooleanConstructor |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/find.d.ts:4
 
 ▸ **find**<T, S, A\>(`predicate`: (`this`: A, `value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => value is S, `thisArg`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S \| undefined\>
 
@@ -4051,8 +3805,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S \| undefined\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/find.d.ts:6
-
 ▸ **find**<T, S\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => value is S): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S \| undefined\>
 
 #### Type parameters:
@@ -4069,8 +3821,6 @@ Name | Type |
 `predicate` | (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => value is S |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S \| undefined\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/find.d.ts:7
 
 ▸ **find**<T, A\>(`predicate`: (`this`: A, `value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*, `thisArg`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| undefined\>
 
@@ -4092,8 +3842,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| undefined\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/find.d.ts:9
-
 ▸ **find**<T\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| undefined\>
 
 #### Type parameters:
@@ -4109,8 +3857,6 @@ Name | Type |
 `predicate` | (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| undefined\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/find.d.ts:10
 
 ___
 
@@ -4132,8 +3878,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T *extends* [*Falsy*](rxjs.md#falsy) ? *-1* : *number*\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/findIndex.d.ts:3
-
 ▸ **findIndex**<T\>(`predicate`: BooleanConstructor, `thisArg`: *any*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T *extends* [*Falsy*](rxjs.md#falsy) ? *-1* : *number*\>
 
 **`deprecated`** Use a closure instead of a `thisArg`. Signatures accepting a `thisArg` will be removed in v8.
@@ -4152,8 +3896,6 @@ Name | Type |
 `thisArg` | *any* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T *extends* [*Falsy*](rxjs.md#falsy) ? *-1* : *number*\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/findIndex.d.ts:5
 
 ▸ **findIndex**<T, A\>(`predicate`: (`this`: A, `value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*, `thisArg`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, number\>
 
@@ -4175,8 +3917,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, number\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/findIndex.d.ts:7
-
 ▸ **findIndex**<T\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, number\>
 
 #### Type parameters:
@@ -4192,8 +3932,6 @@ Name | Type |
 `predicate` | (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, number\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/findIndex.d.ts:8
 
 ___
 
@@ -4217,8 +3955,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| D\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/first.d.ts:3
-
 ▸ **first**<T\>(`predicate`: BooleanConstructor): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\>\>
 
 #### Type parameters:
@@ -4234,8 +3970,6 @@ Name | Type |
 `predicate` | BooleanConstructor |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/first.d.ts:4
 
 ▸ **first**<T, D\>(`predicate`: BooleanConstructor, `defaultValue`: D): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\> \| D\>
 
@@ -4255,8 +3989,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\> \| D\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/first.d.ts:5
-
 ▸ **first**<T, S\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => value is S, `defaultValue?`: S): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
 #### Type parameters:
@@ -4274,8 +4006,6 @@ Name | Type |
 `defaultValue?` | S |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/first.d.ts:6
 
 ▸ **first**<T, S, D\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => value is S, `defaultValue`: D): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S \| D\>
 
@@ -4296,8 +4026,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S \| D\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/first.d.ts:7
-
 ▸ **first**<T, D\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*, `defaultValue?`: D): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| D\>
 
 #### Type parameters:
@@ -4315,8 +4043,6 @@ Name | Type |
 `defaultValue?` | D |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| D\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/first.d.ts:8
 
 ___
 
@@ -4340,8 +4066,6 @@ Name | Type |
 
 **Returns:** *Promise*<T \| D\>
 
-Defined in: node_modules/rxjs/dist/types/internal/firstValueFrom.d.ts:5
-
 ▸ **firstValueFrom**<T\>(`source`: [*Observable*](../classes/rxjs.observable.md)<T\>): *Promise*<T\>
 
 #### Type parameters:
@@ -4357,8 +4081,6 @@ Name | Type |
 `source` | [*Observable*](../classes/rxjs.observable.md)<T\> |
 
 **Returns:** *Promise*<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/firstValueFrom.d.ts:6
 
 ___
 
@@ -4384,8 +4106,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/flatMap.d.ts:5
-
 ▸ `Const`**flatMap**<T, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: *undefined*, `concurrent?`: *number*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** Renamed to [mergeMap](rxjs.md#mergemap). Will be removed in v8.
@@ -4406,8 +4126,6 @@ Name | Type |
 `concurrent?` | *number* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/flatMap.d.ts:5
 
 ▸ `Const`**flatMap**<T, R, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R, `concurrent?`: *number*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -4430,8 +4148,6 @@ Name | Type |
 `concurrent?` | *number* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/flatMap.d.ts:5
 
 ___
 
@@ -4456,8 +4172,6 @@ Name | Type | Description |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<unknown\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:9
-
 ▸ **forkJoin**(`scheduler`: *null* \| *undefined*): [*Observable*](../classes/rxjs.observable.md)<never\>
 
 #### Parameters:
@@ -4468,8 +4182,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:10
-
 ▸ **forkJoin**(`sources`: readonly []): [*Observable*](../classes/rxjs.observable.md)<never\>
 
 #### Parameters:
@@ -4479,8 +4191,6 @@ Name | Type |
 `sources` | readonly [] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:11
 
 ▸ **forkJoin**<A\>(`sources`: readonly [...ObservableInputTuple<A\>]): [*Observable*](../classes/rxjs.observable.md)<A\>
 
@@ -4497,8 +4207,6 @@ Name | Type |
 `sources` | readonly [...ObservableInputTuple<A\>] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:12
 
 ▸ **forkJoin**<A, R\>(`sources`: readonly [...ObservableInputTuple<A\>], `resultSelector`: (...`values`: A) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
@@ -4518,8 +4226,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:13
-
 ▸ **forkJoin**<A\>(...`sources`: [...ObservableInputTuple<A\>]): [*Observable*](../classes/rxjs.observable.md)<A\>
 
 **`deprecated`** Pass an array of sources instead. The rest-parameters signature will be removed in v8. Details: https://rxjs.dev/deprecations/array-argument
@@ -4537,8 +4243,6 @@ Name | Type |
 `...sources` | [...ObservableInputTuple<A\>] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:15
 
 ▸ **forkJoin**<A, R\>(...`sourcesAndResultSelector`: [...ObservableInputTuple<A\>, (...`values`: A) => R]): [*Observable*](../classes/rxjs.observable.md)<R\>
 
@@ -4559,8 +4263,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:17
-
 ▸ **forkJoin**(`sourcesObject`: { [K in any]: never}): [*Observable*](../classes/rxjs.observable.md)<never\>
 
 #### Parameters:
@@ -4570,8 +4272,6 @@ Name | Type |
 `sourcesObject` | { [K in any]: never} |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:18
 
 ▸ **forkJoin**<T\>(`sourcesObject`: T): [*Observable*](../classes/rxjs.observable.md)<{ [K in keyof T]: ObservedValueOf<T[K]\>}\>
 
@@ -4588,8 +4288,6 @@ Name | Type |
 `sourcesObject` | T |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<{ [K in keyof T]: ObservedValueOf<T[K]\>}\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/forkJoin.d.ts:21
 
 ___
 
@@ -4611,8 +4309,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/from.d.ts:3
-
 ▸ **from**<O\>(`input`: O, `scheduler`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<[*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `scheduler` parameter will be removed in v8. Use `scheduled`. Details: https://rxjs.dev/deprecations/scheduler-argument
@@ -4631,8 +4327,6 @@ Name | Type |
 `scheduler` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/from.d.ts:5
 
 ___
 
@@ -4655,8 +4349,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:31
-
 ▸ **fromEvent**<T, R\>(`target`: *HasEventTargetAddRemove*<T\> \| *ArrayLike*<HasEventTargetAddRemove<T\>\>, `eventName`: *string*, `resultSelector`: (`event`: T) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
 #### Type parameters:
@@ -4676,8 +4368,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:32
-
 ▸ **fromEvent**<T\>(`target`: *HasEventTargetAddRemove*<T\> \| *ArrayLike*<HasEventTargetAddRemove<T\>\>, `eventName`: *string*, `options`: EventListenerOptions): [*Observable*](../classes/rxjs.observable.md)<T\>
 
 #### Type parameters:
@@ -4695,8 +4385,6 @@ Name | Type |
 `options` | EventListenerOptions |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:33
 
 ▸ **fromEvent**<T, R\>(`target`: *HasEventTargetAddRemove*<T\> \| *ArrayLike*<HasEventTargetAddRemove<T\>\>, `eventName`: *string*, `options`: EventListenerOptions, `resultSelector`: (`event`: T) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
@@ -4718,8 +4406,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:34
-
 ▸ **fromEvent**(`target`: NodeStyleEventEmitter \| *ArrayLike*<NodeStyleEventEmitter\>, `eventName`: *string*): [*Observable*](../classes/rxjs.observable.md)<unknown\>
 
 #### Parameters:
@@ -4730,8 +4416,6 @@ Name | Type |
 `eventName` | *string* |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<unknown\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:35
 
 ▸ **fromEvent**<T\>(`target`: NodeStyleEventEmitter \| *ArrayLike*<NodeStyleEventEmitter\>, `eventName`: *string*): [*Observable*](../classes/rxjs.observable.md)<T\>
 
@@ -4752,8 +4436,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:37
-
 ▸ **fromEvent**<R\>(`target`: NodeStyleEventEmitter \| *ArrayLike*<NodeStyleEventEmitter\>, `eventName`: *string*, `resultSelector`: (...`args`: *any*[]) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
 #### Type parameters:
@@ -4772,8 +4454,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:38
-
 ▸ **fromEvent**(`target`: NodeCompatibleEventEmitter \| *ArrayLike*<NodeCompatibleEventEmitter\>, `eventName`: *string*): [*Observable*](../classes/rxjs.observable.md)<unknown\>
 
 #### Parameters:
@@ -4784,8 +4464,6 @@ Name | Type |
 `eventName` | *string* |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<unknown\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:39
 
 ▸ **fromEvent**<T\>(`target`: NodeCompatibleEventEmitter \| *ArrayLike*<NodeCompatibleEventEmitter\>, `eventName`: *string*): [*Observable*](../classes/rxjs.observable.md)<T\>
 
@@ -4806,8 +4484,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:41
-
 ▸ **fromEvent**<R\>(`target`: NodeCompatibleEventEmitter \| *ArrayLike*<NodeCompatibleEventEmitter\>, `eventName`: *string*, `resultSelector`: (...`args`: *any*[]) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
 #### Type parameters:
@@ -4826,8 +4502,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:42
-
 ▸ **fromEvent**<T\>(`target`: *JQueryStyleEventEmitter*<any, T\> \| *ArrayLike*<JQueryStyleEventEmitter<any, T\>\>, `eventName`: *string*): [*Observable*](../classes/rxjs.observable.md)<T\>
 
 #### Type parameters:
@@ -4844,8 +4518,6 @@ Name | Type |
 `eventName` | *string* |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:43
 
 ▸ **fromEvent**<T, R\>(`target`: *JQueryStyleEventEmitter*<any, T\> \| *ArrayLike*<JQueryStyleEventEmitter<any, T\>\>, `eventName`: *string*, `resultSelector`: (`value`: T, ...`args`: *any*[]) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
@@ -4865,8 +4537,6 @@ Name | Type |
 `resultSelector` | (`value`: T, ...`args`: *any*[]) => R |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEvent.d.ts:44
 
 ___
 
@@ -4889,8 +4559,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEventPattern.d.ts:3
-
 ▸ **fromEventPattern**<T\>(`addHandler`: (`handler`: NodeEventHandler) => *any*, `removeHandler?`: (`handler`: NodeEventHandler, `signal?`: *any*) => *void*, `resultSelector?`: (...`args`: *any*[]) => T): [*Observable*](../classes/rxjs.observable.md)<T\>
 
 #### Type parameters:
@@ -4908,8 +4576,6 @@ Name | Type |
 `resultSelector?` | (...`args`: *any*[]) => T |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/fromEventPattern.d.ts:4
 
 ___
 
@@ -4981,8 +4647,6 @@ Name | Type | Description |
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
 
 The generated sequence.
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/generate.d.ts:83
 
 ▸ **generate**<S\>(`initialState`: S, `condition`: *ConditionFunc*<S\>, `iterate`: *IterateFunc*<S\>, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<S\>
 
@@ -5141,8 +4805,6 @@ Name | Type | Description |
 
 The generated sequence.
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/generate.d.ts:227
-
 ▸ **generate**<S\>(`options`: *GenerateBaseOptions*<S\>): [*Observable*](../classes/rxjs.observable.md)<S\>
 
 Generates an observable sequence by running a state-driven loop
@@ -5197,8 +4859,6 @@ Name | Type | Description |
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<S\>
 
 The generated sequence.
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/generate.d.ts:268
 
 ▸ **generate**<T, S\>(`options`: *GenerateOptions*<T, S\>): [*Observable*](../classes/rxjs.observable.md)<T\>
 
@@ -5257,8 +4917,6 @@ Name | Type | Description |
 
 The generated sequence.
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/generate.d.ts:310
-
 ___
 
 ### groupBy
@@ -5281,8 +4939,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, T\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts:14
-
 ▸ **groupBy**<T, K, E\>(`key`: (`value`: T) => K, `options`: *GroupByOptionsWithElement*<K, E, T\>): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, E\>\>
 
 #### Type parameters:
@@ -5302,8 +4958,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, E\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts:15
-
 ▸ **groupBy**<T, K\>(`key`: (`value`: T) => value is K): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<*true*, K\> \| [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<*false*, Exclude<T, K\>\>\>
 
 #### Type parameters:
@@ -5321,8 +4975,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<*true*, K\> \| [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<*false*, Exclude<T, K\>\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts:16
-
 ▸ **groupBy**<T, K\>(`key`: (`value`: T) => K): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, T\>\>
 
 #### Type parameters:
@@ -5339,8 +4991,6 @@ Name | Type |
 `key` | (`value`: T) => K |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, T\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts:17
 
 ▸ **groupBy**<T, K\>(`key`: (`value`: T) => K, `element`: *void*, `duration`: (`grouped`: [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, T\>) => [*Observable*](../classes/rxjs.observable.md)<any\>): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, T\>\>
 
@@ -5363,8 +5013,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, T\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts:21
-
 ▸ **groupBy**<T, K, R\>(`key`: (`value`: T) => K, `element?`: (`value`: T) => R, `duration?`: (`grouped`: [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, R\>) => [*Observable*](../classes/rxjs.observable.md)<any\>): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, R\>\>
 
 **`deprecated`** use the options parameter instead.
@@ -5386,8 +5034,6 @@ Name | Type |
 `duration?` | (`grouped`: [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, R\>) => [*Observable*](../classes/rxjs.observable.md)<any\> |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, R\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts:25
 
 ▸ **groupBy**<T, K, R\>(`key`: (`value`: T) => K, `element?`: (`value`: T) => R, `duration?`: (`grouped`: [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, R\>) => [*Observable*](../classes/rxjs.observable.md)<any\>, `connector?`: () => [*Subject*](../classes/rxjs.subject.md)<R\>): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*GroupedObservable*](../interfaces/rxjs.groupedobservable.md)<K, R\>\>
 
@@ -5491,8 +5137,6 @@ A function that returns an Observable that emits GroupedObservables,
 each of which corresponds to a unique key value and each of which emits
 those items from the source Observable that share that key value.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/groupBy.d.ts:117
-
 ___
 
 ### identity
@@ -5512,8 +5156,6 @@ Name | Type |
 `x` | T |
 
 **Returns:** T
-
-Defined in: node_modules/rxjs/dist/types/internal/util/identity.d.ts:1
 
 ___
 
@@ -5554,8 +5196,6 @@ of('you', 'talking', 'to', 'me').pipe(
 A function that returns an empty Observable that only calls
 `complete` or `error`, based on which one is called by the source
 Observable.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/ignoreElements.d.ts:34
 
 ___
 
@@ -5654,8 +5294,6 @@ Name | Type | Description |
 
 An observable that proxies to `trueResult` or `falseResult`, depending on the result of the `condition` function.
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/iif.d.ts:81
-
 ___
 
 ### interval
@@ -5711,8 +5349,6 @@ Name | Type |
 
 An Observable that emits a sequential number each time
 interval.
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/interval.d.ts:48
 
 ___
 
@@ -5791,8 +5427,6 @@ Name |
 A function that returns an Observable that emits boolean value
 indicating whether the source Observable was empty or not.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/isEmpty.d.ts:65
-
 ___
 
 ### isObservable
@@ -5808,8 +5442,6 @@ Name | Type | Description |
 `obj` | *any* | the object to test    |
 
 **Returns:** obj is Observable<unknown\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/isObservable.d.ts:7
 
 ___
 
@@ -5831,8 +5463,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/last.d.ts:3
-
 ▸ **last**<T, D\>(`predicate`: BooleanConstructor, `defaultValue`: D): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\> \| D\>
 
 #### Type parameters:
@@ -5850,8 +5480,6 @@ Name | Type |
 `defaultValue` | D |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\> \| D\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/last.d.ts:4
 
 ▸ **last**<T, D\>(`predicate?`: *null*, `defaultValue?`: D): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| D\>
 
@@ -5871,8 +5499,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| D\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/last.d.ts:5
-
 ▸ **last**<T, S\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => value is S, `defaultValue?`: S): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
 #### Type parameters:
@@ -5891,8 +5517,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/last.d.ts:6
-
 ▸ **last**<T, D\>(`predicate`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*, `defaultValue?`: D): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| D\>
 
 #### Type parameters:
@@ -5910,8 +5534,6 @@ Name | Type |
 `defaultValue?` | D |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| D\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/last.d.ts:7
 
 ___
 
@@ -5935,8 +5557,6 @@ Name | Type |
 
 **Returns:** *Promise*<T \| D\>
 
-Defined in: node_modules/rxjs/dist/types/internal/lastValueFrom.d.ts:5
-
 ▸ **lastValueFrom**<T\>(`source`: [*Observable*](../classes/rxjs.observable.md)<T\>): *Promise*<T\>
 
 #### Type parameters:
@@ -5952,8 +5572,6 @@ Name | Type |
 `source` | [*Observable*](../classes/rxjs.observable.md)<T\> |
 
 **Returns:** *Promise*<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/lastValueFrom.d.ts:6
 
 ___
 
@@ -5976,8 +5594,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/map.d.ts:2
-
 ▸ **map**<T, R, A\>(`project`: (`this`: A, `value`: T, `index`: *number*) => R, `thisArg`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
 **`deprecated`** Use a closure instead of a `thisArg`. Signatures accepting a `thisArg` will be removed in v8.
@@ -5999,8 +5615,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/map.d.ts:4
-
 ___
 
 ### mapTo
@@ -6021,8 +5635,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/mapTo.d.ts:2
-
 ▸ **mapTo**<T, R\>(`value`: R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
 **`deprecated`** Do not specify explicit type parameters. Signatures with type parameters that cannot be inferred will be removed in v8.
@@ -6041,8 +5653,6 @@ Name | Type |
 `value` | R |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/mapTo.d.ts:4
 
 ___
 
@@ -6108,8 +5718,6 @@ A function that returns an Observable that emits
 [Notification](../classes/rxjs.notification.md) objects that wrap the original emissions from the
 source Observable with metadata.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/materialize.d.ts:53
-
 ___
 
 ### max
@@ -6171,8 +5779,6 @@ Name | Type |
 A function that returns an Observable that emits item with the
 largest value.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/max.d.ts:46
-
 ___
 
 ### merge
@@ -6193,8 +5799,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/merge.d.ts:3
-
 ▸ **merge**<A\>(...`sourcesAndConcurrency`: [...ObservableInputTuple<A\>, number?]): [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
 
 #### Type parameters:
@@ -6210,8 +5814,6 @@ Name | Type |
 `...sourcesAndConcurrency` | [...ObservableInputTuple<A\>, number?] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/merge.d.ts:4
 
 ▸ **merge**<A\>(...`sourcesAndScheduler`: [...ObservableInputTuple<A\>, SchedulerLike?]): [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
 
@@ -6231,8 +5833,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/merge.d.ts:6
-
 ▸ **merge**<A\>(...`sourcesAndConcurrencyAndScheduler`: [...ObservableInputTuple<A\>, number?, SchedulerLike?]): [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
 
 **`deprecated`** The `scheduler` parameter will be removed in v8. Use `scheduled` and `mergeAll`. Details: https://rxjs.dev/deprecations/scheduler-argument
@@ -6250,8 +5850,6 @@ Name | Type |
 `...sourcesAndConcurrencyAndScheduler` | [...ObservableInputTuple<A\>, number?, SchedulerLike?] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/merge.d.ts:8
 
 ___
 
@@ -6335,8 +5933,6 @@ Name | Type |
 A function that returns an Observable that emits values coming from
 all the inner Observables emitted by the source Observable.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeAll.d.ts:58
-
 ___
 
 ### mergeMap
@@ -6359,8 +5955,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeMap.d.ts:2
-
 ▸ **mergeMap**<T, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: *undefined*, `concurrent?`: *number*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `resultSelector` parameter will be removed in v8. Use an inner `map` instead. Details: https://rxjs.dev/deprecations/resultSelector
@@ -6381,8 +5975,6 @@ Name | Type |
 `concurrent?` | *number* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeMap.d.ts:4
 
 ▸ **mergeMap**<T, R, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R, `concurrent?`: *number*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -6406,8 +5998,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeMap.d.ts:6
-
 ___
 
 ### mergeMapTo
@@ -6428,8 +6018,6 @@ Name | Type |
 `concurrent?` | *number* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeMapTo.d.ts:2
 
 ▸ **mergeMapTo**<T, R, O\>(`innerObservable`: O, `resultSelector`: (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R, `concurrent?`: *number*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -6452,8 +6040,6 @@ Name | Type |
 `concurrent?` | *number* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeMapTo.d.ts:4
 
 ___
 
@@ -6537,8 +6123,6 @@ Name | Type | Description |
 
 A function that returns an Observable of the accumulated values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeScan.d.ts:66
-
 ___
 
 ### mergeWith
@@ -6598,8 +6182,6 @@ Name | Type | Description |
 
 A function that returns an Observable that merges the values from
 all given Observables.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/mergeWith.d.ts:43
 
 ___
 
@@ -6662,8 +6244,6 @@ Name | Type |
 A function that returns an Observable that emits item with the
 smallest value.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/min.d.ts:45
-
 ___
 
 ### multicast
@@ -6696,8 +6276,6 @@ Name | Type | Description |
 
 A function that returns a [ConnectableObservable](../classes/rxjs.connectableobservable.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/multicast.d.ts:18
-
 ▸ **multicast**<T, O\>(`subject`: [*Subject*](../classes/rxjs.subject.md)<T\>, `selector`: (`shared`: [*Observable*](../classes/rxjs.observable.md)<T\>) => O): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 Because this is deprecated in favor of the [connect](rxjs.md#connect) operator, and was otherwise poorly documented,
@@ -6727,8 +6305,6 @@ Name | Type | Description |
 
 A function that returns an observable that mirrors the observable returned by the selector.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/multicast.d.ts:32
-
 ▸ **multicast**<T\>(`subjectFactory`: () => [*Subject*](../classes/rxjs.subject.md)<T\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<[*Observable*](../classes/rxjs.observable.md)<T\>, [*ConnectableObservable*](../classes/rxjs.connectableobservable.md)<T\>\>
 
 An operator that creates a [ConnectableObservable](../classes/rxjs.connectableobservable.md), that when connected,
@@ -6756,8 +6332,6 @@ Name | Type | Description |
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<[*Observable*](../classes/rxjs.observable.md)<T\>, [*ConnectableObservable*](../classes/rxjs.connectableobservable.md)<T\>\>
 
 A function that returns a [ConnectableObservable](../classes/rxjs.connectableobservable.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/multicast.d.ts:48
 
 ▸ **multicast**<T, O\>(`subjectFactory`: () => [*Subject*](../classes/rxjs.subject.md)<T\>, `selector`: (`shared`: [*Observable*](../classes/rxjs.observable.md)<T\>) => O): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
@@ -6788,8 +6362,6 @@ Name | Type | Description |
 
 A function that returns an observable that mirrors the observable returned by the selector.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/multicast.d.ts:62
-
 ___
 
 ### never
@@ -6800,8 +6372,6 @@ ___
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/never.d.ts:36
-
 ___
 
 ### noop
@@ -6809,8 +6379,6 @@ ___
 ▸ **noop**(): *void*
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/util/noop.d.ts:1
 
 ___
 
@@ -6881,8 +6449,6 @@ Name | Type | Description |
 A function that returns an Observable that emits the same
 notifications as the source Observable, but with provided scheduler.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/observeOn.d.ts:54
-
 ___
 
 ### of
@@ -6897,8 +6463,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<*null*\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:3
-
 ▸ **of**(`value`: *undefined*): [*Observable*](../classes/rxjs.observable.md)<undefined\>
 
 #### Parameters:
@@ -6908,8 +6472,6 @@ Name | Type |
 `value` | *undefined* |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<undefined\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:4
 
 ▸ **of**(`scheduler`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<never\>
 
@@ -6922,8 +6484,6 @@ Name | Type |
 `scheduler` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:6
 
 ▸ **of**<A\>(...`valuesAndScheduler`: [...A, [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)]): [*Observable*](../classes/rxjs.observable.md)<[*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
@@ -6943,13 +6503,9 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:8
-
 ▸ **of**(): [*Observable*](../classes/rxjs.observable.md)<never\>
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:9
 
 ▸ **of**<T\>(): [*Observable*](../classes/rxjs.observable.md)<T\>
 
@@ -6962,8 +6518,6 @@ Name |
 `T` |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:11
 
 ▸ **of**<T\>(`value`: T): [*Observable*](../classes/rxjs.observable.md)<T\>
 
@@ -6981,8 +6535,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:12
-
 ▸ **of**<A\>(...`values`: A): [*Observable*](../classes/rxjs.observable.md)<[*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
 #### Type parameters:
@@ -6998,8 +6550,6 @@ Name | Type |
 `...values` | A |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/of.d.ts:13
 
 ___
 
@@ -7021,8 +6571,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/onErrorResumeNext.d.ts:3
-
 ▸ **onErrorResumeNext**<A\>(...`sources`: [...ObservableInputTuple<A\>]): [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
 
 #### Type parameters:
@@ -7038,8 +6586,6 @@ Name | Type |
 `...sources` | [...ObservableInputTuple<A\>] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A[*number*]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/onErrorResumeNext.d.ts:4
 
 ___
 
@@ -7064,8 +6610,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[*string*, T]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/pairs.d.ts:6
-
 ▸ **pairs**<O\>(`obj`: O, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<[keyof O, O[keyof O]]\>
 
 **`deprecated`** Use `from(Object.entries(obj))` instead. Will be removed in v8.
@@ -7084,8 +6628,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[keyof O, O[keyof O]]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/pairs.d.ts:10
 
 ▸ **pairs**<T\>(`iterable`: *Iterable*<T\>, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<[*string*, T]\>
 
@@ -7106,8 +6648,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[*string*, T]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/pairs.d.ts:14
-
 ▸ **pairs**(`n`: *number* \| *bigint* \| *boolean* \| (...`args`: *any*[]) => *any* \| *symbol*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<[*never*, *never*]\>
 
 **`deprecated`** Use `from(Object.entries(obj))` instead. Will be removed in v8.
@@ -7120,8 +6660,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<[*never*, *never*]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/pairs.d.ts:18
 
 ___
 
@@ -7178,8 +6716,6 @@ Name |
 A function that returns an Observable of pairs (as arrays) of
 consecutive values from the source Observable.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/pairwise.d.ts:43
-
 ___
 
 ### partition
@@ -7206,8 +6742,6 @@ Name | Type |
 
 **Returns:** [[*Observable*](../classes/rxjs.observable.md)<U\>, [*Observable*](../classes/rxjs.observable.md)<Exclude<T, U\>\>]
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/partition.d.ts:4
-
 ▸ **partition**<T, U\>(`source`: [*ObservableInput*](rxjs.md#observableinput)<T\>, `predicate`: (`value`: T, `index`: *number*) => value is U): [[*Observable*](../classes/rxjs.observable.md)<U\>, [*Observable*](../classes/rxjs.observable.md)<Exclude<T, U\>\>]
 
 #### Type parameters:
@@ -7225,8 +6759,6 @@ Name | Type |
 `predicate` | (`value`: T, `index`: *number*) => value is U |
 
 **Returns:** [[*Observable*](../classes/rxjs.observable.md)<U\>, [*Observable*](../classes/rxjs.observable.md)<Exclude<T, U\>\>]
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/partition.d.ts:5
 
 ▸ **partition**<T, A\>(`source`: [*ObservableInput*](rxjs.md#observableinput)<T\>, `predicate`: (`this`: A, `value`: T, `index`: *number*) => *boolean*, `thisArg`: A): [[*Observable*](../classes/rxjs.observable.md)<T\>, [*Observable*](../classes/rxjs.observable.md)<T\>]
 
@@ -7249,8 +6781,6 @@ Name | Type |
 
 **Returns:** [[*Observable*](../classes/rxjs.observable.md)<T\>, [*Observable*](../classes/rxjs.observable.md)<T\>]
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/partition.d.ts:7
-
 ▸ **partition**<T\>(`source`: [*ObservableInput*](rxjs.md#observableinput)<T\>, `predicate`: (`value`: T, `index`: *number*) => *boolean*): [[*Observable*](../classes/rxjs.observable.md)<T\>, [*Observable*](../classes/rxjs.observable.md)<T\>]
 
 #### Type parameters:
@@ -7268,8 +6798,6 @@ Name | Type |
 
 **Returns:** [[*Observable*](../classes/rxjs.observable.md)<T\>, [*Observable*](../classes/rxjs.observable.md)<T\>]
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/partition.d.ts:8
-
 ___
 
 ### pipe
@@ -7277,8 +6805,6 @@ ___
 ▸ **pipe**(): *typeof* [*identity*](rxjs.md#identity)
 
 **Returns:** *typeof* [*identity*](rxjs.md#identity)
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:3
 
 ▸ **pipe**<T, A\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>
 
@@ -7296,8 +6822,6 @@ Name | Type |
 `fn1` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:4
 
 ▸ **pipe**<T, A, B\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, B\>
 
@@ -7317,8 +6841,6 @@ Name | Type |
 `fn2` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, B\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:5
 
 ▸ **pipe**<T, A, B, C\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, C\>
 
@@ -7340,8 +6862,6 @@ Name | Type |
 `fn3` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, C\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:6
 
 ▸ **pipe**<T, A, B, C, D\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>, `fn4`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, D\>
 
@@ -7365,8 +6885,6 @@ Name | Type |
 `fn4` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, D\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:7
 
 ▸ **pipe**<T, A, B, C, D, E\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>, `fn4`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\>, `fn5`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<D, E\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, E\>
 
@@ -7392,8 +6910,6 @@ Name | Type |
 `fn5` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<D, E\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, E\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:8
 
 ▸ **pipe**<T, A, B, C, D, E, F\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>, `fn4`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\>, `fn5`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<D, E\>, `fn6`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<E, F\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, F\>
 
@@ -7421,8 +6937,6 @@ Name | Type |
 `fn6` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<E, F\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, F\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:9
 
 ▸ **pipe**<T, A, B, C, D, E, F, G\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>, `fn4`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\>, `fn5`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<D, E\>, `fn6`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<E, F\>, `fn7`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<F, G\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, G\>
 
@@ -7452,8 +6966,6 @@ Name | Type |
 `fn7` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<F, G\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, G\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:10
 
 ▸ **pipe**<T, A, B, C, D, E, F, G, H\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>, `fn4`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\>, `fn5`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<D, E\>, `fn6`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<E, F\>, `fn7`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<F, G\>, `fn8`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<G, H\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, H\>
 
@@ -7485,8 +6997,6 @@ Name | Type |
 `fn8` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<G, H\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, H\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:11
 
 ▸ **pipe**<T, A, B, C, D, E, F, G, H, I\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>, `fn4`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\>, `fn5`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<D, E\>, `fn6`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<E, F\>, `fn7`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<F, G\>, `fn8`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<G, H\>, `fn9`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<H, I\>): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, I\>
 
@@ -7520,8 +7030,6 @@ Name | Type |
 `fn9` | [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<H, I\> |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, I\>
-
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:12
 
 ▸ **pipe**<T, A, B, C, D, E, F, G, H, I\>(`fn1`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, A\>, `fn2`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<A, B\>, `fn3`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<B, C\>, `fn4`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<C, D\>, `fn5`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<D, E\>, `fn6`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<E, F\>, `fn7`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<F, G\>, `fn8`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<G, H\>, `fn9`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<H, I\>, ...`fns`: [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<any, any\>[]): [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, unknown\>
 
@@ -7557,8 +7065,6 @@ Name | Type |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<T, unknown\>
 
-Defined in: node_modules/rxjs/dist/types/internal/util/pipe.d.ts:13
-
 ___
 
 ### pluck
@@ -7580,8 +7086,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:2
-
 ▸ **pluck**<T, K1, K2\>(`k1`: K1, `k2`: K2): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2]\>
 
 #### Type parameters:
@@ -7600,8 +7104,6 @@ Name | Type |
 `k2` | K2 |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:3
 
 ▸ **pluck**<T, K1, K2, K3\>(`k1`: K1, `k2`: K2, `k3`: K3): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3]\>
 
@@ -7623,8 +7125,6 @@ Name | Type |
 `k3` | K3 |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:4
 
 ▸ **pluck**<T, K1, K2, K3, K4\>(`k1`: K1, `k2`: K2, `k3`: K3, `k4`: K4): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3][K4]\>
 
@@ -7648,8 +7148,6 @@ Name | Type |
 `k4` | K4 |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3][K4]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:5
 
 ▸ **pluck**<T, K1, K2, K3, K4, K5\>(`k1`: K1, `k2`: K2, `k3`: K3, `k4`: K4, `k5`: K5): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3][K4][K5]\>
 
@@ -7675,8 +7173,6 @@ Name | Type |
 `k5` | K5 |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3][K4][K5]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:6
 
 ▸ **pluck**<T, K1, K2, K3, K4, K5, K6\>(`k1`: K1, `k2`: K2, `k3`: K3, `k4`: K4, `k5`: K5, `k6`: K6): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3][K4][K5][K6]\>
 
@@ -7704,8 +7200,6 @@ Name | Type |
 `k6` | K6 |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T[K1][K2][K3][K4][K5][K6]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:7
 
 ▸ **pluck**<T, K1, K2, K3, K4, K5, K6\>(`k1`: K1, `k2`: K2, `k3`: K3, `k4`: K4, `k5`: K5, `k6`: K6, ...`rest`: *string*[]): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, unknown\>
 
@@ -7735,8 +7229,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, unknown\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:8
-
 ▸ **pluck**<T\>(...`properties`: *string*[]): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, unknown\>
 
 #### Type parameters:
@@ -7752,8 +7244,6 @@ Name | Type |
 `...properties` | *string*[] |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, unknown\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/pluck.d.ts:9
 
 ___
 
@@ -7780,8 +7270,6 @@ Name |
 
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<[*Observable*](../classes/rxjs.observable.md)<T\>, [*ConnectableObservable*](../classes/rxjs.connectableobservable.md)<T\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/publish.d.ts:16
-
 ▸ **publish**<T, O\>(`selector`: (`shared`: [*Observable*](../classes/rxjs.observable.md)<T\>) => O): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 Returns an observable, that when subscribed to, creates an underlying [Subject](../classes/rxjs.subject.md),
@@ -7807,8 +7295,6 @@ Name | Type | Description |
 `selector` | (`shared`: [*Observable*](../classes/rxjs.observable.md)<T\>) => O | A function used to setup multicasting prior to automatic connection.    |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/publish.d.ts:29
 
 ___
 
@@ -7842,8 +7328,6 @@ Name | Type | Description |
 **Returns:** [*UnaryFunction*](../interfaces/rxjs.unaryfunction.md)<[*Observable*](../classes/rxjs.observable.md)<T\>, [*ConnectableObservable*](../classes/rxjs.connectableobservable.md)<T\>\>
 
 A function that returns a [ConnectableObservable](../classes/rxjs.connectableobservable.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/publishBehavior.d.ts:18
 
 ___
 
@@ -7925,8 +7409,6 @@ Name |
 A function that returns an Observable that emits elements of a
 sequence produced by multicasting the source sequence.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/publishLast.d.ts:67
-
 ___
 
 ### publishReplay
@@ -7961,8 +7443,6 @@ Name | Type | Description |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/publishReplay.d.ts:19
-
 ▸ **publishReplay**<T, O\>(`bufferSize`: *number* \| *undefined*, `windowTime`: *number* \| *undefined*, `selector`: (`shared`: [*Observable*](../classes/rxjs.observable.md)<T\>) => O, `timestampProvider?`: [*TimestampProvider*](../interfaces/rxjs.timestampprovider.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 Creates an observable, that when subscribed to, will create a [ReplaySubject](../classes/rxjs.replaysubject.md),
@@ -7994,8 +7474,6 @@ Name | Type | Description |
 `timestampProvider?` | [*TimestampProvider*](../interfaces/rxjs.timestampprovider.md) | The timestamp provider for the underlying [ReplaySubject](../classes/rxjs.replaysubject.md).   |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/publishReplay.d.ts:37
 
 ▸ **publishReplay**<T, O\>(`bufferSize`: *number* \| *undefined*, `windowTime`: *number* \| *undefined*, `selector`: *undefined*, `timestampProvider`: [*TimestampProvider*](../interfaces/rxjs.timestampprovider.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
@@ -8029,8 +7507,6 @@ Name | Type | Description |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/publishReplay.d.ts:55
-
 ___
 
 ### race
@@ -8051,8 +7527,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T[*number*]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/race.d.ts:4
-
 ▸ **race**<T\>(...`inputs`: [...ObservableInputTuple<T\>]): [*Observable*](../classes/rxjs.observable.md)<T[*number*]\>
 
 #### Type parameters:
@@ -8068,8 +7542,6 @@ Name | Type |
 `...inputs` | [...ObservableInputTuple<T\>] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T[*number*]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/race.d.ts:5
 
 ___
 
@@ -8119,8 +7591,6 @@ Name | Type | Description |
 A function that returns an Observable that mirrors the output of the
 first Observable to emit an item.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/raceWith.d.ts:31
-
 ___
 
 ### range
@@ -8136,8 +7606,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<number\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/range.d.ts:3
-
 ▸ **range**(`start`: *number*, `count`: *number* \| *undefined*, `scheduler`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<number\>
 
 **`deprecated`** The `scheduler` parameter will be removed in v8. Use `range(start, count).pipe(observeOn(scheduler))` instead. Details: Details: https://rxjs.dev/deprecations/scheduler-argument
@@ -8151,8 +7619,6 @@ Name | Type |
 `scheduler` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<number\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/range.d.ts:7
 
 ___
 
@@ -8175,8 +7641,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, V \| A\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/reduce.d.ts:2
-
 ▸ **reduce**<V, A\>(`accumulator`: (`acc`: A, `value`: V, `index`: *number*) => A, `seed`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
 
 #### Type parameters:
@@ -8194,8 +7658,6 @@ Name | Type |
 `seed` | A |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/reduce.d.ts:3
 
 ▸ **reduce**<V, A, S\>(`accumulator`: (`acc`: A \| S, `value`: V, `index`: *number*) => A, `seed`: S): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
 
@@ -8215,8 +7677,6 @@ Name | Type |
 `seed` | S |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/reduce.d.ts:4
 
 ___
 
@@ -8294,8 +7754,6 @@ Name |
 A function that returns an Observable that automates the connection
 to ConnectableObservable.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/refCount.d.ts:61
-
 ___
 
 ### repeat
@@ -8368,8 +7826,6 @@ Name | Type |
 A function that returns an Observable that will resubscribe to the
 source stream when the source stream completes, at most `count` times.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/repeat.d.ts:56
-
 ___
 
 ### repeatWhen
@@ -8418,8 +7874,6 @@ Name | Type | Description |
 
 A function that returns an Observable that that mirrors the source
 Observable with the exception of a `complete`.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/repeatWhen.d.ts:32
 
 ___
 
@@ -8484,8 +7938,6 @@ Name | Type | Description |
 A function that returns an Observable that will resubscribe to the
 source stream when the source stream errors, at most `count` times.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/retry.d.ts:67
-
 ▸ **retry**<T\>(`config`: RetryConfig): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 Returns an observable that mirrors the source observable unless it errors. If it errors, the source observable
@@ -8505,8 +7957,6 @@ Name | Type | Description |
 `config` | RetryConfig | The retry configuration    |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/retry.d.ts:75
 
 ___
 
@@ -8577,8 +8027,6 @@ Name | Type | Description |
 A function that returns an Observable that mirrors the source
 Observable with the exception of an `error`.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/retryWhen.d.ts:55
-
 ___
 
 ### sample
@@ -8636,8 +8084,6 @@ Name | Type | Description |
 A function that returns an Observable that emits the results of
 sampling the values emitted by the source Observable whenever the notifier
 Observable emits value or completes.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/sample.d.ts:41
 
 ___
 
@@ -8700,8 +8146,6 @@ A function that returns an Observable that emits the results of
 sampling the values emitted by the source Observable at the specified time
 interval.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/sampleTime.d.ts:43
-
 ___
 
 ### scan
@@ -8723,8 +8167,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, V \| A\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/scan.d.ts:2
-
 ▸ **scan**<V, A\>(`accumulator`: (`acc`: A, `value`: V, `index`: *number*) => A, `seed`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
 
 #### Type parameters:
@@ -8742,8 +8184,6 @@ Name | Type |
 `seed` | A |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/scan.d.ts:3
 
 ▸ **scan**<V, A, S\>(`accumulator`: (`acc`: A \| S, `value`: V, `index`: *number*) => A, `seed`: S): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
 
@@ -8763,8 +8203,6 @@ Name | Type |
 `seed` | S |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<V, A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/scan.d.ts:4
 
 ___
 
@@ -8793,8 +8231,6 @@ Name | Type | Description |
 `scheduler` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) | The scheduler to use to schedule the subscription and emissions from the returned observable.    |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduled/scheduled.d.ts:14
 
 ___
 
@@ -8872,8 +8308,6 @@ A function that returns an Observable that emits a single boolean
 value representing whether or not the values emitted by the source
 Observable and provided Observable were equal in sequence.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/sequenceEqual.d.ts:59
-
 ___
 
 ### share
@@ -8887,8 +8321,6 @@ Name |
 `T` |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/share.d.ts:42
 
 ▸ **share**<T\>(`options`: *ShareConfig*<T\>): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
@@ -8905,8 +8337,6 @@ Name | Type |
 `options` | *ShareConfig*<T\> |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/share.d.ts:43
 
 ___
 
@@ -8928,8 +8358,6 @@ Name | Type |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/shareReplay.d.ts:8
-
 ▸ **shareReplay**<T\>(`bufferSize?`: *number*, `windowTime?`: *number*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -8947,8 +8375,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/shareReplay.d.ts:9
 
 ___
 
@@ -8970,8 +8396,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*TruthyTypesOf*](rxjs.md#truthytypesof)<T\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/single.d.ts:3
-
 ▸ **single**<T\>(`predicate?`: (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -8987,8 +8411,6 @@ Name | Type |
 `predicate?` | (`value`: T, `index`: *number*, `source`: [*Observable*](../classes/rxjs.observable.md)<T\>) => *boolean* |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/single.d.ts:4
 
 ___
 
@@ -9041,8 +8463,6 @@ Name | Type | Description |
 
 A function that returns an Observable that skips the first `count`
 values emitted by the source Observable.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/skip.d.ts:33
 
 ___
 
@@ -9108,8 +8528,6 @@ Name | Type | Description |
 A function that returns an Observable that skips the last `count`
 values emitted by the source Observable.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/skipLast.d.ts:45
-
 ___
 
 ### skipUntil
@@ -9165,8 +8583,6 @@ A function that returns an Observable that skips items from the
 source Observable until the second Observable emits an item, then emits the
 remaining items.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/skipUntil.d.ts:41
-
 ___
 
 ### skipWhile
@@ -9187,8 +8603,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, *Extract*<T, [*Falsy*](rxjs.md#falsy)\> *extends* *never* ? *never* : T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/skipWhile.d.ts:2
-
 ▸ **skipWhile**<T\>(`predicate`: (`value`: T, `index`: *number*) => *true*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, never\>
 
 #### Type parameters:
@@ -9205,8 +8619,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, never\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/skipWhile.d.ts:3
-
 ▸ **skipWhile**<T\>(`predicate`: (`value`: T, `index`: *number*) => *boolean*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -9222,8 +8634,6 @@ Name | Type |
 `predicate` | (`value`: T, `index`: *number*) => *boolean* |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/skipWhile.d.ts:4
 
 ___
 
@@ -9245,8 +8655,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| *null*\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/startWith.d.ts:2
-
 ▸ **startWith**<T\>(`value`: *undefined*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| undefined\>
 
 #### Type parameters:
@@ -9262,8 +8670,6 @@ Name | Type |
 `value` | *undefined* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| undefined\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/startWith.d.ts:3
 
 ▸ **startWith**<T, A\>(...`valuesAndScheduler`: [...A, [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)]): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
@@ -9284,8 +8690,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/startWith.d.ts:5
-
 ▸ **startWith**<T, A\>(...`values`: A): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
 
 #### Type parameters:
@@ -9302,8 +8706,6 @@ Name | Type |
 `...values` | A |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ValueFromArray*](rxjs.md#valuefromarray)<A\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/startWith.d.ts:6
 
 ___
 
@@ -9383,8 +8785,6 @@ Name | Type | Description |
 A function that returns an Observable modified so that its
 subscriptions happen on the specified [SchedulerLike](../interfaces/rxjs.schedulerlike.md).
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/subscribeOn.d.ts:62
-
 ___
 
 ### switchAll
@@ -9461,8 +8861,6 @@ A function that returns an Observable that converts a higher-order
 Observable into a first-order Observable producing values only from the most
 recent Observable sequence.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchAll.d.ts:60
-
 ___
 
 ### switchMap
@@ -9484,8 +8882,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchMap.d.ts:2
-
 ▸ **switchMap**<T, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: *undefined*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `resultSelector` parameter will be removed in v8. Use an inner `map` instead. Details: https://rxjs.dev/deprecations/resultSelector
@@ -9505,8 +8901,6 @@ Name | Type |
 `resultSelector` | *undefined* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchMap.d.ts:4
 
 ▸ **switchMap**<T, R, O\>(`project`: (`value`: T, `index`: *number*) => O, `resultSelector`: (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -9529,8 +8923,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchMap.d.ts:6
-
 ___
 
 ### switchMapTo
@@ -9551,8 +8943,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchMapTo.d.ts:2
-
 ▸ **switchMapTo**<O\>(`observable`: O, `resultSelector`: *undefined*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 **`deprecated`** The `resultSelector` parameter will be removed in v8. Use an inner `map` instead. Details: https://rxjs.dev/deprecations/resultSelector
@@ -9571,8 +8961,6 @@ Name | Type |
 `resultSelector` | *undefined* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchMapTo.d.ts:4
 
 ▸ **switchMapTo**<T, R, O\>(`observable`: O, `resultSelector`: (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
@@ -9594,8 +8982,6 @@ Name | Type |
 `resultSelector` | (`outerValue`: T, `innerValue`: [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>, `outerIndex`: *number*, `innerIndex`: *number*) => R |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchMapTo.d.ts:6
 
 ___
 
@@ -9634,8 +9020,6 @@ Name | Type | Description |
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
 
 A function that returns an observable of the accumulated values.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/switchScan.d.ts:19
 
 ___
 
@@ -9699,8 +9083,6 @@ A function that returns an Observable that emits only the first
 `count` values emitted by the source Observable, or all of the values from
 the source if the source emits fewer than `count` values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/take.d.ts:43
-
 ___
 
 ### takeLast
@@ -9761,8 +9143,6 @@ Name | Type | Description |
 A function that returns an Observable that emits at most the last
 `count` values emitted by the source Observable.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeLast.d.ts:42
-
 ___
 
 ### takeUntil
@@ -9820,8 +9200,6 @@ Name | Type | Description |
 A function that returns an Observable that emits the values from the
 source Observable until `notifier` emits its first value.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeUntil.d.ts:40
-
 ___
 
 ### takeWhile
@@ -9842,8 +9220,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, *Exclude*<T, [*Falsy*](rxjs.md#falsy)\> *extends* *never* ? *never* : T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeWhile.d.ts:2
-
 ▸ **takeWhile**<T\>(`predicate`: BooleanConstructor, `inclusive`: *false*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, *Exclude*<T, [*Falsy*](rxjs.md#falsy)\> *extends* *never* ? *never* : T\>
 
 #### Type parameters:
@@ -9860,8 +9236,6 @@ Name | Type |
 `inclusive` | *false* |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, *Exclude*<T, [*Falsy*](rxjs.md#falsy)\> *extends* *never* ? *never* : T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeWhile.d.ts:3
 
 ▸ **takeWhile**<T\>(`predicate`: BooleanConstructor, `inclusive`: *true*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
@@ -9880,8 +9254,6 @@ Name | Type |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeWhile.d.ts:4
-
 ▸ **takeWhile**<T, S\>(`predicate`: (`value`: T, `index`: *number*) => value is S): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
 #### Type parameters:
@@ -9898,8 +9270,6 @@ Name | Type |
 `predicate` | (`value`: T, `index`: *number*) => value is S |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeWhile.d.ts:5
 
 ▸ **takeWhile**<T, S\>(`predicate`: (`value`: T, `index`: *number*) => value is S, `inclusive`: *false*): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
@@ -9919,8 +9289,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, S\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeWhile.d.ts:6
-
 ▸ **takeWhile**<T\>(`predicate`: (`value`: T, `index`: *number*) => *boolean*, `inclusive?`: *boolean*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -9937,8 +9305,6 @@ Name | Type |
 `inclusive?` | *boolean* |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/takeWhile.d.ts:7
 
 ___
 
@@ -9960,8 +9326,6 @@ Name | Type |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/tap.d.ts:7
-
 ▸ **tap**<T\>(`next`: (`value`: T) => *void*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 #### Type parameters:
@@ -9977,8 +9341,6 @@ Name | Type |
 `next` | (`value`: T) => *void* |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/tap.d.ts:8
 
 ▸ **tap**<T\>(`next?`: (`value`: T) => *void* \| *null*, `error?`: (`error`: *any*) => *void* \| *null*, `complete?`: () => *void* \| *null*): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
@@ -9999,8 +9361,6 @@ Name | Type |
 `complete?` | () => *void* \| *null* |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/tap.d.ts:10
 
 ___
 
@@ -10064,8 +9424,6 @@ Name | Type | Description |
 
 A function that returns an Observable that performs the throttle
 operation to limit the rate of emissions from the source.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/throttle.d.ts:51
 
 ___
 
@@ -10161,8 +9519,6 @@ Name | Type | Description |
 
 A function that returns an Observable that performs the throttle
 operation to limit the rate of emissions from the source.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/throttleTime.d.ts:79
 
 ___
 
@@ -10269,8 +9625,6 @@ Name | Type | Description |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/throwError.d.ts:97
-
 ▸ **throwError**(`error`: *any*): [*Observable*](../classes/rxjs.observable.md)<never\>
 
 Returns an observable that will error with the specified error immediately upon subscription.
@@ -10286,8 +9640,6 @@ Name | Type | Description |
 `error` | *any* | The error instance to emit   |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/throwError.d.ts:106
 
 ▸ **throwError**(`errorOrErrorFactory`: *any*, `scheduler`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<never\>
 
@@ -10305,8 +9657,6 @@ Name | Type | Description |
 `scheduler` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) | A scheduler to use to schedule the error notification   |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<never\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/throwError.d.ts:116
 
 ___
 
@@ -10355,8 +9705,6 @@ Name | Type | Description |
 
 A function that returns an Observable that throws an error if the
 source Observable completed without emitting.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/throwIfEmpty.d.ts:34
 
 ___
 
@@ -10419,8 +9767,6 @@ Name | Type |
 
 A function that returns an Observable that emits information about
 value and interval.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeInterval.d.ts:47
 
 ___
 
@@ -10511,8 +9857,6 @@ Name | Type | Description |
 `config` | *TimeoutConfig*<T, O, M\> & { `with`: (`info`: *TimeoutInfo*<T, M\>) => O  } | The configuration for the timeout.    |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| [*ObservedValueOf*](rxjs.md#observedvalueof)<O\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeout.d.ts:141
 
 ▸ **timeout**<T, M\>(`config`: *Omit*<TimeoutConfig<T, any, M\>, *with*\>): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T\>
 
@@ -10622,8 +9966,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeout.d.ts:237
-
 ▸ **timeout**<T\>(`first`: Date, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 Returns an observable that will error if the source does not push its first value before the specified time passed as a `Date`.
@@ -10648,8 +9990,6 @@ Name | Type | Description |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeout.d.ts:250
-
 ▸ **timeout**<T\>(`each`: *number*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
 
 Returns an observable that will error if the source does not push a value within the specified time in milliseconds.
@@ -10673,8 +10013,6 @@ Name | Type | Description |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) | The scheduler to use. Defaults to [asyncScheduler](rxjs.md#asyncscheduler).    |
 
 **Returns:** [*MonoTypeOperatorFunction*](../interfaces/rxjs.monotypeoperatorfunction.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeout.d.ts:263
 
 ___
 
@@ -10708,8 +10046,6 @@ Name | Type | Description |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) | The scheduler to use with time-related operations within this operator. Defaults to [asyncScheduler](rxjs.md#asyncscheduler)   |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeoutWith.d.ts:16
 
 ▸ **timeoutWith**<T, R\>(`waitFor`: *number*, `switchTo`: [*ObservableInput*](rxjs.md#observableinput)<R\>, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, T \| R\>
 
@@ -10789,8 +10125,6 @@ Name | Type | Description |
 A function that returns an Observable that mirrors behaviour of the
 source Observable, unless timeout happens when it starts emitting values
 from the Observable passed as a second parameter.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeoutWith.d.ts:79
 
 ___
 
@@ -10882,8 +10216,6 @@ Name | Type | Description |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<*0*\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/timer.d.ts:83
-
 ▸ **timer**(`startDue`: *number* \| Date, `intervalDuration`: *number*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<number\>
 
 Creates an observable that starts an interval after a specified delay, emitting incrementing numbers -- starting at `0` --
@@ -10929,8 +10261,6 @@ Name | Type | Description |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<number\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/timer.d.ts:124
-
 ▸ **timer**(`dueTime`: *number* \| Date, `unused`: *undefined*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*Observable*](../classes/rxjs.observable.md)<*0*\>
 
 **`deprecated`** The signature allowing `undefined` to be passed for `intervalDuration` will be removed in v8. Use the `timer(dueTime, scheduler?)` signature instead.
@@ -10944,8 +10274,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<*0*\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/timer.d.ts:128
 
 ___
 
@@ -10998,8 +10326,6 @@ Name | Type | Description |
 A function that returns an Observable that attaches a timestamp to
 each item emitted by the source Observable indicating when it was emitted.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/timestamp.d.ts:35
-
 ___
 
 ### toArray
@@ -11042,8 +10368,6 @@ Name |
 
 A function that returns an Observable that emits an array of items
 emitted by the source Observable when source completes.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/toArray.d.ts:32
 
 ___
 
@@ -11088,8 +10412,6 @@ Name | Type | Description |
 
 An Observable that behaves the same as Observable returned by `observableFactory`, but
 which - when completed, errored or unsubscribed - will also call `unsubscribe` on created resource object.
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/using.d.ts:31
 
 ___
 
@@ -11153,8 +10475,6 @@ Name | Type | Description |
 
 A function that returns an Observable of windows, which are
 Observables emitting values of the source Observable.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/window.d.ts:44
 
 ___
 
@@ -11235,8 +10555,6 @@ Name | Type | Description |
 A function that returns an Observable of windows, which in turn are
 Observable of values.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/windowCount.d.ts:64
-
 ___
 
 ### windowTime
@@ -11258,8 +10576,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*Observable*](../classes/rxjs.observable.md)<T\>\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/windowTime.d.ts:3
-
 ▸ **windowTime**<T\>(`windowTimeSpan`: *number*, `windowCreationInterval`: *number*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*Observable*](../classes/rxjs.observable.md)<T\>\>
 
 #### Type parameters:
@@ -11277,8 +10593,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*Observable*](../classes/rxjs.observable.md)<T\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/windowTime.d.ts:4
 
 ▸ **windowTime**<T\>(`windowTimeSpan`: *number*, `windowCreationInterval`: *number* \| *null* \| *void*, `maxWindowSize`: *number*, `scheduler?`: [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md)): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*Observable*](../classes/rxjs.observable.md)<T\>\>
 
@@ -11298,8 +10612,6 @@ Name | Type |
 `scheduler?` | [*SchedulerLike*](../interfaces/rxjs.schedulerlike.md) |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [*Observable*](../classes/rxjs.observable.md)<T\>\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/windowTime.d.ts:5
 
 ___
 
@@ -11366,8 +10678,6 @@ Name | Type | Description |
 A function that returns an Observable of windows, which in turn are
 Observables.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/windowToggle.d.ts:49
-
 ___
 
 ### windowWhen
@@ -11431,8 +10741,6 @@ Name | Type | Description |
 A function that returns an Observable of windows, which in turn are
 Observables.
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/windowWhen.d.ts:46
-
 ___
 
 ### withLatestFrom
@@ -11454,8 +10762,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, [T, ...O]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/withLatestFrom.d.ts:2
-
 ▸ **withLatestFrom**<T, O, R\>(...`inputs`: [...ObservableInputTuple<O\>, (...`value`: [T, ...O]) => R]): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
 
 #### Type parameters:
@@ -11473,8 +10779,6 @@ Name | Type |
 `...inputs` | [...ObservableInputTuple<O\>, (...`value`: [T, ...O]) => R] |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/withLatestFrom.d.ts:3
 
 ___
 
@@ -11496,8 +10800,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/zip.d.ts:3
-
 ▸ **zip**<A, R\>(`sources`: [...ObservableInputTuple<A\>], `resultSelector`: (...`values`: A) => R): [*Observable*](../classes/rxjs.observable.md)<R\>
 
 #### Type parameters:
@@ -11516,8 +10818,6 @@ Name | Type |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/observable/zip.d.ts:4
-
 ▸ **zip**<A\>(...`sources`: [...ObservableInputTuple<A\>]): [*Observable*](../classes/rxjs.observable.md)<A\>
 
 #### Type parameters:
@@ -11533,8 +10833,6 @@ Name | Type |
 `...sources` | [...ObservableInputTuple<A\>] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<A\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/zip.d.ts:5
 
 ▸ **zip**<A, R\>(...`sourcesAndResultSelector`: [...ObservableInputTuple<A\>, (...`values`: A) => R]): [*Observable*](../classes/rxjs.observable.md)<R\>
 
@@ -11552,8 +10850,6 @@ Name | Type |
 `...sourcesAndResultSelector` | [...ObservableInputTuple<A\>, (...`values`: A) => R] |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/observable/zip.d.ts:6
 
 ___
 
@@ -11577,8 +10873,6 @@ Name |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, T[]\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/zipAll.d.ts:10
-
 ▸ **zipAll**<T\>(): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, T[]\>
 
 #### Type parameters:
@@ -11588,8 +10882,6 @@ Name |
 `T` |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, T[]\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/zipAll.d.ts:11
 
 ▸ **zipAll**<T, R\>(`project`: (...`values`: T[]) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, R\>
 
@@ -11608,8 +10900,6 @@ Name | Type |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<[*ObservableInput*](rxjs.md#observableinput)<T\>, R\>
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/zipAll.d.ts:12
-
 ▸ **zipAll**<R\>(`project`: (...`values`: *any*[]) => R): [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, R\>
 
 #### Type parameters:
@@ -11625,8 +10915,6 @@ Name | Type |
 `project` | (...`values`: *any*[]) => R |
 
 **Returns:** [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, R\>
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/zipAll.d.ts:13
 
 ___
 
@@ -11669,5 +10957,3 @@ Name | Type | Description |
 A function that returns an Observable that emits items by index
 combined from the source Observable and provided Observables, in form of an
 array.
-
-Defined in: node_modules/rxjs/dist/types/internal/operators/zipWith.d.ts:25

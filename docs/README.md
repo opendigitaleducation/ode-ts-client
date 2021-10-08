@@ -104,15 +104,15 @@ if( subscription ) {
 ```
 ## Additional developers notes
 
-4 additional libs are installed by the "./build.sh init" command.
-* Webpack and tools to generate bundles.
+4 additional libs are installed by the ```./build.sh init``` command.
+* [Webpack 5](https://webpack.js.org/concepts/) and associated tools to generate JS bundles.
 * [jasmine](https://jasmine.github.io/api/3.6/) for unit-testing.
-* [Typedoc](https://typedoc.org/guides/doccomments/) to generate the markdown documentation in /docs.
-* [husky](https://github.com/typicode/husky) to install a local [git pre-commit hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#_client_side_hooks) in order to rebuild the /docs before every commit.
-  This git pre-hook is automatically created by the "npm prepare" script (no need to run it).
+* [Typedoc](https://typedoc.org/guides/doccomments/) to generate the markdown documentation, in **/docs**, from the Typescript comments in source code.
+* [husky](https://github.com/typicode/husky) to install a local [git pre-commit hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks#_client_side_hooks), in order to run the unit-tests and update /docs before every commit.
+  => **/docs will always be up-to-date on the git server**.
 
 The ```./build.sh build``` command will populate the **/dist** directory
 * **/dist/ts** contains the JS code and associated _.d.ts_ and _.js.map_ files, later packaged in NPM (done by our CI).
 * **/dist/bundle** contains the production-ready code/map.
 
-So, you'll just have to write nice documented code, and unit tests where needed !
+So, **you'll just have to write nice documented code, and unit tests** where needed !

@@ -40,7 +40,6 @@ Name |
 - [hasValue](rxjs.notification.md#hasvalue)
 - [kind](rxjs.notification.md#kind)
 - [value](rxjs.notification.md#value)
-- [completeNotification](rxjs.notification.md#completenotification)
 
 ### Methods
 
@@ -77,8 +76,6 @@ Name | Type | Description |
 
 **Returns:** [*Notification*](rxjs.notification.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:37
-
 \+ **new Notification**<T\>(`kind`: *E*, `value`: *undefined*, `error`: *any*): [*Notification*](rxjs.notification.md)<T\>
 
 Creates an "Error" notification object.
@@ -101,8 +98,6 @@ Name | Type | Description |
 
 **Returns:** [*Notification*](rxjs.notification.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:44
-
 \+ **new Notification**<T\>(`kind`: *C*): [*Notification*](rxjs.notification.md)<T\>
 
 Creates a "completion" notification object.
@@ -123,15 +118,11 @@ Name | Type | Description |
 
 **Returns:** [*Notification*](rxjs.notification.md)<T\>
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:52
-
 ## Properties
 
 ### error
 
 • `Optional` `Readonly` **error**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:31
 
 ___
 
@@ -144,31 +135,17 @@ This is really synonymous with just checking `kind === "N"`.
 
 **`deprecated`** Will be removed in v8. Instead, just check to see if the value of `kind` is `"N"`.
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:37
-
 ___
 
 ### kind
 
 • `Readonly` **kind**: *N* \| *E* \| *C*
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:29
-
 ___
 
 ### value
 
 • `Optional` `Readonly` **value**: T
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:30
-
-___
-
-### completeNotification
-
-▪ `Static` `Private` **completeNotification**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:134
 
 ## Methods
 
@@ -192,8 +169,6 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:101
-
 ▸ **accept**(`next`: (`value`: T) => *void*, `error`: (`err`: *any*) => *void*): *void*
 
 Executes a notification on the appropriate handler from a list provided.
@@ -211,8 +186,6 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:110
-
 ▸ **accept**(`next`: (`value`: T) => *void*): *void*
 
 Executes the next handler if the Notification is of `kind` `"N"`. Otherwise
@@ -227,8 +200,6 @@ Name | Type | Description |
 `next` | (`value`: T) => *void* | The next handler   |
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:117
 
 ▸ **accept**(`observer`: [*PartialObserver*](../modules/rxjs.md#partialobserver)<T\>): *void*
 
@@ -245,8 +216,6 @@ Name | Type | Description |
 `observer` | [*PartialObserver*](../modules/rxjs.md#partialobserver)<T\> | The observer to notify.   |
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:125
 
 ___
 
@@ -270,8 +239,6 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:75
-
 ▸ **do**(`next`: (`value`: T) => *void*, `error`: (`err`: *any*) => *void*): *void*
 
 Executes a notification on the appropriate handler from a list provided.
@@ -289,8 +256,6 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:84
-
 ▸ **do**(`next`: (`value`: T) => *void*): *void*
 
 Executes the next handler if the Notification is of `kind` `"N"`. Otherwise
@@ -305,8 +270,6 @@ Name | Type | Description |
 `next` | (`value`: T) => *void* | The next handler   |
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:91
 
 ___
 
@@ -326,8 +289,6 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:65
-
 ___
 
 ### toObservable
@@ -341,8 +302,6 @@ by this Notification instance.
 use [of](../modules/rxjs.md#of) and [dematerialize](../modules/rxjs.md#dematerialize): `of(notification).pipe(dematerialize())`.
 
 **Returns:** [*Observable*](rxjs.observable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:133
 
 ___
 
@@ -362,8 +321,6 @@ Will be removed in v8.
 **Returns:** [*Notification*](rxjs.notification.md)<never\> & [*CompleteNotification*](../interfaces/rxjs.completenotification.md)
 
 The valueless "complete" Notification.
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:170
 
 ___
 
@@ -391,8 +348,6 @@ Name | Type |
 
 The "error" Notification representing the
 argument.
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:160
 
 ___
 
@@ -426,5 +381,3 @@ Name | Type | Description |
 
 The "next" Notification representing the
 argument.
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:147

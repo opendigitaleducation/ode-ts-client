@@ -78,8 +78,6 @@ Name | Type |
 
 Overrides: [Subscription](rxjs.subscription.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:33
-
 ## Properties
 
 ### closed
@@ -90,8 +88,6 @@ A flag to indicate whether this Subscription has already been unsubscribed.
 
 Inherited from: [Subscription](rxjs.subscription.md).[closed](rxjs.subscription.md#closed)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:21
-
 ___
 
 ### destination
@@ -100,8 +96,6 @@ ___
 
 **`deprecated`** Internal implementation detail, do not use directly. Will be made internal in v8.
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:33
-
 ___
 
 ### isStopped
@@ -109,8 +103,6 @@ ___
 • `Protected` **isStopped**: *boolean*
 
 **`deprecated`** Internal implementation detail, do not use directly. Will be made internal in v8.
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:31
 
 ___
 
@@ -122,8 +114,6 @@ ___
 
 Inherited from: [Subscription](rxjs.subscription.md).[EMPTY](rxjs.subscription.md#empty)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:17
-
 ## Methods
 
 ### \_complete
@@ -131,8 +121,6 @@ Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:17
 ▸ `Protected`**_complete**(): *void*
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:65
 
 ___
 
@@ -148,8 +136,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:64
-
 ___
 
 ### \_next
@@ -163,8 +149,6 @@ Name | Type |
 `value` | T |
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:63
 
 ___
 
@@ -197,8 +181,6 @@ Name | Type | Description |
 
 Inherited from: [Subscription](rxjs.subscription.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:58
-
 ___
 
 ### complete
@@ -212,8 +194,6 @@ has finished sending push-based notifications.
 **Returns:** *void*
 
 Implementation of: void
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:61
 
 ___
 
@@ -235,8 +215,6 @@ Name | Type |
 
 Implementation of: void
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:54
-
 ___
 
 ### next
@@ -256,8 +234,6 @@ Name | Type |
 **Returns:** *void*
 
 Implementation of: void
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:46
 
 ___
 
@@ -286,8 +262,6 @@ Name | Type | Description |
 
 Inherited from: [Subscription](rxjs.subscription.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:92
-
 ___
 
 ### unsubscribe
@@ -297,8 +271,6 @@ ___
 **Returns:** *void*
 
 Overrides: [Subscription](rxjs.subscription.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:62
 
 ___
 
@@ -333,5 +305,3 @@ Name | Type | Description |
 
 A Subscriber wrapping the (partially defined)
 Observer represented by the given arguments.
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscriber.d.ts:29

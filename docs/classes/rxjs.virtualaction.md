@@ -34,7 +34,6 @@ Name |
 - [state](rxjs.virtualaction.md#state)
 - [work](rxjs.virtualaction.md#work)
 - [EMPTY](rxjs.virtualaction.md#empty)
-- [sortActions](rxjs.virtualaction.md#sortactions)
 
 ### Methods
 
@@ -71,15 +70,11 @@ Name | Type |
 
 Overrides: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:40
-
 ## Properties
 
 ### active
 
 • `Protected` **active**: *boolean*
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:40
 
 ___
 
@@ -91,8 +86,6 @@ A flag to indicate whether this Subscription has already been unsubscribed.
 
 Inherited from: void
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:21
-
 ___
 
 ### delay
@@ -100,8 +93,6 @@ ___
 • **delay**: *number*
 
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/AsyncAction.d.ts:10
 
 ___
 
@@ -111,15 +102,11 @@ ___
 
 Inherited from: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/AsyncAction.d.ts:8
-
 ___
 
 ### index
 
 • `Protected` **index**: *number*
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:39
 
 ___
 
@@ -129,8 +116,6 @@ ___
 
 Inherited from: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/AsyncAction.d.ts:11
-
 ___
 
 ### scheduler
@@ -139,8 +124,6 @@ ___
 
 Overrides: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:37
-
 ___
 
 ### state
@@ -148,8 +131,6 @@ ___
 • `Optional` **state**: T
 
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/AsyncAction.d.ts:9
 
 ___
 
@@ -169,11 +150,7 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:38
-
 Overrides: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:38
 
 ___
 
@@ -184,16 +161,6 @@ ___
 **`nocollapse`** 
 
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:17
-
-___
-
-### sortActions
-
-▪ `Static` `Private` **sortActions**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:46
 
 ## Methods
 
@@ -211,8 +178,6 @@ Name | Type |
 **Returns:** *any*
 
 Overrides: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:45
 
 ___
 
@@ -245,8 +210,6 @@ Name | Type | Description |
 
 Inherited from: void
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:58
-
 ___
 
 ### execute
@@ -266,8 +229,6 @@ Name | Type |
 
 Inherited from: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/AsyncAction.d.ts:20
-
 ___
 
 ### recycleAsyncId
@@ -285,8 +246,6 @@ Name | Type |
 **Returns:** *any*
 
 Overrides: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:44
 
 ___
 
@@ -315,8 +274,6 @@ Name | Type | Description |
 
 Inherited from: void
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:92
-
 ___
 
 ### requestAsyncId
@@ -335,8 +292,6 @@ Name | Type |
 
 Overrides: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:43
-
 ___
 
 ### schedule
@@ -354,8 +309,6 @@ Name | Type |
 
 Overrides: void
 
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/VirtualTimeScheduler.d.ts:42
-
 ___
 
 ### unsubscribe
@@ -365,5 +318,3 @@ ___
 **Returns:** *void*
 
 Inherited from: void
-
-Defined in: node_modules/rxjs/dist/types/internal/scheduler/AsyncAction.d.ts:22

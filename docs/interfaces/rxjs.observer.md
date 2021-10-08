@@ -40,10 +40,6 @@ Name |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:138
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:138
-
 ___
 
 ### error
@@ -62,10 +58,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:137
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:137
-
 ___
 
 ### next
@@ -83,7 +75,3 @@ Name | Type |
 `value` | T |
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:136
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:136

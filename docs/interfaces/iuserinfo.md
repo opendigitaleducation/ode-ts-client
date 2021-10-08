@@ -44,15 +44,11 @@
 
 • **apps**: [*IWebApp*](iwebapp.md)[]
 
-Defined in: [src/ts/session/interfaces.ts:90](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L90)
-
 ___
 
 ### authorizedActions
 
 • **authorizedActions**: [*IWorkflowAuth*](iworkflowauth.md)[]
-
-Defined in: [src/ts/session/interfaces.ts:91](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L91)
 
 ___
 
@@ -60,15 +56,11 @@ ___
 
 • **birthDate**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:92](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L92)
-
 ___
 
 ### children
 
 • **children**: *any*
-
-Defined in: [src/ts/session/interfaces.ts:93](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L93)
 
 ___
 
@@ -76,15 +68,11 @@ ___
 
 • **childrenIds**: *string*[]
 
-Defined in: [src/ts/session/interfaces.ts:94](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L94)
-
 ___
 
 ### classNames
 
 • **classNames**: *string*[]
-
-Defined in: [src/ts/session/interfaces.ts:95](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L95)
 
 ___
 
@@ -92,15 +80,11 @@ ___
 
 • **classes**: *any*[]
 
-Defined in: [src/ts/session/interfaces.ts:96](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L96)
-
 ___
 
 ### deletePending
 
 • **deletePending**: *boolean*
-
-Defined in: [src/ts/session/interfaces.ts:97](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L97)
 
 ___
 
@@ -108,15 +92,11 @@ ___
 
 • **externalId**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:98](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L98)
-
 ___
 
 ### federated
 
 • `Optional` **federated**: *any*
-
-Defined in: [src/ts/session/interfaces.ts:99](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L99)
 
 ___
 
@@ -124,23 +104,17 @@ ___
 
 • `Optional` **federatedIDP**: *any*
 
-Defined in: [src/ts/session/interfaces.ts:100](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L100)
-
 ___
 
 ### firstName
 
 • **firstName**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:101](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L101)
-
 ___
 
 ### forceChangePassword
 
 • `Optional` **forceChangePassword**: *any*
-
-Defined in: [src/ts/session/interfaces.ts:102](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L102)
 
 ___
 
@@ -159,15 +133,11 @@ Name | Type |
 `SUPER_ADMIN.code` | *string* |
 `SUPER_ADMIN.scope` | *string*[] |
 
-Defined in: [src/ts/session/interfaces.ts:103](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L103)
-
 ___
 
 ### groupsIds
 
 • **groupsIds**: *string*[]
-
-Defined in: [src/ts/session/interfaces.ts:104](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L104)
 
 ___
 
@@ -175,15 +145,11 @@ ___
 
 • **hasApp**: *boolean*
 
-Defined in: [src/ts/session/interfaces.ts:105](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L105)
-
 ___
 
 ### hasPw
 
 • **hasPw**: *boolean*
-
-Defined in: [src/ts/session/interfaces.ts:106](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L106)
 
 ___
 
@@ -191,15 +157,11 @@ ___
 
 • **lastName**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:107](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L107)
-
 ___
 
 ### level
 
 • **level**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:108](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L108)
 
 ___
 
@@ -207,23 +169,17 @@ ___
 
 • **login**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:109](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L109)
-
 ___
 
 ### needRevalidateTerms
 
 • **needRevalidateTerms**: *any*
 
-Defined in: [src/ts/session/interfaces.ts:110](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L110)
-
 ___
 
 ### optionEnabled
 
 • **optionEnabled**: *any*[]
-
-Defined in: [src/ts/session/interfaces.ts:111](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L111)
 
 ___
 
@@ -236,8 +192,6 @@ ___
 Name | Type |
 :------ | :------ |
 `save` | (`pref`: *any*, `data`: *any*) => *void* |
-
-Defined in: [src/ts/session/interfaces.ts:112](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L112)
 
 ___
 
@@ -252,15 +206,11 @@ Name | Type |
 `_id` | *string* |
 `userId` | *string* |
 
-Defined in: [src/ts/session/interfaces.ts:113](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L113)
-
 ___
 
 ### structureNames
 
 • **structureNames**: *string*[]
-
-Defined in: [src/ts/session/interfaces.ts:114](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L114)
 
 ___
 
@@ -268,15 +218,11 @@ ___
 
 • **structures**: *string*[]
 
-Defined in: [src/ts/session/interfaces.ts:115](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L115)
-
 ___
 
 ### type
 
 • **type**: *ENSEIGNANT* \| *ELEVE* \| *PERSRELELEVE* \| *SUPERADMIN* \| *PERSEDUCNAT*
-
-Defined in: [src/ts/session/interfaces.ts:116](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L116)
 
 ___
 
@@ -284,15 +230,11 @@ ___
 
 • **uai**: *any*[]
 
-Defined in: [src/ts/session/interfaces.ts:117](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L117)
-
 ___
 
 ### userId
 
 • **userId**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:118](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L118)
 
 ___
 
@@ -300,12 +242,8 @@ ___
 
 • **username**: *string*
 
-Defined in: [src/ts/session/interfaces.ts:119](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L119)
-
 ___
 
 ### widgets
 
 • **widgets**: [*IWidgetModel*](iwidgetmodel.md)[]
-
-Defined in: [src/ts/session/interfaces.ts:120](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L120)

@@ -28,8 +28,6 @@ Name | Type |
 
 **Returns:** *null* \| [*IBusAgent*](ibusagent.md)
 
-Defined in: [src/ts/explore/interfaces.ts:475](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L475)
-
 ___
 
 ### publish
@@ -50,8 +48,6 @@ Name | Type | Description |
 
 The result of the action from the agent.
 
-Defined in: [src/ts/explore/interfaces.ts:461](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L461)
-
 ___
 
 ### setAgentFor
@@ -69,8 +65,6 @@ Name | Type |
 `agent` | [*IBusAgent*](ibusagent.md) |
 
 **Returns:** *void*
-
-Defined in: [src/ts/explore/interfaces.ts:472](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L472)
 
 ___
 
@@ -90,5 +84,3 @@ Name | Type | Description |
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<{ `input`: [*IActionParameters*](iactionparameters.md) ; `output`: [*IActionResult*](iactionresult.md)  }\>
 
 A stream of {input:IActionParameters, output:IActionResult}
-
-Defined in: [src/ts/explore/interfaces.ts:469](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L469)

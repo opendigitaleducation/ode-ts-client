@@ -33,5 +33,3 @@ Name | Type |
 `source` | *any* |
 
 **Returns:** [*TeardownLogic*](../modules/rxjs.md#teardownlogic)
-
-Defined in: node_modules/rxjs/dist/types/internal/Operator.d.ts:7

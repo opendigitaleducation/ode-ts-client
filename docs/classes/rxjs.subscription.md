@@ -33,13 +33,7 @@ will be unsubscribed as well.
 
 ### Properties
 
-- [\_addParent](rxjs.subscription.md#_addparent)
-- [\_hasParent](rxjs.subscription.md#_hasparent)
-- [\_parentage](rxjs.subscription.md#_parentage)
-- [\_removeParent](rxjs.subscription.md#_removeparent)
-- [\_teardowns](rxjs.subscription.md#_teardowns)
 - [closed](rxjs.subscription.md#closed)
-- [initialTeardown](rxjs.subscription.md#initialteardown)
 - [EMPTY](rxjs.subscription.md#empty)
 
 ### Methods
@@ -62,68 +56,7 @@ Name | Type | Description |
 
 **Returns:** [*Subscription*](rxjs.subscription.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:27
-
 ## Properties
-
-### \_addParent
-
-• `Private` **\_addParent**: *any*
-
-Adds a parent to this subscription so it can be removed from the parent if it
-unsubscribes on it's own.
-
-NOTE: THIS ASSUMES THAT [_hasParent](rxjs.subscription.md#_hasparent) HAS ALREADY BEEN CHECKED.
-
-**`param`** The parent subscription to add
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:72
-
-___
-
-### \_hasParent
-
-• `Private` **\_hasParent**: *any*
-
-Checks to see if a this subscription already has a particular parent.
-This will signal that this subscription has already been added to the parent in question.
-
-**`param`** the parent to check for
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:64
-
-___
-
-### \_parentage
-
-• `Private` **\_parentage**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:22
-
-___
-
-### \_removeParent
-
-• `Private` **\_removeParent**: *any*
-
-Called on a child when it is removed via {@link #remove}.
-
-**`param`** The parent to remove
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:77
-
-___
-
-### \_teardowns
-
-• `Private` **\_teardowns**: *any*
-
-The list of registered teardowns to execute upon unsubscription. Adding and removing from this
-list occurs in the {@link #add} and {@link #remove} methods.
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:27
-
-___
 
 ### closed
 
@@ -133,16 +66,6 @@ A flag to indicate whether this Subscription has already been unsubscribed.
 
 Implementation of: [SubscriptionLike](../interfaces/rxjs.subscriptionlike.md).[closed](../interfaces/rxjs.subscriptionlike.md#closed)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:21
-
-___
-
-### initialTeardown
-
-• `Private` `Optional` **initialTeardown**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:15
-
 ___
 
 ### EMPTY
@@ -150,8 +73,6 @@ ___
 ▪ `Static` **EMPTY**: [*Subscription*](rxjs.subscription.md)
 
 **`nocollapse`** 
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:17
 
 ## Methods
 
@@ -182,8 +103,6 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:58
-
 ___
 
 ### remove
@@ -209,8 +128,6 @@ Name | Type | Description |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:92
-
 ___
 
 ### unsubscribe
@@ -224,5 +141,3 @@ started when the Subscription was created.
 **Returns:** *void*
 
 Implementation of: [SubscriptionLike](../interfaces/rxjs.subscriptionlike.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:39

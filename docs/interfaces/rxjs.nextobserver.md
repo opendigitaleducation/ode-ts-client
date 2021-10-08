@@ -27,8 +27,6 @@ Name |
 
 • `Optional` **closed**: *boolean*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:117
-
 ___
 
 ### complete
@@ -40,10 +38,6 @@ ___
 ▸ (): *void*
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:120
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:120
 
 ___
 
@@ -63,10 +57,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:119
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:119
-
 ___
 
 ### next
@@ -84,7 +74,3 @@ Name | Type |
 `value` | T |
 
 **Returns:** *void*
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:118
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:118

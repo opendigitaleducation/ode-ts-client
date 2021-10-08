@@ -22,15 +22,11 @@
 
 • `Readonly` **\_id**: *string*
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:40](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L40)
-
 ___
 
 ### model
 
 • `Readonly` **model**: [*NotificationModel*](../modules.md#notificationmodel)
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:41](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L41)
 
 ## Methods
 
@@ -40,8 +36,6 @@ Defined in: [src/ts/apps/timeline/interfaces.ts:41](https://github.com/opendigit
 
 **Returns:** *Promise*<void\>
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:43](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L43)
-
 ___
 
 ### discard
@@ -49,8 +43,6 @@ ___
 ▸ **discard**(): *Promise*<void\>
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:44](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L44)
 
 ___
 
@@ -60,8 +52,6 @@ ___
 
 **Returns:** *boolean*
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:42](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L42)
-
 ___
 
 ### report
@@ -69,5 +59,3 @@ ___
 ▸ **report**(): *Promise*<void\>
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:45](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L45)

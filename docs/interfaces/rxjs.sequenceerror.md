@@ -26,8 +26,6 @@
 
 Inherited from: void
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
-
 ___
 
 ### name
@@ -36,8 +34,6 @@ ___
 
 Inherited from: void
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
-
 ___
 
 ### stack
@@ -45,5 +41,3 @@ ___
 • `Optional` **stack**: *string*
 
 Inherited from: void
-
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975

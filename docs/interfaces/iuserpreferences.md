@@ -39,8 +39,6 @@ Name | Type |
 `timeline` |  |
 `widgets` |  |
 
-Defined in: [src/ts/configure/interfaces.ts:211](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L211)
-
 ## Methods
 
 ### get
@@ -54,8 +52,6 @@ Name | Type |
 `key` | [*UserPreferenceKey*](../modules.md#userpreferencekey) |
 
 **Returns:** *any*
-
-Defined in: [src/ts/configure/interfaces.ts:212](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L212)
 
 ___
 
@@ -72,8 +68,6 @@ Name | Type |
 
 **Returns:** *Promise*<any\>
 
-Defined in: [src/ts/configure/interfaces.ts:213](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L213)
-
 ___
 
 ### save
@@ -87,8 +81,6 @@ Name | Type |
 `key` | [*UserPreferenceKey*](../modules.md#userpreferencekey) |
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/configure/interfaces.ts:215](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L215)
 
 ___
 
@@ -104,5 +96,3 @@ Name | Type |
 `data` | *any* |
 
 **Returns:** [*IUserPreferences*](iuserpreferences.md)
-
-Defined in: [src/ts/configure/interfaces.ts:214](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L214)

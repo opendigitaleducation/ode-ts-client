@@ -28,8 +28,6 @@ Name |
 
 The kind of notification. Always "N"
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:91
-
 ___
 
 ### value
@@ -37,5 +35,3 @@ ___
 • **value**: T
 
 The value of the notification.
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:93

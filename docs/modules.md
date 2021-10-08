@@ -149,8 +149,6 @@
 
 Ƭ **ActionType**: *typeof* [*ACTION*](modules.md#action)[keyof *typeof* [*ACTION*](modules.md#action)]
 
-Defined in: [src/ts/explore/interfaces.ts:169](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L169)
-
 ___
 
 ### AddBundleCallback
@@ -163,15 +161,11 @@ ___
 
 **Returns:** *void* \| *Promise*<void\>
 
-Defined in: [src/ts/configure/interfaces.ts:194](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L194)
-
 ___
 
 ### AnalyticStatus
 
 Ƭ **AnalyticStatus**: *void* \| *pending* \| *ready* \| *failed*
-
-Defined in: [src/ts/configure/interfaces.ts:70](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L70)
 
 ___
 
@@ -179,15 +173,11 @@ ___
 
 Ƭ **App**: *typeof* [*APP*](modules.md#app)[keyof *typeof* [*APP*](modules.md#app)]
 
-Defined in: [src/ts/globals.ts:82](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/globals.ts#L82)
-
 ___
 
 ### BooleanFilterType
 
 Ƭ **BooleanFilterType**: *typeof* [*BOOLEAN\_FILTER*](modules.md#boolean_filter)[keyof *typeof* [*BOOLEAN\_FILTER*](modules.md#boolean_filter)]
-
-Defined in: [src/ts/explore/interfaces.ts:185](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L185)
 
 ___
 
@@ -195,15 +185,11 @@ ___
 
 Ƭ **CopyParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderId`: [*ID*](modules.md#id) ; `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
 
-Defined in: [src/ts/explore/interfaces.ts:392](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L392)
-
 ___
 
 ### CreateFolderParameters
 
 Ƭ **CreateFolderParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `app`: [*App*](modules.md#app) ; `name`: *string* ; `parentId`: [*ID*](modules.md#id) \| *default* ; `type`: [*ResourceType*](modules.md#resourcetype)  }
-
-Defined in: [src/ts/explore/interfaces.ts:379](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L379)
 
 ___
 
@@ -211,15 +197,11 @@ ___
 
 Ƭ **CreateFolderResult**: [*IActionResult*](interfaces/iactionresult.md) & [*IFolder*](interfaces/ifolder.md) & { `createdAt`: *string*  }
 
-Defined in: [src/ts/explore/interfaces.ts:440](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L440)
-
 ___
 
 ### DeleteParameters
 
 Ƭ **DeleteParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
-
-Defined in: [src/ts/explore/interfaces.ts:402](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L402)
 
 ___
 
@@ -227,15 +209,11 @@ ___
 
 Ƭ **ErrorCode**: *typeof* [*ERROR\_CODE*](modules.md#error_code)[keyof *typeof* [*ERROR\_CODE*](modules.md#error_code)]
 
-Defined in: [src/ts/globals.ts:18](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/globals.ts#L18)
-
 ___
 
 ### EventName
 
 Ƭ **EventName**: *typeof* [*EVENT\_NAME*](modules.md#event_name)[keyof *typeof* [*EVENT\_NAME*](modules.md#event_name)]
-
-Defined in: [src/ts/notify/interfaces.ts:81](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L81)
 
 ___
 
@@ -243,15 +221,11 @@ ___
 
 Ƭ **FilterValues**: { [B in BooleanFilterType]?: boolean} & { [S in StringFilterType]?: string} & { `folder?`: [*ID*](modules.md#id)  }
 
-Defined in: [src/ts/explore/interfaces.ts:425](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L425)
-
 ___
 
 ### FolderType
 
 Ƭ **FolderType**: *typeof* [*FOLDER*](modules.md#folder)[keyof *typeof* [*FOLDER*](modules.md#folder)]
-
-Defined in: [src/ts/explore/interfaces.ts:176](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L176)
 
 ___
 
@@ -259,15 +233,11 @@ ___
 
 Ƭ **GetContextParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & [*ISearchParameters*](interfaces/isearchparameters.md)
 
-Defined in: [src/ts/explore/interfaces.ts:377](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L377)
-
 ___
 
 ### GetContextResult
 
 Ƭ **GetContextResult**: [*IActionResult*](interfaces/iactionresult.md) & [*IContext*](interfaces/icontext.md)
-
-Defined in: [src/ts/explore/interfaces.ts:435](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L435)
 
 ___
 
@@ -275,23 +245,17 @@ ___
 
 Ƭ **GetResourcesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & [*ISearchParameters*](interfaces/isearchparameters.md)
 
-Defined in: [src/ts/explore/interfaces.ts:378](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L378)
-
 ___
 
 ### GetResourcesResult
 
 Ƭ **GetResourcesResult**: [*IActionResult*](interfaces/iactionresult.md) & [*ISearchResults*](interfaces/isearchresults.md)
 
-Defined in: [src/ts/explore/interfaces.ts:437](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L437)
-
 ___
 
 ### GetSubFoldersResult
 
 Ƭ **GetSubFoldersResult**: [*IActionResult*](interfaces/iactionresult.md) & { `folders`: [*IFolder*](interfaces/ifolder.md)[]  }
-
-Defined in: [src/ts/explore/interfaces.ts:439](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L439)
 
 ___
 
@@ -307,15 +271,11 @@ Name | Type |
 `values` | *string* |
 `visibility` | *PRIVE* \| *PUBLIC* |
 
-Defined in: [src/ts/session/interfaces.ts:39](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L39)
-
 ___
 
 ### ID
 
 Ƭ **ID**: *string*
-
-Defined in: [src/ts/explore/interfaces.ts:219](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L219)
 
 ___
 
@@ -332,8 +292,6 @@ Name | Type | Description |
 `queryParams`? | *object* | Object to serialize as query parameters and append to the request URL.   |
 `requestName`? | *string* | Request the API to send a notification when done.   |
 
-Defined in: [src/ts/transport/interfaces.ts:73](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L73)
-
 ___
 
 ### IHttpResponse
@@ -348,15 +306,11 @@ Name | Type |
 `status` | *number* |
 `statusText` | *string* |
 
-Defined in: [src/ts/transport/interfaces.ts:88](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L88)
-
 ___
 
 ### IThemeOverrides
 
 Ƭ **IThemeOverrides**: { [app in App]?: string}
-
-Defined in: [src/ts/configure/interfaces.ts:190](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L190)
 
 ___
 
@@ -364,15 +318,11 @@ ___
 
 Ƭ **LayerName**: *typeof* [*LAYER\_NAME*](modules.md#layer_name)[keyof *typeof* [*LAYER\_NAME*](modules.md#layer_name)]
 
-Defined in: [src/ts/notify/interfaces.ts:73](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L73)
-
 ___
 
 ### ManagePropertiesParameters
 
 Ƭ **ManagePropertiesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `resources`: [*IResource*](interfaces/iresource.md)[]  }
-
-Defined in: [src/ts/explore/interfaces.ts:406](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L406)
 
 ___
 
@@ -380,15 +330,11 @@ ___
 
 Ƭ **ManagePropertiesResult**: [*IActionResult*](interfaces/iactionresult.md) & { `genericProps`: [*IProperty*](interfaces/iproperty.md)[]  }
 
-Defined in: [src/ts/explore/interfaces.ts:445](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L445)
-
 ___
 
 ### MoveParameters
 
 Ƭ **MoveParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `folderId`: [*ID*](modules.md#id) ; `folderIds`: [*ID*](modules.md#id)[] ; `resourceIds`: [*ID*](modules.md#id)[]  }
-
-Defined in: [src/ts/explore/interfaces.ts:397](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L397)
 
 ___
 
@@ -417,15 +363,11 @@ Name | Type |
 `sender` | *string* |
 `type` | *string* |
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:49](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L49)
-
 ___
 
 ### OrderValues
 
 Ƭ **OrderValues**: { [O in SortByType]?: SortOrderType}
-
-Defined in: [src/ts/explore/interfaces.ts:426](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L426)
 
 ___
 
@@ -433,15 +375,11 @@ ___
 
 Ƭ **PropFormatType**: *typeof* [*PROP\_FORMAT*](modules.md#prop_format)[keyof *typeof* [*PROP\_FORMAT*](modules.md#prop_format)]
 
-Defined in: [src/ts/explore/interfaces.ts:255](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L255)
-
 ___
 
 ### PropKeyType
 
 Ƭ **PropKeyType**: *typeof* [*PROP\_KEY*](modules.md#prop_key)[keyof *typeof* [*PROP\_KEY*](modules.md#prop_key)]
-
-Defined in: [src/ts/explore/interfaces.ts:234](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L234)
 
 ___
 
@@ -449,23 +387,17 @@ ___
 
 Ƭ **PropModeType**: *typeof* [*PROP\_MODE*](modules.md#prop_mode)[keyof *typeof* [*PROP\_MODE*](modules.md#prop_mode)]
 
-Defined in: [src/ts/explore/interfaces.ts:240](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L240)
-
 ___
 
 ### PropTypeType
 
 Ƭ **PropTypeType**: *typeof* [*PROP\_TYPE*](modules.md#prop_type)[keyof *typeof* [*PROP\_TYPE*](modules.md#prop_type)]
 
-Defined in: [src/ts/explore/interfaces.ts:249](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L249)
-
 ___
 
 ### ResourceType
 
 Ƭ **ResourceType**: *typeof* [*RESOURCE*](modules.md#resource)[keyof *typeof* [*RESOURCE*](modules.md#resource)]
-
-Defined in: [src/ts/explore/interfaces.ts:143](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L143)
 
 ___
 
@@ -480,8 +412,6 @@ Name | Type |
 `classes` | *string*[] |
 `id` | *string* |
 `name` | *string* |
-
-Defined in: [src/ts/session/interfaces.ts:44](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L44)
 
 ___
 
@@ -502,15 +432,11 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/ts/explore/interfaces.ts:258](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L258)
-
 ___
 
 ### SortByType
 
 Ƭ **SortByType**: *typeof* [*SORT\_BY*](modules.md#sort_by)[keyof *typeof* [*SORT\_BY*](modules.md#sort_by)]
-
-Defined in: [src/ts/explore/interfaces.ts:216](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L216)
 
 ___
 
@@ -518,15 +444,11 @@ ___
 
 Ƭ **SortOrderType**: *typeof* [*SORT\_ORDER*](modules.md#sort_order)[keyof *typeof* [*SORT\_ORDER*](modules.md#sort_order)]
 
-Defined in: [src/ts/explore/interfaces.ts:196](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L196)
-
 ___
 
 ### StringFilterType
 
 Ƭ **StringFilterType**: *typeof* [*STRING\_FILTER*](modules.md#string_filter)[keyof *typeof* [*STRING\_FILTER*](modules.md#string_filter)]
-
-Defined in: [src/ts/explore/interfaces.ts:189](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L189)
 
 ___
 
@@ -541,15 +463,11 @@ Name | Type |
 `i18n` | *string* |
 `value` | *string* |
 
-Defined in: [src/ts/explore/interfaces.ts:220](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L220)
-
 ___
 
 ### TrackingType
 
 Ƭ **TrackingType**: *matomo* \| *internal*
-
-Defined in: [src/ts/configure/interfaces.ts:71](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L71)
 
 ___
 
@@ -557,15 +475,11 @@ ___
 
 Ƭ **UpdateFolderParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `app`: [*App*](modules.md#app) ; `folderId`: [*ID*](modules.md#id) ; `name`: *string* ; `parentId`: [*ID*](modules.md#id) \| *default* ; `type`: [*ResourceType*](modules.md#resourcetype)  }
 
-Defined in: [src/ts/explore/interfaces.ts:385](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L385)
-
 ___
 
 ### UpdateFolderResult
 
 Ƭ **UpdateFolderResult**: [*CreateFolderResult*](modules.md#createfolderresult) & { `parentId`: [*ID*](modules.md#id) \| *default* ; `updatedAt`: *string*  }
-
-Defined in: [src/ts/explore/interfaces.ts:441](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L441)
 
 ___
 
@@ -573,15 +487,11 @@ ___
 
 Ƭ **UpdatePropertiesParameters**: [*IActionParameters*](interfaces/iactionparameters.md) & { `props`: { [key in PropKeyType]?: string} ; `resources`: [*IResource*](interfaces/iresource.md)[]  }
 
-Defined in: [src/ts/explore/interfaces.ts:407](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L407)
-
 ___
 
 ### UpdatePropertiesResult
 
 Ƭ **UpdatePropertiesResult**: [*IActionResult*](interfaces/iactionresult.md) & { `resources`: [*IResource*](interfaces/iresource.md)[]  }
-
-Defined in: [src/ts/explore/interfaces.ts:446](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L446)
 
 ___
 
@@ -589,23 +499,17 @@ ___
 
 Ƭ **UserPreferenceKey**: *typeof* [*USER\_PREFS*](modules.md#user_prefs)[keyof *typeof* [*USER\_PREFS*](modules.md#user_prefs)] \| [*App*](modules.md#app)
 
-Defined in: [src/ts/configure/interfaces.ts:207](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L207)
-
 ___
 
 ### WidgetName
 
 Ƭ **WidgetName**: *typeof* [*WIDGET\_NAME*](modules.md#widget_name)[keyof *typeof* [*WIDGET\_NAME*](modules.md#widget_name)]
 
-Defined in: [src/ts/widget/interfaces.ts:23](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L23)
-
 ___
 
 ### WidgetPosition
 
 Ƭ **WidgetPosition**: *typeof* [*WIDGET\_POSITION*](modules.md#widget_position)[keyof *typeof* [*WIDGET\_POSITION*](modules.md#widget_position)]
-
-Defined in: [src/ts/session/interfaces.ts:129](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L129)
 
 ___
 
@@ -620,8 +524,6 @@ Name | Type | Description |
 `index` | *number* | Integer defining the sort order of this widget.   |
 `position`? | [*WidgetPosition*](modules.md#widgetposition) | Prefered position on-screen (left, right...).   |
 `show` | *boolean* | Boolean indicating wether the user wants to see this widget, or not.   |
-
-Defined in: [src/ts/widget/interfaces.ts:60](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L60)
 
 ## Variables
 
@@ -648,8 +550,6 @@ Name | Type |
 `SHARE` | *share* |
 `UPD_PROPS` | *properties* |
 
-Defined in: [src/ts/explore/interfaces.ts:153](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L153)
-
 ___
 
 ### APP
@@ -667,8 +567,6 @@ Name | Type |
 `PORTAL` | *portal* |
 `TIMELINE` | *timeline* |
 
-Defined in: [src/ts/globals.ts:21](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/globals.ts#L21)
-
 ___
 
 ### BOOLEAN\_FILTER
@@ -683,8 +581,6 @@ Name | Type |
 `OWNER` | *owner* |
 `PUBLIC` | *public* |
 `SHARED` | *shared* |
-
-Defined in: [src/ts/explore/interfaces.ts:179](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L179)
 
 ___
 
@@ -706,8 +602,6 @@ Name | Type |
 `TRANSPORT_ERROR` | *0060* |
 `UNKNOWN` | *0010* |
 
-Defined in: [src/ts/globals.ts:7](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/globals.ts#L7)
-
 ___
 
 ### EVENT\_NAME
@@ -720,8 +614,6 @@ Name | Type |
 :------ | :------ |
 `SEARCH_RESULTED` | *searchResulted* |
 `USERPREF_CHANGED` | *userprefChanged* |
-
-Defined in: [src/ts/notify/interfaces.ts:76](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L76)
 
 ___
 
@@ -736,8 +628,6 @@ Name | Type |
 `BIN` | *bin* |
 `DEFAULT` | *default* |
 
-Defined in: [src/ts/explore/interfaces.ts:172](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L172)
-
 ___
 
 ### LAYER\_NAME
@@ -751,8 +641,6 @@ Name | Type |
 `EXPLORER` | *explorer* |
 `WIDGETS` | *widgets* |
 
-Defined in: [src/ts/notify/interfaces.ts:68](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L68)
-
 ___
 
 ### PROP\_FORMAT
@@ -764,8 +652,6 @@ ___
 Name | Type |
 :------ | :------ |
 `PLAIN` | *plain* |
-
-Defined in: [src/ts/explore/interfaces.ts:251](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L251)
 
 ___
 
@@ -783,8 +669,6 @@ Name | Type |
 `TITLE` | *title* |
 `URL` | *url* |
 
-Defined in: [src/ts/explore/interfaces.ts:226](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L226)
-
 ___
 
 ### PROP\_MODE
@@ -797,8 +681,6 @@ Name | Type |
 :------ | :------ |
 `READONLY` | *RO* |
 `READWRITE` | *RW* |
-
-Defined in: [src/ts/explore/interfaces.ts:236](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L236)
 
 ___
 
@@ -815,8 +697,6 @@ Name | Type |
 `NUMBER` | *number* |
 `TEXT` | *text* |
 
-Defined in: [src/ts/explore/interfaces.ts:242](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L242)
-
 ___
 
 ### RESOURCE
@@ -830,8 +710,6 @@ Name | Type |
 `BLOG` | *blog* |
 `EXERCISE` | *exercise* |
 `FOLDER` | *folder* |
-
-Defined in: [src/ts/explore/interfaces.ts:138](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L138)
 
 ___
 
@@ -847,8 +725,6 @@ Name | Type |
 `NAME` | *name* |
 `VIEWS` | *views* |
 
-Defined in: [src/ts/explore/interfaces.ts:197](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L197)
-
 ___
 
 ### SORT\_ORDER
@@ -862,8 +738,6 @@ Name | Type |
 `ASC` | *asc* |
 `DESC` | *desc* |
 
-Defined in: [src/ts/explore/interfaces.ts:192](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L192)
-
 ___
 
 ### STRING\_FILTER
@@ -871,8 +745,6 @@ ___
 • `Const` **STRING\_FILTER**: *object*
 
 #### Type declaration:
-
-Defined in: [src/ts/explore/interfaces.ts:186](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L186)
 
 ___
 
@@ -891,8 +763,6 @@ Name | Type |
 `LANGUAGE` | *language* |
 `RGPD_COOKIES` | *rgpdCookies* |
 `WIDGETS` | *widgets* |
-
-Defined in: [src/ts/globals.ts:85](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/globals.ts#L85)
 
 ___
 
@@ -921,8 +791,6 @@ Name | Type |
 `RSS` | *rss-widget* |
 `SCHOOL` | *school-widget* |
 
-Defined in: [src/ts/widget/interfaces.ts:5](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L5)
-
 ___
 
 ### WIDGET\_POSITION
@@ -936,15 +804,11 @@ Name | Type |
 `LEFT` | *left* |
 `RIGHT` | *right* |
 
-Defined in: [src/ts/session/interfaces.ts:124](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L124)
-
 ___
 
 ### appNameForResource
 
 • `Const` **appNameForResource**: { [R in ResourceType]: App}
-
-Defined in: [src/ts/explore/interfaces.ts:146](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L146)
 
 ___
 
@@ -953,5 +817,3 @@ ___
 • `Const` **explorer**: [*IExplorerFramework*](interfaces/iexplorerframework.md)
 
 The whole framework is a singleton.
-
-Defined in: [src/ts/explore/Framework.ts:41](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/Framework.ts#L41)

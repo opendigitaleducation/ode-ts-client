@@ -31,15 +31,11 @@
 
 • `Readonly` **flashMessages**: [*IFlashMessageModel*](iflashmessagemodel.md)[]
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:33](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L33)
-
 ___
 
 ### hasMorePage
 
 • `Readonly` **hasMorePage**: *boolean*
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:26](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L26)
 
 ___
 
@@ -47,15 +43,11 @@ ___
 
 • `Readonly` **isLoading**: *boolean*
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:24](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L24)
-
 ___
 
 ### notificationTypes
 
 • `Readonly` **notificationTypes**: *string*[]
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:15](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L15)
 
 ___
 
@@ -63,15 +55,11 @@ ___
 
 • `Readonly` **notifications**: [*ITimelineNotification*](itimelinenotification.md)[]
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:21](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L21)
-
 ___
 
 ### page
 
 • `Readonly` **page**: *number*
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:25](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L25)
 
 ___
 
@@ -79,23 +67,17 @@ ___
 
 • `Readonly` **preferences**: *any*
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:29](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L29)
-
 ___
 
 ### selectedNotificationTypes
 
 • `Readonly` **selectedNotificationTypes**: *string*[]
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:16](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L16)
-
 ___
 
 ### showMine
 
 • **showMine**: *boolean*
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:18](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L18)
 
 ## Methods
 
@@ -105,8 +87,6 @@ Defined in: [src/ts/apps/timeline/interfaces.ts:18](https://github.com/opendigit
 
 **Returns:** *Promise*<void\>
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:14](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L14)
-
 ___
 
 ### loadFlashMessages
@@ -114,8 +94,6 @@ ___
 ▸ **loadFlashMessages**(): *Promise*<void\>
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:32](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L32)
 
 ___
 
@@ -133,8 +111,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:20](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L20)
-
 ___
 
 ### markAsRead
@@ -149,8 +125,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:34](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L34)
-
 ___
 
 ### resetPagination
@@ -159,8 +133,6 @@ ___
 
 **Returns:** *void*
 
-Defined in: [src/ts/apps/timeline/interfaces.ts:23](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L23)
-
 ___
 
 ### savePreferences
@@ -168,5 +140,3 @@ ___
 ▸ **savePreferences**(): *Promise*<void\>
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:28](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L28)

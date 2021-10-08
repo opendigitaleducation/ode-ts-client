@@ -18,5 +18,3 @@ Can be used with [dematerialize](../modules/rxjs.md#dematerialize).
 ### kind
 
 • **kind**: *C*
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:109

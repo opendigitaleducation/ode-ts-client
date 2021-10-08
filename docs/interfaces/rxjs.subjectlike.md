@@ -42,11 +42,7 @@ Name |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:138
-
 Inherited from: [Observer](rxjs.observer.md).[complete](rxjs.observer.md#complete)
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:138
 
 ___
 
@@ -66,11 +62,7 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:137
-
 Inherited from: [Observer](rxjs.observer.md).[error](rxjs.observer.md#error)
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:137
 
 ___
 
@@ -90,11 +82,7 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:136
-
 Inherited from: [Observer](rxjs.observer.md).[next](rxjs.observer.md#next)
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:136
 
 ## Methods
 
@@ -111,5 +99,3 @@ Name | Type |
 **Returns:** [*Unsubscribable*](rxjs.unsubscribable.md)
 
 Inherited from: [Subscribable](rxjs.subscribable.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:68

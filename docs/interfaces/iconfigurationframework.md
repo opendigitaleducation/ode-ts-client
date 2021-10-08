@@ -38,8 +38,6 @@ Name | Type | Description |
 `theme` | [*ITheme*](itheme.md) | Configured theme.   |
 `listLanguages` | () => *Promise*<string[]\> | - |
 
-Defined in: [src/ts/configure/interfaces.ts:19](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L19)
-
 ___
 
 ### School
@@ -47,8 +45,6 @@ ___
 • `Readonly` **School**: *object*
 
 #### Type declaration:
-
-Defined in: [src/ts/configure/interfaces.ts:49](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L49)
 
 ___
 
@@ -68,8 +64,6 @@ Name | Type | Description |
 `saveAppPrefs` | (`app`: [*App*](../modules.md#app)) => *Promise*<void\> | - |
 `saveLanguage` | (`lang`: *string*) => *Promise*<void\> | - |
 
-Defined in: [src/ts/configure/interfaces.ts:52](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L52)
-
 ## Methods
 
 ### initialize
@@ -86,5 +80,3 @@ Name | Type |
 `cdnDomain` | *null* \| *string* |
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/configure/interfaces.ts:17](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L17)

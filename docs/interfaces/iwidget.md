@@ -17,8 +17,6 @@
 
 The widgets conf at platform level.
 
-Defined in: [src/ts/widget/interfaces.ts:53](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L53)
-
 ___
 
 ### userPref
@@ -26,5 +24,3 @@ ___
 • `Readonly` **userPref**: [*WidgetUserPref*](../modules.md#widgetuserpref)
 
 The widgets conf at user level.
-
-Defined in: [src/ts/widget/interfaces.ts:56](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L56)

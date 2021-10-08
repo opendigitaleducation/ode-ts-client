@@ -39,8 +39,6 @@ A flag to indicate whether this Subscription has already been unsubscribed.
 
 Inherited from: [Subscription](../classes/rxjs.subscription.md).[closed](../classes/rxjs.subscription.md#closed)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:21
-
 ## Methods
 
 ### add
@@ -72,8 +70,6 @@ Name | Type | Description |
 
 Inherited from: [Subscription](../classes/rxjs.subscription.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:58
-
 ___
 
 ### remove
@@ -101,8 +97,6 @@ Name | Type | Description |
 
 Inherited from: [Subscription](../classes/rxjs.subscription.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:92
-
 ___
 
 ### schedule
@@ -118,8 +112,6 @@ Name | Type |
 
 **Returns:** [*Subscription*](../classes/rxjs.subscription.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:147
-
 ___
 
 ### unsubscribe
@@ -133,5 +125,3 @@ started when the Subscription was created.
 **Returns:** *void*
 
 Inherited from: [Subscription](../classes/rxjs.subscription.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subscription.d.ts:39

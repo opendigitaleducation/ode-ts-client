@@ -27,5 +27,3 @@
 ▸ `Static`**instance**(): [*ITransportFramework*](../interfaces/itransportframework.md)
 
 **Returns:** [*ITransportFramework*](../interfaces/itransportframework.md)
-
-Defined in: [src/ts/transport/interfaces.ts:6](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L6)

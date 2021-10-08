@@ -18,8 +18,6 @@
 
 • **session**: [*ISession*](isession.md)
 
-Defined in: [src/ts/session/interfaces.ts:17](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L17)
-
 ## Methods
 
 ### initialize
@@ -27,5 +25,3 @@ Defined in: [src/ts/session/interfaces.ts:17](https://github.com/opendigitaleduc
 ▸ **initialize**(): *Promise*<void\>
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/session/interfaces.ts:16](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L16)

@@ -32,5 +32,3 @@ Name | Type |
 `source` | T |
 
 **Returns:** R
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:14

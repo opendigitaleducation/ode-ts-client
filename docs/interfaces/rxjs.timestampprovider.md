@@ -30,5 +30,3 @@ This is used by types like `ReplaySubject` or operators like `timestamp` to calc
 the amount of time passed between events.
 
 **Returns:** *number*
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:159

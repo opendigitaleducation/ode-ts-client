@@ -27,5 +27,3 @@ Name | Type |
 `source` | [*Observable*](../classes/rxjs.observable.md)<T\> |
 
 **Returns:** [*Observable*](../classes/rxjs.observable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:14

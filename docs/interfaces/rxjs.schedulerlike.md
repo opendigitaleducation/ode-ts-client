@@ -38,8 +38,6 @@ the amount of time passed between events.
 
 Inherited from: [TimestampProvider](rxjs.timestampprovider.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:159
-
 ___
 
 ### schedule
@@ -61,5 +59,3 @@ Name | Type |
 `state?` | T |
 
 **Returns:** [*Subscription*](../classes/rxjs.subscription.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:144

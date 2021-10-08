@@ -31,8 +31,6 @@ methods.
 Promise constructor. If you need a Promise implementation other than native promises,
 please polyfill/patch Promise as you see appropriate. Will be removed in v8.
 
-Defined in: node_modules/rxjs/dist/types/internal/config.d.ts:43
-
 ___
 
 ### onStoppedNotification
@@ -48,8 +46,6 @@ This will _always_ be called asynchronously on another job in the runtime. This 
 we do not want errors thrown in this user-configured handler to interfere with the
 behavior of the library.
 
-Defined in: node_modules/rxjs/dist/types/internal/config.d.ts:34
-
 ___
 
 ### onUnhandledError
@@ -63,8 +59,6 @@ providing an error handler, errors from that subscription will end up here. This
 will _always_ be called asynchronously on another job in the runtime. This is because
 we do not want errors thrown in this user-configured handler to interfere with the
 behavior of the library.
-
-Defined in: node_modules/rxjs/dist/types/internal/config.d.ts:23
 
 ___
 
@@ -85,8 +79,6 @@ context of next functions provided as part of an observer to Subscribe. Instead,
 you will have access to a subscription or a signal or token that will allow you to do things like
 unsubscribe and test closed status. Will be removed in v8.
 
-Defined in: node_modules/rxjs/dist/types/internal/config.d.ts:71
-
 ___
 
 ### useDeprecatedSynchronousErrorHandling
@@ -103,5 +95,3 @@ FOR MIGRATION REASONS.
 **`deprecated`** As of version 8, RxJS will no longer support synchronous throwing
 of unhandled errors. All errors will be thrown on a separate call stack to prevent bad
 behaviors described above. Will be removed in v8.
-
-Defined in: node_modules/rxjs/dist/types/internal/config.d.ts:56

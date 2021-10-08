@@ -34,7 +34,6 @@ should not be used directly. Rather, create your own class and implement
 ### Properties
 
 - [now](rxjs.scheduler.md#now)
-- [schedulerActionCtor](rxjs.scheduler.md#scheduleractionctor)
 - [now](rxjs.scheduler.md#now)
 
 ### Methods
@@ -56,8 +55,6 @@ Name | Type |
 
 **Returns:** [*Scheduler*](rxjs.scheduler.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:25
-
 ## Properties
 
 ### now
@@ -78,19 +75,7 @@ have a relation to wall-clock time. May or may not refer to a time unit
 
 **Returns:** *number*
 
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:35
-
 Implementation of: [SchedulerLike](../interfaces/rxjs.schedulerlike.md).[now](../interfaces/rxjs.schedulerlike.md#now)
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:35
-
-___
-
-### schedulerActionCtor
-
-• `Private` **schedulerActionCtor**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:24
 
 ___
 
@@ -103,10 +88,6 @@ ___
 ▸ (): *number*
 
 **Returns:** *number*
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:25
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:25
 
 ## Methods
 
@@ -141,5 +122,3 @@ A subscription in order to be able to unsubscribe
 the scheduled work.
 
 Implementation of: [SchedulerLike](../interfaces/rxjs.schedulerlike.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Scheduler.d.ts:53

@@ -21,20 +21,14 @@ It will not be replaced with a const enum as those are not compatible with isola
 
 • **COMPLETE**: = "C"
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:10
-
 ___
 
 ### ERROR
 
 • **ERROR**: = "E"
 
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:9
-
 ___
 
 ### NEXT
 
 • **NEXT**: = "N"
-
-Defined in: node_modules/rxjs/dist/types/internal/Notification.d.ts:8

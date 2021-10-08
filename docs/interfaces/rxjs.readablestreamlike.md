@@ -27,5 +27,3 @@ Name |
 ▸ **getReader**(): *ReadableStreamDefaultReaderLike*<T\>
 
 **Returns:** *ReadableStreamDefaultReaderLike*<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:249

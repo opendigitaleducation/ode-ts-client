@@ -27,8 +27,6 @@
 Get the connected user's avatar URL, or a default one.
 Append a query parameter to this URL for it to get resized, for example "?thumbnail=48x48"
 
-Defined in: [src/ts/session/interfaces.ts:30](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L30)
-
 ___
 
 ### currentApp
@@ -37,15 +35,11 @@ ___
 
 Retrieve the current main app, @see ConfigureFramework.Platform.apps
 
-Defined in: [src/ts/session/interfaces.ts:33](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L33)
-
 ___
 
 ### currentLanguage
 
 • `Readonly` **currentLanguage**: *string*
-
-Defined in: [src/ts/session/interfaces.ts:23](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L23)
 
 ___
 
@@ -53,23 +47,17 @@ ___
 
 • `Readonly` **description**: [*IUserDescription*](iuserdescription.md)
 
-Defined in: [src/ts/session/interfaces.ts:25](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L25)
-
 ___
 
 ### notLoggedIn
 
 • `Readonly` **notLoggedIn**: *boolean*
 
-Defined in: [src/ts/session/interfaces.ts:24](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L24)
-
 ___
 
 ### user
 
 • `Readonly` **user**: [*IUserInfo*](iuserinfo.md)
-
-Defined in: [src/ts/session/interfaces.ts:31](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L31)
 
 ## Methods
 
@@ -86,8 +74,6 @@ Name | Type |
 
 **Returns:** *boolean*
 
-Defined in: [src/ts/session/interfaces.ts:36](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L36)
-
 ___
 
 ### hasWorkflow
@@ -101,5 +87,3 @@ Name | Type |
 `workflowName` | *string* |
 
 **Returns:** *boolean*
-
-Defined in: [src/ts/session/interfaces.ts:35](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/session/interfaces.ts#L35)

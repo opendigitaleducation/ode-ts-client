@@ -29,7 +29,3 @@ Name |
 ▸ (): [*Subscribable*](rxjs.subscribable.md)<T\>
 
 **Returns:** [*Subscribable*](rxjs.subscribable.md)<T\>
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:82
-
-Defined in: node_modules/rxjs/dist/types/internal/types.d.ts:82

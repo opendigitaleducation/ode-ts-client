@@ -28,15 +28,11 @@
 
 • **Profile**: *string*
 
-Defined in: [src/ts/configure/interfaces.ts:81](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L81)
-
 ___
 
 ### Project
 
 • **Project**: *string*
-
-Defined in: [src/ts/configure/interfaces.ts:83](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L83)
 
 ___
 
@@ -44,15 +40,11 @@ ___
 
 • **School**: *string*
 
-Defined in: [src/ts/configure/interfaces.ts:82](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L82)
-
 ___
 
 ### UserId
 
 • **UserId**: *string*
-
-Defined in: [src/ts/configure/interfaces.ts:80](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L80)
 
 ___
 
@@ -62,8 +54,6 @@ ___
 
 Inherited from: [ITrackingParams](itrackingparams.md).[detailApps](itrackingparams.md#detailapps)
 
-Defined in: [src/ts/configure/interfaces.ts:75](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L75)
-
 ___
 
 ### doNotTrack
@@ -72,15 +62,11 @@ ___
 
 Inherited from: [ITrackingParams](itrackingparams.md).[doNotTrack](itrackingparams.md#donottrack)
 
-Defined in: [src/ts/configure/interfaces.ts:74](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L74)
-
 ___
 
 ### siteId
 
 • **siteId**: *number*
-
-Defined in: [src/ts/configure/interfaces.ts:79](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L79)
 
 ___
 
@@ -90,12 +76,8 @@ ___
 
 Inherited from: [ITrackingParams](itrackingparams.md).[trackOnly](itrackingparams.md#trackonly)
 
-Defined in: [src/ts/configure/interfaces.ts:73](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L73)
-
 ___
 
 ### url
 
 • **url**: *string*
-
-Defined in: [src/ts/configure/interfaces.ts:78](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L78)

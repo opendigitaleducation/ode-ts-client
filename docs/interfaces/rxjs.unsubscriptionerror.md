@@ -25,8 +25,6 @@
 
 • `Readonly` **errors**: *any*[]
 
-Defined in: node_modules/rxjs/dist/types/internal/util/UnsubscriptionError.d.ts:2
-
 ___
 
 ### message
@@ -34,8 +32,6 @@ ___
 • **message**: *string*
 
 Inherited from: void
-
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
 
 ___
 
@@ -45,8 +41,6 @@ ___
 
 Inherited from: void
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
-
 ___
 
 ### stack
@@ -54,5 +48,3 @@ ___
 • `Optional` **stack**: *string*
 
 Inherited from: void
-
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975

@@ -40,8 +40,6 @@ used directly in non-RxJS code with an empty constructor.
 (Note that using this constructor directly is not recommended,
 you should create your own errors)
 
-Defined in: node_modules/rxjs/dist/types/internal/operators/timeout.d.ts:49
-
 ___
 
 ### message
@@ -49,8 +47,6 @@ ___
 • **message**: *string*
 
 Inherited from: void
-
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:974
 
 ___
 
@@ -60,8 +56,6 @@ ___
 
 Inherited from: void
 
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:973
-
 ___
 
 ### stack
@@ -69,5 +63,3 @@ ___
 • `Optional` **stack**: *string*
 
 Inherited from: void
-
-Defined in: node_modules/typescript/lib/lib.es5.d.ts:975

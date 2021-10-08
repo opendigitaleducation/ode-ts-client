@@ -55,12 +55,6 @@ Name |
 
 ### Properties
 
-- [\_buffer](rxjs.replaysubject.md#_buffer)
-- [\_bufferSize](rxjs.replaysubject.md#_buffersize)
-- [\_infiniteTimeWindow](rxjs.replaysubject.md#_infinitetimewindow)
-- [\_timestampProvider](rxjs.replaysubject.md#_timestampprovider)
-- [\_trimBuffer](rxjs.replaysubject.md#_trimbuffer)
-- [\_windowTime](rxjs.replaysubject.md#_windowtime)
 - [closed](rxjs.replaysubject.md#closed)
 - [hasError](rxjs.replaysubject.md#haserror)
 - [isStopped](rxjs.replaysubject.md#isstopped)
@@ -111,65 +105,13 @@ Name | Type |
 
 Overrides: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:38
-
 ## Properties
-
-### \_buffer
-
-• `Private` **\_buffer**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:37
-
-___
-
-### \_bufferSize
-
-• `Private` **\_bufferSize**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:34
-
-___
-
-### \_infiniteTimeWindow
-
-• `Private` **\_infiniteTimeWindow**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:38
-
-___
-
-### \_timestampProvider
-
-• `Private` **\_timestampProvider**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:36
-
-___
-
-### \_trimBuffer
-
-• `Private` **\_trimBuffer**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:47
-
-___
-
-### \_windowTime
-
-• `Private` **\_windowTime**: *any*
-
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:35
-
-___
 
 ### closed
 
 • **closed**: *boolean*
 
 Inherited from: [Subject](rxjs.subject.md).[closed](rxjs.subject.md#closed)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:12
 
 ___
 
@@ -181,8 +123,6 @@ ___
 
 Inherited from: [Subject](rxjs.subject.md).[hasError](rxjs.subject.md#haserror)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:18
-
 ___
 
 ### isStopped
@@ -192,8 +132,6 @@ ___
 **`deprecated`** Internal implementation detail, do not use directly. Will be made internal in v8.
 
 Inherited from: [Subject](rxjs.subject.md).[isStopped](rxjs.subject.md#isstopped)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:16
 
 ___
 
@@ -205,8 +143,6 @@ ___
 
 Inherited from: [Subject](rxjs.subject.md).[observers](rxjs.subject.md#observers)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:14
-
 ___
 
 ### operator
@@ -216,8 +152,6 @@ ___
 **`deprecated`** Internal implementation detail, do not use directly. Will be made internal in v8.
 
 Inherited from: [Subject](rxjs.subject.md).[operator](rxjs.subject.md#operator)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:22
 
 ___
 
@@ -229,8 +163,6 @@ ___
 
 Inherited from: [Subject](rxjs.subject.md).[source](rxjs.subject.md#source)
 
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:18
-
 ___
 
 ### thrownError
@@ -240,8 +172,6 @@ ___
 **`deprecated`** Internal implementation detail, do not use directly. Will be made internal in v8.
 
 Inherited from: [Subject](rxjs.subject.md).[thrownError](rxjs.subject.md#thrownerror)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:20
 
 ___
 
@@ -267,11 +197,7 @@ Name | Type |
 
 **Returns:** *any*
 
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:27
-
 Inherited from: [Subject](rxjs.subject.md).[create](rxjs.subject.md#create)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:27
 
 ## Accessors
 
@@ -280,8 +206,6 @@ Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:27
 • get **observed**(): *boolean*
 
 **Returns:** *boolean*
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:35
 
 ## Methods
 
@@ -299,8 +223,6 @@ Observable that the Subject casts to
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:42
-
 ___
 
 ### complete
@@ -310,8 +232,6 @@ ___
 **Returns:** *void*
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:33
 
 ___
 
@@ -328,8 +248,6 @@ Name | Type |
 **Returns:** *void*
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:32
 
 ___
 
@@ -390,8 +308,6 @@ a promise that either resolves on observable completion or
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:101
-
 ▸ **forEach**(`next`: (`value`: T) => *void*, `promiseCtor`: PromiseConstructorLike): *Promise*<void\>
 
 **`deprecated`** Passing a Promise constructor will no longer be available
@@ -413,8 +329,6 @@ a promise that either resolves on observable completion or
  rejects with the handled error
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:113
 
 ___
 
@@ -440,8 +354,6 @@ Name | Type |
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:30
-
 ___
 
 ### next
@@ -458,8 +370,6 @@ Name | Type |
 
 Overrides: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/ReplaySubject.d.ts:46
-
 ___
 
 ### pipe
@@ -469,8 +379,6 @@ ___
 **Returns:** [*Observable*](rxjs.observable.md)<T\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:114
 
 ▸ **pipe**<A\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>): [*Observable*](rxjs.observable.md)<A\>
 
@@ -489,8 +397,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<A\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:115
 
 ▸ **pipe**<A, B\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>): [*Observable*](rxjs.observable.md)<B\>
 
@@ -511,8 +417,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<B\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:116
 
 ▸ **pipe**<A, B, C\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>): [*Observable*](rxjs.observable.md)<C\>
 
@@ -535,8 +439,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<C\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:117
 
 ▸ **pipe**<A, B, C, D\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>, `op4`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<C, D\>): [*Observable*](rxjs.observable.md)<D\>
 
@@ -561,8 +463,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<D\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:118
 
 ▸ **pipe**<A, B, C, D, E\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>, `op4`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<C, D\>, `op5`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<D, E\>): [*Observable*](rxjs.observable.md)<E\>
 
@@ -589,8 +489,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<E\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:119
 
 ▸ **pipe**<A, B, C, D, E, F\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>, `op4`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<C, D\>, `op5`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<D, E\>, `op6`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<E, F\>): [*Observable*](rxjs.observable.md)<F\>
 
@@ -619,8 +517,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<F\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:120
 
 ▸ **pipe**<A, B, C, D, E, F, G\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>, `op4`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<C, D\>, `op5`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<D, E\>, `op6`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<E, F\>, `op7`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<F, G\>): [*Observable*](rxjs.observable.md)<G\>
 
@@ -651,8 +547,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<G\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:121
 
 ▸ **pipe**<A, B, C, D, E, F, G, H\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>, `op4`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<C, D\>, `op5`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<D, E\>, `op6`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<E, F\>, `op7`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<F, G\>, `op8`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<G, H\>): [*Observable*](rxjs.observable.md)<H\>
 
@@ -685,8 +579,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<H\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:122
 
 ▸ **pipe**<A, B, C, D, E, F, G, H, I\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>, `op4`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<C, D\>, `op5`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<D, E\>, `op6`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<E, F\>, `op7`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<F, G\>, `op8`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<G, H\>, `op9`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<H, I\>): [*Observable*](rxjs.observable.md)<I\>
 
@@ -721,8 +613,6 @@ Name | Type |
 **Returns:** [*Observable*](rxjs.observable.md)<I\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:123
 
 ▸ **pipe**<A, B, C, D, E, F, G, H, I\>(`op1`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<T, A\>, `op2`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<A, B\>, `op3`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<B, C\>, `op4`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<C, D\>, `op5`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<D, E\>, `op6`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<E, F\>, `op7`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<F, G\>, `op8`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<G, H\>, `op9`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<H, I\>, ...`operations`: [*OperatorFunction*](../interfaces/rxjs.operatorfunction.md)<any, any\>[]): [*Observable*](rxjs.observable.md)<unknown\>
 
@@ -759,8 +649,6 @@ Name | Type |
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:124
-
 ___
 
 ### subscribe
@@ -777,8 +665,6 @@ Name | Type |
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:53
-
 ▸ **subscribe**(`next`: (`value`: T) => *void*): [*Subscription*](rxjs.subscription.md)
 
 #### Parameters:
@@ -790,8 +676,6 @@ Name | Type |
 **Returns:** [*Subscription*](rxjs.subscription.md)
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:54
 
 ▸ **subscribe**(`next?`: *null* \| (`value`: T) => *void*, `error?`: *null* \| (`error`: *any*) => *void*, `complete?`: *null* \| () => *void*): [*Subscription*](rxjs.subscription.md)
 
@@ -809,8 +693,6 @@ Name | Type |
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:56
-
 ___
 
 ### toPromise
@@ -822,8 +704,6 @@ ___
 **Returns:** *Promise*<undefined \| T\>
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:126
 
 ▸ **toPromise**(`PromiseCtor`: PromiseConstructor): *Promise*<undefined \| T\>
 
@@ -839,8 +719,6 @@ Name | Type |
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:128
-
 ▸ **toPromise**(`PromiseCtor`: PromiseConstructorLike): *Promise*<undefined \| T\>
 
 **`deprecated`** Replaced with [firstValueFrom](../modules/rxjs.md#firstvaluefrom) and [lastValueFrom](../modules/rxjs.md#lastvaluefrom). Will be removed in v8. Details: https://rxjs.dev/deprecations/to-promise
@@ -855,8 +733,6 @@ Name | Type |
 
 Inherited from: [Subject](rxjs.subject.md)
 
-Defined in: node_modules/rxjs/dist/types/internal/Observable.d.ts:130
-
 ___
 
 ### unsubscribe
@@ -866,5 +742,3 @@ ___
 **Returns:** *void*
 
 Inherited from: [Subject](rxjs.subject.md)
-
-Defined in: node_modules/rxjs/dist/types/internal/Subject.d.ts:34

@@ -27,5 +27,3 @@
 ▸ `Static`**createInstance**(): [*ITimelineApp*](../interfaces/itimelineapp.md)
 
 **Returns:** [*ITimelineApp*](../interfaces/itimelineapp.md)
-
-Defined in: [src/ts/apps/timeline/interfaces.ts:6](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/apps/timeline/interfaces.ts#L6)

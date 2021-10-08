@@ -36,8 +36,6 @@
 
 (legacy) URL to the folder containing assets.
 
-Defined in: [src/ts/configure/interfaces.ts:118](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L118)
-
 ___
 
 ### is1D
@@ -45,8 +43,6 @@ ___
 • `Readonly` **is1D**: *boolean*
 
 Check if the "school degree" of the current theme is 1D ("panda", or an override of it).
-
-Defined in: [src/ts/configure/interfaces.ts:125](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L125)
 
 ___
 
@@ -56,8 +52,6 @@ ___
 
 Check if the "school degree" of the current theme is 2D ("theme-open-ent" or an override of it).
 
-Defined in: [src/ts/configure/interfaces.ts:128](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L128)
-
 ___
 
 ### logoutCallback
@@ -65,8 +59,6 @@ ___
 • `Readonly` **logoutCallback**: *string*
 
 (legacy) URL where the user is redirected after logout.
-
-Defined in: [src/ts/configure/interfaces.ts:120](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L120)
 
 ___
 
@@ -76,8 +68,6 @@ ___
 
 (legacy) URL to the currently active portal.html template. Used in infra-front.
 
-Defined in: [src/ts/configure/interfaces.ts:116](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L116)
-
 ___
 
 ### skin
@@ -85,8 +75,6 @@ ___
 • `Readonly` **skin**: *string*
 
 (legacy) FIXME Seems to be equal to themeName.
-
-Defined in: [src/ts/configure/interfaces.ts:112](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L112)
 
 ___
 
@@ -96,8 +84,6 @@ ___
 
 (legacy) Name of the currently active skin (user's choice in /timeline) : "default" by default, or another available name.
 
-Defined in: [src/ts/configure/interfaces.ts:108](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L108)
-
 ___
 
 ### skins
@@ -105,8 +91,6 @@ ___
 • `Readonly` **skins**: [*IThemeConfOverriding*](ithemeconfoverriding.md)[]
 
 Available skins configuration (also called "overrides").
-
-Defined in: [src/ts/configure/interfaces.ts:122](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L122)
 
 ___
 
@@ -116,8 +100,6 @@ ___
 
 (legacy) Name of the currently active theme, derived from a parent which is classified as 1D (panda) or 2D(theme-open-ent). This is a domain-level configurated value.
 
-Defined in: [src/ts/configure/interfaces.ts:110](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L110)
-
 ___
 
 ### themeUrl
@@ -125,8 +107,6 @@ ___
 • `Readonly` **themeUrl**: *string*
 
 (legacy) URL to the currently active theme/skin folder.
-
-Defined in: [src/ts/configure/interfaces.ts:114](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L114)
 
 ## Methods
 
@@ -144,8 +124,6 @@ Name | Type |
 
 **Returns:** *Promise*<[*IThemeConf*](ithemeconf.md)\>
 
-Defined in: [src/ts/configure/interfaces.ts:131](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L131)
-
 ___
 
 ### getHelpPath
@@ -155,8 +133,6 @@ ___
 Get the help path, which can be dedicated to 1D or 2D.
 
 **Returns:** *Promise*<String\>
-
-Defined in: [src/ts/configure/interfaces.ts:152](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L152)
 
 ___
 
@@ -168,8 +144,6 @@ List available skins.
 
 **Returns:** *Promise*<[*IThemeConfOverriding*](ithemeconfoverriding.md)[]\>
 
-Defined in: [src/ts/configure/interfaces.ts:149](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L149)
-
 ___
 
 ### listThemes
@@ -179,8 +153,6 @@ ___
 List available themes.
 
 **Returns:** *Promise*<[*IThemeDesc*](ithemedesc.md)[]\>
-
-Defined in: [src/ts/configure/interfaces.ts:143](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L143)
 
 ___
 
@@ -192,8 +164,6 @@ Await for theme to be fully loaded (skin, overrides, degrees...).
 
 **Returns:** *Promise*<[*ITheme*](itheme.md)\>
 
-Defined in: [src/ts/configure/interfaces.ts:134](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L134)
-
 ___
 
 ### onOverrideReady
@@ -204,8 +174,6 @@ Await for overrides conf to be loaded.
 
 **Returns:** *Promise*<[*IThemeOverrides*](../modules.md#ithemeoverrides)\>
 
-Defined in: [src/ts/configure/interfaces.ts:140](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L140)
-
 ___
 
 ### onSkinReady
@@ -215,8 +183,6 @@ ___
 Await for skin conf to be loaded.
 
 **Returns:** *Promise*<[*ITheme*](itheme.md)\>
-
-Defined in: [src/ts/configure/interfaces.ts:137](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L137)
 
 ___
 
@@ -233,5 +199,3 @@ Name | Type |
 `theme` | [*IThemeDesc*](ithemedesc.md) |
 
 **Returns:** *void*
-
-Defined in: [src/ts/configure/interfaces.ts:146](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/configure/interfaces.ts#L146)

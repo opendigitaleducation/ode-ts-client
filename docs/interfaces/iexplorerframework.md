@@ -28,8 +28,6 @@ Name | Type | Description |
 
 **Returns:** [*IExplorerContext*](iexplorercontext.md)
 
-Defined in: [src/ts/explore/interfaces.ts:22](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L22)
-
 ___
 
 ### getBus
@@ -39,5 +37,3 @@ ___
 Retrieve the underlying communication bus.
 
 **Returns:** [*IBus*](ibus.md)
-
-Defined in: [src/ts/explore/interfaces.ts:27](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/explore/interfaces.ts#L27)

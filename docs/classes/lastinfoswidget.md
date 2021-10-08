@@ -30,8 +30,6 @@
 
 **Returns:** *Promise*<number\>
 
-Defined in: [src/ts/widget/LastInfos.widget.ts:20](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L20)
-
 ___
 
 ### loadInfos
@@ -46,8 +44,6 @@ Name | Type |
 
 **Returns:** *Promise*<[*ILastInfosModel*](../interfaces/ilastinfosmodel.md)[]\>
 
-Defined in: [src/ts/widget/LastInfos.widget.ts:16](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L16)
-
 ___
 
 ### setMaxResults
@@ -61,5 +57,3 @@ Name | Type |
 `maxResults` | *number* |
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/widget/LastInfos.widget.ts:26](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/LastInfos.widget.ts#L26)

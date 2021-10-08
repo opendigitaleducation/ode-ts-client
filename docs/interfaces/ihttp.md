@@ -29,8 +29,6 @@
 
 Latest available HTTP response, valid during your get|post|put...then() and catch() handlers.
 
-Defined in: [src/ts/transport/interfaces.ts:28](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L28)
-
 ## Methods
 
 ### delete
@@ -54,8 +52,6 @@ Name | Type |
 `params?` | [*IHttpParams*](../modules.md#ihttpparams) |
 
 **Returns:** *Promise*<R\>
-
-Defined in: [src/ts/transport/interfaces.ts:57](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L57)
 
 ___
 
@@ -81,8 +77,6 @@ Name | Type |
 
 **Returns:** *Promise*<R\>
 
-Defined in: [src/ts/transport/interfaces.ts:60](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L60)
-
 ___
 
 ### get
@@ -105,8 +99,6 @@ Name | Type |
 `params?` | [*IHttpParams*](../modules.md#ihttpparams) |
 
 **Returns:** *Promise*<R\>
-
-Defined in: [src/ts/transport/interfaces.ts:31](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L31)
 
 ___
 
@@ -132,8 +124,6 @@ Name | Type |
 
 **Returns:** *Promise*<R\>
 
-Defined in: [src/ts/transport/interfaces.ts:66](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L66)
-
 ___
 
 ### loadScript
@@ -150,8 +140,6 @@ Name | Type |
 `params?` | [*IHttpParams*](../modules.md#ihttpparams) |
 
 **Returns:** *Promise*<void\>
-
-Defined in: [src/ts/transport/interfaces.ts:69](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L69)
 
 ___
 
@@ -177,8 +165,6 @@ Name | Type |
 
 **Returns:** *Promise*<R\>
 
-Defined in: [src/ts/transport/interfaces.ts:34](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L34)
-
 ___
 
 ### postFile
@@ -202,8 +188,6 @@ Name | Type | Description |
 `params?` | [*IHttpParams*](../modules.md#ihttpparams) | - |
 
 **Returns:** *Promise*<R\>
-
-Defined in: [src/ts/transport/interfaces.ts:43](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L43)
 
 ___
 
@@ -230,8 +214,6 @@ Name | Type |
 
 **Returns:** *Promise*<R\>
 
-Defined in: [src/ts/transport/interfaces.ts:46](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L46)
-
 ___
 
 ### put
@@ -257,8 +239,6 @@ Name | Type |
 
 **Returns:** *Promise*<R\>
 
-Defined in: [src/ts/transport/interfaces.ts:49](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L49)
-
 ___
 
 ### putJson
@@ -283,5 +263,3 @@ Name | Type |
 `params?` | [*IHttpParams*](../modules.md#ihttpparams) |
 
 **Returns:** *Promise*<R\>
-
-Defined in: [src/ts/transport/interfaces.ts:54](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/transport/interfaces.ts#L54)

@@ -22,8 +22,6 @@ Name |
 
 • `Readonly` **promise**: *Promise*<T\>
 
-Defined in: [src/ts/notify/interfaces.ts:62](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L62)
-
 ___
 
 ### reject
@@ -42,10 +40,6 @@ Name | Type |
 
 **Returns:** *void*
 
-Defined in: [src/ts/notify/interfaces.ts:64](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L64)
-
-Defined in: [src/ts/notify/interfaces.ts:64](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L64)
-
 ___
 
 ### resolve
@@ -63,7 +57,3 @@ Name | Type |
 `value` | T \| *PromiseLike*<T\> |
 
 **Returns:** *void*
-
-Defined in: [src/ts/notify/interfaces.ts:63](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L63)
-
-Defined in: [src/ts/notify/interfaces.ts:63](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/notify/interfaces.ts#L63)

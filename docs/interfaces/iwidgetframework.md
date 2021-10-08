@@ -22,8 +22,6 @@
 
 List widgets that are visible to the connected user.
 
-Defined in: [src/ts/widget/interfaces.ts:43](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L43)
-
 ## Methods
 
 ### initialize
@@ -41,8 +39,6 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [src/ts/widget/interfaces.ts:37](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L37)
-
 ___
 
 ### lookup
@@ -59,8 +55,6 @@ Name | Type |
 
 **Returns:** *undefined* \| [*IWidget*](iwidget.md)
 
-Defined in: [src/ts/widget/interfaces.ts:46](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L46)
-
 ___
 
 ### saveUserPrefs
@@ -70,5 +64,3 @@ ___
 Save user preferences
 
 **Returns:** *Promise*<any\>
-
-Defined in: [src/ts/widget/interfaces.ts:40](https://github.com/opendigitaleducation/ode-ts-client/blob/b81969a/src/ts/widget/interfaces.ts#L40)
