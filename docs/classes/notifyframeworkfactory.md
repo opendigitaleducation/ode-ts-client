@@ -24,6 +24,6 @@
 
 ### instance
 
-▸ `Static`**instance**(): [*INotifyFramework*](inotifyframework.md)
+▸ `Static`**instance**(): [*INotifyFramework*](../interfaces/inotifyframework.md)
 
-**Returns:** [*INotifyFramework*](inotifyframework.md)
+**Returns:** [*INotifyFramework*](../interfaces/inotifyframework.md)

@@ -12,40 +12,40 @@ export abstract class NotifyFrameworkFactory {
 }
 
 //-------------------------------------
-export abstract class INotifyFramework {
+export interface INotifyFramework {
 //-------------------------------------
 	/**
 	 * Notify that a process is done and data ready or rejected.
 	 * Utility method : wrap your own Promise.
 	 * Or use one of the predefined promises.
 	 */
-	abstract promisify<T>():IPromisified<T>;
+	promisify<T>():IPromisified<T>;
 
 	/**
 	 * Notify that a process is done and data ready or rejected.
 	 * Promise / resolve / reject of current user's language.
 	 */
-	abstract onLangReady():IPromisified<string>;
+	onLangReady():IPromisified<string>;
 
 	/**
 	 * Notify that a process is done and data ready or rejected.
 	 * Promise / resolve / reject of current user's session.
 	 */
-	abstract onSessionReady():IPromisified<IUserInfo>;
+	onSessionReady():IPromisified<IUserInfo>;
 
 	 /**
 	  * Notify that a process is done and data ready or rejected.
 	  * This data is not intended to change after being resolved.
 	  * Promise / resolve / reject of asynchronous skin.
 	  */
-	abstract onSkinReady():IPromisified<ITheme>;
+	onSkinReady():IPromisified<ITheme>;
 
 	/**
 	 * Notify that a process is done and data ready or rejected.
 	 * This data is not intended to change after being resolved.
 	 * Promise / resolve / reject of asynchronous skin overrides.
 	 */
-	abstract onOverridesReady():IPromisified<IThemeOverrides>;
+	onOverridesReady():IPromisified<IThemeOverrides>;
 
 
 	/**
@@ -53,7 +53,7 @@ export abstract class INotifyFramework {
 	 * By definition, an event can occur multiple times (otherwise it is a one-time "process", see above) and be watched by many targets.
 	 * => We use RxJS Subject to model events stream with many potential subscribers.
 	 */
-	abstract events():Subject<{name:EventName, layer:LayerName|string, data?:any}>;
+	events():Subject<{name:EventName, layer:LayerName|string, data?:any}>;
 }
 
 //-------------------------------------
