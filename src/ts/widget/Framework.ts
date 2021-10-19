@@ -191,23 +191,15 @@ class Widget implements IWidget {
     
     private _userPref:WidgetUserPref;
     get userPref(): WidgetUserPref {
-        // Sanity checks
-        if( this._platformConf.name==="school-widget" ) {
-            // School-widget always has index 0
-            this._userPref.index = 0;
-        }
+        // Sanity checks here
         return this._userPref;
     }
 
     applyUserPref( pref:WidgetUserPref ) {
         this._userPref = pref;
-        // Sanity checks
+        // Sanity checks here
         // Apply default position, left or right.
         this._userPref.position = this._userPref.position ?? widgets.lookupDefaultPosition(this._platformConf.name) ?? "left";
-            // School-widget always has index 0
-        if( this._platformConf.name==="school-widget" ) {
-            this._userPref.index = 0;
-        }
     }
     
 }
