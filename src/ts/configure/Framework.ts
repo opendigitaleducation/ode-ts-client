@@ -28,11 +28,13 @@ export class ConfigurationFramework implements IConfigurationFramework {
     initialize( version?:string|null, cdnDomain?:string|null ):Promise<void> {
         // If version is undefined, default to a new tag every day.
         if( !version ) {
+            const padWith0 = (val:number):string => (val<10 ? '0' : '')+val.toFixed(0);
             const now = new Date();
-            var y = now.getFullYear();
-            var m = now.getMonth() + 1;
-            var d = now.getDate();
-            version = '' + y + (m < 10 ? '0' : '') + m + (d < 10 ? '0' : '') + d;
+            const y = now.getFullYear();
+            const m = now.getMonth() + 1;
+            const d = now.getDate();
+            const h = now.getMinutes() / 10;
+            version = `${y}${padWith0(m)}${padWith0(d)}`; //FIXME add ${h.toFixed(0)} to change the tag every 10 minutes
         }
         const v = version;
         this.Platform.deploymentTag = version;
