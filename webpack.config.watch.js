@@ -8,7 +8,7 @@ module.exports = env => ({
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist', env.build_target),
+    path: path.resolve(__dirname, env.build_target),
   },
   // @see https://github.com/TypeStrong/ts-loader#devtool--sourcemaps
   devtool: "inline-source-map",
