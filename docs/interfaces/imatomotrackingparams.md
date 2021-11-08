@@ -52,6 +52,8 @@ ___
 
 • **detailApps**: *boolean*
 
+Set to true if state changes of the Single Page App need to be tracked.
+
 Inherited from: [ITrackingParams](itrackingparams.md).[detailApps](itrackingparams.md#detailapps)
 
 ___
@@ -59,6 +61,8 @@ ___
 ### doNotTrack
 
 • **doNotTrack**: *string*[]
+
+Blacklist of events not to track, in the form "app" or "app.eventName" or "*.eventName".
 
 Inherited from: [ITrackingParams](itrackingparams.md).[doNotTrack](itrackingparams.md#donottrack)
 
@@ -73,6 +77,8 @@ ___
 ### trackOnly
 
 • **trackOnly**: *string*[]
+
+Whitelist of events to track, in the form "app" or "app.eventName" or "*.eventName".
 
 Inherited from: [ITrackingParams](itrackingparams.md).[trackOnly](itrackingparams.md#trackonly)
 

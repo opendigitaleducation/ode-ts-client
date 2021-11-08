@@ -22,14 +22,20 @@
 
 • **detailApps**: *boolean*
 
+Set to true if state changes of the Single Page App need to be tracked.
+
 ___
 
 ### doNotTrack
 
 • **doNotTrack**: *string*[]
 
+Blacklist of events not to track, in the form "app" or "app.eventName" or "*.eventName".
+
 ___
 
 ### trackOnly
 
 • **trackOnly**: *string*[]
+
+Whitelist of events to track, in the form "app" or "app.eventName" or "*.eventName".

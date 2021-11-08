@@ -70,8 +70,11 @@ export interface IConfigurationFramework {
 export type AnalyticStatus = "void" | "pending" | "ready" | "failed";
 export type TrackingType = "matomo" | "internal";
 export interface ITrackingParams {
+    /** Whitelist of events to track, in the form "app" or "app.eventName" or "*.eventName". */
     trackOnly: string[];
+    /** Blacklist of events not to track, in the form "app" or "app.eventName" or "*.eventName". */
     doNotTrack: string[];
+    /** Set to true if state changes of the Single Page App need to be tracked. */
     detailApps: boolean;
 }
 export interface IMatomoTrackingParams extends ITrackingParams {
