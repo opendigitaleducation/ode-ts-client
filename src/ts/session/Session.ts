@@ -135,8 +135,8 @@ export class Session implements ISession {
     }
 
     private loadDefaultLanguage():Promise<string> {
-        return http.get<string>( '/locale' ).then( responseText => {
-            return JSON.parse(responseText).locale;
+        return http.get<{locale:string}>( '/locale' ).then( response => {
+            return response.locale;
         }).catch( () => {
             // void
             return this._currentLanguage;
