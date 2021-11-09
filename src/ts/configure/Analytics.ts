@@ -1,6 +1,6 @@
 import { AnalyticStatus, IXitiTrackingParams, IMatomoTrackingParams, ITrackingParams, TrackingType } from "./interfaces";
 import { transport } from "../transport/Framework";
-import { ERROR_CODE } from "..";
+import { ERROR_CODE, IPromisified } from "..";
 import { session } from "../session/Framework";
 import { notify } from "../notify/Framework";
 import { configure } from "./Framework";
@@ -40,7 +40,7 @@ type XitiConf = {
 export class Analytics {
 //-------------------------------------
 	private _status:AnalyticStatus = "void";
-	private _params?:ParamsByTrackingSystem;
+	private _params?:IPromisified<ParamsByTrackingSystem>;
 
 	get status():AnalyticStatus {
 		return this._status;
@@ -48,19 +48,25 @@ export class Analytics {
 
 	xiti():Promise<IXitiTrackingParams|undefined> {
 		// XiTi does not implement ITrackingParams but behaves like it does.
-		return this.parameters("xiti" as TrackingType) as Promise<IXitiTrackingParams|undefined>;
+		return this.parametersWithCheck("xiti" as TrackingType, false) as Promise<IXitiTrackingParams|undefined>;
 	}
 
 	parameters<T extends ITrackingParams>(type:TrackingType):Promise<T|undefined> {
+		return this.parametersWithCheck<T>(type, true);
+	}
+
+	protected async parametersWithCheck<T extends ITrackingParams>(type:TrackingType, checkType:boolean):Promise<T|undefined> {
 		if( !this._params ) {
-			return this.initialize().then( () => {
-				return this._params ? this._params[type] as T : undefined;
-			});
+			this.initialize();
 		}
-		return Promise.resolve( this._params[type] as T );
+		return this._params?.promise.then( params => (!checkType || params.type===type) ? params[type] as T : undefined );
 	}
 
 	initialize():Promise<void> {
+		if( this._params ) {
+			return Promise.resolve();
+		}
+		this._params = notify.promisify<ParamsByTrackingSystem>();
 		this._status = "pending";
 		return Promise.all([
 			transport.http.get<ParamsByTrackingSystem & {multiple?:ITrackingParams}>('/analyticsConf'),
@@ -74,7 +80,7 @@ export class Analytics {
 				// Data seems corrupted
 				throw ERROR_CODE.MALFORMED_DATA;
 			}
-			this._params = tuple[0];
+			this._params?.resolve( tuple[0] );
 
 			// Add XiTi config to the resulting object, if active.
 			if( tuple[1] && tuple[1].active ) {
@@ -84,6 +90,7 @@ export class Analytics {
 		})
 		.catch( e => {
 			this._status = "failed";
+			this._params?.reject();
 			throw e;
 		});
 	}
