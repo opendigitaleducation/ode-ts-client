@@ -85,6 +85,26 @@ export interface IMatomoTrackingParams extends ITrackingParams {
   School: string;
   Project: string;
 }
+/** 2021 implementation of XiTi. */
+export interface IXitiTrackingParams {
+  /** Which property of LIBELLE_SERVICE to use depends on the frontend. */
+  LIBELLE_SERVICE: {'default':string} & {[prop:string]: string};
+  TYPE: string;
+  OUTIL: any;
+  STRUCT_ID:	any;
+  STRUCT_UAI:	string;
+  PROJET: any;
+  EXPLOITANT:	any;
+  PLATFORME: any;
+  ID_PERSO: any;
+  PROFILE: any;
+  // NOM_PAGE is missing, but has to determined by the frontend.
+}
+
+/* 
+FIXME Remove old code in comments below, once the 2021 XiTi impl is validated.
+The following was ported from themes but NEVER TESTED.
+
 export interface IXitiTrackingParams {
   //Springboard constants
   ID_COLLECTIVITE: number|'';
@@ -103,6 +123,7 @@ export interface IXitiTrackingParams {
   ID_PERSO: string;
   ID_PROFIL: number;
 }
+*/
 
 //-------------------------------------
 export interface ITheme {

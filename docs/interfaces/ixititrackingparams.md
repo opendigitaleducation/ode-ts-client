@@ -2,70 +2,81 @@
 
 # Interface: IXitiTrackingParams
 
+2021 implementation of XiTi.
+
 ## Table of contents
 
 ### Properties
 
-- [ENABLE\_PROXY](ixititrackingparams.md#enable_proxy)
-- [ID\_COLLECTIVITE](ixititrackingparams.md#id_collectivite)
-- [ID\_ETAB](ixititrackingparams.md#id_etab)
+- [EXPLOITANT](ixititrackingparams.md#exploitant)
 - [ID\_PERSO](ixititrackingparams.md#id_perso)
-- [ID\_PLATEFORME](ixititrackingparams.md#id_plateforme)
-- [ID\_PROFIL](ixititrackingparams.md#id_profil)
-- [ID\_PROJET](ixititrackingparams.md#id_projet)
-- [ID\_SERVICE](ixititrackingparams.md#id_service)
-- [LIB\_SERVICE](ixititrackingparams.md#lib_service)
+- [LIBELLE\_SERVICE](ixititrackingparams.md#libelle_service)
+- [OUTIL](ixititrackingparams.md#outil)
+- [PLATFORME](ixititrackingparams.md#platforme)
+- [PROFILE](ixititrackingparams.md#profile)
+- [PROJET](ixititrackingparams.md#projet)
+- [STRUCT\_ID](ixititrackingparams.md#struct_id)
+- [STRUCT\_UAI](ixititrackingparams.md#struct_uai)
+- [TYPE](ixititrackingparams.md#type)
 
 ## Properties
 
-### ENABLE\_PROXY
+### EXPLOITANT
 
-• `Optional` **ENABLE\_PROXY**: *boolean*
-
-___
-
-### ID\_COLLECTIVITE
-
-• **ID\_COLLECTIVITE**: *number* \| **
-
-___
-
-### ID\_ETAB
-
-• **ID\_ETAB**: ** \| *0* \| { `collectiviteId?`: *any* ; `id`: *number* ; `plateformeId?`: *any* ; `projetId?`: *any*  }
+• **EXPLOITANT**: *any*
 
 ___
 
 ### ID\_PERSO
 
-• **ID\_PERSO**: *string*
+• **ID\_PERSO**: *any*
 
 ___
 
-### ID\_PLATEFORME
+### LIBELLE\_SERVICE
 
-• **ID\_PLATEFORME**: *number* \| **
+• **LIBELLE\_SERVICE**: { `default`: *string*  } & { [prop: string]: *string*;  }
 
-___
-
-### ID\_PROFIL
-
-• **ID\_PROFIL**: *number*
+Which property of LIBELLE_SERVICE to use depends on the frontend.
 
 ___
 
-### ID\_PROJET
+### OUTIL
 
-• **ID\_PROJET**: *number* \| **
-
-___
-
-### ID\_SERVICE
-
-• **ID\_SERVICE**: *number* \| **
+• **OUTIL**: *any*
 
 ___
 
-### LIB\_SERVICE
+### PLATFORME
 
-• **LIB\_SERVICE**: *string* \| *number*
+• **PLATFORME**: *any*
+
+___
+
+### PROFILE
+
+• **PROFILE**: *any*
+
+___
+
+### PROJET
+
+• **PROJET**: *any*
+
+___
+
+### STRUCT\_ID
+
+• **STRUCT\_ID**: *any*
+
+___
+
+### STRUCT\_UAI
+
+• **STRUCT\_UAI**: *string*
+
+___
+
+### TYPE
+
+• **TYPE**: *string*

@@ -129,7 +129,7 @@ ___
 
 ### profiles
 
-• **profiles**: *string*[]
+• **profiles**: (*Student* \| *Teacher* \| *Relative* \| *Personnel* \| *Guest*)[]
 
 ___
 

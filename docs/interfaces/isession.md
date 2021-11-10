@@ -41,11 +41,15 @@ ___
 
 • `Readonly` **currentLanguage**: *string*
 
+Language code (2-letters) actually applied.
+
 ___
 
 ### description
 
 • `Readonly` **description**: [*IUserDescription*](iuserdescription.md)
+
+Additional information about the connected user.
 
 ___
 
@@ -53,11 +57,15 @@ ___
 
 • `Readonly` **notLoggedIn**: *boolean*
 
+Truthy when no user is connected.
+
 ___
 
 ### user
 
 • `Readonly` **user**: [*IUserInfo*](iuserinfo.md)
+
+Basic information about the connected user.
 
 ## Methods
 

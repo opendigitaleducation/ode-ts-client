@@ -159,6 +159,7 @@ export class Session implements ISession {
 
 	private loadDescription():Promise<IUserDescription> {
 		return Promise.all([
+            // FIXME The full user's description should be obtainable from a single endpoint in the backend.
 			http.get<PersonApiResult>('/userbook/api/person', {requestName: "refreshAvatar"}),
 			http.get<IUserDescription>('/directory/userbook/'+ this._me.userId)
 		]).then( results => {
@@ -169,7 +170,7 @@ export class Session implements ISession {
             }
             // "type" field from /userbook/api/person becomes "profiles"
             if( this._description.type && !this._description.profiles ) {
-                this._description.profiles = this._description.type as unknown as Array<string>;
+                this._description.profiles = this._description.type as unknown as Array<"Student"|"Teacher"|"Relative"|"Personnel"|"Guest">;
             }
 			Object.assign( this._description, results[1]);
 			return this._description;

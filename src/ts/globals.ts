@@ -51,8 +51,8 @@ export const APP = {
   "workspace"
   "admin-portal"
   "stats"
-  "userbook"
-  "directory"
+  "userbook"    // FIXME userbook OR directory : the choice may impact some configurations, @see IXitiTrackingParams.NOM_PAGE for example
+  "directory"   // FIXME Keep in mind that ode-ts-client MUST not access the locationPath of the window !
   "mindmap"
   "timelinegenerator"
   "actualites"

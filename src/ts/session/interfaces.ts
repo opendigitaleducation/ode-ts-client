@@ -20,14 +20,18 @@ export interface ISessionFramework {
 //-------------------------------------
 export interface ISession {
 //-------------------------------------
+  /** Language code (2-letters) actually applied. */
   readonly currentLanguage:string;
+  /** Truthy when no user is connected. */
   readonly notLoggedIn:boolean;
+  /** Additional information about the connected user. */
   readonly description:IUserDescription;
   /** 
    * Get the connected user's avatar URL, or a default one.
    * Append a query parameter to this URL for it to get resized, for example "?thumbnail=48x48"
    */
   readonly avatarUrl:string;
+  /** Basic information about the connected user. */
   readonly user:IUserInfo;
   /** Retrieve the current main app, @see ConfigureFramework.Platform.apps */
   readonly currentApp:App|null;
@@ -77,7 +81,7 @@ export interface IUserDescription {
   relatedType?: any;     // null
   schools: Array<School>;
   tel: string;
-  profiles:Array<string>// ["Teacher"]; // NOTE: initial field name is "type", but it is renamed to "profiles" internally.
+  profiles:Array<"Student"|"Teacher"|"Relative"|"Personnel"|"Guest">// NOTE: initial field name is "type", but it is renamed to "profiles" internally.
   userId: string;       // "12345678-9abc-def0-1234-56789abcdef0"
   visibleInfos: Array<string>;  // ["SHOW_BIRTHDATE"]
 }
