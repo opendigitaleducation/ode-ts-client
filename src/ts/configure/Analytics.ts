@@ -79,11 +79,8 @@ export class Analytics {
 		return this.parametersWithCheck<T>(type, true);
 	}
 
-	protected async parametersWithCheck<T extends ITrackingParams>(type:TrackingType, checkType:boolean):Promise<T|undefined> {
-		if( !this._params ) {
-			this.initialize();
-		}
-		return this._params?.promise.then( params => {
+	private async parametersWithCheck<T extends ITrackingParams>(type:TrackingType, checkType:boolean):Promise<T|undefined> {
+		return this.initialize().promise.then( params => {
 			return (!checkType||params.type===type||params.type==="multiple") ? params[type] as T : undefined 
 		});
 	}
@@ -94,38 +91,38 @@ export class Analytics {
 	 * @returns A promise of the end of the init process (it may throw errors)
 	 * @throws ERROR_CODE.MALFORMED_DATA when config cannot be read.
 	 */
-	initialize():Promise<void> {
-		if( this._params ) {
-			return Promise.resolve();
+	private initialize():IPromisified<ParamsByTrackingSystem> {
+		if( ! this._params ) {
+			this._params = notify.promisify<ParamsByTrackingSystem>();
+			this._status = "pending";
+			Promise.all([
+				transport.http.get<ParamsByTrackingSystem>('/analyticsConf'),
+				//FIXME change servers config to only keep the "all-in-one" query to /analyticsConf.
+				transport.http.get<XitiConf>('/xiti/config')
+			])
+			.then( async tuple => {
+				// Sanitize results
+				// FIXME what to do with type "multiple" ?
+				if( !tuple || !tuple[0] || !tuple[0].type ) {
+					// Data seems corrupted
+					throw ERROR_CODE.MALFORMED_DATA;
+				}
+
+				// Add XiTi config to the resulting object, if active.
+				if( tuple[1] && tuple[1].active ) {
+					tuple[0].xiti = await this.initializeXiti( tuple[1] );
+				}
+
+				this._params?.resolve( tuple[0] );
+				this._status = "ready";
+			})
+			.catch( e => {
+				this._status = "failed";
+				this._params?.reject();
+				throw e;
+			});
 		}
-		this._params = notify.promisify<ParamsByTrackingSystem>();
-		this._status = "pending";
-		return Promise.all([
-			transport.http.get<ParamsByTrackingSystem>('/analyticsConf'),
-			//FIXME change servers config to only keep the "all-in-one" query to /analyticsConf.
-			transport.http.get<XitiConf>('/xiti/config')
-		])
-		.then( async tuple => {
-			// Sanitize results
-			// FIXME what to do with type "multiple" ?
-			if( !tuple || !tuple[0] || !tuple[0].type ) {
-				// Data seems corrupted
-				throw ERROR_CODE.MALFORMED_DATA;
-			}
-
-			// Add XiTi config to the resulting object, if active.
-			if( tuple[1] && tuple[1].active ) {
-				tuple[0].xiti = await this.initializeXiti( tuple[1] );
-			}
-
-			this._params?.resolve( tuple[0] );
-			this._status = "ready";
-		})
-		.catch( e => {
-			this._status = "failed";
-			this._params?.reject();
-			throw e;
-		});
+		return this._params;
 	}
 
 	/** 2021 implementation of XiTi. */
