@@ -39,6 +39,7 @@
 - [IHttp](interfaces/IHttp.md)
 - [IIdiom](interfaces/IIdiom.md)
 - [ILastInfosModel](interfaces/ILastInfosModel.md)
+- [ILoginModel](interfaces/ILoginModel.md)
 - [IMatomoTrackingParams](interfaces/IMatomoTrackingParams.md)
 - [INotifyFramework](interfaces/INotifyFramework.md)
 - [IOrder](interfaces/IOrder.md)
@@ -604,6 +605,7 @@ ___
 | `APP_NOT_FOUND` | ``"0040"`` |
 | `MALFORMED_DATA` | ``"0080"`` |
 | `NOT_INITIALIZED` | ``"0020"`` |
+| `NOT_LOGGED_IN` | ``"0090"`` |
 | `NOT_SUPPORTED` | ``"0030"`` |
 | `SUCCESS` | ``"0000"`` |
 | `TIME_OUT` | ``"0070"`` |
