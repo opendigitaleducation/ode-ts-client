@@ -103,6 +103,7 @@
 - [NotificationModel](modules.md#notificationmodel)
 - [OpenParameters](modules.md#openparameters)
 - [OrderValues](modules.md#ordervalues)
+- [PrintParameters](modules.md#printparameters)
 - [PropFormatType](modules.md#propformattype)
 - [PropKeyType](modules.md#propkeytype)
 - [PropModeType](modules.md#propmodetype)
@@ -380,6 +381,12 @@ ___
 ### OrderValues
 
 Ƭ **OrderValues**: { [O in SortByType]?: SortOrderType }
+
+___
+
+### PrintParameters
+
+Ƭ **PrintParameters**: [`IActionParameters`](interfaces/IActionParameters.md) & { `resourceId`: [`ID`](modules.md#id) ; `withComments?`: `boolean`  }
 
 ___
 
