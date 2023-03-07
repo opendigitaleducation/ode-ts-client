@@ -15,6 +15,7 @@
 - [ITimelineFactory](classes/ITimelineFactory.md)
 - [LastInfosWidget](classes/LastInfosWidget.md)
 - [NotifyFrameworkFactory](classes/NotifyFrameworkFactory.md)
+- [OdeClient](classes/OdeClient.md)
 - [SessionFrameworkFactory](classes/SessionFrameworkFactory.md)
 - [TransportFrameworkFactory](classes/TransportFrameworkFactory.md)
 - [WidgetFrameworkFactory](classes/WidgetFrameworkFactory.md)

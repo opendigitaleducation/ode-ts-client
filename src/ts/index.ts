@@ -32,3 +32,6 @@ export * from "./apps/timeline/interfaces";
 
 //---------------------------------- SERVICES ----------------------------------
 export * from "./services";
+
+//---------------------------------- ODE CLIENT ----------------------------------
+export * from "./client";
