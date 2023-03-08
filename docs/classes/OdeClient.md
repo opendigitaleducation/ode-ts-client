@@ -10,11 +10,11 @@
 
 ### Properties
 
-- [\_configure](OdeClient.md#_configure)
-- [\_explorer](OdeClient.md#_explorer)
-- [\_http](OdeClient.md#_http)
-- [\_notify](OdeClient.md#_notify)
-- [\_session](OdeClient.md#_session)
+- [configure](OdeClient.md#configure)
+- [explorer](OdeClient.md#explorer)
+- [http](OdeClient.md#http)
+- [notify](OdeClient.md#notify)
+- [session](OdeClient.md#session)
 
 ### Methods
 
@@ -29,33 +29,33 @@
 
 ## Properties
 
-### \_configure
+### configure
 
-• **\_configure**: [`IConfigurationFramework`](../interfaces/IConfigurationFramework.md)
-
-___
-
-### \_explorer
-
-• **\_explorer**: [`IExplorerFramework`](../interfaces/IExplorerFramework.md)
+• **configure**: [`IConfigurationFramework`](../interfaces/IConfigurationFramework.md)
 
 ___
 
-### \_http
+### explorer
 
-• **\_http**: [`IHttp`](../interfaces/IHttp.md)
-
-___
-
-### \_notify
-
-• **\_notify**: [`INotifyFramework`](../interfaces/INotifyFramework.md)
+• **explorer**: [`IExplorerFramework`](../interfaces/IExplorerFramework.md)
 
 ___
 
-### \_session
+### http
 
-• **\_session**: [`ISessionFramework`](../interfaces/ISessionFramework.md)
+• **http**: [`IHttp`](../interfaces/IHttp.md)
+
+___
+
+### notify
+
+• **notify**: [`INotifyFramework`](../interfaces/INotifyFramework.md)
+
+___
+
+### session
+
+• **session**: [`ISessionFramework`](../interfaces/ISessionFramework.md)
 
 ## Methods
 
@@ -77,13 +77,13 @@ ___
 
 ### mount
 
-▸ **mount**(`params`): `Promise`<`void`\>
+▸ **mount**(`params?`): `Promise`<`void`\>
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `params` | `IParams` | IParams initialize sessionFramework and configurationFramework can be use on any framework (React, Vue, ...) |
+| `params?` | `IParams` | IParams initialize sessionFramework and configurationFramework can be use on any framework (React, Vue, ...) |
 
 #### Returns
 

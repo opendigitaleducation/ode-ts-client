@@ -1,12 +1,12 @@
-import { configure } from "../configure/Framework";
+import { configure as ConfigurationFramework } from "../configure/Framework";
 import type { IConfigurationFramework } from "../configure/interfaces";
 import { notify } from "../notify/Framework";
 import { INotifyFramework } from "../notify/interfaces";
-import { session } from "../session/Framework";
+import { session as SessionFramework } from "../session/Framework";
 import type { ISessionFramework } from "../session/interfaces";
-import { explorer } from "../explore/Framework";
+import { explorer as ExplorerFramework } from "../explore/Framework";
 import type { IExplorerFramework } from "../explore/interfaces";
-import { transport } from "../transport/Framework";
+import { transport as TransportFramework } from "../transport/Framework";
 import type { IHttp } from "../transport/interfaces";
 import { App } from "../globals";
 
@@ -19,21 +19,22 @@ export interface IParams {
 
 export interface IOdeClient {
   mount: () => Promise<void>;
+  initialize: () => Promise<any>;
 }
 
 export class OdeClient {
-  _session: ISessionFramework;
-  _configure: IConfigurationFramework;
-  _notify: INotifyFramework;
-  _explorer: IExplorerFramework;
-  _http: IHttp;
+  session: ISessionFramework;
+  configure: IConfigurationFramework;
+  notify: INotifyFramework;
+  explorer: IExplorerFramework;
+  http: IHttp;
 
   constructor() {
-    this._session = session;
-    this._configure = configure;
-    this._notify = notify;
-    this._explorer = explorer;
-    this._http = transport.http;
+    this.session = SessionFramework;
+    this.configure = ConfigurationFramework;
+    this.notify = notify;
+    this.explorer = ExplorerFramework;
+    this.http = TransportFramework.http;
   }
 
   /**
@@ -42,12 +43,12 @@ export class OdeClient {
    * initialize sessionFramework and configurationFramework
    * can be use on any framework (React, Vue, ...)
    */
-  async mount(params: IParams): Promise<void> {
+  async mount(params?: IParams): Promise<void> {
     await Promise.all([
-      this._session.initialize(),
-      this._configure.initialize(
-        params.version || null,
-        params.cdnDomain || null,
+      this.session.initialize(),
+      this.configure.initialize(
+        params?.version || null,
+        params?.cdnDomain || null,
       ),
     ]);
   }
@@ -59,8 +60,8 @@ export class OdeClient {
    */
   async initialize(params: IParams): Promise<any> {
     return await Promise.all([
-      this._configure.Platform.apps.getWebAppConf(params.app),
-      this._configure.Platform.theme.getConf(),
+      this.configure.Platform.apps.getWebAppConf(params.app),
+      this.configure.Platform.theme.getConf(),
     ]);
   }
 }
