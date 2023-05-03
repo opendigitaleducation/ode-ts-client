@@ -15,6 +15,7 @@ const config = [
   },
   {
     entry: path.resolve(__dirname, "./src/ts/index.ts"),
+    fileName: () => `ode-ts-client.mjs`,
     formats: ["es"],
   },
 ];
@@ -22,17 +23,15 @@ const config = [
 config.forEach(async (lib) => {
   await build({
     build: {
-      sourcemap: true,
-      target: "es2015",
-      minify: "terser",
+      // target: "es2015",
       outDir: "./dist",
       lib: {
         ...lib,
       },
-      commonjsOptions: {
+      /* commonjsOptions: {
         transformMixedEsModules: true,
         exclude: ["node_modules"],
-      },
+      }, */
       rollupOptions: {
         output: {
           globals: {
@@ -44,10 +43,7 @@ config.forEach(async (lib) => {
     },
     plugins: [
       visualizer(),
-      dts({
-        insertTypesEntry: false,
-        outputDir: "dist",
-      }),
+      dts(),
     ],
   });
 });
