@@ -160,9 +160,9 @@ doc () {
 publishNPM () {
   LOCAL_BRANCH=`echo $GIT_BRANCH | sed -e "s|origin/||g"`
   if [ "$NO_DOCKER" = "true" ] ; then
-    npm publish --tag $LOCAL_BRANCH
+    pnpm publish --tag $LOCAL_BRANCH
   else
-    docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "pnpm run publish --tag $LOCAL_BRANCH"
+    docker-compose run --rm -u "$USER_UID:$GROUP_GID" node sh -c "pnpm publish --no-git-checks --tag $LOCAL_BRANCH"
   fi
 }
 
