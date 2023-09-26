@@ -323,6 +323,7 @@ export interface ISearchResults {
   folders: IFolder[];
   pagination: IPagination;
   resources: IResource[];
+  searchConfig?: {minLength:number}
 }
 //-------------------------------------
 export interface IContext extends ISearchResults {
