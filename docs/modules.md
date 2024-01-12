@@ -957,6 +957,7 @@ ___
 | `CALENDAR` | ``"calendar-widget"`` |
 | `CARNET` | ``"carnet-de-bord"`` |
 | `CURSUS` | ``"cursus-widget"`` |
+| `EDUMALIN` | ``"edumalin-widget"`` |
 | `LAST_INFOS` | ``"last-infos-widget"`` |
 | `MAXICOURS` | ``"maxicours-widget"`` |
 | `MOOD` | ``"mood"`` |

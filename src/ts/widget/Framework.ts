@@ -53,6 +53,7 @@ const defaultWidgetPosition: { [name in WidgetName]: WidgetPosition } = {
   "universalis-widget": WIDGET_POSITION.RIGHT,
   "briefme-widget": WIDGET_POSITION.LEFT,
   "school-widget": WIDGET_POSITION.LEFT,
+  "edumalin-widget": WIDGET_POSITION.RIGHT,
 };
 
 // Default sort order for widgets, then overriden by user preferences, if any.
@@ -75,6 +76,7 @@ const defaultWidgetOrder: { [name in WidgetName]: number } = {
   birthday: 120,
   "calendar-widget": 130, // Calendrier
   notes: 140,
+  "edumalin-widget": 35,
 };
 
 //-------------------------------------
