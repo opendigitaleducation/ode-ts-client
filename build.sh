@@ -83,6 +83,7 @@ init () {
   NPM_VERSION_SUFFIX=`date +"%Y%m%d%H%M"`
   cp package.json.template package.json
   sed -i "s/%generateVersion%/${NPM_VERSION_SUFFIX}/" package.json
+  sed -i "s/%branch%/${BRANCH_NAME}/" package.json
 
   if [ "$NO_DOCKER" = "true" ] ; then
     pnpm install && pnpm run prepare && npx husky add .husky/pre-commit "pnpm run test && pnpm run docs && git add ./docs/*"
